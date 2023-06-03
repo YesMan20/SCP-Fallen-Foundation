@@ -1,0 +1,22 @@
+{
+  "item.scpff.scp207": "SCP-207 - §aCola Bottles",
+  "item.scpff.scp500": "SCP-500 - §aPanacea",
+  "item.scpff.itemicon": "???",
+  "item.scpff.blockicon": "???",
+  "item.scpff.armoryicon": "???",
+  "item.scpff.scpicon": "???",
+  "item.scpff.scp_650_spawn_egg": "SCP-650 - §eStartling Statue §rSpawn Egg",
+  "item.scpff.medkit": "Medical Kit",
+
+  "entity.scpff.scp_650": "SCP-650 - §eStartling Statue",
+
+  "block.scpff.hcwall": "Heavy Containment Wall",
+  "block.scpff.hcfloor": "Grated Floor",
+  "block.scpff.metalwall1": "Metal Plated Wall 1",
+  "block.scpff.metalwall2": "Metal Plated Wall 2",
+
+  "itemGroup.itemstab": "SCP Items",
+  "itemGroup.blockstab": "SCP Blocks",
+  "itemGroup.scpstab": "SCP Spawn eggs",
+  "itemGroup.armorytab": "SCP Armory"
+}
