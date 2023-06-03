@@ -19,7 +19,7 @@ import org.slf4j.Logger;
 public class SCPFf
 {
     public static final String MOD_ID = "scpff";
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
     public SCPFf()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();

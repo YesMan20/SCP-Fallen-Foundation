@@ -17,6 +17,7 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
+import net.yesman.scpff.SCPFf;
 import net.yesman.scpff.misc.Helper;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.manager.AnimationData;
@@ -71,10 +72,8 @@ public class SCP650 extends Mob implements IAnimatable {
         this.setYHeadRot(0);
         for (Entity entity : this.level.getEntities(this, this.getBoundingBox().inflate(30), (val) -> val instanceof Player player && !player.isCreative())) {
             if (!this.level.isClientSide && entity instanceof Player player) {
-                List<Entity> lookedAt = Helper.lookingAtInRange(player, 30);
-                assert lookedAt != null;
-                boolean isMe = lookedAt.contains(this);
-                if (!isMe && player.hasLineOfSight(this) && this.cooldownTick + 200 < this.tickCount) {
+                Entity lookedAt = Helper.lookingAtInRange(player, 30);
+                if (lookedAt != this && player.hasLineOfSight(this) && this.cooldownTick + 200 < this.tickCount) {
                     this.cooldownTick = this.tickCount;
                     Vec3 vec3 = Helper.calculateViewVector(0, entity.getYRot()).scale(-1.0F);
                     Vec3 vec32 = new Vec3(entity.getX(), entity.getY(), entity.getZ()).add(vec3);

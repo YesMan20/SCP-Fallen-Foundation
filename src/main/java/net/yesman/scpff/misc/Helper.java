@@ -1,16 +1,21 @@
 package net.yesman.scpff.misc;
 
+import net.minecraft.core.BlockPos;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.projectile.ProjectileUtil;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 import java.util.*;
+import java.util.function.Predicate;
 
 public class Helper {
 
@@ -39,12 +44,28 @@ public class Helper {
         return new Vec3((f3 * f4), (-f5), (f2 * f4));
     }
 
-    @Nullable
-    public static List<Entity> lookingAtInRange(LivingEntity livingEntity, double distance) {
-        Vec3 startVec3 = new Vec3(livingEntity.getX(), livingEntity.getY(), livingEntity.getZ());
-        Vec3 endVec3 = getEntityPOVHitResultBlock(livingEntity.level, livingEntity, ClipContext.Fluid.NONE, distance).getLocation();
-        AABB aabb = new AABB(startVec3, endVec3);
-        return new ArrayList<>(livingEntity.level.getEntities(livingEntity, aabb));
+    public static Entity lookingAtInRange(LivingEntity livingEntity, double distance) {
+        if (livingEntity != null) {
+            Vec3 vec3 = livingEntity.getEyePosition();
+            for (int x = 0; x < distance; x++) {
+                Vec3 vec31 = calculateViewVector(livingEntity.getXRot(), livingEntity.getYRot()).scale(x);
+                Vec3 vec32 = vec3.add(vec31);
+                if (livingEntity.level.getBlockState(new BlockPos(vec32.x, vec32.y, vec32.z)).isAir()) {
+                    AABB aabb = livingEntity.getBoundingBox().expandTowards(vec31).inflate(1.0D);
+                    double i = x * x;
+                    Predicate<Entity> predicate = (entity) -> !entity.isSpectator() && entity.isPickable();
+                    EntityHitResult entityhitresult = ProjectileUtil.getEntityHitResult(livingEntity, vec3, vec32, aabb, predicate, i);
+                    if (entityhitresult != null) {
+                        if (vec3.distanceToSqr(entityhitresult.getLocation()) < i) {
+                            return entityhitresult.getEntity();
+                        }
+                    }
+                } else {
+                    return null;
+                }
+            }
+        }
+        return null;
     }
 
 }
