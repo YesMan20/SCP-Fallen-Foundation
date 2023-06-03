@@ -86,6 +86,9 @@ public class SCP650 extends Mob implements IAnimatable {
 
     @Override
     public boolean hurt(DamageSource pSource, float pAmount) {
-        return pSource.equals(DamageSource.OUT_OF_WORLD);
+        if (pSource.equals(DamageSource.OUT_OF_WORLD)) {
+            return super.hurt(pSource, pAmount);
+        }
+        return false;
     }
 }
