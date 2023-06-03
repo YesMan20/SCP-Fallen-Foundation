@@ -11,7 +11,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.yesman.scpff.SCPFf;
 import net.yesman.scpff.entity.ModEntity;
-import net.yesman.scpff.item.scps.MEDKITItem;
+import net.yesman.scpff.item.scps.MedkitItem;
 import net.yesman.scpff.item.scps.SCP207Item;
 import net.yesman.scpff.item.scps.SCP500Item;
 
@@ -34,7 +34,7 @@ public class ModItems {
     public static final RegistryObject<Item> ARMORYICON = ITEMS.register("armoryicon", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> SCP_650_SPAWN_EGG = ITEMS.register("scp_650_spawn_egg", () -> new ForgeSpawnEggItem(ModEntity.SCP_650, 0, 1710618,
             new Item.Properties().tab(ModCreativeModeTab.SCP_TAB)));
-    public static final RegistryObject<Item> MEDKIT = ITEMS.register("medkit", () -> new MEDKITItem(new Item.Properties()
+    public static final RegistryObject<Item> MEDKIT = ITEMS.register("medkit", () -> new MedkitItem(new Item.Properties()
             .stacksTo(15)
             .tab(ModCreativeModeTab.ITEMS_TAB)
             .food(Foods.MEDKIT)));

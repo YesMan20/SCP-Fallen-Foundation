@@ -11,7 +11,8 @@ public class SCP207Item extends Item {
 
     @Override
     public UseAnim getUseAnimation(ItemStack pStack) {
-        return pStack.getItem().isEdible() ? UseAnim.DRINK : UseAnim.NONE; }
+        return UseAnim.DRINK;
+    }
 
     public SoundEvent getDrinkingSound() {
         return SoundEvents.GENERIC_DRINK;
