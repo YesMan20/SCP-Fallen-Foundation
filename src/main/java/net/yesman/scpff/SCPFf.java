@@ -46,5 +46,5 @@ public class SCPFf
         public static void onClientSetup(FMLClientSetupEvent event)
         {
         }
-    }
+    } 
 }
