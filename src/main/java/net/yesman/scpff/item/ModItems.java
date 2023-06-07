@@ -12,6 +12,7 @@ import net.minecraftforge.registries.RegistryObject;
 import net.yesman.scpff.SCPFf;
 import net.yesman.scpff.entity.ModEntity;
 import net.yesman.scpff.item.scps.MedkitItem;
+import net.yesman.scpff.item.scps.SCP109Item;
 import net.yesman.scpff.item.scps.SCP207Item;
 import net.yesman.scpff.item.scps.SCP500Item;
 
@@ -28,18 +29,35 @@ public class ModItems {
             .tab(ModCreativeModeTab.ITEMS_TAB)
             .food(Foods.SCP500)
             .stacksTo(7)));
+
     public static final RegistryObject<Item> ITEMICON = ITEMS.register("itemicon", () -> new Item(new Item.Properties()));
+
     public static final RegistryObject<Item> SCPICON = ITEMS.register("scpicon", () -> new Item(new Item.Properties()));
+
     public static final RegistryObject<Item> BLOCKICON = ITEMS.register("blockicon", () -> new Item(new Item.Properties()));
+
     public static final RegistryObject<Item> ARMORYICON = ITEMS.register("armoryicon", () -> new Item(new Item.Properties()));
+
     public static final RegistryObject<Item> SCP_650_SPAWN_EGG = ITEMS.register("scp_650_spawn_egg", () -> new ForgeSpawnEggItem(ModEntity.SCP_650, 0, 1710618,
-            new Item.Properties().tab(ModCreativeModeTab.SCP_TAB)));
+            new Item.Properties()
+                    .tab(ModCreativeModeTab.SCP_TAB)));
+
     public static final RegistryObject<Item> MEDKIT = ITEMS.register("medkit", () -> new MedkitItem(new Item.Properties()
             .stacksTo(15)
             .tab(ModCreativeModeTab.ITEMS_TAB)
             .food(Foods.MEDKIT)));
 
+    public static final RegistryObject<Item> SCP109 = ITEMS.register("scp109", () -> new SCP109Item(new Item.Properties()
+            .stacksTo(1)
+            .food(Foods.SCP109)
+            .tab(ModCreativeModeTab.ITEMS_TAB)));
+
     public static class Foods {
+        public static final FoodProperties SCP109 = new FoodProperties.Builder()
+                .alwaysEat()
+                .fast()
+                .build();
+
         public static final FoodProperties MEDKIT = new FoodProperties.Builder()
                 .alwaysEat()
                 .meat()
@@ -48,8 +66,8 @@ public class ModItems {
         public static final FoodProperties SCP207 = new FoodProperties.Builder()
                 .nutrition(4)
                 .saturationMod(0.2f)
-                .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 400, 2), 0.9f)
-                .effect(() -> new MobEffectInstance(MobEffects.WITHER, 400, 1), 0.9f)
+                .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 400, 2), 1f)
+                .effect(() -> new MobEffectInstance(MobEffects.WITHER, 400, 1), 1f)
                 .alwaysEat()
                 .fast()
                 .build();
@@ -57,8 +75,8 @@ public class ModItems {
         public static final FoodProperties SCP500 = new FoodProperties.Builder()
                 .nutrition(4)
                 .saturationMod(0.2f)
-                .effect(() -> new MobEffectInstance(MobEffects.HEALTH_BOOST, 600, 3), 0.9f)
-                .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 600, 3), 0.9f)
+                .effect(() -> new MobEffectInstance(MobEffects.HEALTH_BOOST, 600, 3), 1f)
+                .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 600, 3), 1f)
                 .alwaysEat()
                 .fast()
                 .build();
