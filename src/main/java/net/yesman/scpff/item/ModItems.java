@@ -30,6 +30,8 @@ public class ModItems {
             .food(Foods.SCP500)
             .stacksTo(7)));
 
+    /** Icons for tabs **/
+
     public static final RegistryObject<Item> ITEMICON = ITEMS.register("itemicon", () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> SCPICON = ITEMS.register("scpicon", () -> new Item(new Item.Properties()));
@@ -38,14 +40,35 @@ public class ModItems {
 
     public static final RegistryObject<Item> ARMORYICON = ITEMS.register("armoryicon", () -> new Item(new Item.Properties()));
 
+    /** Keycards **/
+
+    public static final RegistryObject<Item> KEYCARD1 = ITEMS.register("keycard1", () -> new Item(new Item.Properties()
+            .tab(ModCreativeModeTab.ITEMS_TAB)));
+
+    public static final RegistryObject<Item> KEYCARD2 = ITEMS.register("keycard2", () -> new Item(new Item.Properties()
+            .tab(ModCreativeModeTab.ITEMS_TAB)));
+
+    public static final RegistryObject<Item> KEYCARD3 = ITEMS.register("keycard3", () -> new Item(new Item.Properties()
+            .tab(ModCreativeModeTab.ITEMS_TAB)));
+
+    public static final RegistryObject<Item> KEYCARD4 = ITEMS.register("keycard4", () -> new Item(new Item.Properties()
+            .tab(ModCreativeModeTab.ITEMS_TAB)));
+
+    public static final RegistryObject<Item> KEYCARD5 = ITEMS.register("keycard5", () -> new Item(new Item.Properties()
+            .tab(ModCreativeModeTab.ITEMS_TAB)));
+
+    /** Generic Items **/
+
+     public static final RegistryObject<Item> MEDKIT = ITEMS.register("medkit", () -> new MedkitItem(new Item.Properties()
+     .stacksTo(15)
+     .tab(ModCreativeModeTab.ITEMS_TAB)
+     .food(Foods.MEDKIT)));
+
+    /** SCP Items **/
+
     public static final RegistryObject<Item> SCP_650_SPAWN_EGG = ITEMS.register("scp_650_spawn_egg", () -> new ForgeSpawnEggItem(ModEntity.SCP_650, 0, 1710618,
             new Item.Properties()
                     .tab(ModCreativeModeTab.SCP_TAB)));
-
-    public static final RegistryObject<Item> MEDKIT = ITEMS.register("medkit", () -> new MedkitItem(new Item.Properties()
-            .stacksTo(15)
-            .tab(ModCreativeModeTab.ITEMS_TAB)
-            .food(Foods.MEDKIT)));
 
     public static final RegistryObject<Item> SCP109 = ITEMS.register("scp109", () -> new SCP109Item(new Item.Properties()
             .stacksTo(1)
