@@ -29,7 +29,7 @@ displayName="SCP Fallen Foundation" #mandatory
 # A file name (in the root of the mod JAR) containing a logo for display
 logoFile="icon.png" #optional
 # A text field displayed in the mod UI
-credits="Thanks to Lucent, Willow, Phoillows, and Zeus" #optional
+credits="Thanks to Lucent, Willow, Phoillows, ConnorTron110, and Zeus" #optional
 # A text field displayed in the mod UI
 authors="YesMan" #optional
 # Display Test controls the display for your mod in the server connection screen

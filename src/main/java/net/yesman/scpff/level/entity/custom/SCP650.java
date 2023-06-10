@@ -1,30 +1,22 @@
-package net.yesman.scpff.entity.custom;
+package net.yesman.scpff.level.entity.custom;
 
+import net.minecraft.commands.arguments.EntityAnchorArgument;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
-import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
-import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
-import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
-import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
-import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
-import net.yesman.scpff.SCPFf;
 import net.yesman.scpff.misc.Helper;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 import software.bernie.geckolib3.util.GeckoLibUtil;
-
-import java.util.List;
 
 public class SCP650 extends Mob implements IAnimatable {
     AnimationFactory cache = GeckoLibUtil.createFactory(this);
@@ -86,9 +78,6 @@ public class SCP650 extends Mob implements IAnimatable {
 
     @Override
     public boolean hurt(DamageSource pSource, float pAmount) {
-        if (pSource.equals(DamageSource.OUT_OF_WORLD)) {
-            return super.hurt(pSource, pAmount);
-        }
-        return false;
+        return pSource.equals(DamageSource.OUT_OF_WORLD) && super.hurt(pSource, pAmount);
     }
 }

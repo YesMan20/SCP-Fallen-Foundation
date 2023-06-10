@@ -1,4 +1,4 @@
-package net.yesman.scpff.block;
+package net.yesman.scpff.level.block;
 
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -11,8 +11,8 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.yesman.scpff.SCPFf;
-import net.yesman.scpff.item.ModCreativeModeTab;
-import net.yesman.scpff.item.ModItems;
+import net.yesman.scpff.level.item.ModCreativeModeTab;
+import net.yesman.scpff.level.item.ModItems;
 
 import java.util.function.Supplier;
 

@@ -9,9 +9,9 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.yesman.scpff.block.ModBlocks;
-import net.yesman.scpff.entity.ModEntity;
-import net.yesman.scpff.item.ModItems;
+import net.yesman.scpff.level.block.ModBlocks;
+import net.yesman.scpff.level.entity.ModEntity;
+import net.yesman.scpff.level.item.ModItems;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file

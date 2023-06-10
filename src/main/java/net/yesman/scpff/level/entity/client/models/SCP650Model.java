@@ -1,8 +1,8 @@
-package net.yesman.scpff.client.models;
+package net.yesman.scpff.level.entity.client.models;
 
 import net.minecraft.resources.ResourceLocation;
 import net.yesman.scpff.SCPFf;
-import net.yesman.scpff.entity.custom.SCP650;
+import net.yesman.scpff.level.entity.custom.SCP650;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class SCP650Model extends AnimatedGeoModel<SCP650> {

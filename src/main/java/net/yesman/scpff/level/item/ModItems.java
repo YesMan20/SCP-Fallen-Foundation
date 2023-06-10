@@ -1,4 +1,4 @@
-package net.yesman.scpff.item;
+package net.yesman.scpff.level.item;
 
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -10,21 +10,21 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.yesman.scpff.SCPFf;
-import net.yesman.scpff.entity.ModEntity;
-import net.yesman.scpff.item.scps.MedkitItem;
-import net.yesman.scpff.item.scps.SCP109Item;
-import net.yesman.scpff.item.scps.SCP207Item;
-import net.yesman.scpff.item.scps.SCP500Item;
+import net.yesman.scpff.level.entity.ModEntity;
+import net.yesman.scpff.level.item.scps.MedkitItem;
+import net.yesman.scpff.level.item.scps.SCP109Item;
+import net.yesman.scpff.level.item.scps.SCP207Item;
+import net.yesman.scpff.level.item.scps.SCP500Item;
 
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, SCPFf.MOD_ID);
 
-            public static final RegistryObject<Item> SCP207 = ITEMS.register("scp207", () -> new SCP207Item(new Item.Properties()
-                            .tab(ModCreativeModeTab.ITEMS_TAB)
-                            .food(Foods.SCP207)
-                            .stacksTo(3)));
+    public static final RegistryObject<Item> SCP207 = ITEMS.register("scp207", () -> new SCP207Item(new Item.Properties()
+            .tab(ModCreativeModeTab.ITEMS_TAB)
+            .food(Foods.SCP207)
+            .stacksTo(3)));
     public static final RegistryObject<Item> SCP500 = ITEMS.register("scp500", () -> new SCP500Item(new Item.Properties()
             .tab(ModCreativeModeTab.ITEMS_TAB)
             .food(Foods.SCP500)
@@ -59,10 +59,10 @@ public class ModItems {
 
     /** Generic Items **/
 
-     public static final RegistryObject<Item> MEDKIT = ITEMS.register("medkit", () -> new MedkitItem(new Item.Properties()
-     .stacksTo(15)
-     .tab(ModCreativeModeTab.ITEMS_TAB)
-     .food(Foods.MEDKIT)));
+    public static final RegistryObject<Item> MEDKIT = ITEMS.register("medkit", () -> new MedkitItem(new Item.Properties()
+            .stacksTo(15)
+            .tab(ModCreativeModeTab.ITEMS_TAB)
+            .food(Foods.MEDKIT)));
 
     /** SCP Items **/
 

@@ -383,7 +383,7 @@
 				}
 			}
 		},
-		"animation.scp049.aggresive": {
+		"animation.scp049.aggressive": {
 			"loop": true,
 			"animation_length": 2,
 			"bones": {

@@ -1,4 +1,4 @@
-package net.yesman.scpff.item;
+package net.yesman.scpff.level.item;
 
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
