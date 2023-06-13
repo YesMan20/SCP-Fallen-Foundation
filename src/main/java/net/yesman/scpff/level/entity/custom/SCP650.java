@@ -2,6 +2,8 @@ package net.yesman.scpff.level.entity.custom;
 
 import net.minecraft.commands.arguments.EntityAnchorArgument;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageType;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
@@ -13,13 +15,12 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import net.yesman.scpff.misc.Helper;
-import software.bernie.geckolib3.core.IAnimatable;
-import software.bernie.geckolib3.core.manager.AnimationData;
-import software.bernie.geckolib3.core.manager.AnimationFactory;
-import software.bernie.geckolib3.util.GeckoLibUtil;
-
-public class SCP650 extends Mob implements IAnimatable {
-    AnimationFactory cache = GeckoLibUtil.createFactory(this);
+import software.bernie.geckolib.animatable.GeoEntity;
+import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
+import software.bernie.geckolib.core.animation.AnimatableManager;
+import software.bernie.geckolib.util.GeckoLibUtil;
+public class SCP650 extends Mob implements GeoEntity {
+    AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
     private int cooldownTick = 0;
 
     public SCP650(EntityType<? extends Mob> entityType, Level level) {
@@ -48,12 +49,12 @@ public class SCP650 extends Mob implements IAnimatable {
     }
 
     @Override
-    public void registerControllers(AnimationData data) {
+    public void registerControllers(AnimatableManager.ControllerRegistrar controller) {
 
     }
 
     @Override
-    public AnimationFactory getFactory() {
+    public AnimatableInstanceCache getAnimatableInstanceCache() {
         return cache;
     }
 
@@ -78,6 +79,6 @@ public class SCP650 extends Mob implements IAnimatable {
 
     @Override
     public boolean hurt(DamageSource pSource, float pAmount) {
-        return pSource.equals(DamageSource.OUT_OF_WORLD) && super.hurt(pSource, pAmount);
+        return pSource.is(DamageTypes.OUT_OF_WORLD) && super.hurt(pSource, pAmount);
     }
 }

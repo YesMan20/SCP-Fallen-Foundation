@@ -6,8 +6,10 @@
 
   "item.scpff.scp207": "SCP-207 - §aCola Bottles",
   "item.scpff.scp500": "SCP-500 - §aPanacea",
-  "item.scpff.scp_650_spawn_egg": "SCP-650 - §eStartling Statue §rSpawn Egg",
   "item.scpff.scp109": "SCP-109 - §aInfinite Canteen",
+
+  "item.scpff.scp_650_spawn_egg": "SCP-650 - §eStartling Statue §rSpawn Egg",
+  "item.scpff.scp_049_spawn_egg": "SCP-049 - §eThe Plague Doctor §rSpawn Egg",
 
   "item.scpff.medkit": "Medical Kit",
 
@@ -18,14 +20,17 @@
   "item.scpff.keycard5": "Keycard - §cLvl 5",
 
   "entity.scpff.scp_650": "SCP-650 - §eStartling Statue",
+  "entity.scpff.scp_049": "SCP-650 - §eThe Plague Doctor",
 
   "block.scpff.hcwall": "Heavy Containment Wall",
   "block.scpff.hcfloor": "Grated Floor",
   "block.scpff.metalwall1": "Metal Plated Wall 1",
   "block.scpff.metalwall2": "Metal Plated Wall 2",
+  "block.scpff.ezwall1": "Entrance Wall 1",
+  "block.scpff.ezwall2": "Entrance Wall 2",
+  "block.scpff.tiles": "Tiles",
 
-  "itemGroup.itemstab": "SCP Items",
-  "itemGroup.blockstab": "SCP Blocks",
-  "itemGroup.scpstab": "SCP Spawn eggs",
-  "itemGroup.armorytab": "SCP Armory"
+  "creativemodetab.scpff_item": "SCP Items",
+  "creativemodetab.scpff_block": "SCP Blocks",
+  "creativemodetab.scpff_scps": "SCP Spawn eggs"
 }

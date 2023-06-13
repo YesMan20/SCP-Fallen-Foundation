@@ -4,7 +4,9 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.NeutralMob;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -20,19 +22,19 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.yesman.scpff.misc.RunnableCooldownHandler;
 import org.jetbrains.annotations.Nullable;
-import software.bernie.geckolib3.core.IAnimatable;
-import software.bernie.geckolib3.core.PlayState;
-import software.bernie.geckolib3.core.builder.AnimationBuilder;
-import software.bernie.geckolib3.core.builder.ILoopType;
-import software.bernie.geckolib3.core.controller.AnimationController;
-import software.bernie.geckolib3.core.manager.AnimationData;
-import software.bernie.geckolib3.core.manager.AnimationFactory;
-import software.bernie.geckolib3.util.GeckoLibUtil;
+import software.bernie.geckolib.animatable.GeoEntity;
+import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
+import software.bernie.geckolib.core.animation.AnimatableManager;
+import software.bernie.geckolib.core.animation.Animation;
+import software.bernie.geckolib.core.animation.AnimationController;
+import software.bernie.geckolib.core.animation.RawAnimation;
+import software.bernie.geckolib.core.object.PlayState;
+import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.UUID;
 
-public class SCP049 extends Monster implements IAnimatable, NeutralMob {
-    AnimationFactory cache = GeckoLibUtil.createFactory(this);
+public class SCP049 extends Monster implements GeoEntity, NeutralMob {
+    private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
     private static final EntityDataAccessor<Boolean> DATA_HAS_TARGET = SynchedEntityData.defineId(SCP049.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Boolean> DATA_IS_CURING = SynchedEntityData.defineId(SCP049.class, EntityDataSerializers.BOOLEAN);
     private static final AttributeModifier modifier = new AttributeModifier("049", -1, AttributeModifier.Operation.MULTIPLY_BASE);
@@ -66,17 +68,22 @@ public class SCP049 extends Monster implements IAnimatable, NeutralMob {
                 .add(Attributes.ATTACK_DAMAGE, 100.0F);
     }
 
+    private static final RawAnimation ATTACK_ANIM = RawAnimation.begin().then("animation.scp049.attack", Animation.LoopType.PLAY_ONCE);
+    private static final RawAnimation CHASE_ANIM = RawAnimation.begin().then("animation.scp049.aggressive", Animation.LoopType.LOOP);
+    private static final RawAnimation IDLE_ANIM = RawAnimation.begin().then("animation.scp049.idle", Animation.LoopType.LOOP);
+    private static final RawAnimation WALK_ANIM = RawAnimation.begin().then("animation.scp049.moving", Animation.LoopType.LOOP);
+
     @Override
-    public void registerControllers(AnimationData data) {
-        data.addAnimationController(new AnimationController<>(this, "Controller", 0, state -> {
+    public void registerControllers(AnimatableManager.ControllerRegistrar controller) {
+        controller.add(new AnimationController<>(this, "Controller", 0, state -> {
             if (this.isCuring()) {
-                state.getController().setAnimation(new AnimationBuilder().addAnimation("animation.scp049.attack", ILoopType.EDefaultLoopTypes.PLAY_ONCE));
+                state.getController().setAnimation(ATTACK_ANIM);
             } else if (this.hasTarget() && state.isMoving()) {
-                state.getController().setAnimation(new AnimationBuilder().addAnimation("animation.scp049.aggressive", ILoopType.EDefaultLoopTypes.LOOP));
+                state.getController().setAnimation(CHASE_ANIM);
             } else if (!state.isMoving()) {
-                state.getController().setAnimation(new AnimationBuilder().addAnimation("animation.scp049.idle", ILoopType.EDefaultLoopTypes.LOOP));
+                state.getController().setAnimation(IDLE_ANIM);
             } else if (state.isMoving()) {
-                state.getController().setAnimation(new AnimationBuilder().addAnimation("animation.scp049.moving", ILoopType.EDefaultLoopTypes.LOOP));
+                state.getController().setAnimation(WALK_ANIM);
             }
 
             return PlayState.CONTINUE;
@@ -138,7 +145,7 @@ public class SCP049 extends Monster implements IAnimatable, NeutralMob {
     }
 
     @Override
-    public AnimationFactory getFactory() {
+    public AnimatableInstanceCache getAnimatableInstanceCache() {
         return cache;
     }
 

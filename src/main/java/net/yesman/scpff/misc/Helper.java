@@ -1,7 +1,11 @@
 package net.yesman.scpff.misc;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.Mth;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.ProjectileUtil;
@@ -50,7 +54,7 @@ public class Helper {
             for (int x = 0; x < distance; x++) {
                 Vec3 vec31 = calculateViewVector(livingEntity.getXRot(), livingEntity.getYRot()).scale(x);
                 Vec3 vec32 = vec3.add(vec31);
-                if (livingEntity.level.getBlockState(new BlockPos(vec32.x, vec32.y, vec32.z)).isAir()) {
+                if (livingEntity.level.getBlockState(BlockPos.containing(vec32.x, vec32.y, vec32.z)).isAir()) {
                     AABB aabb = livingEntity.getBoundingBox().expandTowards(vec31).inflate(1.0D);
                     double i = x * x;
                     Predicate<Entity> predicate = (entity) -> !entity.isSpectator() && entity.isPickable();
@@ -67,5 +71,10 @@ public class Helper {
         }
         return null;
     }
+
+    public static DamageSource damageSource(ResourceKey<DamageType> damageType, Level level) {
+        return new DamageSource(level.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(damageType));
+    }
+
 
 }
