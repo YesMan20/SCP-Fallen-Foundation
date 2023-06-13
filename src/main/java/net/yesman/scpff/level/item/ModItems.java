@@ -2,6 +2,7 @@ package net.yesman.scpff.level.item;
 
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.EggItem;
 import net.minecraft.world.item.Item;
@@ -70,7 +71,46 @@ public class ModItems {
             .stacksTo(1)
             .food(Foods.SCP109)));
 
+    /** Candy **/
+
+    public static final RegistryObject<Item> CANDY1 = ITEMS.register("candy1", () -> new Item(new Item.Properties()
+            .stacksTo(3)
+            .food(Foods.CANDY1)));
+
+    public static final RegistryObject<Item> CANDY2 = ITEMS.register("candy2", () -> new Item(new Item.Properties()
+            .stacksTo(3)
+            .food(Foods.CANDY2)));
+
+    public static final RegistryObject<Item> CANDY3 = ITEMS.register("candy3", () -> new Item(new Item.Properties()
+            .stacksTo(3)
+            .food(Foods.CANDY3)));
+
+    public static final RegistryObject<Item> CANDY4 = ITEMS.register("candy4", () -> new Item(new Item.Properties()
+            .stacksTo(3)
+            .food(Foods.CANDY4)));
+
+
     public static class Foods {
+        public static final FoodProperties CANDY1 = new FoodProperties.Builder()
+                .alwaysEat()
+                .fast()
+                .build();
+
+        public static final FoodProperties CANDY2 = new FoodProperties.Builder()
+                .alwaysEat()
+                .fast()
+                .build();
+
+        public static final FoodProperties CANDY3 = new FoodProperties.Builder()
+                .alwaysEat()
+                .fast()
+                .build();
+
+        public static final FoodProperties CANDY4 = new FoodProperties.Builder()
+                .alwaysEat()
+                .fast()
+                .build();
+
         public static final FoodProperties SCP109 = new FoodProperties.Builder()
                 .alwaysEat()
                 .fast()
