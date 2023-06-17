@@ -2,8 +2,10 @@ package net.yesman.scpff.level.item;
 
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.EggItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.ForgeSpawnEggItem;
@@ -14,10 +16,7 @@ import net.minecraftforge.registries.RegistryObject;
 import net.yesman.scpff.SCPFf;
 import net.yesman.scpff.level.entity.ModEntity;
 import net.yesman.scpff.level.item.custom.IgnoreOnLoad;
-import net.yesman.scpff.level.item.scps.MedkitItem;
-import net.yesman.scpff.level.item.scps.SCP109Item;
-import net.yesman.scpff.level.item.scps.SCP207Item;
-import net.yesman.scpff.level.item.scps.SCP500Item;
+import net.yesman.scpff.level.item.scps.*;
 
 
 public class ModItems {
@@ -61,6 +60,12 @@ public class ModItems {
 
     /** SCP Items **/
 
+    public static final RegistryObject<Item> SCP268 = ITEMS.register("scp268", () -> new SCP268ArmorItem(ModArmorMaterials.SCP_268, ArmorItem.Type.HELMET, new Item.Properties()));
+
+    public static final RegistryObject<Item> SCP1025 = ITEMS.register("scp1025", () -> new SCP1025Item(new Item.Properties()
+            .stacksTo(1)
+            .food(Foods.SCP1025)));
+
     public static final RegistryObject<ForgeSpawnEggItem> SCP_650_SPAWN_EGG = ITEMS.register("scp_650_spawn_egg", () -> new ForgeSpawnEggItem(ModEntity.SCP_650, 0, 1710618,
             new Item.Properties()));
 
@@ -91,6 +96,10 @@ public class ModItems {
 
 
     public static class Foods {
+        public static final FoodProperties SCP1025 = new FoodProperties.Builder()
+                .alwaysEat()
+                .fast()
+                .build();
         public static final FoodProperties CANDY1 = new FoodProperties.Builder()
                 .alwaysEat()
                 .fast()

@@ -1,6 +1,5 @@
 package net.yesman.scpff.level.item.scps;
 
-
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
