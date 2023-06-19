@@ -15,13 +15,27 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(MeleeAttackGoal.class)
 public class MeleeAttackGoalMixin {
 
-    @Shadow @Final protected PathfinderMob mob;
+    @Shadow
+    @Final
+    protected PathfinderMob mob;
 
     @Inject(at = @At("HEAD"), method = "canContinueToUse", cancellable = true)
     public void canContinueInject(CallbackInfoReturnable<Boolean> cir) {
         LivingEntity livingentity = this.mob.getTarget();
-        if (livingentity == null) return;
+        if (livingentity == null) {
+            cir.setReturnValue(false);
+            return;
+        }
         if (livingentity.getItemBySlot(EquipmentSlot.HEAD).is(ModItems.SCP268.get())) cir.setReturnValue(false);
     }
 
+    @Inject(at = @At("HEAD"), method = "canUse", cancellable = true)
+    public void canUseInject(CallbackInfoReturnable<Boolean> cir) {
+        LivingEntity livingentity = this.mob.getTarget();
+        if (livingentity == null) {
+            cir.setReturnValue(false);
+            return;
+        }
+        if (livingentity.getItemBySlot(EquipmentSlot.HEAD).is(ModItems.SCP268.get())) cir.setReturnValue(false);
+    }
 }
