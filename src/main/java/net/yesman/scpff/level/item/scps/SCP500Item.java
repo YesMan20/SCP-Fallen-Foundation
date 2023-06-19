@@ -36,8 +36,4 @@ public class SCP500Item extends Item {
         return UseAnim.DRINK;
     }
 
-    @Override
-    public SoundEvent getDrinkingSound() {
-        return null;
-    }
 }

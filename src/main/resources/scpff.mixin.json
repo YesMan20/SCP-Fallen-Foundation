@@ -1,0 +1,16 @@
+{
+  "required": false,
+  "package": "net.yesman.scpff.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "client": [
+  ],
+  "server": [
+  ],
+  "mixins": [
+    "MeleeAttackGoalMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "refmap": "scpff.refmap.json"
+}
