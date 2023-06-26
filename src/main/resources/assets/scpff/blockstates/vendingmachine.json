@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "scpff:block/vendingmachine"
+    },
+    "facing=east": {
+      "model": "scpff:block/vendingmachine",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "scpff:block/vendingmachine",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "scpff:block/vendingmachine",
+      "y": 270
+    }
+  }
+}

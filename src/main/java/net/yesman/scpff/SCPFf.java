@@ -23,6 +23,7 @@ import net.yesman.scpff.level.block.ModBlocks;
 import net.yesman.scpff.level.entity.ModEntity;
 import net.yesman.scpff.level.item.ModItems;
 import net.yesman.scpff.level.item.custom.IgnoreOnLoad;
+import net.yesman.scpff.level.painting.ModPaintings;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -37,11 +38,13 @@ public class SCPFf
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModPaintings.register(modEventBus);
         ModEntity.MOD_ENTITES.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::registerItemTab);
         modEventBus.addListener(this::registerBlockTab);
+        modEventBus.addListener(this::registerArmoryTab);
         modEventBus.addListener(this::registerEggTab);
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -62,7 +65,6 @@ public class SCPFf
                                     entries.accept(key.get());
                                 }
                             }
-
                         }));
     }
 
@@ -75,7 +77,18 @@ public class SCPFf
                             for (RegistryObject<Block> key : ModBlocks.BLOCKS.getEntries()) {
                                 entries.accept(key.get());
                             }
+                        }));
+    }
 
+    public void registerArmoryTab(CreativeModeTabEvent.Register event) {
+        event.registerCreativeModeTab(new ResourceLocation(SCPFf.MOD_ID, "scpfftab_armory"),
+                builder -> builder.icon(() -> new ItemStack(ModItems.ARMORYICON.get()))
+                        .title(Component.translatable("creativemodetab.scpff_armory"))
+                        .displayItems((enabledFeatures, entries) -> {
+
+                            for (RegistryObject<Block> key : ModBlocks.BLOCKS.getEntries()) {
+                                entries.accept(key.get());
+                            }
                         }));
     }
 
@@ -91,8 +104,6 @@ public class SCPFf
                                     entries.accept(key.get());
                                 }
                             }
-
                         }));
     }
-
 }

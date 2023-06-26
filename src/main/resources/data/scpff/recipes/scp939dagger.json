@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "O",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "O": {
+      "item": "scpff:scp939spine"
+    }
+  },
+  "result": {
+    "item": "scpff:scp939dagger",
+    "count": 1
+  }
+}

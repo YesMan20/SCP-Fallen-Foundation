@@ -1,0 +1,58 @@
+{
+	"credit": "Made with Blockbench",
+	"texture_size": [32, 32],
+	"textures": {
+		"0": "scpff:block/electricalbox",
+		"particle": "scpff:block/electricalbox"
+	},
+	"elements": [
+		{
+			"from": [3, 2, 13],
+			"to": [13, 15, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 5, 6.5], "texture": "#0"},
+				"east": {"uv": [0, 6.5, 1.5, 13], "texture": "#0"},
+				"south": {"uv": [5, 0, 10, 6.5], "texture": "#0"},
+				"west": {"uv": [1.5, 6.5, 3, 13], "texture": "#0"},
+				"up": {"uv": [8, 8, 3, 6.5], "texture": "#0"},
+				"down": {"uv": [8, 8, 3, 9.5], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0, 0, -4.25],
+			"scale": [0.63, 0.63, 0.63]
+		},
+		"thirdperson_lefthand": {
+			"translation": [0, 0, -4.25],
+			"scale": [0.63, 0.63, 0.63]
+		},
+		"firstperson_righthand": {
+			"scale": [0.63, 0.63, 0.63]
+		},
+		"firstperson_lefthand": {
+			"scale": [0.63, 0.63, 0.63]
+		},
+		"ground": {
+			"scale": [0.63, 0.63, 0.63]
+		},
+		"gui": {
+			"rotation": [-154, 21.25, -180],
+			"translation": [-2.5, -3.25, 0]
+		},
+		"fixed": {
+			"translation": [0, -1.25, -18.25],
+			"scale": [2.57617, 2.57617, 2.57617]
+		}
+	},
+	"groups": [
+		{
+			"name": "electricalbox",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [0]
+		}
+	]
+}

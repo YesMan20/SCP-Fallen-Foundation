@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "scpff:block/desklamp"
+    },
+    "facing=east": {
+      "model": "scpff:block/desklamp",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "scpff:block/desklamp",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "scpff:block/desklamp",
+      "y": 270
+    }
+  }
+}

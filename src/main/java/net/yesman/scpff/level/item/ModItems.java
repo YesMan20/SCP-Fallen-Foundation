@@ -5,9 +5,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.EggItem;
-import net.minecraft.world.item.Item;
+import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -16,6 +14,7 @@ import net.minecraftforge.registries.RegistryObject;
 import net.yesman.scpff.SCPFf;
 import net.yesman.scpff.level.entity.ModEntity;
 import net.yesman.scpff.level.item.custom.IgnoreOnLoad;
+import net.yesman.scpff.level.item.custom.InstaKillItem;
 import net.yesman.scpff.level.item.scps.*;
 
 
@@ -42,15 +41,20 @@ public class ModItems {
 
     /** Keycards **/
 
-    public static final RegistryObject<Item> KEYCARD1 = ITEMS.register("keycard1", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> KEYCARD1 = ITEMS.register("keycard1", () -> new Item(new Item.Properties()
+            .stacksTo(16)));
 
-    public static final RegistryObject<Item> KEYCARD2 = ITEMS.register("keycard2", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> KEYCARD2 = ITEMS.register("keycard2", () -> new Item(new Item.Properties()
+            .stacksTo(16)));
 
-    public static final RegistryObject<Item> KEYCARD3 = ITEMS.register("keycard3", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> KEYCARD3 = ITEMS.register("keycard3", () -> new Item(new Item.Properties()
+            .stacksTo(16)));
 
-    public static final RegistryObject<Item> KEYCARD4 = ITEMS.register("keycard4", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> KEYCARD4 = ITEMS.register("keycard4", () -> new Item(new Item.Properties()
+            .stacksTo(16)));
 
-    public static final RegistryObject<Item> KEYCARD5 = ITEMS.register("keycard5", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> KEYCARD5 = ITEMS.register("keycard5", () -> new Item(new Item.Properties()
+            .stacksTo(16)));
 
     /** Generic Items **/
 
@@ -58,13 +62,24 @@ public class ModItems {
             .stacksTo(15)
             .food(Foods.MEDKIT)));
 
+    public static final RegistryObject<Item> SCP939SPINE = ITEMS.register("scp939spine", () -> new Item(new Item.Properties()
+            .stacksTo(64)));
+
+    public static final RegistryObject<Item> SCP939DAGGER = ITEMS.register("scp939dagger", () -> new SwordItem(Tiers.WOOD, 5, 1.3f,
+            new Item.Properties().durability(110)));
+
+    public static final RegistryObject<Item> INSTAKILL = ITEMS.register("instakill", () -> new InstaKillItem(Tiers.NETHERITE, 99999, 1.3f,
+            new Item.Properties()));
+
+    public static final RegistryObject<Item> SLEDGEHAMMER = ITEMS.register("sledgehammer", () -> new PickaxeItem(Tiers.IRON, 4, 1f,
+        new Item.Properties().durability(100)));
+
     /** SCP Items **/
 
     public static final RegistryObject<Item> SCP268 = ITEMS.register("scp268", () -> new SCP268ArmorItem(ModArmorMaterials.SCP_268, ArmorItem.Type.HELMET, new Item.Properties()));
 
     public static final RegistryObject<Item> SCP1025 = ITEMS.register("scp1025", () -> new SCP1025Item(new Item.Properties()
-            .stacksTo(1)
-            .food(Foods.SCP1025)));
+            .stacksTo(1)));
 
     public static final RegistryObject<ForgeSpawnEggItem> SCP_650_SPAWN_EGG = ITEMS.register("scp_650_spawn_egg", () -> new ForgeSpawnEggItem(ModEntity.SCP_650, 0, 1710618,
             new Item.Properties()));
@@ -96,31 +111,37 @@ public class ModItems {
 
 
     public static class Foods {
-        public static final FoodProperties SCP1025 = new FoodProperties.Builder()
-                .alwaysEat()
-                .fast()
-                .build();
         public static final FoodProperties CANDY1 = new FoodProperties.Builder()
+                .saturationMod(0.3f)
+                .nutrition(4)
                 .alwaysEat()
                 .fast()
                 .build();
 
         public static final FoodProperties CANDY2 = new FoodProperties.Builder()
+                .saturationMod(0.3f)
+                .nutrition(4)
                 .alwaysEat()
                 .fast()
                 .build();
 
         public static final FoodProperties CANDY3 = new FoodProperties.Builder()
+                .saturationMod(0.3f)
+                .nutrition(4)
                 .alwaysEat()
                 .fast()
                 .build();
 
         public static final FoodProperties CANDY4 = new FoodProperties.Builder()
+                .saturationMod(0.3f)
+                .nutrition(4)
                 .alwaysEat()
                 .fast()
                 .build();
 
         public static final FoodProperties SCP109 = new FoodProperties.Builder()
+                .nutrition(8)
+                .saturationMod(0.7f)
                 .alwaysEat()
                 .fast()
                 .build();
@@ -131,8 +152,8 @@ public class ModItems {
                 .build();
 
         public static final FoodProperties SCP207 = new FoodProperties.Builder()
-                .nutrition(4)
-                .saturationMod(0.2f)
+                .nutrition(6)
+                .saturationMod(0.9f)
                 .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 400, 2), 1f)
                 .effect(() -> new MobEffectInstance(MobEffects.WITHER, 400, 1), 1f)
                 .alwaysEat()
@@ -140,8 +161,8 @@ public class ModItems {
                 .build();
 
         public static final FoodProperties SCP500 = new FoodProperties.Builder()
-                .nutrition(4)
-                .saturationMod(0.2f)
+                .nutrition(7)
+                .saturationMod(0.5f)
                 .effect(() -> new MobEffectInstance(MobEffects.HEALTH_BOOST, 600, 3), 1f)
                 .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 600, 3), 1f)
                 .alwaysEat()

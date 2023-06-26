@@ -28,12 +28,11 @@ public class SCP500Item extends Item {
 
     @Override
     public int getUseDuration(ItemStack pStack) {
-        return 12;
+        return 3;
     }
 
     @Override
     public UseAnim getUseAnimation(ItemStack pStack) {
-        return UseAnim.DRINK;
+        return UseAnim.EAT;
     }
-
 }

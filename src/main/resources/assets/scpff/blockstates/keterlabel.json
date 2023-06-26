@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "scpff:block/keterlabel"
+    },
+    "facing=east": {
+      "model": "scpff:block/keterlabel",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "scpff:block/keterlabel",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "scpff:block/keterlabel",
+      "y": 270
+    }
+  }
+}
