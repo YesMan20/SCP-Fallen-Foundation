@@ -244,7 +244,7 @@ public class ModBlocks {
                     .noOcclusion()));
 
     public static final RegistryObject<Block> SERVERSRACK = registerBlock("serversrack",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL)
+            () -> new ServersRackBlock(BlockBehaviour.Properties.of(Material.METAL)
                     .strength(4f)
                     .sound(SoundType.METAL)
                     .noOcclusion()));
