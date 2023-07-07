@@ -20,6 +20,7 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.yesman.scpff.level.entity.goals.SCP049LookForPlayerGoal;
 import net.yesman.scpff.misc.RunnableCooldownHandler;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
@@ -55,7 +56,7 @@ public class SCP049 extends Monster implements GeoEntity, NeutralMob {
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.0D, false));
         this.targetSelector.addGoal(2, (new HurtByTargetGoal(this)));
-        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Player.class, true));
+        this.targetSelector.addGoal(3, new SCP049LookForPlayerGoal(this, Player.class, true));
     }
 
     public static AttributeSupplier.Builder createAttributes() {
@@ -108,7 +109,6 @@ public class SCP049 extends Monster implements GeoEntity, NeutralMob {
 
         }
     }
-
 
     @Override
     public void checkDespawn() {

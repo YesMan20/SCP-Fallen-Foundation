@@ -21,6 +21,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.RegistryObject;
 import net.yesman.scpff.level.block.ModBlocks;
 import net.yesman.scpff.level.entity.ModEntity;
+import net.yesman.scpff.level.entity.init.EntityInit;
 import net.yesman.scpff.level.item.ModItems;
 import net.yesman.scpff.level.item.custom.IgnoreOnLoad;
 import net.yesman.scpff.level.painting.ModPaintings;
@@ -40,6 +41,8 @@ public class SCPFf
         ModBlocks.register(modEventBus);
         ModPaintings.register(modEventBus);
         ModEntity.MOD_ENTITES.register(modEventBus);
+
+        EntityInit.init();
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::registerItemTab);

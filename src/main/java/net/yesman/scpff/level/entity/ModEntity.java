@@ -8,6 +8,7 @@ import net.minecraftforge.registries.RegistryObject;
 import net.yesman.scpff.SCPFf;
 import net.yesman.scpff.level.entity.custom.SCP049;
 import net.yesman.scpff.level.entity.custom.SCP650;
+import net.yesman.scpff.level.entity.goals.SCP049LookForPlayerGoal;
 
 public class ModEntity {
     public static final DeferredRegister<EntityType<?>> MOD_ENTITES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, SCPFf.MOD_ID);
