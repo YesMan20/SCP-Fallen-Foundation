@@ -32,9 +32,8 @@ import javax.annotation.Nullable;
 
 import java.util.stream.IntStream;
 
-public class FileCabinetBlockEntity extends RandomizableContainerBlockEntity implements WorldlyContainer {
-    private NonNullList<ItemStack> items = NonNullList.<ItemStack>withSize(9, ItemStack.EMPTY);
-    private final LazyOptional<? extends IItemHandler>[] handlers = SidedInvWrapper.create(this, Direction.values());
+public class FileCabinetBlockEntity extends RandomizableContainerBlockEntity {
+    private NonNullList<ItemStack> items = NonNullList.withSize(27, ItemStack.EMPTY);
 
     public FileCabinetBlockEntity(BlockPos position, BlockState state) {
         super(ModBlockEntities.FILECABINET.get(), position, state);
@@ -79,15 +78,6 @@ public class FileCabinetBlockEntity extends RandomizableContainerBlockEntity imp
         }
     }
 
-    private net.minecraftforge.items.IItemHandlerModifiable createHandler() {
-        BlockState state = this.getBlockState();
-        if (!(state.getBlock() instanceof ChestBlock)) {
-            return new net.minecraftforge.items.wrapper.InvWrapper(this);
-        }
-        Container inv = ChestBlock.getContainer((ChestBlock) state.getBlock(), state, getLevel(), getBlockPos(), true);
-        return new net.minecraftforge.items.wrapper.InvWrapper(inv == null ? this : inv);
-    }
-
     protected NonNullList<ItemStack> getItems() {
         return this.items;
     }
@@ -129,35 +119,4 @@ public class FileCabinetBlockEntity extends RandomizableContainerBlockEntity imp
         return true;
     }
 
-    @Override
-    public int[] getSlotsForFace(Direction side) {
-        return IntStream.range(0, this.getContainerSize()).toArray();
-    }
-
-    @Override
-    public boolean canPlaceItemThroughFace(int index, ItemStack stack, @Nullable Direction direction) {
-        return this.canPlaceItem(index, stack);
-    }
-
-    @Override
-    public boolean canTakeItemThroughFace(int index, ItemStack stack, Direction direction) {
-        return true;
-    }
-
-    @Override
-    public <T> LazyOptional<T> getCapability(Capability<T> capability, @Nullable Direction facing) {
-        if (!this.remove && facing != null && capability == ForgeCapabilities.ITEM_HANDLER)
-            return handlers[facing.ordinal()].cast();
-        return super.getCapability(capability, facing);
-    }
-
-    @Override
-    public void setRemoved() {
-        super.setRemoved();
-        for (LazyOptional<? extends IItemHandler> handler : handlers)
-            handler.invalidate();
-    }
-
-    public static <E extends BlockEntity> void tick(Level level, BlockPos blockPos, BlockState blockState, E e) {
-    }
 }

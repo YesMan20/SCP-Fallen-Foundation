@@ -3,12 +3,14 @@ package net.yesman.scpff.level.block.decor;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.stats.Stats;
 import net.minecraft.util.Mth;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
-import net.minecraft.world.MenuProvider;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.*;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.monster.piglin.PiglinAi;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -20,6 +22,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.entity.BarrelBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -41,6 +44,7 @@ import net.yesman.scpff.level.block.entity.ModBlockEntities;
 import javax.annotation.Nullable;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.locks.Lock;
 
 public class LockerBlock extends BaseEntityBlock {
     public static final EnumProperty<DoubleBlockHalf> HALF = BlockStateProperties.DOUBLE_BLOCK_HALF;
@@ -66,7 +70,8 @@ public class LockerBlock extends BaseEntityBlock {
         if (blockpos.getY() < level.getMaxBuildHeight() - 1 && level.getBlockState(blockpos.above()).canBeReplaced(pContext)) {
             boolean flag = level.hasNeighborSignal(blockpos) || level.hasNeighborSignal(blockpos.above());
             return this.defaultBlockState().setValue(HALF, DoubleBlockHalf.LOWER).setValue(FACING, pContext.getHorizontalDirection().getOpposite())
-        ;} else {
+                    ;
+        } else {
             return null;
         }
     }
@@ -127,25 +132,11 @@ public class LockerBlock extends BaseEntityBlock {
 
     @Override
     public InteractionResult use(BlockState blockstate, Level world, BlockPos pos, Player entity, InteractionHand hand, BlockHitResult hit) {
-        super.use(blockstate, world, pos, entity, hand, hit);
         if (entity instanceof ServerPlayer player) {
-            NetworkHooks.openScreen(player, new MenuProvider() {
-                @org.jetbrains.annotations.Nullable
-                @Override
-                public AbstractContainerMenu createMenu(int pContainerId, Inventory pPlayerInventory, Player pPlayer) {
-                    return ChestMenu.threeRows(pContainerId, pPlayerInventory);
-                }
-
-                @Override
-                public Component getDisplayName() {
-                    return Component.literal("Locker");
-                }
-            }, pos);
+            NetworkHooks.openScreen(player, blockstate.getMenuProvider(world, pos));
         }
         return InteractionResult.SUCCESS;
     }
-
-
 
     @org.jetbrains.annotations.Nullable
     @Override
@@ -153,11 +144,16 @@ public class LockerBlock extends BaseEntityBlock {
         return new LockerBlockEntity(pos, state);
     }
 
-    @org.jetbrains.annotations.Nullable
-    @Override
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state,
-                                                                  BlockEntityType<T> type) {
-        return createTickerHelper(type, ModBlockEntities.LOCKER.get(),
-                LockerBlockEntity::tick);
+    public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
+        if (!pState.is(pNewState.getBlock())) {
+            BlockEntity blockentity = pLevel.getBlockEntity(pPos);
+            if (blockentity instanceof Container) {
+                Containers.dropContents(pLevel, pPos, (Container)blockentity);
+                pLevel.updateNeighbourForOutputSignal(pPos, this);
+            }
+
+            super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);
+        }
     }
+
 }

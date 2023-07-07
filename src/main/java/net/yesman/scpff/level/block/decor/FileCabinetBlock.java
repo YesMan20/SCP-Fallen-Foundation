@@ -4,10 +4,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.Container;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
-import net.minecraft.world.MenuProvider;
+import net.minecraft.world.*;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -82,22 +79,10 @@ public class FileCabinetBlock extends BaseEntityBlock {
     public InteractionResult use(BlockState blockstate, Level world, BlockPos pos, Player entity, InteractionHand hand, BlockHitResult hit) {
         super.use(blockstate, world, pos, entity, hand, hit);
         if (entity instanceof ServerPlayer player) {
-            NetworkHooks.openScreen(player, new MenuProvider() {
-                @Nullable
-                @Override
-                public AbstractContainerMenu createMenu(int pContainerId, Inventory pPlayerInventory, Player pPlayer) {
-                    return ChestMenu.threeRows(pContainerId, pPlayerInventory);
-                }
-
-                @Override
-                public Component getDisplayName() {
-                    return Component.literal("File Cabinet");
-                }
-            }, pos);
+            NetworkHooks.openScreen(player, blockstate.getMenuProvider(world, pos));
         }
         return InteractionResult.SUCCESS;
     }
-
 
 
     @Nullable
@@ -106,11 +91,16 @@ public class FileCabinetBlock extends BaseEntityBlock {
         return new FileCabinetBlockEntity(pos, state);
     }
 
-    @Nullable
-    @Override
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state,
-                                                                  BlockEntityType<T> type) {
-        return createTickerHelper(type, ModBlockEntities.FILECABINET.get(),
-                FileCabinetBlockEntity::tick);
+    public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
+        if (!pState.is(pNewState.getBlock())) {
+            BlockEntity blockentity = pLevel.getBlockEntity(pPos);
+            if (blockentity instanceof Container) {
+                Containers.dropContents(pLevel, pPos, (Container)blockentity);
+                pLevel.updateNeighbourForOutputSignal(pPos, this);
+            }
+
+            super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);
+        }
     }
+
 }
