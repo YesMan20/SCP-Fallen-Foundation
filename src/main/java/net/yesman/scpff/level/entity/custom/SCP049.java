@@ -16,6 +16,7 @@ import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.monster.Husk;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.player.Player;
@@ -97,10 +98,10 @@ public class SCP049 extends Monster implements GeoEntity, NeutralMob {
             this.getAttribute(Attributes.MOVEMENT_SPEED).addTransientModifier(modifier);
             RunnableCooldownHandler.addDelayedRunnable(() -> {
                 if (this.isDeadOrDying()) return;
-                Zombie zombie = new Zombie(EntityType.ZOMBIE, level);
-                zombie.teleportTo(this.getX(), this.getY(), this.getZ());
-                zombie.setPersistenceRequired();
-                level.addFreshEntity(zombie);
+                Husk husk = new Husk(EntityType.HUSK, level);
+                husk.teleportTo(this.getX(), this.getY(), this.getZ());
+                husk.setPersistenceRequired();
+                level.addFreshEntity(husk);
                 this.setIsCuring(false);
                 if (this.getAttribute(Attributes.MOVEMENT_SPEED).hasModifier(modifier)) {
                     this.getAttribute(Attributes.MOVEMENT_SPEED).removeModifier(modifier);
