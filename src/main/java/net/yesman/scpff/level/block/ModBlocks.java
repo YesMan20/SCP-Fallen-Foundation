@@ -21,7 +21,7 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, SCPFf.MOD_ID);
 
-    /** HC Blocks **/
+    /** HC Blocks meaning less change**/
 
     public static final RegistryObject<Block> HCWALL = registerBlock("hcwall",
             () -> new Block(BlockBehaviour.Properties.of(Material.HEAVY_METAL)
