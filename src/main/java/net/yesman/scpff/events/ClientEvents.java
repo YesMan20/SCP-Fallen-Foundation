@@ -8,6 +8,7 @@ import net.yesman.scpff.SCPFf;
 import net.yesman.scpff.level.entity.client.renderer.SCP049Renderer;
 import net.yesman.scpff.level.entity.client.renderer.SCP650Renderer;
 import net.yesman.scpff.level.entity.ModEntity;
+import net.yesman.scpff.level.entity.client.renderer.SCP939Renderer;
 
 @Mod.EventBusSubscriber(modid = SCPFf.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ClientEvents {
@@ -16,6 +17,6 @@ public class ClientEvents {
     public static void registerRenderers(final EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(ModEntity.SCP_650.get(), SCP650Renderer::new);
         event.registerEntityRenderer(ModEntity.SCP_049.get(), SCP049Renderer::new);
+        event.registerEntityRenderer(ModEntity.SCP_939.get(), SCP939Renderer::new);
     }
-
 }

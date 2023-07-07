@@ -6,7 +6,15 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "scpff:hcfloor"
+          "name": "scpff:hcfloor",
+          "conditions": [
+            {
+              "condition": "minecraft:match_tool",
+              "predicate": {
+                "tag": "minecraft:pickaxes"
+              }
+            }
+          ]
         }
       ]
     }

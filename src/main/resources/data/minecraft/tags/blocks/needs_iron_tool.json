@@ -1,0 +1,29 @@
+{
+  "values": [
+    "scpff:ezwall1",
+    "scpff:ezwall2",
+    "scpff:lcwall1",
+    "scpff:lcwall2",
+    "scpff:lcwall3",
+    "scpff:hcwall",
+    "scpff:hcfloor",
+    "scpff:brickwall1",
+    "scpff:brickwall2",
+    "scpff:brickwall3",
+    "scpff:tiles",
+    "scpff:pipecorner",
+    "scpff:pipe",
+    "scpff:pipeside",
+    "scpff:metalwall1",
+    "scpff:metalwall2",
+    "scpff:fireextinguishercase",
+    "scpff:electricalbox",
+    "scpff:walllight",
+    "scpff:vendingmachine",
+    "scpff:filecabinet",
+    "scpff:catwalkfence",
+    "scpff:catwalkfence2",
+    "scpff:catwalkblock",
+    "scpff:facilitylight"
+  ]
+}

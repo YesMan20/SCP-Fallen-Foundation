@@ -6,7 +6,15 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "scpff:ezwall2"
+          "name": "scpff:ezwall2",
+          "conditions": [
+            {
+              "condition": "minecraft:match_tool",
+              "predicate": {
+                "tag": "minecraft:pickaxes"
+              }
+            }
+          ]
         }
       ]
     }
