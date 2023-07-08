@@ -11,8 +11,6 @@ public class EntityInit {
         add049VoiceLine("I am only trying to help you.");
         add049VoiceLine("Do not resist, for I have the cure");
     }
-
-
     private static void add049VoiceLine(String voiceLine) {
         VOICE_LINES.add(voiceLine);
     }

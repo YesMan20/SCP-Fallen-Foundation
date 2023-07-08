@@ -6,22 +6,27 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.SpawnPlacements;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.ai.navigation.PathNavigation;
+import net.minecraft.world.entity.ai.navigation.WallClimberNavigation;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.monster.Spider;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.monster.ZombifiedPiglin;
 import net.minecraft.world.entity.monster.piglin.Piglin;
+import net.minecraft.world.entity.monster.warden.Warden;
+import net.minecraft.world.entity.monster.warden.WardenAi;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.npc.WanderingTrader;
 import net.minecraft.world.entity.player.Player;
@@ -41,9 +46,12 @@ import software.bernie.geckolib.core.animation.Animation;
 import software.bernie.geckolib.core.animation.AnimationController;
 import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
-import software.bernie.geckolib.util.GeckoLibUtil;
+import software.bernie.geckolib.util.GeckoLibUtil;import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
 
 public class SCP939 extends Monster implements GeoEntity {
+    private static final EntityDataAccessor<Byte> DATA_FLAGS_ID = SynchedEntityData.defineId(SCP939.class, EntityDataSerializers.BYTE);
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
     private static final EntityDataAccessor<Boolean> DATA_HAS_TARGET = SynchedEntityData.defineId(SCP939.class, EntityDataSerializers.BOOLEAN);
 
@@ -64,9 +72,62 @@ public class SCP939 extends Monster implements GeoEntity {
 
     }
 
-    @Override
-    public SoundEvent getAmbientSound() {
-        return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.villager.ambient"));
+    public MobType getMobType() {
+        return MobType.ARTHROPOD;
+    }
+
+    /** Blindness **/
+
+    /** Climbing **/
+
+    public boolean onClimbable() {
+        return this.isClimbing();
+    }
+
+    protected PathNavigation createNavigation(Level pLevel) {
+        return new WallClimberNavigation(this, pLevel);
+    }
+
+    public double getPassengersRidingOffset() {
+        return (double)(this.getBbHeight() * 0.5F);
+    }
+
+    public boolean isClimbing() {
+        return (this.entityData.get(DATA_FLAGS_ID) & 1) != 0;
+    }
+
+    public void setClimbing(boolean pClimbing) {
+        byte b0 = this.entityData.get(DATA_FLAGS_ID);
+        if (pClimbing) {
+            b0 = (byte)(b0 | 1);
+        } else {
+            b0 = (byte)(b0 & -2);
+        }
+
+        this.entityData.set(DATA_FLAGS_ID, b0);
+    }
+
+    public void tick() {
+        super.tick();
+        if (!this.level.isClientSide) {
+            this.setClimbing(this.horizontalCollision);
+        }
+        for (Entity entity : this.level.getEntities(this, this.getBoundingBox().inflate(20, 20, 20))) {
+            if (entity instanceof Mob mob) {
+                if (RandomSource.create().nextFloat() > 0.99F) {
+                    try {
+                        Method ambientSound = Mob.class.getDeclaredMethod("getAmbientSound");
+                        ambientSound.setAccessible(true);
+                        SoundEvent ambientSoundEvent = (SoundEvent) ambientSound.invoke(mob);
+                        this.playSound(ambientSoundEvent);
+                    } catch (InvocationTargetException | NoSuchMethodException | IllegalAccessException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            }
+        }
+
+
     }
 
     @Override
@@ -76,9 +137,8 @@ public class SCP939 extends Monster implements GeoEntity {
 
     @Override
     public SoundEvent getDeathSound() {
-        return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.villager.death"));
+        return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.pig.death"));
     }
-
 
     @Override
     protected void registerGoals() {
@@ -153,6 +213,7 @@ public class SCP939 extends Monster implements GeoEntity {
     protected void defineSynchedData() {
         super.defineSynchedData();
         this.entityData.define(DATA_HAS_TARGET, false);
+        this.entityData.define(DATA_FLAGS_ID, (byte)0);
     }
 
     public boolean hasTarget() {

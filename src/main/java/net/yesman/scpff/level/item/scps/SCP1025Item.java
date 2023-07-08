@@ -27,7 +27,7 @@ public class SCP1025Item extends Item {
 
     @Override
     public UseAnim getUseAnimation(ItemStack pStack) {
-        return UseAnim.BRUSH;
+        return UseAnim.EAT;
     }
 
     @Override
@@ -36,16 +36,16 @@ public class SCP1025Item extends Item {
             MobEffect pick = null;
             for (Map.Entry<ResourceKey<MobEffect>, MobEffect> effect : ForgeRegistries.MOB_EFFECTS.getEntries()) {
                 MobEffect mobEffect = effect.getValue();
-                if (RandomSource.create().nextFloat() > 0.9F) {
+                if (RandomSource.create().nextFloat() > 0.9F && !effect.getValue().isBeneficial()) {
                     pick = mobEffect;
                     break;
                 }
             }
             if (pick == null) {
-                pick = MobEffects.LUCK;
+                pick = MobEffects.CONFUSION;
             }
-            pPlayer.addEffect(new MobEffectInstance(pick, RandomSource.create().nextInt(20, 200)));
-            pPlayer.displayClientMessage(Component.literal("You read a page about " + pick.getDisplayName().getString()), false);
+            pPlayer.addEffect(new MobEffectInstance(pick, RandomSource.create().nextInt(200, 1000)));
+            pPlayer.displayClientMessage(Component.literal("You read a page about " + pick.getDisplayName().getString()), true);
             return InteractionResultHolder.success(pPlayer.getItemInHand(pUsedHand));
         }
         return InteractionResultHolder.fail(pPlayer.getItemInHand(pUsedHand));
