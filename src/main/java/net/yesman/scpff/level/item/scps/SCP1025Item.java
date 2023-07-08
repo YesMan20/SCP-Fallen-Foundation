@@ -16,10 +16,11 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.yesman.scpff.misc.Safe;
 
 import java.util.Map;
 
-
+@Safe
 public class SCP1025Item extends Item {
     public SCP1025Item(Properties pProperties) {
         super(pProperties);

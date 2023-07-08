@@ -4,16 +4,16 @@
   "item.scpff.armoryicon": "???",
   "item.scpff.scpicon": "???",
 
-  "item.scpff.scp207": "SCP-207 - §aCola Bottles",
-  "item.scpff.scp268": "SCP-268 - §aCap Of Neglect",
-  "item.scpff.scp500": "SCP-500 - §aPanacea",
-  "item.scpff.scp109": "SCP-109 - §aInfinite Canteen",
-  "item.scpff.scp1025": "SCP-1025 - §aEncyclopedia Of Diseases",
+  "item.scpff.scp207": "SCP-207 - Cola Bottles",
+  "item.scpff.scp268": "SCP-268 - Cap Of Neglect",
+  "item.scpff.scp500": "SCP-500 - Panacea",
+  "item.scpff.scp109": "SCP-109 - Infinite Canteen",
+  "item.scpff.scp1025": "SCP-1025 - Encyclopedia Of Diseases",
   "item.scpff.candy1": "Purple Candy",
   "item.scpff.candy2": "Red Candy",
   "item.scpff.candy3": "Yellow Candy",
   "item.scpff.candy4": "Green Candy",
-  "item.scpff.instakill": "§dInsta-Kill",
+  "item.scpff.instakill": "Insta-Kill",
 
   "item.scpff.scp_650_spawn_egg": "SCP-650 - §eStartling Statue §rSpawn Egg",
   "item.scpff.scp_049_spawn_egg": "SCP-049 - §eThe Plague Doctor §rSpawn Egg",
@@ -29,6 +29,10 @@
   "item.scpff.keycard3": "Keycard - §6Lvl 3",
   "item.scpff.keycard4": "Keycard - §6Lvl 4",
   "item.scpff.keycard5": "Keycard - §cLvl 5",
+
+  "tooltip.scpff.safe": "§aSafe",
+  "tooltip.scpff.euclid": "§6Euclid",
+  "tooltip.scpff.keter": "§cKeter",
 
   "entity.scpff.scp_650": "SCP-650 - §eStartling Statue",
   "entity.scpff.scp_049": "SCP-049 - §eThe Plague Doctor",

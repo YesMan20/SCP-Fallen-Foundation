@@ -2,8 +2,6 @@ package net.yesman.scpff.level.item;
 
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.Mob;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeSpawnEggItem;
@@ -13,8 +11,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.yesman.scpff.SCPFf;
 import net.yesman.scpff.level.entity.ModEntity;
-import net.yesman.scpff.level.item.custom.IgnoreOnLoad;
-import net.yesman.scpff.level.item.custom.InstaKillItem;
+import net.yesman.scpff.level.item.custom.*;
 import net.yesman.scpff.level.item.scps.*;
 
 
@@ -69,7 +66,7 @@ public class ModItems {
             new Item.Properties().durability(110)));
 
     public static final RegistryObject<Item> INSTAKILL = ITEMS.register("instakill", () -> new InstaKillItem(Tiers.NETHERITE, 99999, 1.3f,
-            new Item.Properties()));
+            new Item.Properties().rarity(Rarity.EPIC)));
 
     public static final RegistryObject<Item> SLEDGEHAMMER = ITEMS.register("sledgehammer", () -> new PickaxeItem(Tiers.IRON, 4, 1f,
         new Item.Properties().durability(100)));

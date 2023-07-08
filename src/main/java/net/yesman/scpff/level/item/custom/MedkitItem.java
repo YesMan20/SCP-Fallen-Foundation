@@ -1,4 +1,4 @@
-package net.yesman.scpff.level.item.scps;
+package net.yesman.scpff.level.item.custom;
 
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;

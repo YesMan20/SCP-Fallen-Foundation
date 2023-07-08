@@ -8,10 +8,11 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
+import net.yesman.scpff.misc.Safe;
 
 import java.util.Map;
 
-
+@Safe
 public class SCP500Item extends Item {
     public SCP500Item(Properties pProperties) {
         super(pProperties);

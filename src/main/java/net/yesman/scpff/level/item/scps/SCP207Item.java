@@ -5,7 +5,9 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
+import net.yesman.scpff.misc.Safe;
 
+@Safe
 public class SCP207Item extends Item {
     public SCP207Item(Properties pProperties) { super(pProperties); }
 

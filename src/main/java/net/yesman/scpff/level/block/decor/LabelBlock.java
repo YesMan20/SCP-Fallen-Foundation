@@ -14,10 +14,10 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class EuclidLabelBlock extends HorizontalDirectionalBlock {
+public class LabelBlock extends HorizontalDirectionalBlock {
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
-    public EuclidLabelBlock(Properties pProperties) {
+    public LabelBlock(Properties pProperties) {
         super(pProperties);
     }
 

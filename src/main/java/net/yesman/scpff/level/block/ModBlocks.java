@@ -2,11 +2,8 @@ package net.yesman.scpff.level.block;
 
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.TurtleEggBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -144,7 +141,7 @@ public class ModBlocks {
                     .destroyTime(9f)));
 
     public static final RegistryObject<Block> CATWALKFENCE2 = registerBlock("catwalkfence2",
-            () -> new CatWalkFence2Block(BlockBehaviour.Properties.of(Material.METAL)
+            () -> new CatWalkFenceBlock(BlockBehaviour.Properties.of(Material.METAL)
                     .sound(SoundType.METAL)
                     .requiresCorrectToolForDrops()
                     .strength(4f)
@@ -318,21 +315,21 @@ public class ModBlocks {
                     .noOcclusion()));
 
     public static final RegistryObject<Block> SAFELABEL = registerBlock("safelabel",
-            () -> new SafeLabelBlock(BlockBehaviour.Properties.of(Material.WOOD)
+            () -> new LabelBlock(BlockBehaviour.Properties.of(Material.WOOD)
                     .sound(SoundType.WOOD)
                     .strength(2f)
                     .requiresCorrectToolForDrops()
                     .noOcclusion()));
 
     public static final RegistryObject<Block> KETERLABEL = registerBlock("keterlabel",
-            () -> new EuclidLabelBlock(BlockBehaviour.Properties.of(Material.WOOD)
+            () -> new LabelBlock(BlockBehaviour.Properties.of(Material.WOOD)
                     .sound(SoundType.WOOD)
                     .strength(2f)
                     .requiresCorrectToolForDrops()
                     .noOcclusion()));
 
     public static final RegistryObject<Block> EUCLIDLABEL = registerBlock("euclidlabel",
-            () -> new EuclidLabelBlock(BlockBehaviour.Properties.of(Material.WOOD)
+            () -> new LabelBlock(BlockBehaviour.Properties.of(Material.WOOD)
                     .sound(SoundType.WOOD)
                     .strength(2f)
                     .requiresCorrectToolForDrops()
