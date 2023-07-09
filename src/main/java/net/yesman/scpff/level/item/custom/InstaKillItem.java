@@ -1,96 +1,37 @@
 package net.yesman.scpff.level.item.custom;
 
-import com.google.common.collect.ImmutableMultimap;
-import com.google.common.collect.Multimap;
-import net.minecraft.core.BlockPos;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.ai.attributes.Attribute;
-import net.minecraft.world.entity.ai.attributes.AttributeModifier;
-import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.*;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.material.Material;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.Tier;
 
-public class InstaKillItem extends TieredItem implements Vanishable {
-    private final float attackDamage;
-    private final Multimap<Attribute, AttributeModifier> defaultModifiers;
-
-    public boolean isFoil(ItemStack pStack) {
-        return true;
-    }
-
-    public InstaKillItem(Tier pTier, int pAttackDamageModifier, float pAttackSpeedModifier, Item.Properties pProperties) {
-        super(pTier, pProperties);
-        this.attackDamage = (float)pAttackDamageModifier + pTier.getAttackDamageBonus();
-        ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
-        builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Weapon modifier", (double)this.attackDamage, AttributeModifier.Operation.ADDITION));
-        builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Weapon modifier", (double)pAttackSpeedModifier, AttributeModifier.Operation.ADDITION));
-        this.defaultModifiers = builder.build();
-    }
-
-    public float getDamage() {
-        return this.attackDamage;
-    }
-
-    public boolean canAttackBlock(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer) {
-        return !pPlayer.isCreative();
-    }
-
-    public float getDestroySpeed(ItemStack pStack, BlockState pState) {
-        if (pState.is(Blocks.COBWEB)) {
-            return 15.0F;
-        } else {
-            Material material = pState.getMaterial();
-            return material != Material.PLANT && material != Material.REPLACEABLE_PLANT && !pState.is(BlockTags.LEAVES) && material != Material.VEGETABLE ? 1.0F : 1.5F;
-        }
-    }
-
-    /**
-     * Current implementations of this method in child classes do not use the entry argument beside ev. They just raise
-     * the damage on the stack.
-     */
-    public boolean hurtEnemy(ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker) {
-        pStack.hurtAndBreak(1, pAttacker, (p_43296_) -> {
-            p_43296_.broadcastBreakEvent(EquipmentSlot.MAINHAND);
-        });
-        return true;
-    }
-
-    /**
-     * Called when a {@link net.minecraft.world.level.block.Block} is destroyed using this Item. Return {@code true} to
-     * trigger the "Use Item" statistic.
-     */
-    public boolean mineBlock(ItemStack pStack, Level pLevel, BlockState pState, BlockPos pPos, LivingEntity pEntityLiving) {
-        if (pState.getDestroySpeed(pLevel, pPos) != 0.0F) {
-            pStack.hurtAndBreak(2, pEntityLiving, (p_43276_) -> {
-                p_43276_.broadcastBreakEvent(EquipmentSlot.MAINHAND);
-            });
-        }
-
-        return true;
-    }
-
-    /**
-     * Check whether this Item can harvest the given Block
-     */
-    public boolean isCorrectToolForDrops(BlockState pBlock) {
-        return pBlock.is(Blocks.COBWEB);
-    }
-
-    /**
-     * Gets a map of item attribute modifiers, used by ItemSword to increase hit damage.
-     */
-    public Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers(EquipmentSlot pEquipmentSlot) {
-        return pEquipmentSlot == EquipmentSlot.MAINHAND ? this.defaultModifiers : super.getDefaultAttributeModifiers(pEquipmentSlot);
+public class InstaKillItem extends SwordItem {
+    public InstaKillItem(Tier tier, int damage, float speed, Properties property) {
+        super(tier, damage, speed, property);
     }
 
     @Override
-    public boolean canPerformAction(ItemStack stack, net.minecraftforge.common.ToolAction toolAction) {
-        return net.minecraftforge.common.ToolActions.DEFAULT_SWORD_ACTIONS.contains(toolAction);
+    public InteractionResult interactLivingEntity(ItemStack stack, Player player, LivingEntity target, InteractionHand hand) {
+        target.kill();
+
+        if (hand == InteractionHand.MAIN_HAND) {
+            player.swing(InteractionHand.MAIN_HAND, true);
+        } else {
+            player.swing(InteractionHand.OFF_HAND, true);
+        }
+        return super.interactLivingEntity(stack, player, target, hand);
+    }
+
+    @Override
+    public boolean isFoil(ItemStack stack) {
+        return true;
+    }
+
+    @Override
+    public boolean isFireResistant() {
+        return true;
     }
 }
