@@ -57,8 +57,8 @@ public class ModItems {
     public static final RegistryObject<Item> SCP939SPINE = ITEMS.register("scp939spine", () -> new Item(new Item.Properties()
             .stacksTo(64)));
 
-    public static final RegistryObject<Item> SCP939DAGGER = ITEMS.register("scp939dagger", () -> new SwordItem(Tiers.WOOD, 5, 1.3f,
-            new Item.Properties().durability(110)));
+    public static final RegistryObject<Item> SCP939DAGGER = ITEMS.register("scp939dagger", () -> new SwordItem(Tiers.WOOD, 5, 1.0f,
+            new SwordItem.Properties().durability(110)));
 
     public static final RegistryObject<Item> INSTAKILL = ITEMS.register("instakill", () -> new InstaKillItem(Tiers.NETHERITE, 99999, -1.0f,
             new Item.Properties().rarity(Rarity.EPIC).durability(99999)));

@@ -32,7 +32,7 @@ public class SCP049LookForPlayerGoal extends NearestAttackableTargetGoal<Player>
             }
             return !livingEntity.getItemBySlot(EquipmentSlot.HEAD).is(ModItems.SCP268.get());
         })), this.scp049);
-        if (RandomSource.create().nextFloat() > 0.99F && pendingTarget != null) {
+        if (RandomSource.create().nextFloat() > 0.199F && pendingTarget != null) {
             pendingTarget.displayClientMessage(Component.literal("I SENSE THE DISEASE").withStyle(ChatFormatting.RED).withStyle(ChatFormatting.BOLD), false);
             this.findTarget();
             return true;

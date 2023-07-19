@@ -10,9 +10,16 @@ logoFile="icon.png" #optional
 credits="Thanks to Lucent, Willow, Phoillows, ConnorTron110, and Zeus" #optional
 authors="YesMan" #optional
 description='''
-You are the last
-They are free
-do not mess up
+You are the last,
+They are free,
+do not mess up.
+
+SCP Fallen Foundation is a mod for Minecraft that focuses on,
+bringing popular & obscure SCPs to Minecraft.
+SCP Stands for,
+-Secure,
+-Contain,
+-Protect.
 '''
 
 [[dependencies.scpff]]

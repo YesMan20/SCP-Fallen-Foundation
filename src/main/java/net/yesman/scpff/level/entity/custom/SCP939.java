@@ -1,5 +1,6 @@
 package net.yesman.scpff.level.entity.custom;
 
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -8,7 +9,11 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.Difficulty;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -20,10 +25,7 @@ import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.ai.navigation.WallClimberNavigation;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.IronGolem;
-import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.monster.Spider;
-import net.minecraft.world.entity.monster.Zombie;
-import net.minecraft.world.entity.monster.ZombifiedPiglin;
+import net.minecraft.world.entity.monster.*;
 import net.minecraft.world.entity.monster.piglin.Piglin;
 import net.minecraft.world.entity.monster.warden.Warden;
 import net.minecraft.world.entity.monster.warden.WardenAi;
@@ -31,11 +33,13 @@ import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.npc.WanderingTrader;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.common.DungeonHooks;
 import net.minecraftforge.eventbus.api.BusBuilder;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.yesman.scpff.SCPFf;
 import net.yesman.scpff.level.entity.ModEntity;
 import net.yesman.scpff.misc.RunnableCooldownHandler;
 import org.jetbrains.annotations.Nullable;
@@ -118,16 +122,17 @@ public class SCP939 extends Monster implements GeoEntity {
                     try {
                         Method ambientSound = Mob.class.getDeclaredMethod("getAmbientSound");
                         ambientSound.setAccessible(true);
+
                         SoundEvent ambientSoundEvent = (SoundEvent) ambientSound.invoke(mob);
-                        this.playSound(ambientSoundEvent);
+                        if (ambientSoundEvent != null) {
+                            this.playSound(ambientSoundEvent);
+                        }
                     } catch (InvocationTargetException | NoSuchMethodException | IllegalAccessException e) {
-                        throw new RuntimeException(e);
+                        SCPFf.LOGGER.error("Could not fetch sound \n {}", e.getMessage());
                     }
                 }
             }
         }
-
-
     }
 
     @Override
@@ -161,25 +166,10 @@ public class SCP939 extends Monster implements GeoEntity {
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Animal.class, true));
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Villager.class, true));
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, IronGolem.class, true));
-        this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, Animal.class, true, true));
-        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal(this, Player.class, true, true));
-        this.targetSelector.addGoal(7, new NearestAttackableTargetGoal(this, Villager.class, true, true));
-        this.targetSelector.addGoal(8, new NearestAttackableTargetGoal(this, IronGolem.class, true, true));
-        this.targetSelector.addGoal(9, new NearestAttackableTargetGoal(this, WanderingTrader.class, true, true));
-        this.targetSelector.addGoal(10, new NearestAttackableTargetGoal(this, Piglin.class, true, true));
-        this.targetSelector.addGoal(11, new NearestAttackableTargetGoal(this, ZombifiedPiglin.class, true, true));
+        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, WanderingTrader.class, true, true));
+        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Piglin.class, true, true));
+        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, ZombifiedPiglin.class, true, true));
     }
-
-    public static void init() {
-        SpawnPlacements.register(ModEntity.SCP_939.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (entityType, world, reason, pos, random) -> {
-            int x = pos.getX();
-            int y = pos.getY();
-            int z = pos.getZ();
-            return false;
-        });
-        DungeonHooks.addDungeonMob(ModEntity.SCP_939.get(), 180);
-    }
-
 
     private static final RawAnimation ATTACK_ANIM = RawAnimation.begin().then("animation.scp939.attack", Animation.LoopType.PLAY_ONCE);
     private static final RawAnimation CHASE_ANIM = RawAnimation.begin().then("animation.scp939.aggresive", Animation.LoopType.LOOP);
