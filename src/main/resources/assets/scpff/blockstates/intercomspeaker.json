@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "scpff:block/intercomspeaker"
+    },
+    "facing=east": {
+      "model": "scpff:block/intercomspeaker",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "scpff:block/intercomspeaker",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "scpff:block/intercomspeaker",
+      "y": 270
+    }
+  }
+}

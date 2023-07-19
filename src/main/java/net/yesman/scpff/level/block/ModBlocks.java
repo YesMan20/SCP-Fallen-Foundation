@@ -252,6 +252,19 @@ public class ModBlocks {
                     .sound(SoundType.METAL)
                     .noOcclusion()));
 
+    public static final RegistryObject<Block> INTERCOMMICROPHONE = registerBlock("intercommicrophone",
+            () -> new IntercomMicrophoneBlock(BlockBehaviour.Properties.of(Material.METAL)
+                    .strength(1f)
+                    .sound(SoundType.METAL)
+                    .noOcclusion()));
+
+    public static final RegistryObject<Block> INTERCOMSPEAKER = registerBlock("intercomspeaker",
+            () -> new IntercomSpeakerBlock(BlockBehaviour.Properties.of(Material.METAL)
+                    .strength(1f)
+                    .sound(SoundType.METAL)
+                    .noOcclusion()));
+
+
     public static final RegistryObject<Block> PAPERSTACK = registerBlock("paperstack",
             () -> new PaperStackBlock(BlockBehaviour.Properties.of(Material.WOOL)
                     .sound(SoundType.WOOL)

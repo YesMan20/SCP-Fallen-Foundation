@@ -1,4 +1,9 @@
 {
+  "item.scpff.itemicon": "???",
+  "item.scpff.blockicon": "???",
+  "item.scpff.armoryicon": "???",
+  "item.scpff.scpicon": "???",
+
   "item.scpff.scp207": "SCP-207 - §aCola Bottles",
   "item.scpff.scp268": "SCP-268 - §6Cap Of Neglect",
   "item.scpff.scp500": "SCP-500 - §aPanacea",
@@ -10,9 +15,9 @@
   "item.scpff.candy4": "Green Candy",
   "item.scpff.instakill": "Insta-Kill",
 
-  "item.scpff.scp_650_spawn_egg": "SCP-650 - §eStartling Statue §rSpawn Egg",
-  "item.scpff.scp_049_spawn_egg": "SCP-049 - §eThe Plague Doctor §rSpawn Egg",
-  "item.scpff.scp_939_spawn_egg": "SCP-939 - §4With Many Voices §rSpawn Egg",
+  "item.scpff.scp_650_spawn_egg": "SCP-650 - §6Startling Statue §rSpawn Egg",
+  "item.scpff.scp_049_spawn_egg": "SCP-049 - §6The Plague Doctor §rSpawn Egg",
+  "item.scpff.scp_939_spawn_egg": "SCP-939 - §cWith Many Voices §rSpawn Egg",
 
   "item.scpff.medkit": "Medical Kit",
   "item.scpff.scp939spine": "SCP-939 Spine",
@@ -83,6 +88,8 @@
   "block.scpff.beakers": "Beakers",
   "block.scpff.testtubes": "Test Tubes",
   "block.scpff.serversrack": "Server Racks",
+  "block.scpff.intercommicrophone": "Intercom Microphone",
+  "block.scpff.intercomspeaker": "Intercom Speaker",
 
   "painting.scpff.soda.title": "SODA!!!!!",
   "painting.scpff.soda.author": "Lucent",
@@ -101,6 +108,6 @@
 
   "creativemodetab.scpff_item": "SCP Items",
   "creativemodetab.scpff_block": "SCP Blocks",
-  "creativemodetab.scpff_scps": "SCP Spawn Eggs",
+  "creativemodetab.scpff_scps": "SCP Spawn eggs",
   "creativemodetab.scpff_armory": "Armory/Weapons"
 }

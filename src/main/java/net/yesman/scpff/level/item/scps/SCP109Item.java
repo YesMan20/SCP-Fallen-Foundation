@@ -8,6 +8,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import net.yesman.scpff.misc.Euclid;
+import net.yesman.scpff.misc.Safe;
 
 @Euclid
 public class SCP109Item extends Item {
