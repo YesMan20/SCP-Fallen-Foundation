@@ -40,6 +40,16 @@ public class BlockShapes {
     public static final VoxelShape TEST_TUBES_E = box(4, 0, 1, 10, 6, 15);
     public static final VoxelShape TEST_TUBES_W = box(6, 0, 1, 12, 6, 15);
 
+    public static final VoxelShape INTERCOM_MICROPHONE_S = box(5, 0, 3, 11, 10, 16);
+    public static final VoxelShape INTERCOM_MICROPHONE_N = box(5, 0, 0, 11, 10, 13);
+    public static final VoxelShape INTERCOM_MICROPHONE_E = box(3, 0, 5, 16, 10, 11);
+    public static final VoxelShape INTERCOM_MICROPHONE_W = box(0, 0, 5, 13, 10, 11);
+
+    public static final VoxelShape INTERCOM_SPEAKER_S = box(2, 0, 0, 11, 12, 8);
+    public static final VoxelShape INTERCOM_SPEAKER_N = box(5, 0, 8, 14, 12, 16);
+    public static final VoxelShape INTERCOM_SPEAKER_E = box(0, 0, 5, 8, 12, 14);
+    public static final VoxelShape INTERCOM_SPEAKER_W = box(8, 0, 2, 16, 12, 11);
+
     public static final VoxelShape PAPER_STACK_S = box(4, 0, 2, 13, 4, 14);
     public static final VoxelShape PAPER_STACK_N = box(3, 0, 2, 12, 4, 14);
     public static final VoxelShape PAPER_STACK_E = box(2, 0, 3, 14, 4, 12);

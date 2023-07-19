@@ -143,6 +143,14 @@ public class ModBlocks {
     public static final RegistryObject<Block> LOCKER = registerBlock("locker", () ->
             new LockerBlock(BlockBehaviour.Properties.of(Material.METAL).strength(4F).sound(SoundType.METAL).requiresCorrectToolForDrops().noOcclusion()));
 
+    public static final RegistryObject<Block> INTERCOMMICROPHONE = registerBlock("intercommicrophone", () ->
+            new HorizontalDecorationBlock(BlockBehaviour.Properties.of(Material.METAL).strength(1f).sound(SoundType.METAL).noOcclusion(),
+                    BlockShapes.INTERCOM_MICROPHONE_S, BlockShapes.INTERCOM_MICROPHONE_N, BlockShapes.INTERCOM_MICROPHONE_E, BlockShapes.INTERCOM_MICROPHONE_W));
+
+    public static final RegistryObject<Block> INTERCOMSPEAKER = registerBlock("intercomspeaker", () ->
+            new HorizontalDecorationBlock(BlockBehaviour.Properties.of(Material.METAL).strength(1f).sound(SoundType.METAL).noOcclusion(),
+                    BlockShapes.INTERCOM_SPEAKER_S, BlockShapes.INTERCOM_SPEAKER_N, BlockShapes.INTERCOM_SPEAKER_E, BlockShapes.INTERCOM_SPEAKER_W));
+
     public static final RegistryObject<Block> PAPERSTACK = registerBlock("paperstack", () ->
             new HorizontalDecorationBlock(BlockBehaviour.Properties.of(Material.WOOL).sound(SoundType.WOOL).strength(1F).noOcclusion(),
                     BlockShapes.PAPER_STACK_S, BlockShapes.PAPER_STACK_N, BlockShapes.PAPER_STACK_E, BlockShapes.PAPER_STACK_W));
