@@ -6,39 +6,21 @@ import net.minecraft.world.food.FoodProperties;
 
 public class ModFoods {
     public static final FoodProperties CANDY = new FoodProperties.Builder()
-            .saturationMod(0.3f)
-            .nutrition(4)
-            .alwaysEat()
-            .fast()
-            .build();
+            .nutrition(4).saturationMod(0.3f).alwaysEat().fast().build();
 
     public static final FoodProperties SCP109 = new FoodProperties.Builder()
-            .nutrition(8)
-            .saturationMod(0.7f)
-            .alwaysEat()
-            .fast()
-            .build();
+            .nutrition(8).saturationMod(0.7f).alwaysEat().fast().build();
 
     public static final FoodProperties MEDKIT = new FoodProperties.Builder()
-            .alwaysEat()
-            .meat()
-            .build();
+            .alwaysEat().build();
 
     public static final FoodProperties SCP207 = new FoodProperties.Builder()
-            .nutrition(6)
-            .saturationMod(0.9f)
+            .nutrition(6).saturationMod(0.9f).alwaysEat().fast()
             .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 400, 2), 1f)
-            .effect(() -> new MobEffectInstance(MobEffects.WITHER, 400, 1), 1f)
-            .alwaysEat()
-            .fast()
-            .build();
+            .effect(() -> new MobEffectInstance(MobEffects.WITHER, 400, 1), 1f).build();
 
     public static final FoodProperties SCP500 = new FoodProperties.Builder()
-            .nutrition(7)
-            .saturationMod(0.5f)
+            .nutrition(7).saturationMod(0.5f).alwaysEat().fast()
             .effect(() -> new MobEffectInstance(MobEffects.HEALTH_BOOST, 600, 3), 1f)
-            .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 600, 3), 1f)
-            .alwaysEat()
-            .fast()
-            .build();
+            .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 600, 3), 1f).build();
 }

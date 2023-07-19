@@ -1,19 +1,5 @@
 {
   "variants": {
-    "facing=north": {
-      "model": "scpff:block/steelcanister"
-    },
-    "facing=east": {
-      "model": "scpff:block/steelcanister",
-      "y": 90
-    },
-    "facing=south": {
-      "model": "scpff:block/steelcanister",
-      "y": 180
-    },
-    "facing=west": {
-      "model": "scpff:block/steelcanister",
-      "y": 270
-    }
+    "": { "model": "scpff:block/steelcanister" }
   }
 }

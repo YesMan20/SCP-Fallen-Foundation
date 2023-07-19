@@ -4,6 +4,8 @@
     "scpff:safelabel",
     "scpff:euclidlabel",
     "scpff:keterlabel",
-    "scpff:computer"
+    "scpff:computer",
+    "scpff:microscope",
+    "scpff:beakers"
   ]
 }

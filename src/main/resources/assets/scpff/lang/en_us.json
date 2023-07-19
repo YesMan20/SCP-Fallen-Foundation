@@ -10,20 +10,20 @@
   "item.scpff.candy4": "Green Candy",
   "item.scpff.instakill": "Insta-Kill",
 
-  "item.scpff.scp_650_spawn_egg": "SCP-650 - §eStartling Statue §rSpawn Egg",
-  "item.scpff.scp_049_spawn_egg": "SCP-049 - §eThe Plague Doctor §rSpawn Egg",
-  "item.scpff.scp_939_spawn_egg": "SCP-939 - §4With Many Voices §rSpawn Egg",
+  "item.scpff.scp_049_spawn_egg": "SCP-049 - §6The Plague Doctor §rSpawn Egg",
+  "item.scpff.scp_650_spawn_egg": "SCP-650 - §6Startling Statue §rSpawn Egg",
+  "item.scpff.scp_939_spawn_egg": "SCP-939 - §cWith Many Voices §rSpawn Egg",
 
   "item.scpff.medkit": "Medical Kit",
   "item.scpff.scp939spine": "SCP-939 Spine",
   "item.scpff.scp939dagger": "SCP-939 Dagger",
   "item.scpff.sledgehammer": "Sledgehammer",
 
-  "item.scpff.keycard1": "Keycard - §eLvl 1",
-  "item.scpff.keycard2": "Keycard - §6Lvl 2",
-  "item.scpff.keycard3": "Keycard - §6Lvl 3",
-  "item.scpff.keycard4": "Keycard - §6Lvl 4",
-  "item.scpff.keycard5": "Keycard - §cLvl 5",
+  "item.scpff.keycard1": "Keycard - §eLevel 1",
+  "item.scpff.keycard2": "Keycard - §6Level 2",
+  "item.scpff.keycard3": "Keycard - §6Level 3",
+  "item.scpff.keycard4": "Keycard - §6Level 4",
+  "item.scpff.keycard5": "Keycard - §cLevel 5",
 
   "tooltip.scpff.safe": "§aSafe",
   "tooltip.scpff.euclid": "§6Euclid",
@@ -64,7 +64,7 @@
   "block.scpff.electricalbox": "Electrical Box",
   "block.scpff.fireextinguishercase": "Fire Extinguisher Case",
   "block.scpff.vendingmachine": "Vending Machine",
-  "block.scpff.catwalkfence": "Catwalk Fence",
+  "block.scpff.catwalkfence": "Catwalk Fence 1",
   "block.scpff.catwalkfence2": "Catwalk Fence 2",
   "block.scpff.catwalkblock": "Catwalk Floor",
   "block.scpff.filecabinet": "File Cabinet",
@@ -102,5 +102,5 @@
   "creativemodetab.scpff_item": "SCP Items",
   "creativemodetab.scpff_block": "SCP Blocks",
   "creativemodetab.scpff_scps": "SCP Spawn Eggs",
-  "creativemodetab.scpff_armory": "Armory/Weapons"
+  "creativemodetab.scpff_armory": "SCP Armory"
 }

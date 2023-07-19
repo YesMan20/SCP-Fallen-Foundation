@@ -1,11 +1,12 @@
 {
-	"credit": "Made with Blockbench",
+	"credit": "YesMan",
+	"parent": "computer",
+	"render_type": "minecraft:cutout",
 	"texture_size": [64, 64],
 	"textures": {
 		"1": "scpff:block/computer",
 		"particle": "scpff:block/computer"
 	},
-	"render_type": "minecraft:cutout",
 	"elements": [
 		{
 			"from": [2.5, 5, 6.5],
@@ -108,22 +109,40 @@
 	],
 	"display": {
 		"thirdperson_righthand": {
-			"scale": [0.49805, 0.49805, 0.49805]
+			"rotation": [75, 45, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
 		},
 		"thirdperson_lefthand": {
-			"scale": [0.49805, 0.49805, 0.49805]
+			"rotation": [75, 45, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, 45, 0],
+			"translation": [0, 1.5, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, 45, 0],
+			"translation": [0, 1.5, 0],
+			"scale": [0.4, 0.4, 0.4]
 		},
 		"ground": {
-			"scale": [0.49805, 0.49805, 0.49805]
+			"translation": [0, 3, 0],
+			"scale": [0.25, 0.25, 0.25]
 		},
 		"gui": {
-			"rotation": [-143.25, 50, -180],
-			"translation": [0, 0.75, 0],
-			"scale": [0.72, 0.72, 0.72]
+			"rotation": [30, 225, 0],
+			"translation": [-0.75, 0.25, 0],
+			"scale": [0.65, 0.65, 0.65]
 		},
 		"head": {
 			"translation": [0, 0, -4.75],
 			"scale": [1.31445, 1.23047, 1.38281]
+		},
+		"fixed": {
+			"scale": [0.6, 0.6, 0.6]
 		}
 	},
 	"groups": [

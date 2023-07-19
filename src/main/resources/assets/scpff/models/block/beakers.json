@@ -1,11 +1,12 @@
 {
-	"credit": "Made with Blockbench",
+	"credit": "YesMan",
+	"parent": "beakers",
+	"render_type": "minecraft:cutout",
 	"texture_size": [32, 32],
 	"textures": {
 		"0": "scpff:block/beakers",
 		"particle": "scpff:block/beakers"
 	},
-	"render_type": "minecraft:cutout",
 	"elements": [
 		{
 			"from": [11, 0, 10],
@@ -111,29 +112,37 @@
 	],
 	"display": {
 		"thirdperson_righthand": {
-			"translation": [0, 2.25, 0],
-			"scale": [0.46, 0.46, 0.46]
+			"rotation": [75, 45, 0],
+			"translation": [-0.25, 2.25, 2.5],
+			"scale": [0.45, 0.45, 0.45]
 		},
 		"thirdperson_lefthand": {
-			"translation": [0, 2.25, 0],
-			"scale": [0.46, 0.46, 0.46]
+			"rotation": [75, 45, 0],
+			"translation": [-0.25, 2.25, 2.5],
+			"scale": [0.45, 0.45, 0.45]
 		},
 		"firstperson_righthand": {
-			"translation": [0, 3.5, 0],
-			"scale": [0.46, 0.46, 0.46]
+			"rotation": [0, 45, 0],
+			"translation": [0, 3, 0],
+			"scale": [0.4, 0.4, 0.4]
 		},
 		"firstperson_lefthand": {
-			"translation": [0, 3.5, 0],
-			"scale": [0.46, 0.46, 0.46]
+			"rotation": [0, 45, 0],
+			"translation": [0, 3, 0],
+			"scale": [0.4, 0.4, 0.4]
 		},
 		"ground": {
-			"translation": [0, 3.25, 0],
-			"scale": [0.73, 0.73, 0.73]
+			"translation": [0, 3, 0],
+			"scale": [0.25, 0.25, 0.25]
 		},
 		"gui": {
-			"rotation": [-130, 27, -180],
-			"translation": [0, 1.75, 0],
-			"scale": [0.92383, 0.92383, 0.92383]
+			"rotation": [30, -113, 0],
+			"translation": [0.25, 1.25, 0],
+			"scale": [0.75, 0.75, 0.75]
+		},
+		"fixed": {
+			"translation": [0, 3, -1.5],
+			"scale": [0.6, 0.6, 0.6]
 		}
 	},
 	"groups": [

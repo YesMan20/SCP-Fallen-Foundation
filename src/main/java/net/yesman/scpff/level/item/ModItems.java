@@ -34,26 +34,25 @@ public class ModItems {
 
 
     /** Keycards **/
-    public static final RegistryObject<Item> KEYCARD1 = ITEMS.register("keycard1", () -> new Item(new Item.Properties()
-            .stacksTo(16)));
+    public static final RegistryObject<Item> KEYCARD1 = ITEMS.register("keycard1", () -> new KeycardItem(new Item.Properties()
+            .stacksTo(16), 1));
 
-    public static final RegistryObject<Item> KEYCARD2 = ITEMS.register("keycard2", () -> new Item(new Item.Properties()
-            .stacksTo(16)));
+    public static final RegistryObject<Item> KEYCARD2 = ITEMS.register("keycard2", () -> new KeycardItem(new Item.Properties()
+            .stacksTo(16),  2));
 
-    public static final RegistryObject<Item> KEYCARD3 = ITEMS.register("keycard3", () -> new Item(new Item.Properties()
-            .stacksTo(16)));
+    public static final RegistryObject<Item> KEYCARD3 = ITEMS.register("keycard3", () -> new KeycardItem(new Item.Properties()
+            .stacksTo(16), 3));
 
-    public static final RegistryObject<Item> KEYCARD4 = ITEMS.register("keycard4", () -> new Item(new Item.Properties()
-            .stacksTo(16)));
+    public static final RegistryObject<Item> KEYCARD4 = ITEMS.register("keycard4", () -> new KeycardItem(new Item.Properties()
+            .stacksTo(16), 4));
 
-    public static final RegistryObject<Item> KEYCARD5 = ITEMS.register("keycard5", () -> new Item(new Item.Properties()
-            .stacksTo(16)));
+    public static final RegistryObject<Item> KEYCARD5 = ITEMS.register("keycard5", () -> new KeycardItem(new Item.Properties()
+            .stacksTo(16), 5));
 
 
     /** Generic Items **/
     public static final RegistryObject<Item> MEDKIT = ITEMS.register("medkit", () -> new MedkitItem(new Item.Properties()
-            .stacksTo(15)
-            .food(ModFoods.MEDKIT)));
+            .stacksTo(15).food(ModFoods.MEDKIT)));
 
     public static final RegistryObject<Item> SCP939SPINE = ITEMS.register("scp939spine", () -> new Item(new Item.Properties()
             .stacksTo(64)));
@@ -84,25 +83,20 @@ public class ModItems {
             new Item.Properties()));
 
     public static final RegistryObject<Item> SCP109 = ITEMS.register("scp109", () -> new SCP109Item(new Item.Properties()
-            .stacksTo(1)
-            .food(ModFoods.SCP109)));
+            .stacksTo(1).food(ModFoods.SCP109)));
 
     /** Candy **/
     public static final RegistryObject<Item> CANDY1 = ITEMS.register("candy1", () -> new Item(new Item.Properties()
-            .stacksTo(3)
-            .food(ModFoods.CANDY)));
+            .stacksTo(3).food(ModFoods.CANDY)));
 
     public static final RegistryObject<Item> CANDY2 = ITEMS.register("candy2", () -> new Item(new Item.Properties()
-            .stacksTo(3)
-            .food(ModFoods.CANDY)));
+            .stacksTo(3).food(ModFoods.CANDY)));
 
     public static final RegistryObject<Item> CANDY3 = ITEMS.register("candy3", () -> new Item(new Item.Properties()
-            .stacksTo(3)
-            .food(ModFoods.CANDY)));
+            .stacksTo(3).food(ModFoods.CANDY)));
 
     public static final RegistryObject<Item> CANDY4 = ITEMS.register("candy4", () -> new Item(new Item.Properties()
-            .stacksTo(3)
-            .food(ModFoods.CANDY)));
+            .stacksTo(3).food(ModFoods.CANDY)));
 
 
     public static void register(IEventBus eventBus) {

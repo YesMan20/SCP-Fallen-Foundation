@@ -26,6 +26,7 @@ public class CommonEvents {
     public static void toolTip(ItemTooltipEvent event) {
         Item item = event.getItemStack().getItem();
 
+        // Object classes
         if (item.getClass().isAnnotationPresent(Safe.class)) {
             event.getToolTip().add(Component.translatable("tooltip.scpff.safe"));
 

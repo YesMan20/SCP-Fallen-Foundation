@@ -1,19 +1,22 @@
 package net.yesman.scpff.level.block.decor;
 
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.SimpleWaterloggedBlock;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class DecorationBlock extends Block implements SimpleWaterloggedBlock {
-    public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
-    public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
-
-    public DecorationBlock(Properties property) {
-        super(property);
-    }
+public class DecorationBlock extends Block {
+    protected VoxelShape SHAPE;
 
     // The purpose of this class is to make implementing decoration blocks way easier instead of having to create a new class everytime
-    // will complete later
+    public DecorationBlock(Properties property, VoxelShape shape) {
+        super(property);
+        this.SHAPE = shape;
+    }
+
+    public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
+        return SHAPE;
+    }
 }
