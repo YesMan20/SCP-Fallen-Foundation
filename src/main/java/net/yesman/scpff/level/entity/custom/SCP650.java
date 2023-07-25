@@ -50,7 +50,13 @@ public class SCP650 extends Mob implements GeoEntity {
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controller) {
+    }
 
+    private void snapLookToPlayer(Player targetPlayer) {
+        Vec3 vecPos = position();
+        Vec3 vecPlayerPos = targetPlayer.position();
+        float angle = (float) Math.toDegrees((float) Math.atan2(vecPos.z - vecPlayerPos.z, vecPos.x - vecPlayerPos.x));
+        yHeadRot = yBodyRot = angle > 180 ? angle : angle + 90;
     }
 
     @Override
@@ -60,9 +66,6 @@ public class SCP650 extends Mob implements GeoEntity {
 
     @Override
     public void tick() {
-        this.setXRot(0);
-        this.setYRot(0);
-        this.setYHeadRot(0);
         for (Entity entity : this.level.getEntities(this, this.getBoundingBox().inflate(30), (val) -> val instanceof Player player && !player.isCreative())) {
             if (!this.level.isClientSide && entity instanceof Player player) {
                 Entity lookedAt = Helper.lookingAtInRange(player, 30);

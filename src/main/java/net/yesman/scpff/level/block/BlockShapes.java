@@ -11,7 +11,7 @@ public class BlockShapes {
 
     public static final VoxelShape CAT_WALK_BLOCK = box(0, 14, 0, 16, 16, 16);
     public static final VoxelShape WALL_LIGHT_BLOCK = box(2, 1, 2, 14, 12, 14);
-    public static final VoxelShape WIRE_BLOCK = box(0, 0, 0, 16, 1, 16);
+    public static final VoxelShape CARPET = box(0, 0, 0, 16, 1, 16);
     public static final VoxelShape BEAKERS = box(1, 0, 1, 15, 2, 15);
     public static final VoxelShape PIPE = box(3, 0, 3, 13, 16, 13);
     public static final VoxelShape TRASH_BIN = box(3, 0, 3, 13, 14, 13);
@@ -24,6 +24,11 @@ public class BlockShapes {
     public static final VoxelShape CAT_WALK_FENCE_N = box(0, 0, 14, 16, 16, 16);
     public static final VoxelShape CAT_WALK_FENCE_E = box(0, 0, 0, 2, 16, 16);
     public static final VoxelShape CAT_WALK_FENCE_W = box(14, 0, 0, 16, 16, 16);
+
+    public static final VoxelShape TRUSSBEAM_FENCE_S = box(0, 0, 7, 16, 16, 9);
+    public static final VoxelShape TRUSSBEAM_FENCE_N = box(0, 0, 7, 16, 16, 9);
+    public static final VoxelShape TRUSSBEAM_FENCE_E = box(7, 0, 0, 9, 16, 16);
+    public static final VoxelShape TRUSSBEAM_FENCE_W = box(7, 0, 0, 9, 16, 16);
 
     public static final VoxelShape MICROSCOPE_S = box(4, 0, 3, 12, 14, 14);
     public static final VoxelShape MICROSCOPE_N = box(4, 0, 2, 12, 14, 13);

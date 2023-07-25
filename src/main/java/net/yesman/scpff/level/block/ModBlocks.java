@@ -99,19 +99,19 @@ public class ModBlocks {
             new ChairBlock(BlockBehaviour.Properties.of(Material.METAL).strength(1F).noOcclusion()));
 
     public static final RegistryObject<Block> WIRES = registerBlock("wires", () ->
-            new WireBlock(BlockShapes.WIRE_BLOCK, BlockShapes.WIRE_BLOCK, BlockShapes.WIRE_BLOCK, BlockShapes.WIRE_BLOCK));
+            new WireBlock(BlockShapes.CARPET, BlockShapes.CARPET, BlockShapes.CARPET, BlockShapes.CARPET));
 
     public static final RegistryObject<Block> WIRES_LEFT = registerBlock("wires_left", () ->
-            new WireBlock(BlockShapes.WIRE_BLOCK, BlockShapes.WIRE_BLOCK, BlockShapes.WIRE_BLOCK, BlockShapes.WIRE_BLOCK));
+            new WireBlock(BlockShapes.CARPET, BlockShapes.CARPET, BlockShapes.CARPET, BlockShapes.CARPET));
 
     public static final RegistryObject<Block> WIRES_RIGHT = registerBlock("wires_right", () ->
-            new WireBlock(BlockShapes.WIRE_BLOCK, BlockShapes.WIRE_BLOCK, BlockShapes.WIRE_BLOCK, BlockShapes.WIRE_BLOCK));
+            new WireBlock(BlockShapes.CARPET, BlockShapes.CARPET, BlockShapes.CARPET, BlockShapes.CARPET));
 
     public static final RegistryObject<Block> WIRES_THREEWAY = registerBlock("wires_threeway", () ->
-            new WireBlock(BlockShapes.WIRE_BLOCK, BlockShapes.WIRE_BLOCK, BlockShapes.WIRE_BLOCK, BlockShapes.WIRE_BLOCK));
+            new WireBlock(BlockShapes.CARPET, BlockShapes.CARPET, BlockShapes.CARPET, BlockShapes.CARPET));
 
     public static final RegistryObject<Block> WIRES_THREEWAY2 = registerBlock("wires_threeway2", () ->
-            new WireBlock(BlockShapes.WIRE_BLOCK, BlockShapes.WIRE_BLOCK, BlockShapes.WIRE_BLOCK, BlockShapes.WIRE_BLOCK));
+            new WireBlock(BlockShapes.CARPET, BlockShapes.CARPET, BlockShapes.CARPET, BlockShapes.CARPET));
 
     public static final RegistryObject<Block> STEELCANISTER = registerBlock("steelcanister", () ->
             new DecorationBlock(BlockBehaviour.Properties.of(Material.METAL).strength(3F).sound(SoundType.METAL).noOcclusion(),
@@ -196,8 +196,19 @@ public class ModBlocks {
             new HorizontalDecorationBlock(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD).strength(2F).requiresCorrectToolForDrops().noOcclusion(),
                     BlockShapes.LABEL_S, BlockShapes.LABEL_N, BlockShapes.LABEL_E, BlockShapes.LABEL_W));
 
+    public static final RegistryObject<Block> TRUSSBEAM = registerBlock("trussbeam", () ->
+            new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL).strength(2F).noOcclusion()));
+
+    public static final RegistryObject<Block> TRUSSBEAM_FENCE = registerBlock("trussbeam_fence", () ->
+            new HorizontalDecorationBlock(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL).strength(2F).requiresCorrectToolForDrops().noOcclusion(),
+                    BlockShapes.TRUSSBEAM_FENCE_S, BlockShapes.TRUSSBEAM_FENCE_N, BlockShapes.TRUSSBEAM_FENCE_E, BlockShapes.TRUSSBEAM_FENCE_W));
+
+    public static final RegistryObject<Block> SCP173CRAP = registerBlock("scp173crap", () ->
+            new DecorationBlock(BlockBehaviour.Properties.of(Material.SPONGE).sound(SoundType.SLIME_BLOCK).strength(2F).noOcclusion().speedFactor(0.2f), BlockShapes.CARPET));
+
 
     /** MISC Blocks **/
+
     public static final RegistryObject<Block> CAUTIONLINE = registerBlock("cautionline", () ->
             new Block(BlockBehaviour.Properties.of(Material.WOOL).sound(SoundType.WOOL).strength(0.8F).explosionResistance(0.8F)));
 
