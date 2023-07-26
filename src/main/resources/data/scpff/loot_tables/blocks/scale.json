@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:block",
+  "polls": [
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "scpff:scale"
+        }
+      ]
+    }
+  ]
+}

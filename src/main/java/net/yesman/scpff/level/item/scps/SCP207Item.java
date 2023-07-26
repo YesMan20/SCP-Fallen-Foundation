@@ -9,7 +9,9 @@ import net.yesman.scpff.misc.Safe;
 
 @Safe
 public class SCP207Item extends Item {
-    public SCP207Item(Properties pProperties) { super(pProperties); }
+    public SCP207Item(Properties pProperties) {
+        super(pProperties);
+    }
 
     @Override
     public UseAnim getUseAnimation(ItemStack pStack) {

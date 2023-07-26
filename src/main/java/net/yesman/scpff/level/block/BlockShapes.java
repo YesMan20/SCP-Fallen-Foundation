@@ -7,7 +7,7 @@ import static net.minecraft.world.level.block.Block.box;
 public class BlockShapes {
     // Setup block shapes here:
 
-    public static final VoxelShape BLOCK = box(0,0, 0, 16, 16, 16);
+    public static final VoxelShape BLOCK = box(0, 0, 0, 16, 16, 16);
 
     public static final VoxelShape CAT_WALK_BLOCK = box(0, 14, 0, 16, 16, 16);
     public static final VoxelShape WALL_LIGHT_BLOCK = box(2, 1, 2, 14, 12, 14);

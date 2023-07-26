@@ -28,13 +28,13 @@ public class CommonEvents {
 
         // Object classes
         if (item.getClass().isAnnotationPresent(Safe.class)) {
-            event.getToolTip().add(Component.translatable("tooltip.scpff.safe"));
+            event.getToolTip().add(Component.literal("§aSafe"));
 
         } else if (item.getClass().isAnnotationPresent(Euclid.class)) {
-            event.getToolTip().add(Component.translatable("tooltip.scpff.euclid"));
+            event.getToolTip().add(Component.literal("§6Euclid"));
 
         } else if (item.getClass().isAnnotationPresent(Keter.class)) {
-            event.getToolTip().add(Component.translatable("tooltip.scpff.keter"));
+            event.getToolTip().add(Component.literal("§cKeter"));
         }
     }
 }

@@ -45,10 +45,10 @@ public class ModBlocks {
 
     /** EZ Blocks **/
     public static final RegistryObject<Block> EZWALL1 = registerBlock("ezwall1", () ->
-            new Block(BlockBehaviour.Properties.of(Material.STONE).explosionResistance(1.8f).strength(1.8f).destroyTime(9f).requiresCorrectToolForDrops()));
+            new TooltipBlock(BlockBehaviour.Properties.of(Material.STONE).explosionResistance(1.8f).strength(1.8f).destroyTime(9f).requiresCorrectToolForDrops(), "§8§oCan be used with White Concrete"));
 
     public static final RegistryObject<Block> EZWALL2 = registerBlock("ezwall2", () ->
-            new Block(BlockBehaviour.Properties.of(Material.STONE).explosionResistance(1.8f).strength(1.8f).destroyTime(9f).requiresCorrectToolForDrops()));
+            new TooltipBlock(BlockBehaviour.Properties.of(Material.STONE).explosionResistance(1.8f).strength(1.8f).destroyTime(9f).requiresCorrectToolForDrops(), "§8§oCan be used with White Concrete"));
 
     public static final RegistryObject<Block> TILES = registerBlock("tiles", () ->
             new Block(BlockBehaviour.Properties.of(Material.STONE).strength(10f).requiresCorrectToolForDrops()));
@@ -56,13 +56,13 @@ public class ModBlocks {
 
     /** LC Blocks **/
     public static final RegistryObject<Block> LCWALL1 = registerBlock("lcwall1", () ->
-            new Block(BlockBehaviour.Properties.of(Material.STONE).explosionResistance(1.8f).strength(1.8f).requiresCorrectToolForDrops()));
+            new TooltipBlock(BlockBehaviour.Properties.of(Material.STONE).explosionResistance(1.8f).strength(1.8f).requiresCorrectToolForDrops(), "§8§oCan be used with White Concrete"));
 
     public static final RegistryObject<Block> LCWALL2 = registerBlock("lcwall2", () ->
-            new Block(BlockBehaviour.Properties.of(Material.STONE).explosionResistance(1.8f).strength(1.8f).requiresCorrectToolForDrops()));
+            new TooltipBlock(BlockBehaviour.Properties.of(Material.STONE).explosionResistance(1.8f).strength(1.8f).requiresCorrectToolForDrops(), "§8§oCan be used with White Concrete"));
 
     public static final RegistryObject<Block> LCWALL3 = registerBlock("lcwall3", () ->
-            new Block(BlockBehaviour.Properties.of(Material.STONE).explosionResistance(1.8F).strength(1.8F).requiresCorrectToolForDrops()));
+            new TooltipBlock(BlockBehaviour.Properties.of(Material.STONE).explosionResistance(1.8F).strength(1.8F).requiresCorrectToolForDrops(), "§8§oCan be used with White Concrete"));
 
 
     /** Decoration Blocks **/

@@ -26,10 +26,6 @@
   "item.scpff.keycard4": "Keycard - §6Level 4",
   "item.scpff.keycard5": "Keycard - §cLevel 5",
 
-  "tooltip.scpff.safe": "§aSafe",
-  "tooltip.scpff.euclid": "§6Euclid",
-  "tooltip.scpff.keter": "§cKeter",
-
   "entity.scpff.scp_650": "SCP-650 - §eStartling Statue",
   "entity.scpff.scp_173": "SCP-173 - §eThe Sculpture",
   "entity.scpff.scp_049": "SCP-049 - §eThe Plague Doctor",

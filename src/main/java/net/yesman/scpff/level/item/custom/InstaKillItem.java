@@ -15,13 +15,8 @@ public class InstaKillItem extends SwordItem {
 
     @Override
     public InteractionResult interactLivingEntity(ItemStack stack, Player player, LivingEntity target, InteractionHand hand) {
+        player.swing(hand);
         target.kill();
-
-        if (hand == InteractionHand.MAIN_HAND) {
-            player.swing(InteractionHand.MAIN_HAND, true);
-        } else {
-            player.swing(InteractionHand.OFF_HAND, true);
-        }
         return super.interactLivingEntity(stack, player, target, hand);
     }
 

@@ -16,11 +16,10 @@ public class ModItems {
             DeferredRegister.create(ForgeRegistries.ITEMS, SCPFf.MOD_ID);
 
     public static final RegistryObject<Item> SCP207 = ITEMS.register("scp207", () -> new SCP207Item(new Item.Properties()
-            .food(ModFoods.SCP207)
-            .stacksTo(3)));
+            .food(ModFoods.SCP207).stacksTo(3)));
+
     public static final RegistryObject<Item> SCP500 = ITEMS.register("scp500", () -> new SCP500Item(new Item.Properties()
-            .food(ModFoods.SCP500)
-            .stacksTo(7)));
+            .food(ModFoods.SCP500).stacksTo(7)));
 
 
     /** Icons for tabs **/

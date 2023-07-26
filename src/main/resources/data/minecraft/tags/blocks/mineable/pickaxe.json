@@ -28,6 +28,18 @@
     "scpff:catwalkblock",
     "scpff:facilitylight",
     "scpff:microscope",
-    "scpff:beakers"
+    "scpff:beakers",
+    "scpff:floodlights",
+    "scpff:chair",
+    "scpff:steelcanister",
+    "scpff:scale",
+    "scpff:testtubes",
+    "scpff:crate",
+    "scpff:serversracks",
+    "scpff:locker",
+    "scpff:intercommicrophone",
+    "scpff:intercomspeaker",
+    "scpff:desklamp",
+    "scpff:trashbin"
   ]
 }
