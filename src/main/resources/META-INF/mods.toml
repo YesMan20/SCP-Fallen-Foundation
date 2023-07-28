@@ -4,23 +4,25 @@ license="CC-BY-SA"
 
 [[mods]] #mandatory
 modId="scpff" #mandatory
-version="0.0.1-1.19.4" #mandatory
+version="1.3.0-1.19.4" #mandatory
 displayName="SCP Fallen Foundation" #mandatory
 logoFile="icon.png" #optional
-credits="Thanks to Lucent, Willow, Phoillows, ConnorTron110, and Zeus" #optional
+credits="Lucent, Willow, Phoillows, Zeus, and ConnorTron110" #optional
 authors="YesMan" #optional
-description='''
-You are the last,
-They are free,
+description='''You are the last.
+They are free.
 do not mess up.
 
-SCP Fallen Foundation is a mod for Minecraft that focuses on,
+SCP Fallen Foundation is a mod for Minecraft that focuses on
 bringing popular & obscure SCPs to Minecraft.
-SCP Stands for,
--Secure,
--Contain,
+SCP Stands for:
+-Secure.
+-Contain.
 -Protect.
-'''
+
+SCP Wiki - https://scp-wiki.wikidot.com
+Mod Homepage - https://modrinth.com/mod/scp-fallen-foundation
+Mod Twitter - https://twitter.com/SCPFallen'''
 
 [[dependencies.scpff]]
 modId="geckolib"

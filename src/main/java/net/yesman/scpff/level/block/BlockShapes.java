@@ -1,5 +1,7 @@
 package net.yesman.scpff.level.block;
 
+import net.minecraft.world.level.block.FenceBlock;
+import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import static net.minecraft.world.level.block.Block.box;
@@ -17,7 +19,6 @@ public class BlockShapes {
     public static final VoxelShape TRASH_BIN = box(3, 0, 3, 13, 14, 13);
 
     public static final VoxelShape STEEL_CANISTER = Shapes.or(box(3, 0, 3, 13, 15, 13), box(4, 18, 4, 12, 20, 12));
-
 
     // Rotated shapes:
     public static final VoxelShape CAT_WALK_FENCE_S = box(0, 0, 0, 16, 16, 2);

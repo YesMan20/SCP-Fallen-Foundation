@@ -85,4 +85,14 @@ public class SCP650 extends Mob implements GeoEntity {
     public boolean hurt(DamageSource pSource, float pAmount) {
         return pSource.is(DamageTypes.OUT_OF_WORLD) && super.hurt(pSource, pAmount);
     }
+
+    @Override
+    public boolean canCollideWith(Entity pEntity) {
+        return true;
+    }
+
+    @Override
+    public boolean canBeCollidedWith() {
+        return true;
+    }
 }

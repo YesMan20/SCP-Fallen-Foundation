@@ -13,7 +13,7 @@
   "item.scpff.scp_049_spawn_egg": "SCP-049 - §6The Plague Doctor §rSpawn Egg",
   "item.scpff.scp_650_spawn_egg": "SCP-650 - §6Startling Statue §rSpawn Egg",
   "item.scpff.scp_939_spawn_egg": "SCP-939 - §cWith Many Voices §rSpawn Egg",
-  "item.scpff.scp_173_spawn_egg": "SCP-173 - §eThe Sculpture §rSpawn Egg",
+  "item.scpff.scp_173_spawn_egg": "SCP-173 - §6The Sculpture §rSpawn Egg",
 
   "item.scpff.medkit": "Medical Kit",
   "item.scpff.scp939spine": "SCP-939 Spine",
@@ -26,9 +26,9 @@
   "item.scpff.keycard4": "Keycard - §6Level 4",
   "item.scpff.keycard5": "Keycard - §cLevel 5",
 
-  "entity.scpff.scp_650": "SCP-650 - §eStartling Statue",
-  "entity.scpff.scp_173": "SCP-173 - §eThe Sculpture",
-  "entity.scpff.scp_049": "SCP-049 - §eThe Plague Doctor",
+  "entity.scpff.scp_650": "SCP-650 - §6Startling Statue",
+  "entity.scpff.scp_173": "SCP-173 - §6The Sculpture",
+  "entity.scpff.scp_049": "SCP-049 - §6The Plague Doctor",
   "entity.scpff.scp_939": "SCP-939 - §4With Many Voices",
 
   "block.scpff.hcwall": "Heavy Containment Wall",
