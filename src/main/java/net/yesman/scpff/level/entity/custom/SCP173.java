@@ -1,44 +1,25 @@
 package net.yesman.scpff.level.entity.custom;
 
-import net.minecraft.client.model.WolfModel;
-import net.minecraft.client.renderer.entity.WolfRenderer;
+import com.google.errorprone.annotations.Var;
 import net.minecraft.core.BlockPos;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.commands.SetBlockCommand;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.util.RandomSource;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
-import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
-import net.minecraft.world.entity.ai.navigation.PathNavigation;
-import net.minecraft.world.entity.ai.navigation.WallClimberNavigation;
-import net.minecraft.world.entity.animal.Animal;
-import net.minecraft.world.entity.animal.IronGolem;
-import net.minecraft.world.entity.animal.Wolf;
 import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.monster.ZombifiedPiglin;
-import net.minecraft.world.entity.monster.piglin.Piglin;
-import net.minecraft.world.entity.npc.Villager;
-import net.minecraft.world.entity.npc.WanderingTrader;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.network.PlayMessages;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.yesman.scpff.SCPFf;
-import net.yesman.scpff.level.item.ModItems;
 import net.yesman.scpff.misc.Helper;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
@@ -50,14 +31,13 @@ import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.Objects;
 
 public class SCP173 extends Monster implements GeoEntity {
     private int cooldownTick = 0;
     AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
-    private static final EntityDataAccessor<Boolean> DATA_HAS_TARGET = SynchedEntityData.defineId(SCP173.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<String> DATA_MODEL = SynchedEntityData.defineId(SCP173.class, EntityDataSerializers.STRING); // Used for SCP-173 rendering.
+
     public SCP173(EntityType<? extends Monster> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
@@ -77,6 +57,10 @@ public class SCP173 extends Monster implements GeoEntity {
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controller) {
+        controller.add(new AnimationController<>(this, "controller", state -> {
+
+            return state.setAndContinue(RawAnimation.begin().then("animation." + this.getModel() + ".idle", Animation.LoopType.LOOP));
+        }));
     }
 
     @Override
@@ -116,23 +100,35 @@ public class SCP173 extends Monster implements GeoEntity {
     }
 
     @Override
-    public void setTarget(@Nullable LivingEntity pTarget) {
-        super.setTarget(pTarget);
-        this.setHasTarget(pTarget != null);
+    protected void defineSynchedData() {
+        super.defineSynchedData();
+        this.entityData.define(DATA_MODEL, "scp173");
+    }
+
+    public String getModel() {
+        return this.entityData.get(DATA_MODEL);
+    }
+
+    public Variants getVariant() { // Could be better.
+        return Variants.valueOf(Variants.class, this.getModel().toUpperCase().replace("P173", "P_173"));
+    }
+
+    public void setModel(Variants model) {
+        this.entityData.set(DATA_MODEL, model.resourceName);
     }
 
     @Override
-    protected void defineSynchedData() {
-        super.defineSynchedData();
-        this.entityData.define(DATA_HAS_TARGET, false);
+    public void addAdditionalSaveData(CompoundTag pCompound) {
+        super.addAdditionalSaveData(pCompound);
+        pCompound.putString("variant", this.getModel());
     }
 
-    public boolean hasTarget() {
-        return this.entityData.get(DATA_HAS_TARGET);
-    }
-
-    public void setHasTarget(boolean hasTarget) {
-        this.entityData.set(DATA_HAS_TARGET, hasTarget);
+    @Override
+    public void readAdditionalSaveData(CompoundTag pCompound) {
+        super.readAdditionalSaveData(pCompound);
+        if (pCompound.contains("variant")) {
+            this.entityData.set(DATA_MODEL, pCompound.getString("variant"));
+        }
     }
 
     @Override
@@ -148,5 +144,22 @@ public class SCP173 extends Monster implements GeoEntity {
     @Override
     public boolean canBeCollidedWith() {
         return true;
+    }
+
+    public enum Variants {
+        SCP_173("scp173"),
+        SCP_173B("scp173b"),
+        SCP_173FM("scp173fm"),
+        SCP_173U("scp173u"),
+        SCP_173V("scp173v"),
+        SCP_173Y("scp173y"),
+        ;
+
+        public final String resourceName;
+
+        Variants(String resourceName) {
+            this.resourceName = resourceName;
+        }
+
     }
 }

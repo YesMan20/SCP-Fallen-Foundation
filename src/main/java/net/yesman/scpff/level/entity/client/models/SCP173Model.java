@@ -9,16 +9,16 @@ public class SCP173Model extends GeoModel<SCP173> {
 
     @Override
     public ResourceLocation getModelResource(SCP173 object) {
-        return new ResourceLocation(SCPFf.MOD_ID, "geo/scp173/scp173.geo.json");
+        return new ResourceLocation(SCPFf.MOD_ID, "geo/scp173/" + object.getModel() + ".geo.json");
     }
 
     @Override
     public ResourceLocation getTextureResource(SCP173 object) {
-        return new ResourceLocation(SCPFf.MOD_ID, "textures/entity/scp173/scp173.png");
+        return new ResourceLocation(SCPFf.MOD_ID, "textures/entity/scp173/" + object.getModel() + ".png");
     }
 
     @Override
     public ResourceLocation getAnimationResource(SCP173 animatable) {
-        return new ResourceLocation(SCPFf.MOD_ID, "animations/scp173/scp173.animation.json");
+        return new ResourceLocation(SCPFf.MOD_ID, "animations/scp173/" + animatable.getModel() + ".animation.json");
     }
 }

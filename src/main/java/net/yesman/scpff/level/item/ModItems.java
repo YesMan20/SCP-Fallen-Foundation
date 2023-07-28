@@ -62,7 +62,7 @@ public class ModItems {
     public static final RegistryObject<Item> INSTAKILL = ITEMS.register("instakill", () -> new InstaKillItem(Tiers.NETHERITE, 99999, -1.0f,
             new Item.Properties().rarity(Rarity.EPIC).durability(99999)));
 
-    public static final RegistryObject<Item> SLEDGEHAMMER = ITEMS.register("sledgehammer", () -> new PickaxeItem(Tiers.IRON, 4, 1f,
+    public static final RegistryObject<Item> SLEDGEHAMMER = ITEMS.register("sledgehammer", () -> new SledgeHammer(Tiers.IRON, 4, 1f,
         new Item.Properties().durability(100)));
 
 
