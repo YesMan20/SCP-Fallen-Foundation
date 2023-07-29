@@ -1,0 +1,41 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.scp173r.idle": {
+			"loop": true,
+			"bones": {
+				"rebar1": {
+					"rotation": {
+						"vector": [173.11997, 16.1299, 156.52397]
+					}
+				},
+				"rebar4": {
+					"rotation": {
+						"vector": [0, 52.5, 0]
+					}
+				},
+				"rebar2": {
+					"rotation": {
+						"vector": [0, 67.5, 0]
+					}
+				},
+				"rebar3": {
+					"rotation": {
+						"vector": [0, 40, 0]
+					}
+				},
+				"rebar5": {
+					"rotation": {
+						"vector": [0, 30, 0]
+					}
+				},
+				"rebar6": {
+					"rotation": {
+						"vector": [7.79011, 57.15935, 9.24832]
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

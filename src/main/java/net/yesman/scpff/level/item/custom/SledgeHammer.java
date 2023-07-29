@@ -1,5 +1,9 @@
 package net.yesman.scpff.level.item.custom;
 
+import net.minecraft.server.commands.PlaySoundCommand;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
@@ -9,6 +13,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.SoundType;
 import net.yesman.scpff.level.entity.custom.SCP173;
 
 public class SledgeHammer extends PickaxeItem {

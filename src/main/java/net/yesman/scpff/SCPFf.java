@@ -19,6 +19,7 @@ import net.yesman.scpff.level.block.ModBlocks;
 import net.yesman.scpff.level.block.entity.ModBlockEntities;
 import net.yesman.scpff.level.entity.ModEntity;
 import net.yesman.scpff.level.entity.init.EntityInit;
+import net.yesman.scpff.level.item.ModArmorMaterials;
 import net.yesman.scpff.level.item.ModItems;
 import net.yesman.scpff.level.item.custom.IgnoreOnLoad;
 import net.yesman.scpff.level.painting.ModPaintings;
@@ -84,7 +85,7 @@ public class SCPFf {
                         .title(Component.translatable("creativemodetab.scpff_armory"))
                         .displayItems((enabledFeatures, entries) -> {
 
-                            for (RegistryObject<Block> key : ModBlocks.BLOCKS.getEntries()) {
+                            for (RegistryObject<Item> key : ModItems.ITEMS.getEntries()) {
                                 entries.accept(key.get());
                             }
                         }));

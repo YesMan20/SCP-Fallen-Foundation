@@ -1,12 +1,12 @@
 package net.yesman.scpff.level.entity.custom;
 
-import com.google.errorprone.annotations.Var;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.*;
@@ -21,14 +21,12 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.yesman.scpff.misc.Helper;
-import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.AnimatableManager;
 import software.bernie.geckolib.core.animation.Animation;
 import software.bernie.geckolib.core.animation.AnimationController;
 import software.bernie.geckolib.core.animation.RawAnimation;
-import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.Objects;
@@ -58,7 +56,6 @@ public class SCP173 extends Monster implements GeoEntity {
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controller) {
         controller.add(new AnimationController<>(this, "controller", state -> {
-
             return state.setAndContinue(RawAnimation.begin().then("animation." + this.getModel() + ".idle", Animation.LoopType.LOOP));
         }));
     }
@@ -73,7 +70,6 @@ public class SCP173 extends Monster implements GeoEntity {
                 Entity lookedAt = Helper.lookingAtInRange(player, 10);
                 if ((lookedAt != this && player.hasLineOfSight(this) && this.cooldownTick < this.tickCount)) {
                     this.cooldownTick = this.tickCount;
-                    Vec3 vec3 = Helper.calculateViewVector(0, entity.getYRot()).scale(-1.0F);
                     this.setNoAi(false);
                 }
             }
@@ -102,7 +98,7 @@ public class SCP173 extends Monster implements GeoEntity {
     @Override
     protected void defineSynchedData() {
         super.defineSynchedData();
-        this.entityData.define(DATA_MODEL, "scp173");
+        this.entityData.define(DATA_MODEL, "scp173y");
     }
 
     public String getModel() {
@@ -147,12 +143,13 @@ public class SCP173 extends Monster implements GeoEntity {
     }
 
     public enum Variants {
+        SCP_173Y("scp173y"),
         SCP_173("scp173"),
-        SCP_173B("scp173b"),
-        SCP_173FM("scp173fm"),
         SCP_173U("scp173u"),
         SCP_173V("scp173v"),
-        SCP_173Y("scp173y"),
+        SCP_173R("scp173r"),
+        SCP_173B("scp173b"),
+        SCP_173FM("scp173fm"),
         ;
 
         public final String resourceName;
