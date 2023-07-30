@@ -20,6 +20,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.yesman.scpff.level.block.ModBlocks;
 import net.yesman.scpff.misc.Helper;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
@@ -72,6 +73,11 @@ public class SCP173 extends Monster implements GeoEntity {
                     this.cooldownTick = this.tickCount;
                     this.setNoAi(false);
                 }
+            }
+        }
+        if (this.random.nextFloat() > 0.99F) {
+            if (this.level.getBlockState(this.blockPosition()).isAir()) {
+                this.level.setBlockAndUpdate(this.blockPosition(), ModBlocks.SCP173CRAP.get().defaultBlockState());
             }
         }
         super.tick();
