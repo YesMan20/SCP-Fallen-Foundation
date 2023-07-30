@@ -1,19 +1,17 @@
 package net.yesman.scpff.level.item.custom;
 
-import net.minecraft.server.commands.PlaySoundCommand;
-import net.minecraft.sounds.SoundEvent;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.SoundType;
 import net.yesman.scpff.level.entity.custom.SCP173;
 
 public class SledgeHammer extends PickaxeItem {
@@ -22,12 +20,22 @@ public class SledgeHammer extends PickaxeItem {
     }
 
     @Override
-    public InteractionResult interactLivingEntity(ItemStack pStack, Player pPlayer, LivingEntity pInteractionTarget, InteractionHand pUsedHand) {
-        if (pInteractionTarget instanceof SCP173 scp173) {
+    public InteractionResult interactLivingEntity(ItemStack pStack, Player pPlayer, LivingEntity target, InteractionHand pUsedHand) {
+        Level level = pPlayer.getLevel();
+        level.playSound(pPlayer, pPlayer.getX(), pPlayer.getY(), pPlayer.getZ(), SoundEvents.EXPERIENCE_ORB_PICKUP, SoundSource.PLAYERS, 0.7F, 1.0F);
+        pPlayer.swing(pUsedHand);
+
+        if (level instanceof ServerLevel serverLevel) {
+            serverLevel.sendParticles(ParticleTypes.CLOUD,
+                    (target.getX() + Math.random() * 0.2),
+                    (target.getY() + 0.7  + Math.random() * 0.5),
+                    (target.getZ() + Math.random() * 0.2), 15, 0.2D, 0.4D, 0.2D, 0.0D);
+        }
+        if (target instanceof SCP173 scp173) {
             SCP173.Variants variant = scp173.getVariant();
             SCP173.Variants newVariant = SCP173.Variants.values().length <= variant.ordinal() + 1 ? SCP173.Variants.values()[0] : SCP173.Variants.values()[variant.ordinal() + 1];
             scp173.setModel(newVariant);
         }
-        return super.interactLivingEntity(pStack, pPlayer, pInteractionTarget, pUsedHand);
+        return super.interactLivingEntity(pStack, pPlayer, target, pUsedHand);
     }
 }
