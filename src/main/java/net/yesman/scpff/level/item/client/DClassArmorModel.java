@@ -8,7 +8,7 @@ import software.bernie.geckolib.model.GeoModel;
 public class DClassArmorModel extends GeoModel<DClassArmorItem> {
     @Override
     public ResourceLocation getModelResource(DClassArmorItem animatable) {
-        return new ResourceLocation(SCPFf.MOD_ID, "geo/dclass_armor.geo.json");
+        return new ResourceLocation(SCPFf.MOD_ID, "geo/armor/dclass_suit.geo.json");
     }
 
     @Override

@@ -59,6 +59,9 @@ public class ModItems {
     public static final RegistryObject<Item> DCLASS_ARMOR_BOOTS = ITEMS.register("dclass_armor_boots", () -> new DClassArmorItem(
             ModArmorMaterials.DCLASS_ARMOR, ArmorItem.Type.BOOTS, new Item.Properties()));
 
+    public static final RegistryObject<Item> DCLASS_ARMOR_HELMET = ITEMS.register("dclass_armor_helmet", () -> new DClassArmorItem(
+            ModArmorMaterials.DCLASS_ARMOR, ArmorItem.Type.HELMET, new Item.Properties()));
+
     /** Generic Items **/
 
     public static final RegistryObject<Item> MOP = ITEMS.register("mop", () -> new MopItem(new ShearsItem.Properties().stacksTo(1).durability(64)));

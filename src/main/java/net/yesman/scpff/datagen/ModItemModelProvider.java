@@ -19,10 +19,6 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         simpleItem(ModItems.SCP268);
-
-        simpleItem(ModItems.DCLASS_ARMOR_LEGGINGS);
-        simpleItem(ModItems.DCLASS_ARMOR_CHESTPLATE);
-        simpleItem(ModItems.DCLASS_ARMOR_BOOTS);
     }
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(),

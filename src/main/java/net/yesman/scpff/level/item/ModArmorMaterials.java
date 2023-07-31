@@ -24,6 +24,7 @@ public enum ModArmorMaterials implements ArmorMaterial {
         p_266655_.put(ArmorItem.Type.BOOTS, 1);
         p_266655_.put(ArmorItem.Type.LEGGINGS, 2);
         p_266655_.put(ArmorItem.Type.CHESTPLATE, 3);
+        p_266655_.put(ArmorItem.Type.HELMET, 1);
     }), 15, SoundEvents.ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, () -> {
         return Ingredient.of(Items.LEATHER);
     });
