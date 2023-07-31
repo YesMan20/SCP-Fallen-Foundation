@@ -8,6 +8,7 @@ import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import net.yesman.scpff.level.item.client.DClassArmorRenderer;
+import net.yesman.scpff.level.item.client.ResearcherArmorRenderer;
 import org.jetbrains.annotations.NotNull;
 import software.bernie.geckolib.animatable.GeoItem;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
@@ -18,10 +19,10 @@ import software.bernie.geckolib.renderer.GeoArmorRenderer;
 
 import java.util.function.Consumer;
 
-public class DClassArmorItem extends ArmorItem implements GeoItem {
+public class ResearcherArmorItem extends ArmorItem implements GeoItem {
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
 
-    public DClassArmorItem(ArmorMaterial material, Type type, Properties properties) {
+    public ResearcherArmorItem(ArmorMaterial material, Type type, Properties properties) {
         super(material, type, properties);
     }
 
@@ -33,7 +34,7 @@ public class DClassArmorItem extends ArmorItem implements GeoItem {
             @Override
             public @NotNull HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack, EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
                 if(this.renderer == null)
-                    this.renderer = new DClassArmorRenderer();
+                    this.renderer = new ResearcherArmorRenderer();
                 this.renderer.prepForRender(livingEntity, itemStack, equipmentSlot, original);
 
                 return this.renderer;

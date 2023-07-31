@@ -50,17 +50,35 @@ public class ModItems {
 
     /** Armor Items **/
 
-    public static final RegistryObject<Item> DCLASS_ARMOR_CHESTPLATE = ITEMS.register("dclass_armor_chestplate", () -> new DClassArmorItem(
+    public static final RegistryObject<Item> DCLASS_ARMOR_CHESTPLATE = ITEMS.register("dclass_suit_chestplate", () -> new DClassArmorItem(
             ModArmorMaterials.DCLASS_ARMOR, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
 
-    public static final RegistryObject<Item> DCLASS_ARMOR_LEGGINGS = ITEMS.register("dclass_armor_leggings", () -> new DClassArmorItem(
+    public static final RegistryObject<Item> DCLASS_ARMOR_LEGGINGS = ITEMS.register("dclass_suit_leggings", () -> new DClassArmorItem(
             ModArmorMaterials.DCLASS_ARMOR, ArmorItem.Type.LEGGINGS, new Item.Properties()));
 
-    public static final RegistryObject<Item> DCLASS_ARMOR_BOOTS = ITEMS.register("dclass_armor_boots", () -> new DClassArmorItem(
+    public static final RegistryObject<Item> DCLASS_ARMOR_BOOTS = ITEMS.register("dclass_suit_boots", () -> new DClassArmorItem(
             ModArmorMaterials.DCLASS_ARMOR, ArmorItem.Type.BOOTS, new Item.Properties()));
 
-    public static final RegistryObject<Item> DCLASS_ARMOR_HELMET = ITEMS.register("dclass_armor_helmet", () -> new DClassArmorItem(
-            ModArmorMaterials.DCLASS_ARMOR, ArmorItem.Type.HELMET, new Item.Properties()));
+    public static final RegistryObject<Item> RESEARCHER_ARMOR_CHESTPLATE = ITEMS.register("researcher_suit_chestplate", () -> new ResearcherArmorItem(
+            ModArmorMaterials.RESEARCHER_SUIT, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+
+    public static final RegistryObject<Item> RESEARCHER_ARMOR_LEGGINGS = ITEMS.register("researcher_suit_leggings", () -> new ResearcherArmorItem(
+            ModArmorMaterials.RESEARCHER_SUIT, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+
+    public static final RegistryObject<Item> RESEARCHER_ARMOR_BOOTS = ITEMS.register("researcher_suit_boots", () -> new ResearcherArmorItem(
+            ModArmorMaterials.RESEARCHER_SUIT, ArmorItem.Type.BOOTS, new Item.Properties()));
+
+    public static final RegistryObject<Item> GUARD_ARMOR_HELMET = ITEMS.register("guard_armor_helmet", () -> new GuardArmorItem(
+            ModArmorMaterials.GUARD_ARMOR, ArmorItem.Type.HELMET, new Item.Properties()));
+
+    public static final RegistryObject<Item> GUARD_ARMOR_CHESTPLATE = ITEMS.register("guard_armor_chestplate", () -> new GuardArmorItem(
+            ModArmorMaterials.GUARD_ARMOR, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+
+    public static final RegistryObject<Item> GUARD_ARMOR_LEGGINGS = ITEMS.register("guard_armor_leggings", () -> new GuardArmorItem(
+            ModArmorMaterials.GUARD_ARMOR, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+
+    public static final RegistryObject<Item> GUARD_ARMOR_BOOTS = ITEMS.register("guard_armor_boots", () -> new GuardArmorItem(
+            ModArmorMaterials.GUARD_ARMOR, ArmorItem.Type.BOOTS, new Item.Properties()));
 
     /** Generic Items **/
 

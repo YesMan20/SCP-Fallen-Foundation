@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "scpff:item/candy4"
+    "layer0": "scpff:item/guard_helmet"
   }
 }

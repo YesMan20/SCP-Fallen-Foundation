@@ -13,11 +13,11 @@ public class DClassArmorModel extends GeoModel<DClassArmorItem> {
 
     @Override
     public ResourceLocation getTextureResource(DClassArmorItem animatable) {
-        return new ResourceLocation(SCPFf.MOD_ID, "textures/armor/dclass_armor.png");
+        return new ResourceLocation(SCPFf.MOD_ID, "textures/armor/dclass_suit.png");
     }
 
     @Override
     public ResourceLocation getAnimationResource(DClassArmorItem animatable) {
-        return new ResourceLocation(SCPFf.MOD_ID, "animations/dclass_armor.animation.json");
+        return new ResourceLocation(SCPFf.MOD_ID, "animations/dclass_suit.animation.json");
     }
 }

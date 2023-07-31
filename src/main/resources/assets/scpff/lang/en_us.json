@@ -27,9 +27,18 @@
   "item.scpff.keycard4": "Keycard - §6Level 4",
   "item.scpff.keycard5": "Keycard - §cLevel 5",
 
-  "item.scpff.dclass_armor_chestplate": "D-Class Suit Chestplate",
-  "item.scpff.dclass_armor_leggings": "D-Class Suit Leggings",
-  "item.scpff.dclass_armor_boots": "D-Class Suit Boots",
+  "item.scpff.dclass_suit_chestplate": "D-Class Suit Chestplate",
+  "item.scpff.dclass_suit_leggings": "D-Class Suit Leggings",
+  "item.scpff.dclass_suit_boots": "D-Class Suit Boots",
+
+  "item.scpff.guard_armor_chestplate": "Guard Armor Chestplate",
+  "item.scpff.guard_armor_leggings": "Guard Armor Leggings",
+  "item.scpff.guard_armor_boots": "Guard Armor Boots",
+  "item.scpff.guard_armor_helmet": "Guard Armor Helmet",
+
+  "item.scpff.researcher_suit_chestplate": "Researcher Suit Chestplate",
+  "item.scpff.researcher_suit_leggings": "Researcher Suit Leggings",
+  "item.scpff.researcher_suit_boots": "Researcher Suit Boots",
 
   "entity.scpff.scp_650": "SCP-650 - §6Startling Statue",
   "entity.scpff.scp_173": "SCP-173 - §6The Sculpture",
