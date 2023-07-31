@@ -21,8 +21,8 @@ public class ModItems {
     public static final RegistryObject<Item> SCP500 = ITEMS.register("scp500", () -> new SCP500Item(new Item.Properties()
             .food(ModFoods.SCP500).stacksTo(7)));
 
-
     /** Icons for tabs **/
+
     public static final RegistryObject<IgnoreOnLoad> ITEMICON = ITEMS.register("itemicon", () -> new IgnoreOnLoad(new Item.Properties()));
 
     public static final RegistryObject<IgnoreOnLoad> SCPICON = ITEMS.register("scpicon", () -> new IgnoreOnLoad(new Item.Properties()));
@@ -31,8 +31,8 @@ public class ModItems {
 
     public static final RegistryObject<IgnoreOnLoad> ARMORYICON = ITEMS.register("armoryicon", () -> new IgnoreOnLoad(new Item.Properties()));
 
-
     /** Keycards **/
+
     public static final RegistryObject<Item> KEYCARD1 = ITEMS.register("keycard1", () -> new KeycardItem(new Item.Properties()
             .stacksTo(16), 1));
 
@@ -48,8 +48,21 @@ public class ModItems {
     public static final RegistryObject<Item> KEYCARD5 = ITEMS.register("keycard5", () -> new KeycardItem(new Item.Properties()
             .stacksTo(16), 5));
 
+    /** Armor Items **/
+
+    public static final RegistryObject<Item> DCLASS_ARMOR_CHESTPLATE = ITEMS.register("dclass_armor_chestplate", () -> new DClassArmorItem(
+            ModArmorMaterials.DCLASS_ARMOR, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+
+    public static final RegistryObject<Item> DCLASS_ARMOR_LEGGINGS = ITEMS.register("dclass_armor_leggings", () -> new DClassArmorItem(
+            ModArmorMaterials.DCLASS_ARMOR, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+
+    public static final RegistryObject<Item> DCLASS_ARMOR_BOOTS = ITEMS.register("dclass_armor_boots", () -> new DClassArmorItem(
+            ModArmorMaterials.DCLASS_ARMOR, ArmorItem.Type.BOOTS, new Item.Properties()));
 
     /** Generic Items **/
+
+    public static final RegistryObject<Item> MOP = ITEMS.register("mop", () -> new MopItem(new ShearsItem.Properties().stacksTo(1).durability(64)));
+
     public static final RegistryObject<Item> MEDKIT = ITEMS.register("medkit", () -> new MedkitItem(new Item.Properties()
             .stacksTo(15).food(ModFoods.MEDKIT)));
 
@@ -62,11 +75,11 @@ public class ModItems {
     public static final RegistryObject<Item> INSTAKILL = ITEMS.register("instakill", () -> new InstaKillItem(Tiers.NETHERITE, 99999, -1.0f,
             new Item.Properties().rarity(Rarity.EPIC).durability(99999)));
 
-    public static final RegistryObject<Item> SLEDGEHAMMER = ITEMS.register("sledgehammer", () -> new SledgeHammer(Tiers.IRON, 4, 1f,
+    public static final RegistryObject<Item> SLEDGEHAMMER = ITEMS.register("sledgehammer", () -> new SledgeHammerItem(Tiers.IRON, 4, 1f,
         new Item.Properties().durability(100)));
 
-
     /** SCP Items **/
+
     public static final RegistryObject<Item> SCP268 = ITEMS.register("scp268", () -> new SCP268ArmorItem(ModArmorMaterials.SCP_268, ArmorItem.Type.HELMET, new Item.Properties()));
 
     public static final RegistryObject<Item> SCP1025 = ITEMS.register("scp1025", () -> new SCP1025Item(new Item.Properties()

@@ -1,67 +1,96 @@
 package net.yesman.scpff.level.item;
 
+import net.minecraft.Util;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.LazyLoadedValue;
+import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.ArmorMaterials;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 
-public class ModArmorMaterials implements ArmorMaterial {
-    public static final ArmorMaterial SCP_268 = new ModArmorMaterials(55, 1, 15, SoundEvents.ARMOR_EQUIP_LEATHER, "scp_268", 0.0F, 0.0F);
+import java.util.EnumMap;
+import java.util.function.Supplier;
 
+public enum ModArmorMaterials implements ArmorMaterial {
+    SCP_268("scp_268", 5,Util.make(new EnumMap<>(ArmorItem.Type.class), (p_266655_) -> {
+        p_266655_.put(ArmorItem.Type.HELMET, 1);
+    }), 15, SoundEvents.ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, () -> {
+        return Ingredient.of(Items.LEATHER);
+    }),
+    DCLASS_ARMOR("dclass_armor", 5, Util.make(new EnumMap<>(ArmorItem.Type.class), (p_266655_) -> {
+        p_266655_.put(ArmorItem.Type.BOOTS, 1);
+        p_266655_.put(ArmorItem.Type.LEGGINGS, 2);
+        p_266655_.put(ArmorItem.Type.CHESTPLATE, 3);
+    }), 15, SoundEvents.ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, () -> {
+        return Ingredient.of(Items.LEATHER);
+    });
 
-    private final int durability, defense, enchantment;
-    private final SoundEvent sound;
+    public static final StringRepresentable.EnumCodec<ArmorMaterials> CODEC = StringRepresentable.fromEnum(ArmorMaterials::values);
+    private static final EnumMap<ArmorItem.Type, Integer> HEALTH_FUNCTION_FOR_TYPE = Util.make(new EnumMap<>(ArmorItem.Type.class), (p_266653_) -> {
+        p_266653_.put(ArmorItem.Type.BOOTS, 13);
+        p_266653_.put(ArmorItem.Type.LEGGINGS, 15);
+        p_266653_.put(ArmorItem.Type.CHESTPLATE, 16);
+        p_266653_.put(ArmorItem.Type.HELMET, 11);
+    });
     private final String name;
-    private final float toughness, knockbackR;
+    private final int durabilityMultiplier;
+    private final EnumMap<ArmorItem.Type, Integer> protectionFunctionForType;
+    private final int enchantmentValue;
+    private final SoundEvent sound;
+    private final float toughness;
+    private final float knockbackResistance;
+    private final LazyLoadedValue<Ingredient> repairIngredient;
 
-    public ModArmorMaterials(int durability, int defense, int enchantment, SoundEvent sound, String name, float toughness, float knockbackR) {
-        this.durability = durability;
-        this.defense = defense;
-        this.enchantment = enchantment;
-        this.sound = sound;
-        this.name = name;
-        this.toughness = toughness;
-        this.knockbackR = knockbackR;
+    private ModArmorMaterials(String p_268171_, int p_268303_, EnumMap<ArmorItem.Type, Integer> p_267941_, int p_268086_, SoundEvent p_268145_, float p_268058_, float p_268180_, Supplier<Ingredient> p_268256_) {
+        this.name = p_268171_;
+        this.durabilityMultiplier = p_268303_;
+        this.protectionFunctionForType = p_267941_;
+        this.enchantmentValue = p_268086_;
+        this.sound = p_268145_;
+        this.toughness = p_268058_;
+        this.knockbackResistance = p_268180_;
+        this.repairIngredient = new LazyLoadedValue<>(p_268256_);
     }
 
-    @Override
-    public int getDurabilityForType(ArmorItem.Type type) {
-        return durability;
+    public int getDurabilityForType(ArmorItem.Type p_266745_) {
+        return HEALTH_FUNCTION_FOR_TYPE.get(p_266745_) * this.durabilityMultiplier;
     }
 
-    @Override
-    public int getDefenseForType(ArmorItem.Type type) {
-        return defense;
+    public int getDefenseForType(ArmorItem.Type p_266752_) {
+        return this.protectionFunctionForType.get(p_266752_);
     }
 
-    @Override
     public int getEnchantmentValue() {
-        return enchantment;
+        return this.enchantmentValue;
     }
 
-    @Override
     public SoundEvent getEquipSound() {
-        return sound;
+        return this.sound;
     }
 
-    @Override
     public Ingredient getRepairIngredient() {
-        return null;
+        return this.repairIngredient.get();
     }
 
-    @Override
     public String getName() {
-        return name;
+        return this.name;
     }
 
-    @Override
     public float getToughness() {
-        return toughness;
+        return this.toughness;
     }
 
-    @Override
+    /**
+     * Gets the percentage of knockback resistance provided by armor of the material.
+     */
     public float getKnockbackResistance() {
-        return knockbackR;
+        return this.knockbackResistance;
+    }
+
+    public String getSerializedName() {
+        return this.name;
     }
 }

@@ -1,9 +1,14 @@
 package net.yesman.scpff.level.block;
 
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
+import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+
+import java.util.stream.Stream;
+
 import static net.minecraft.world.level.block.Block.box;
 
 public class BlockShapes {
@@ -21,6 +26,39 @@ public class BlockShapes {
     public static final VoxelShape STEEL_CANISTER = Shapes.or(box(3, 0, 3, 13, 15, 13), box(4, 18, 4, 12, 20, 12));
 
     // Rotated shapes:
+
+    public static final VoxelShape CAT_WALK_STAIRS_N = Stream.of(
+            Block.box(0, 14, 0, 16, 16, 8),
+            Block.box(0, 6, 8, 16, 8, 16),
+            Block.box(12, 6, 6, 14, 14, 8),
+            Block.box(2, 6, 6, 4, 14, 8),
+            Block.box(2, 0, 14, 4, 6, 16),
+            Block.box(12, 0, 14, 14, 6, 16)
+    ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
+    public static final VoxelShape CAT_WALK_STAIRS_E = Stream.of(
+            Block.box(0, 14, 8, 16, 16, 16),
+            Block.box(0, 6, 0, 16, 8, 8),
+            Block.box(2, 6, 8, 4, 14, 10),
+            Block.box(12, 6, 8, 14, 14, 10),
+            Block.box(12, 0, 0, 14, 6, 2),
+            Block.box(2, 0, 0, 4, 6, 2)
+    ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
+    public static final VoxelShape CAT_WALK_STAIRS_S = Stream.of(
+            Block.box(0, 14, 0, 8, 16, 16),
+            Block.box(8, 6, 0, 16, 8, 16),
+            Block.box(6, 6, 2, 8, 14, 4),
+            Block.box(6, 6, 12, 8, 14, 14),
+            Block.box(14, 0, 12, 16, 6, 14),
+            Block.box(14, 0, 2, 16, 6, 4)
+    ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
+    public static final VoxelShape CAT_WALK_STAIRS_W = Stream.of(
+            Block.box(8, 14, 0, 16, 16, 16),
+            Block.box(0, 6, 0, 8, 8, 16),
+            Block.box(8, 6, 12, 10, 14, 14),
+            Block.box(8, 6, 2, 10, 14, 4),
+            Block.box(0, 0, 2, 2, 6, 4),
+            Block.box(0, 0, 12, 2, 6, 14)
+    ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
     public static final VoxelShape CAT_WALK_FENCE_S = box(0, 0, 0, 16, 16, 2);
     public static final VoxelShape CAT_WALK_FENCE_N = box(0, 0, 14, 16, 16, 16);
     public static final VoxelShape CAT_WALK_FENCE_E = box(0, 0, 0, 2, 16, 16);

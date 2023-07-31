@@ -6,6 +6,7 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
@@ -19,6 +20,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.event.level.NoteBlockEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.yesman.scpff.level.block.ModBlocks;
 import net.yesman.scpff.misc.Helper;
@@ -77,6 +79,7 @@ public class SCP173 extends Monster implements GeoEntity {
         }
         if (this.random.nextFloat() > 0.99F) {
             if (this.level.getBlockState(this.blockPosition()).isAir()) {
+                this.playSound(SoundEvents.SLIME_BLOCK_FALL);
                 this.level.setBlockAndUpdate(this.blockPosition(), ModBlocks.SCP173CRAP.get().defaultBlockState());
             }
         }

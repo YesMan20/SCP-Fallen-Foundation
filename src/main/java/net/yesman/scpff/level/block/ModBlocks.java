@@ -1,17 +1,20 @@
 package net.yesman.scpff.level.block;
 
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.yesman.scpff.SCPFf;
 import net.yesman.scpff.level.block.decor.*;
+import net.yesman.scpff.level.entity.custom.SCP173;
 import net.yesman.scpff.level.item.ModItems;
 
 import java.util.function.Supplier;
@@ -24,8 +27,21 @@ public class ModBlocks {
     public static final RegistryObject<Block> HCWALL = registerBlock("hcwall", () ->
             new Block(BlockBehaviour.Properties.of(Material.HEAVY_METAL).explosionResistance(1.8f).strength(1.8f).destroyTime(9f).requiresCorrectToolForDrops()));
 
+    public static final RegistryObject<Block> HCWALL_STAIRS = registerBlock("hcwall_stairs", () ->
+            new StairBlock(() -> ModBlocks.HCWALL.get().defaultBlockState(),
+                    BlockBehaviour.Properties.of(Material.HEAVY_METAL).explosionResistance(1.8f).strength(1.8f).destroyTime(9f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> HCWALL_SLAB = registerBlock("hcwall_slab", () ->
+            new SlabBlock(BlockBehaviour.Properties.of(Material.HEAVY_METAL).explosionResistance(1.8f).strength(1.8f).destroyTime(9f).requiresCorrectToolForDrops()));
+
     public static final RegistryObject<Block> HCFLOOR = registerBlock("hcfloor", () ->
             new Block(BlockBehaviour.Properties.of(Material.HEAVY_METAL).strength(10f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> HCFLOOR_SLAB = registerBlock("hcfloor_slab", () ->
+            new SlabBlock(BlockBehaviour.Properties.of(Material.HEAVY_METAL).strength(10f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> HCFLOOR_STAIRS = registerBlock("hcfloor_stairs", () ->
+            new StairBlock(() -> ModBlocks.HCFLOOR.get().defaultBlockState(), BlockBehaviour.Properties.of(Material.HEAVY_METAL).strength(10f).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> METALWALL1 = registerBlock("metalwall1", () ->
             new Block(BlockBehaviour.Properties.of(Material.HEAVY_METAL).explosionResistance(1.8f).strength(1.8f).destroyTime(9f).requiresCorrectToolForDrops()));
@@ -53,6 +69,23 @@ public class ModBlocks {
     public static final RegistryObject<Block> TILES = registerBlock("tiles", () ->
             new Block(BlockBehaviour.Properties.of(Material.STONE).strength(10f).requiresCorrectToolForDrops()));
 
+    public static final RegistryObject<Block> TILE_SLAB = registerBlock("tile_slab", () ->
+            new SlabBlock(BlockBehaviour.Properties.of(Material.STONE).strength(10f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> TILE_STAIRS = registerBlock("tile_stairs", () ->
+            new StairBlock(() -> ModBlocks.TILES.get().defaultBlockState(), BlockBehaviour.Properties.of(Material.STONE).strength(10f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> WHITE_CONCRETE_STAIRS = registerBlock("whiteconcretestairs", () ->
+            new StairBlock(() -> Blocks.WHITE_CONCRETE.defaultBlockState(), BlockBehaviour.Properties.of(Material.STONE).explosionResistance(1.8f).strength(1.8f).destroyTime(9f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> WHITE_CONCRETE_SLAB = registerBlock("whiteconcreteslab", () ->
+            new SlabBlock(BlockBehaviour.Properties.of(Material.STONE).explosionResistance(1.8f).strength(1.8f).destroyTime(9f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> GRAY_CONCRETE_STAIRS = registerBlock("grayconcretestairs", () ->
+            new StairBlock(() -> Blocks.GRAY_CONCRETE.defaultBlockState(), BlockBehaviour.Properties.of(Material.STONE).explosionResistance(1.8f).strength(1.8f).destroyTime(9f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> GRAY_CONCRETE_SLAB = registerBlock("grayconcreteslab", () ->
+            new SlabBlock(BlockBehaviour.Properties.of(Material.STONE).explosionResistance(1.8f).strength(1.8f).destroyTime(9f).requiresCorrectToolForDrops()));
 
     /** LC Blocks **/
     public static final RegistryObject<Block> LCWALL1 = registerBlock("lcwall1", () ->
@@ -83,6 +116,11 @@ public class ModBlocks {
     public static final RegistryObject<Block> CATWALKFENCE2 = registerBlock("catwalkfence2", () ->
             new HorizontalDecorationBlock(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL).requiresCorrectToolForDrops().strength(4F).noOcclusion(),
                     BlockShapes.CAT_WALK_FENCE_S, BlockShapes.CAT_WALK_FENCE_N, BlockShapes.CAT_WALK_FENCE_E, BlockShapes.CAT_WALK_FENCE_W));
+
+    public static final RegistryObject<Block> CATWALKSTAIRS = registerBlock("catwalkstairs", () ->
+            new HorizontalDecorationBlock(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL).requiresCorrectToolForDrops().strength(4F).noOcclusion(),
+                    BlockShapes.CAT_WALK_STAIRS_N, BlockShapes.CAT_WALK_STAIRS_E, BlockShapes.CAT_WALK_STAIRS_S, BlockShapes.CAT_WALK_STAIRS_W));
+
 
     public static final RegistryObject<Block> CATWALKBLOCK = registerBlock("catwalkblock", () ->
             new DecorationBlock(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL).requiresCorrectToolForDrops().strength(4F).noOcclusion(),
@@ -204,13 +242,18 @@ public class ModBlocks {
                     BlockShapes.TRUSSBEAM_FENCE_S, BlockShapes.TRUSSBEAM_FENCE_N, BlockShapes.TRUSSBEAM_FENCE_E, BlockShapes.TRUSSBEAM_FENCE_W));
 
     public static final RegistryObject<Block> SCP173CRAP = registerBlock("scp173crap", () ->
-            new DecorationBlock(BlockBehaviour.Properties.of(Material.SPONGE).sound(SoundType.SLIME_BLOCK).strength(2F).noOcclusion().speedFactor(0.2f), BlockShapes.CARPET));
-
+            new DecorationBlock(BlockBehaviour.Properties.of(Material.SPONGE).noCollission().sound(SoundType.SLIME_BLOCK).strength(2F).noOcclusion().speedFactor(0.2f).requiresCorrectToolForDrops(), BlockShapes.CARPET));
 
     /** MISC Blocks **/
 
     public static final RegistryObject<Block> CAUTIONLINE = registerBlock("cautionline", () ->
             new Block(BlockBehaviour.Properties.of(Material.WOOL).sound(SoundType.WOOL).strength(0.8F).explosionResistance(0.8F)));
+
+    public static final RegistryObject<Block> CAUTIONLINE_STAIRS = registerBlock("cautionline_stairs", () ->
+            new StairBlock(() -> ModBlocks.CAUTIONLINE.get().defaultBlockState(), BlockBehaviour.Properties.of(Material.WOOL).sound(SoundType.WOOL).strength(0.8F).explosionResistance(0.8F)));
+
+    public static final RegistryObject<Block> CAUTIONLINE_SLAB = registerBlock("cautionline_slab", () ->
+            new SlabBlock(BlockBehaviour.Properties.of(Material.WOOL).sound(SoundType.WOOL).strength(0.8F).explosionResistance(0.8F)));
 
     public static final RegistryObject<Block> FACILITYLIGHT = registerBlock("facilitylight", () ->
             new Block(BlockBehaviour.Properties.of(Material.GLASS).lightLevel(s -> 15).sound(SoundType.GLASS).strength(0.8F).explosionResistance(0.8F).requiresCorrectToolForDrops()));

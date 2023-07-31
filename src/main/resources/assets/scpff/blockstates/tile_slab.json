@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "scpff:block/slabs/tile_slab"
+    },
+    "type=double": {
+      "model": "scpff:block/tiles"
+    },
+    "type=top": {
+      "model": "scpff:block/slabs/tile_slab_top"
+    }
+  }
+}

@@ -86,7 +86,9 @@ public class SCPFf {
                         .displayItems((enabledFeatures, entries) -> {
 
                             for (RegistryObject<Item> key : ModItems.ITEMS.getEntries()) {
-                                entries.accept(key.get());
+                                if (!(key.get() instanceof IgnoreOnLoad || key.get() instanceof ForgeSpawnEggItem || key.get() instanceof BlockItem)) {
+                                    entries.accept(key.get());
+                                }
                             }
                         }));
     }
@@ -96,7 +98,6 @@ public class SCPFf {
                 builder -> builder.icon(() -> new ItemStack(ModItems.SCPICON.get()))
                         .title(Component.translatable("creativemodetab.scpff_scps"))
                         .displayItems((enabledFeatures, entries) -> {
-
 
                             for (RegistryObject<Item> key : ModItems.ITEMS.getEntries()) {
                                 if (key.get() instanceof ForgeSpawnEggItem) {

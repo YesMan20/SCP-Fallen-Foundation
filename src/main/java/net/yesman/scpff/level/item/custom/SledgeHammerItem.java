@@ -14,15 +14,15 @@ import net.minecraft.world.item.Tier;
 import net.minecraft.world.level.Level;
 import net.yesman.scpff.level.entity.custom.SCP173;
 
-public class SledgeHammer extends PickaxeItem {
-    public SledgeHammer(Tier pTier, int pAttackDamageModifier, float pAttackSpeedModifier, Properties pProperties) {
+public class SledgeHammerItem extends PickaxeItem {
+    public SledgeHammerItem(Tier pTier, int pAttackDamageModifier, float pAttackSpeedModifier, Properties pProperties) {
         super(pTier, pAttackDamageModifier, pAttackSpeedModifier, pProperties);
     }
 
     @Override
     public InteractionResult interactLivingEntity(ItemStack pStack, Player pPlayer, LivingEntity target, InteractionHand pUsedHand) {
         Level level = pPlayer.getLevel();
-        level.playSound(pPlayer, pPlayer.getX(), pPlayer.getY(), pPlayer.getZ(), SoundEvents.EXPERIENCE_ORB_PICKUP, SoundSource.PLAYERS, 0.7F, 1.0F);
+        level.playSound(pPlayer, pPlayer.getX(), pPlayer.getY(), pPlayer.getZ(), SoundEvents.ANVIL_USE, SoundSource.PLAYERS, 0.7F, 1.0F);
         pPlayer.swing(pUsedHand);
 
         if (level instanceof ServerLevel serverLevel) {
