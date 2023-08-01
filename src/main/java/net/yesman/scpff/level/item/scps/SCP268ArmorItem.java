@@ -3,14 +3,12 @@ package net.yesman.scpff.level.item.scps;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import net.yesman.scpff.level.item.client.SCP268Renderer;
 import net.yesman.scpff.misc.Euclid;
 import org.jetbrains.annotations.NotNull;
-import software.bernie.geckolib.animatable.GeoItem;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.core.animatable.instance.SingletonAnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.*;
@@ -19,7 +17,7 @@ import software.bernie.geckolib.core.object.PlayState;
 import java.util.function.Consumer;
 
 @Euclid
-public class SCP268ArmorItem extends ArmorItem implements GeoItem {
+public class SCP268ArmorItem extends SCPArmorItem {
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
 
     public SCP268ArmorItem(ArmorMaterial material, Type type, Properties properties) {

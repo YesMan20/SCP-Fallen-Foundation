@@ -20,10 +20,9 @@ import net.yesman.scpff.level.block.ModBlocks;
 import net.yesman.scpff.level.block.entity.ModBlockEntities;
 import net.yesman.scpff.level.entity.ModEntity;
 import net.yesman.scpff.level.entity.init.EntityInit;
-import net.yesman.scpff.level.item.ModArmorMaterials;
 import net.yesman.scpff.level.item.ModItems;
 import net.yesman.scpff.level.item.custom.IgnoreOnLoad;
-import net.yesman.scpff.level.item.scps.SCP268ArmorItem;
+import net.yesman.scpff.level.item.scps.SCPArmorItem;
 import net.yesman.scpff.level.painting.ModPaintings;
 import org.slf4j.Logger;
 
@@ -62,7 +61,7 @@ public class SCPFf {
                         .displayItems((enabledFeatures, entries) -> {
 
                             for (RegistryObject<Item> key : ModItems.ITEMS.getEntries()) {
-                                if (!(key.get() instanceof IgnoreOnLoad || key.get() instanceof ForgeSpawnEggItem || key.get() instanceof BlockItem || key.get() instanceof ArmorItem)) {
+                                if (!(key.get() instanceof IgnoreOnLoad || key.get() instanceof ForgeSpawnEggItem || key.get() instanceof BlockItem || key.get() instanceof ArmorItem) || key.get() instanceof SCPArmorItem) {
                                     entries.accept(key.get());
                                 }
                             }
@@ -88,7 +87,7 @@ public class SCPFf {
                         .displayItems((enabledFeatures, entries) -> {
 
                             for (RegistryObject<Item> key : ModItems.ITEMS.getEntries()) {
-                                if (key.get() instanceof ArmorItem) {
+                                if (key.get() instanceof ArmorItem && !(key.get() instanceof SCPArmorItem)) {
                                     entries.accept(key.get());
                                 }
                             }
