@@ -40,6 +40,8 @@
   "item.scpff.researcher_suit_leggings": "Researcher Suit Leggings",
   "item.scpff.researcher_suit_boots": "Researcher Suit Boots",
 
+  "tooltip.scpff.sledgehammer": "§8Cycles through SCP-173 variants",
+
   "entity.scpff.scp_650": "SCP-650 - §6Startling Statue",
   "entity.scpff.scp_173": "SCP-173 - §6The Sculpture",
   "entity.scpff.scp_049": "SCP-049 - §6The Plague Doctor",

@@ -11,9 +11,6 @@ public class ModFoods {
     public static final FoodProperties SCP109 = new FoodProperties.Builder()
             .nutrition(8).saturationMod(0.7f).alwaysEat().fast().build();
 
-    public static final FoodProperties MEDKIT = new FoodProperties.Builder()
-            .alwaysEat().build();
-
     public static final FoodProperties SCP207 = new FoodProperties.Builder()
             .nutrition(6).saturationMod(0.9f).alwaysEat().fast()
             .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 400, 2), 1f)

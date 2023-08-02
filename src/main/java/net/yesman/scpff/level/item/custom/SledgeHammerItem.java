@@ -1,6 +1,7 @@
 package net.yesman.scpff.level.item.custom;
 
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -11,8 +12,12 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.yesman.scpff.level.entity.custom.SCP173;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class SledgeHammerItem extends PickaxeItem {
     public SledgeHammerItem(Tier pTier, int pAttackDamageModifier, float pAttackSpeedModifier, Properties pProperties) {
@@ -26,10 +31,7 @@ public class SledgeHammerItem extends PickaxeItem {
         pPlayer.swing(pUsedHand);
 
         if (level instanceof ServerLevel serverLevel) {
-            serverLevel.sendParticles(ParticleTypes.CLOUD,
-                    (target.getX() + Math.random() * 0.2),
-                    (target.getY() + 0.7  + Math.random() * 0.5),
-                    (target.getZ() + Math.random() * 0.2), 15, 0.2D, 0.4D, 0.2D, 0.0D);
+            serverLevel.sendParticles(ParticleTypes.CLOUD, (target.getX() + Math.random() * 0.2), (target.getY() + 0.7  + Math.random() * 0.5), (target.getZ() + Math.random() * 0.2), 15, 0.2D, 0.4D, 0.2D, 0.0D);
         }
         if (target instanceof SCP173 scp173) {
             SCP173.Variants variant = scp173.getVariant();
@@ -37,5 +39,11 @@ public class SledgeHammerItem extends PickaxeItem {
             scp173.setModel(newVariant);
         }
         return super.interactLivingEntity(pStack, pPlayer, target, pUsedHand);
+    }
+
+    @Override
+    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
+        tooltip.add(Component.translatable("tooltip.scpff.sledgehammer"));
+        super.appendHoverText(stack, level, tooltip, flag);
     }
 }

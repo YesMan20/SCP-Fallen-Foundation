@@ -113,7 +113,7 @@ public class ModItems {
             new Item.Properties().rarity(Rarity.EPIC).durability(99999)));
 
     public static final RegistryObject<Item> MEDKIT = ITEMS.register("medkit", () -> new MedkitItem(new Item.Properties()
-            .stacksTo(15).food(ModFoods.MEDKIT)));
+            .stacksTo(15)));
 
     public static final RegistryObject<Item> SCP939SPINE = ITEMS.register("scp939spine", () -> new Item(new Item.Properties()
             .stacksTo(64)));
