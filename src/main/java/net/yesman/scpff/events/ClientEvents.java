@@ -5,11 +5,8 @@ import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.yesman.scpff.SCPFf;
-import net.yesman.scpff.level.entity.client.renderer.SCP049Renderer;
-import net.yesman.scpff.level.entity.client.renderer.SCP173Renderer;
-import net.yesman.scpff.level.entity.client.renderer.SCP650Renderer;
+import net.yesman.scpff.level.entity.client.renderer.*;
 import net.yesman.scpff.level.entity.ModEntity;
-import net.yesman.scpff.level.entity.client.renderer.SCP939Renderer;
 
 @Mod.EventBusSubscriber(modid = SCPFf.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ClientEvents {

@@ -1,0 +1,9 @@
+{
+  "replaces": false,
+  "values": [
+    "scpff:guard_armor_helmet",
+    "scpff:guard_armor_chestplate",
+    "scpff:guard_armor_leggings",
+    "scpff:guard_armor_boots"
+  ]
+}

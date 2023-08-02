@@ -91,16 +91,16 @@ public class ModItems {
             ModArmorMaterials.RESEARCHER_SUIT, ArmorItem.Type.BOOTS, new Item.Properties()));
 
     public static final RegistryObject<Item> GUARD_ARMOR_HELMET = ITEMS.register("guard_armor_helmet", () -> new GuardArmorItem(
-            ModArmorMaterials.GUARD_ARMOR, ArmorItem.Type.HELMET, new Item.Properties()));
+            0.01F, ModArmorMaterials.GUARD_ARMOR, ArmorItem.Type.HELMET, new Item.Properties()));
 
     public static final RegistryObject<Item> GUARD_ARMOR_CHESTPLATE = ITEMS.register("guard_armor_chestplate", () -> new GuardArmorItem(
-            ModArmorMaterials.GUARD_ARMOR, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+            0.01F, ModArmorMaterials.GUARD_ARMOR, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
 
     public static final RegistryObject<Item> GUARD_ARMOR_LEGGINGS = ITEMS.register("guard_armor_leggings", () -> new GuardArmorItem(
-            ModArmorMaterials.GUARD_ARMOR, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+            0.01F, ModArmorMaterials.GUARD_ARMOR, ArmorItem.Type.LEGGINGS, new Item.Properties()));
 
     public static final RegistryObject<Item> GUARD_ARMOR_BOOTS = ITEMS.register("guard_armor_boots", () -> new GuardArmorItem(
-            ModArmorMaterials.GUARD_ARMOR, ArmorItem.Type.BOOTS, new Item.Properties()));
+            0.01F, ModArmorMaterials.GUARD_ARMOR, ArmorItem.Type.BOOTS, new Item.Properties()));
 
     /** Generic Items **/
 

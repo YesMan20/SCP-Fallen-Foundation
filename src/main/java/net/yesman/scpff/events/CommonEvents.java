@@ -9,6 +9,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.yesman.scpff.SCPFf;
 import net.yesman.scpff.level.item.ModItems;
+import net.yesman.scpff.level.item.custom.WeightedArmorItem;
 import net.yesman.scpff.misc.*;
 
 @Mod.EventBusSubscriber(modid = SCPFf.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
@@ -35,6 +36,11 @@ public class CommonEvents {
 
         } else if (item.getClass().isAnnotationPresent(Keter.class)) {
             event.getToolTip().add(Component.literal("§cKeter"));
+        }
+
+        // Weighted armor
+        if (item instanceof WeightedArmorItem) {
+            event.getToolTip().add(Component.literal("§9+" + WeightedArmorItem.weight + " Weight"));
         }
     }
 }
