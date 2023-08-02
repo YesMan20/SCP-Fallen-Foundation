@@ -1,5 +1,6 @@
 package net.yesman.scpff.level.block.decor;
 
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -19,7 +20,11 @@ public class TooltipBlock extends Block {
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable BlockGetter level, List<Component> tooltip, TooltipFlag flag) {
-        tooltip.add(Component.literal(text));
+        if (Screen.hasShiftDown()) {
+            tooltip.add(Component.literal(text));
+        } else {
+            tooltip.add(Component.literal("§8Shift+ for Info"));
+        }
         super.appendHoverText(stack, level, tooltip, flag);
     }
 }
