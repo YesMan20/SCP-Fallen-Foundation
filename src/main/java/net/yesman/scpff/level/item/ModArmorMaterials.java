@@ -20,6 +20,11 @@ public enum ModArmorMaterials implements ArmorMaterial {
     }), 15, SoundEvents.ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, () -> {
         return Ingredient.of(Items.LEATHER);
     }),
+    SCP_035("scp_035", 15,Util.make(new EnumMap<>(ArmorItem.Type.class), (p_266655_) -> {
+        p_266655_.put(ArmorItem.Type.HELMET, 2);
+    }), 15, SoundEvents.ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, () -> {
+        return Ingredient.of(Items.LEATHER);
+    }),
     DCLASS_ARMOR("dclass_suit", 5, Util.make(new EnumMap<>(ArmorItem.Type.class), (p_266655_) -> {
         p_266655_.put(ArmorItem.Type.BOOTS, 1);
         p_266655_.put(ArmorItem.Type.LEGGINGS, 2);
@@ -35,6 +40,14 @@ public enum ModArmorMaterials implements ArmorMaterial {
         return Ingredient.of(Items.LEATHER);
     }),
     GUARD_ARMOR("guard_armor", 15, Util.make(new EnumMap<>(ArmorItem.Type.class), (p_266655_) -> {
+        p_266655_.put(ArmorItem.Type.BOOTS, 1);
+        p_266655_.put(ArmorItem.Type.LEGGINGS, 4);
+        p_266655_.put(ArmorItem.Type.CHESTPLATE, 5);
+        p_266655_.put(ArmorItem.Type.HELMET, 2);
+    }), 15, SoundEvents.ARMOR_EQUIP_IRON, 0.0F, 0.0F, () -> {
+        return Ingredient.of(Items.IRON_INGOT);
+    }),
+    NTF_ARMOR("ntf_armor", 15, Util.make(new EnumMap<>(ArmorItem.Type.class), (p_266655_) -> {
         p_266655_.put(ArmorItem.Type.BOOTS, 1);
         p_266655_.put(ArmorItem.Type.LEGGINGS, 4);
         p_266655_.put(ArmorItem.Type.CHESTPLATE, 5);

@@ -22,7 +22,7 @@ public class MedkitItem extends Item {
         player.getCooldowns().addCooldown(this, 35);
         player.heal(10.0F);
         player.swing(hand);
-        level.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.BEACON_ACTIVATE, SoundSource.BLOCKS, 1.0F, 1.0F);
+        level.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.CHAIN_BREAK, SoundSource.BLOCKS, 1.0F, 1.0F);
         return super.use(level, player, hand);
     }
 }

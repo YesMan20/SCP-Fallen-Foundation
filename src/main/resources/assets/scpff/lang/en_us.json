@@ -4,6 +4,8 @@
   "item.scpff.scp500": "SCP-500 - §aPanacea",
   "item.scpff.scp109": "SCP-109 - §6Infinite Canteen",
   "item.scpff.scp1025": "SCP-1025 - §aEncyclopedia Of Diseases",
+  "item.scpff.scp035": "SCP-035 - §cThe Possessive Mask",
+
   "item.scpff.candy1": "Purple Candy",
   "item.scpff.candy2": "Red Candy",
   "item.scpff.candy3": "Yellow Candy",
@@ -15,11 +17,11 @@
   "item.scpff.scp_939_spawn_egg": "SCP-939 - §cWith Many Voices §rSpawn Egg",
   "item.scpff.scp_173_spawn_egg": "SCP-173 - §6The Sculpture §rSpawn Egg",
 
+  "item.scpff.sledgehammer": "Sledgehammer",
+  "item.scpff.mop": "Mop",
   "item.scpff.medkit": "Medical Kit",
   "item.scpff.scp939spine": "SCP-939 Spine",
   "item.scpff.scp939dagger": "SCP-939 Dagger",
-  "item.scpff.sledgehammer": "Sledgehammer",
-  "item.scpff.mop": "Mop",
 
   "item.scpff.keycard1": "Keycard - §eLevel 1",
   "item.scpff.keycard2": "Keycard - §6Level 2",
@@ -35,6 +37,11 @@
   "item.scpff.guard_armor_leggings": "Guard Armor Leggings",
   "item.scpff.guard_armor_boots": "Guard Armor Boots",
   "item.scpff.guard_armor_helmet": "Guard Armor Helmet",
+
+  "item.scpff.ntf_armor_chestplate": "Nine-Tailed-Fox Armor Chestplate",
+  "item.scpff.ntf_armor_leggings": "Nine-Tailed-Fox Armor Leggings",
+  "item.scpff.ntf_armor_boots": "Nine-Tailed-Fox Armor Boots",
+  "item.scpff.ntf_armor_helmet": "Nine-Tailed-Fox Armor Helmet",
 
   "item.scpff.researcher_suit_chestplate": "Researcher Suit Chestplate",
   "item.scpff.researcher_suit_leggings": "Researcher Suit Leggings",

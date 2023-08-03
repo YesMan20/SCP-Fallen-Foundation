@@ -261,7 +261,6 @@ public class ModBlocks {
     public static final RegistryObject<Block> REINFORCEDIRON = registerBlock("reinforcediron", () ->
             new Block(BlockBehaviour.Properties.of(Material.HEAVY_METAL).sound(SoundType.METAL).strength(50F).explosionResistance(1000F).requiresCorrectToolForDrops()));
 
-
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);

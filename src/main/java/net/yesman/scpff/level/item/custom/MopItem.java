@@ -30,11 +30,14 @@ public class MopItem extends Item {
     }
 
     public float getDestroySpeed(ItemStack pStack, BlockState pState) {
-        if (!pState.is(ModBlocks.SCP173CRAP.get())) {
+        if (!pState.is(Blocks.COBWEB) && !pState.is(BlockTags.LEAVES)) {
             if (pState.is(ModBlocks.SCP173CRAP.get())) {
                 return 5.0F;
+            } else {
+                return !pState.is(Blocks.VINE) && !pState.is(Blocks.GLOW_LICHEN) ? super.getDestroySpeed(pStack, pState) : 2.0F;
             }
+        } else {
+            return 15.0F;
         }
-        return 15.0F;
     }
 }

@@ -8,7 +8,7 @@ import software.bernie.geckolib.model.GeoModel;
 public class SCP268Model extends GeoModel<SCP268ArmorItem> {
     @Override
     public ResourceLocation getModelResource(SCP268ArmorItem animatable) {
-        return new ResourceLocation(SCPFf.MOD_ID, "geo/scp268.geo.json");
+        return new ResourceLocation(SCPFf.MOD_ID, "geo/armor/scp268.geo.json");
     }
 
     @Override

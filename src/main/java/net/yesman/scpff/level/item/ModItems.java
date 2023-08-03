@@ -29,6 +29,8 @@ public class ModItems {
 
     public static final RegistryObject<Item> SCP268 = ITEMS.register("scp268", () -> new SCP268ArmorItem(ModArmorMaterials.SCP_268, ArmorItem.Type.HELMET, new Item.Properties()));
 
+    public static final RegistryObject<Item> SCP035 = ITEMS.register("scp035", () -> new SCP035ArmorItem(ModArmorMaterials.SCP_035, ArmorItem.Type.HELMET, new Item.Properties()));
+
     /** Icons for tabs **/
 
     public static final RegistryObject<IgnoreOnLoad> ITEMICON = ITEMS.register("itemicon", () -> new IgnoreOnLoad(new Item.Properties()));
@@ -70,6 +72,39 @@ public class ModItems {
     public static final RegistryObject<Item> CANDY4 = ITEMS.register("candy4", () -> new Item(new Item.Properties()
             .stacksTo(3).food(ModFoods.CANDY)));
 
+    /** Generic Items **/
+
+    public static final RegistryObject<Item> MOP = ITEMS.register("mop", () -> new MopItem(new ShearsItem.Properties().stacksTo(1).durability(64)));
+
+    public static final RegistryObject<Item> SLEDGEHAMMER = ITEMS.register("sledgehammer", () -> new SledgeHammerItem(Tiers.IRON, 4, 1f,
+            new Item.Properties().durability(100)));
+
+    public static final RegistryObject<Item> MEDKIT = ITEMS.register("medkit", () -> new MedkitItem(new Item.Properties()
+            .stacksTo(15)));
+
+    public static final RegistryObject<Item> SCP939SPINE = ITEMS.register("scp939spine", () -> new Item(new Item.Properties()
+            .stacksTo(64)));
+
+    public static final RegistryObject<Item> SCP939DAGGER = ITEMS.register("scp939dagger", () -> new SwordItem(Tiers.WOOD, 5, 1.0f,
+            new SwordItem.Properties().durability(110)));
+
+    public static final RegistryObject<Item> INSTAKILL = ITEMS.register("instakill", () -> new InstaKillItem(Tiers.NETHERITE, 99999, -1.0f,
+            new Item.Properties().rarity(Rarity.EPIC).durability(99999)));
+
+    /** SCP Spawn Eggs **/
+
+    public static final RegistryObject<ForgeSpawnEggItem> SCP_049_SPAWN_EGG = ITEMS.register("scp_049_spawn_egg", () -> new ForgeSpawnEggItem(ModEntity.SCP_049, 3289650, 1820927,
+            new Item.Properties()));
+
+    public static final RegistryObject<ForgeSpawnEggItem> SCP_173_SPAWN_EGG = ITEMS.register("scp_173_spawn_egg", () -> new ForgeSpawnEggItem(ModEntity.SCP_173, 15385721, 16721446,
+            new Item.Properties()));
+
+    public static final RegistryObject<ForgeSpawnEggItem> SCP_650_SPAWN_EGG = ITEMS.register("scp_650_spawn_egg", () -> new ForgeSpawnEggItem(ModEntity.SCP_650, 0, 1710618,
+            new Item.Properties()));
+
+    public static final RegistryObject<ForgeSpawnEggItem> SCP_939_SPAWN_EGG = ITEMS.register("scp_939_spawn_egg", () -> new ForgeSpawnEggItem(ModEntity.SCP_939, 3342336, 10027008,
+            new Item.Properties()));
+
     /** Armor Items **/
 
     public static final RegistryObject<Item> DCLASS_ARMOR_CHESTPLATE = ITEMS.register("dclass_suit_chestplate", () -> new DClassArmorItem(
@@ -102,38 +137,17 @@ public class ModItems {
     public static final RegistryObject<Item> GUARD_ARMOR_BOOTS = ITEMS.register("guard_armor_boots", () -> new GuardArmorItem(
             0.01F, ModArmorMaterials.GUARD_ARMOR, ArmorItem.Type.BOOTS, new Item.Properties()));
 
-    /** Generic Items **/
+    public static final RegistryObject<Item> NTF_ARMOR_HELMET = ITEMS.register("ntf_armor_helmet", () -> new NtfArmorItem(
+            ModArmorMaterials.NTF_ARMOR, ArmorItem.Type.HELMET, new Item.Properties()));
 
-    public static final RegistryObject<Item> MOP = ITEMS.register("mop", () -> new MopItem(new ShearsItem.Properties().stacksTo(1).durability(64)));
+    public static final RegistryObject<Item> NTF_ARMOR_CHESTPLATE = ITEMS.register("ntf_armor_chestplate", () -> new NtfArmorItem(
+            ModArmorMaterials.NTF_ARMOR, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
 
-    public static final RegistryObject<Item> SLEDGEHAMMER = ITEMS.register("sledgehammer", () -> new SledgeHammerItem(Tiers.IRON, 4, 1f,
-            new Item.Properties().durability(100)));
+    public static final RegistryObject<Item> NTF_ARMOR_LEGGINGS = ITEMS.register("ntf_armor_leggings", () -> new NtfArmorItem(
+            ModArmorMaterials.NTF_ARMOR, ArmorItem.Type.LEGGINGS, new Item.Properties()));
 
-    public static final RegistryObject<Item> INSTAKILL = ITEMS.register("instakill", () -> new InstaKillItem(Tiers.NETHERITE, 99999, -1.0f,
-            new Item.Properties().rarity(Rarity.EPIC).durability(99999)));
-
-    public static final RegistryObject<Item> MEDKIT = ITEMS.register("medkit", () -> new MedkitItem(new Item.Properties()
-            .stacksTo(15)));
-
-    public static final RegistryObject<Item> SCP939SPINE = ITEMS.register("scp939spine", () -> new Item(new Item.Properties()
-            .stacksTo(64)));
-
-    public static final RegistryObject<Item> SCP939DAGGER = ITEMS.register("scp939dagger", () -> new SwordItem(Tiers.WOOD, 5, 1.0f,
-            new SwordItem.Properties().durability(110)));
-
-    /** SCP Spawn Eggs **/
-
-    public static final RegistryObject<ForgeSpawnEggItem> SCP_049_SPAWN_EGG = ITEMS.register("scp_049_spawn_egg", () -> new ForgeSpawnEggItem(ModEntity.SCP_049, 3289650, 1820927,
-            new Item.Properties()));
-
-    public static final RegistryObject<ForgeSpawnEggItem> SCP_173_SPAWN_EGG = ITEMS.register("scp_173_spawn_egg", () -> new ForgeSpawnEggItem(ModEntity.SCP_173, 15385721, 16721446,
-            new Item.Properties()));
-
-    public static final RegistryObject<ForgeSpawnEggItem> SCP_650_SPAWN_EGG = ITEMS.register("scp_650_spawn_egg", () -> new ForgeSpawnEggItem(ModEntity.SCP_650, 0, 1710618,
-            new Item.Properties()));
-
-    public static final RegistryObject<ForgeSpawnEggItem> SCP_939_SPAWN_EGG = ITEMS.register("scp_939_spawn_egg", () -> new ForgeSpawnEggItem(ModEntity.SCP_939, 3342336, 10027008,
-            new Item.Properties()));
+    public static final RegistryObject<Item> NTF_ARMOR_BOOTS = ITEMS.register("ntf_armor_boots", () -> new NtfArmorItem(
+            ModArmorMaterials.NTF_ARMOR, ArmorItem.Type.BOOTS, new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

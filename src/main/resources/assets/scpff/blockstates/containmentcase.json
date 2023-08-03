@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "scpff:block/containmentcase"
+    },
+    "facing=east": {
+      "model": "scpff:block/containmentcase",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "scpff:block/containmentcase",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "scpff:block/containmentcase",
+      "y": 270
+    }
+  }
+}
