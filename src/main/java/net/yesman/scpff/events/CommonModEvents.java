@@ -1,5 +1,6 @@
 package net.yesman.scpff.events;
 
+import net.minecraft.world.entity.monster.WitherSkeleton;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;

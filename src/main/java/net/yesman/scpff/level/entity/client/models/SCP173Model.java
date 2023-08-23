@@ -1,9 +1,15 @@
 package net.yesman.scpff.level.entity.client.models;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
 import net.yesman.scpff.SCPFf;
 import net.yesman.scpff.level.entity.custom.SCP173;
+import software.bernie.geckolib.constant.DataTickets;
+import software.bernie.geckolib.core.animatable.model.CoreGeoBone;
+import software.bernie.geckolib.core.animation.AnimationState;
 import software.bernie.geckolib.model.GeoModel;
+import software.bernie.geckolib.model.data.EntityModelData;
 
 public class SCP173Model extends GeoModel<SCP173> {
 
@@ -21,4 +27,5 @@ public class SCP173Model extends GeoModel<SCP173> {
     public ResourceLocation getAnimationResource(SCP173 animatable) {
         return new ResourceLocation(SCPFf.MOD_ID, "animations/scp173/" + animatable.getModel() + ".animation.json");
     }
+
 }

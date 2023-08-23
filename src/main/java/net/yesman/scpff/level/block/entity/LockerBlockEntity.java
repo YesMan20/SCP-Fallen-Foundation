@@ -34,7 +34,7 @@ public class LockerBlockEntity extends RandomizableContainerBlockEntity {
     private NonNullList<ItemStack> items = NonNullList.withSize(27, ItemStack.EMPTY);
 
     public LockerBlockEntity(BlockPos position, BlockState state) {
-        super(ModBlockEntities.FILECABINET.get(), position, state);
+        super(ModBlockEntities.LOCKER.get(), position, state);
     }
 
     @Override

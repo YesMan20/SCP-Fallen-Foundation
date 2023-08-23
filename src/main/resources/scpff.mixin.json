@@ -3,10 +3,13 @@
   "package": "net.yesman.scpff.mixin",
   "compatibilityLevel": "JAVA_17",
   "client": [
+    "EntityRenderDispatcherAccessor",
+    "LivingEntityRendererMixin"
   ],
   "server": [
   ],
   "mixins": [
+    "LivingEntityMixin",
     "MeleeAttackGoalMixin"
   ],
   "injectors": {

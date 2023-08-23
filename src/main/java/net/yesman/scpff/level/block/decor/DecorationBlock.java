@@ -18,13 +18,11 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
 // The purpose of this class is to make implementing decoration blocks way easier instead of having to create a new class everytime
-public class DecorationBlock extends Block implements SimpleWaterloggedBlock {
-    public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
+public class DecorationBlock extends Block {
     protected VoxelShape SHAPE;
 
     public DecorationBlock(Properties property, VoxelShape shape) {
         super(property);
-        this.registerDefaultState(this.getStateDefinition().any().setValue(WATERLOGGED, false));
         this.SHAPE = shape;
     }
 
@@ -32,29 +30,4 @@ public class DecorationBlock extends Block implements SimpleWaterloggedBlock {
         return SHAPE;
     }
 
-    @Override
-    public BlockState updateShape(BlockState state, Direction direction, BlockState facingState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
-        if (state.getValue(WATERLOGGED)) {
-            level.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
-        }
-        return super.updateShape(state, direction, facingState, level, pos, neighborPos);
-    }
-
-    @Nullable
-    @Override
-    public BlockState getStateForPlacement(BlockPlaceContext context) {
-        LevelAccessor level = context.getLevel();
-        BlockPos pos = context.getClickedPos();
-        return this.defaultBlockState().setValue(WATERLOGGED, Boolean.valueOf(level.getFluidState(pos).getType() == Fluids.WATER));
-    }
-
-    @Override
-    public FluidState getFluidState(BlockState state) {
-        return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
-    }
-
-    @Override
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(WATERLOGGED);
-    }
 }

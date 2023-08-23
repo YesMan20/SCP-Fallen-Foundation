@@ -13,6 +13,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.yesman.scpff.SCPFf;
+import net.yesman.scpff.level.block.custom.ContainmentCase;
 import net.yesman.scpff.level.block.decor.*;
 import net.yesman.scpff.level.entity.custom.SCP173;
 import net.yesman.scpff.level.item.ModItems;
@@ -76,13 +77,13 @@ public class ModBlocks {
             new StairBlock(() -> ModBlocks.TILES.get().defaultBlockState(), BlockBehaviour.Properties.of(Material.STONE).strength(10f).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> WHITE_CONCRETE_STAIRS = registerBlock("whiteconcretestairs", () ->
-            new StairBlock(() -> Blocks.WHITE_CONCRETE.defaultBlockState(), BlockBehaviour.Properties.of(Material.STONE).explosionResistance(1.8f).strength(1.8f).destroyTime(9f).requiresCorrectToolForDrops()));
+            new StairBlock(Blocks.WHITE_CONCRETE::defaultBlockState, BlockBehaviour.Properties.of(Material.STONE).explosionResistance(1.8f).strength(1.8f).destroyTime(9f).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> WHITE_CONCRETE_SLAB = registerBlock("whiteconcreteslab", () ->
             new SlabBlock(BlockBehaviour.Properties.of(Material.STONE).explosionResistance(1.8f).strength(1.8f).destroyTime(9f).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> GRAY_CONCRETE_STAIRS = registerBlock("grayconcretestairs", () ->
-            new StairBlock(() -> Blocks.GRAY_CONCRETE.defaultBlockState(), BlockBehaviour.Properties.of(Material.STONE).explosionResistance(1.8f).strength(1.8f).destroyTime(9f).requiresCorrectToolForDrops()));
+            new StairBlock(Blocks.GRAY_CONCRETE::defaultBlockState, BlockBehaviour.Properties.of(Material.STONE).explosionResistance(1.8f).strength(1.8f).destroyTime(9f).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> GRAY_CONCRETE_SLAB = registerBlock("grayconcreteslab", () ->
             new SlabBlock(BlockBehaviour.Properties.of(Material.STONE).explosionResistance(1.8f).strength(1.8f).destroyTime(9f).requiresCorrectToolForDrops()));
@@ -244,6 +245,10 @@ public class ModBlocks {
     public static final RegistryObject<Block> SCP173CRAP = registerBlock("scp173crap", () ->
             new DecorationBlock(BlockBehaviour.Properties.of(Material.SPONGE).noCollission().sound(SoundType.SLIME_BLOCK).strength(2F).noOcclusion().speedFactor(0.2f).requiresCorrectToolForDrops(), BlockShapes.CARPET));
 
+    public static final RegistryObject<Block> CONTAINMENT_CASE = registerBlock("containment_case", () ->
+            new ContainmentCase(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL).strength(2F).noOcclusion()));
+
+
     /** MISC Blocks **/
 
     public static final RegistryObject<Block> CAUTIONLINE = registerBlock("cautionline", () ->
@@ -264,7 +269,6 @@ public class ModBlocks {
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
-
         return toReturn;
     }
 

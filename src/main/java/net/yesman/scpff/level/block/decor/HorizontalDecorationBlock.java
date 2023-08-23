@@ -18,7 +18,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 // Like the DecorationBlock class but can be rotated
-public class HorizontalDecorationBlock extends DecorationBlock implements SimpleWaterloggedBlock {
+public class HorizontalDecorationBlock extends DecorationBlock {
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
     protected VoxelShape NORTH_SHAPE;
     protected VoxelShape EAST_SHAPE;
@@ -26,7 +26,6 @@ public class HorizontalDecorationBlock extends DecorationBlock implements Simple
 
     public HorizontalDecorationBlock(Properties property, VoxelShape shape, VoxelShape northShape, VoxelShape eastShape, VoxelShape westShape) {
         super(property, shape);
-        this.registerDefaultState(this.getStateDefinition().any().setValue(WATERLOGGED, false));
         this.NORTH_SHAPE = northShape;
         this.EAST_SHAPE = eastShape;
         this.WEST_SHAPE = westShape;
@@ -43,19 +42,8 @@ public class HorizontalDecorationBlock extends DecorationBlock implements Simple
     }
 
     @Override
-    public BlockState updateShape(BlockState state, Direction direction, BlockState facingState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
-        return super.updateShape(state, direction, facingState, level, pos, neighborPos);
-    }
-
-    @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        super.getStateForPlacement(context);
         return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
-    }
-
-    @Override
-    public FluidState getFluidState(BlockState state) {
-        return super.getFluidState(state);
     }
 
     @Override
@@ -70,6 +58,6 @@ public class HorizontalDecorationBlock extends DecorationBlock implements Simple
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(FACING, WATERLOGGED);
+        builder.add(FACING);
     }
 }

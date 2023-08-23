@@ -53,13 +53,6 @@ public class SCP650 extends Mob implements GeoEntity {
     public void registerControllers(AnimatableManager.ControllerRegistrar controller) {
     }
 
-    private void snapLookToPlayer(Player targetPlayer) {
-        Vec3 vecPos = position();
-        Vec3 vecPlayerPos = targetPlayer.position();
-        float angle = (float) Math.toDegrees((float) Math.atan2(vecPos.z - vecPlayerPos.z, vecPos.x - vecPlayerPos.x));
-        yHeadRot = yBodyRot = angle > 180 ? angle : angle + 90;
-    }
-
     @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {
         return cache;

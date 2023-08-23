@@ -22,6 +22,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.event.level.NoteBlockEvent;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.yesman.scpff.SCPFf;
 import net.yesman.scpff.level.block.ModBlocks;
 import net.yesman.scpff.misc.Helper;
 import software.bernie.geckolib.animatable.GeoEntity;
@@ -37,7 +38,7 @@ import java.util.Objects;
 public class SCP173 extends Monster implements GeoEntity {
     private int cooldownTick = 0;
     AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
-    private static final EntityDataAccessor<String> DATA_MODEL = SynchedEntityData.defineId(SCP173.class, EntityDataSerializers.STRING); // Used for SCP-173 rendering.
+    private static final EntityDataAccessor<Integer> DATA_MODEL = SynchedEntityData.defineId(SCP173.class, EntityDataSerializers.INT); // Used for SCP-173 rendering.
 
     public SCP173(EntityType<? extends Monster> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
@@ -107,19 +108,19 @@ public class SCP173 extends Monster implements GeoEntity {
     @Override
     protected void defineSynchedData() {
         super.defineSynchedData();
-        this.entityData.define(DATA_MODEL, "scp173y");
+        this.entityData.define(DATA_MODEL, 0);
     }
 
     public String getModel() {
-        return this.entityData.get(DATA_MODEL);
+        return Variants.values()[this.entityData.get(DATA_MODEL)].resourceName;
     }
 
-    public Variants getVariant() { // Could be better.
-        return Variants.valueOf(Variants.class, this.getModel().toUpperCase().replace("P173", "P_173"));
+    public Variants getVariant() {
+        return Variants.values()[this.entityData.get(DATA_MODEL)];
     }
 
     public void setModel(Variants model) {
-        this.entityData.set(DATA_MODEL, model.resourceName);
+        this.entityData.set(DATA_MODEL, model.ordinal());
     }
 
     @Override
@@ -132,7 +133,7 @@ public class SCP173 extends Monster implements GeoEntity {
     public void readAdditionalSaveData(CompoundTag pCompound) {
         super.readAdditionalSaveData(pCompound);
         if (pCompound.contains("variant")) {
-            this.entityData.set(DATA_MODEL, pCompound.getString("variant"));
+            this.entityData.set(DATA_MODEL, pCompound.getInt("variant"));
         }
     }
 

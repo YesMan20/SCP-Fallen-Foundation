@@ -1,13 +1,19 @@
 package net.yesman.scpff.events;
 
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.monster.WitherSkeleton;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.event.entity.living.LivingChangeTargetEvent;
+import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.yesman.scpff.SCPFf;
+import net.yesman.scpff.level.entity.ModEntity;
+import net.yesman.scpff.level.entity.custom.SCP035WitherSkeleton;
 import net.yesman.scpff.level.item.ModItems;
 import net.yesman.scpff.level.item.custom.WeightedArmorItem;
 import net.yesman.scpff.misc.*;
