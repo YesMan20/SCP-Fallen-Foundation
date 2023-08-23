@@ -248,6 +248,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> CONTAINMENT_CASE = registerBlock("containment_case", () ->
             new ContainmentCase(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL).strength(2F).noOcclusion()));
 
+    public static final RegistryObject<Block> CONTAINMENTCASE_BOTTOM = registerBlock("containmentcase_bottom", () ->
+            new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL).strength(2F).noOcclusion()));
 
     /** MISC Blocks **/
 
