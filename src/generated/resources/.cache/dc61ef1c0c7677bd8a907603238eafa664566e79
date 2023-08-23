@@ -1,3 +1,5 @@
-// 1.19.4	2023-08-23T20:57:39.1596252	Block States: scpff
+// 1.19.4	2023-08-24T00:11:33.8992158	Block States: scpff
 bd05461b6e67594d6a20eee6ffa57c362f659aea assets/scpff/blockstates/containment_case.json
+bc91c87fa2965461ecff8fb8641d1b4d23963c62 assets/scpff/blockstates/containment_case_bottom.json
 64eb668dda84653340b2a55ddf7882a7d52439cc assets/scpff/models/item/containment_case.json
+d01ae41e86b8b90c9b667231633798ec6827badb assets/scpff/models/item/containment_case_bottom.json

@@ -1,21 +1,18 @@
 package net.yesman.scpff.level.block;
 
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.yesman.scpff.SCPFf;
 import net.yesman.scpff.level.block.custom.ContainmentCase;
 import net.yesman.scpff.level.block.decor.*;
-import net.yesman.scpff.level.entity.custom.SCP173;
 import net.yesman.scpff.level.item.ModItems;
 
 import java.util.function.Supplier;
@@ -248,8 +245,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> CONTAINMENT_CASE = registerBlock("containment_case", () ->
             new ContainmentCase(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL).strength(2F).noOcclusion()));
 
-    public static final RegistryObject<Block> CONTAINMENTCASE_BOTTOM = registerBlock("containmentcase_bottom", () ->
-            new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL).strength(2F).noOcclusion()));
+    public static final RegistryObject<Block> CONTAINMENT_CASE_BOTTOM = registerBlock("containment_case_bottom", () ->
+            new HorizontalDecorationBlock(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL).strength(2F).noOcclusion(), BlockShapes.BLOCK));
 
     /** MISC Blocks **/
 

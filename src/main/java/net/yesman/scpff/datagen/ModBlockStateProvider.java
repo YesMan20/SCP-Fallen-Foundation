@@ -18,6 +18,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         horizontalBlockWithItem(ModBlocks.CONTAINMENT_CASE);
+        horizontalBlockWithItem(ModBlocks.CONTAINMENT_CASE_BOTTOM);
     }
 
 

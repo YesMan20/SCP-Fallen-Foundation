@@ -31,6 +31,14 @@ public class HorizontalDecorationBlock extends DecorationBlock {
         this.WEST_SHAPE = westShape;
     }
 
+
+    public HorizontalDecorationBlock(Properties property, VoxelShape shape) {
+        super(property, shape);
+        this.NORTH_SHAPE = shape;
+        this.EAST_SHAPE = shape;
+        this.WEST_SHAPE = shape;
+    }
+
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return switch (state.getValue(FACING)) {
