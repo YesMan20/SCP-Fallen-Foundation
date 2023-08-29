@@ -14,6 +14,7 @@ import net.yesman.scpff.level.block.client.ContainmentCaseRenderer;
 import net.yesman.scpff.level.block.entity.ModBlockEntities;
 import net.yesman.scpff.level.entity.client.renderer.*;
 import net.yesman.scpff.level.entity.ModEntity;
+import net.yesman.scpff.level.entity.custom.SCP1507;
 
 @Mod.EventBusSubscriber(modid = SCPFf.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ClientEvents {
@@ -24,6 +25,7 @@ public class ClientEvents {
         event.registerEntityRenderer(ModEntity.SCP_049.get(), SCP049Renderer::new);
         event.registerEntityRenderer(ModEntity.SCP_939.get(), SCP939Renderer::new);
         event.registerEntityRenderer(ModEntity.SCP_173.get(), SCP173Renderer::new);
+        event.registerEntityRenderer(ModEntity.SCP_1507.get(), SCP1507Renderer::new);
         event.registerEntityRenderer(EntityType.PLAYER, SCP035WitherSkeletonRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.CONTAINMENT_BLOCK.get(), ContainmentCaseRenderer::new);
     }

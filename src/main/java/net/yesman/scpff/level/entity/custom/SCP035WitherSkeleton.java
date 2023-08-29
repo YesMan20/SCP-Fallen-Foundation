@@ -2,6 +2,17 @@ package net.yesman.scpff.level.entity.custom;
 
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.goal.FloatGoal;
+import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
+import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
+import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.animal.IronGolem;
+import net.minecraft.world.entity.monster.ZombifiedPiglin;
+import net.minecraft.world.entity.monster.piglin.Piglin;
+import net.minecraft.world.entity.npc.Villager;
+import net.minecraft.world.entity.npc.WanderingTrader;
+import net.minecraft.world.entity.player.Player;
 import software.bernie.geckolib.animatable.GeoReplacedEntity;
 import software.bernie.geckolib.constant.DataTickets;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
@@ -20,6 +31,7 @@ public class SCP035WitherSkeleton implements GeoReplacedEntity {
     }
 
     public static final RawAnimation WALKING = RawAnimation.begin().thenLoop("animation.witherskeleton.moving");
+    public static final RawAnimation ATTACKING = RawAnimation.begin().thenPlay("animation.witherskeleton.attack");
 
     public static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.witherskeleton.idle");
     public static final RawAnimation CROUCH = RawAnimation.begin().thenLoop("animation.witherskeleton.crouching");

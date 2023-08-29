@@ -1,5 +1,6 @@
 package net.yesman.scpff.level.entity.custom;
 
+import net.minecraft.client.renderer.entity.WardenRenderer;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -23,6 +24,7 @@ import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.npc.WanderingTrader;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.AABB;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.yesman.scpff.SCPFf;
 import org.jetbrains.annotations.Nullable;
@@ -38,6 +40,7 @@ import java.lang.reflect.Method;
 
 
 public class SCP939 extends Monster implements GeoEntity {
+    private EntityDimensions dimensions;
     private static final EntityDataAccessor<Byte> DATA_FLAGS_ID = SynchedEntityData.defineId(SCP939.class, EntityDataSerializers.BYTE);
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
     private static final EntityDataAccessor<Boolean> DATA_HAS_TARGET = SynchedEntityData.defineId(SCP939.class, EntityDataSerializers.BOOLEAN);
@@ -56,8 +59,9 @@ public class SCP939 extends Monster implements GeoEntity {
 
     @Override
     public void checkDespawn() {
-
     }
+
+
 
     public MobType getMobType() {
         return MobType.ARTHROPOD;

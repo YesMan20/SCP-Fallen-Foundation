@@ -12,14 +12,17 @@
   "item.scpff.candy4": "Green Candy",
   "item.scpff.instakill": "Insta-Kill",
 
+  "item.scpff.scp_553_spawn_egg": "SCP-553 - §aCrystalline Butterflies §rSpawn Egg",
   "item.scpff.scp_049_spawn_egg": "SCP-049 - §6The Plague Doctor §rSpawn Egg",
   "item.scpff.scp_650_spawn_egg": "SCP-650 - §6Startling Statue §rSpawn Egg",
   "item.scpff.scp_939_spawn_egg": "SCP-939 - §cWith Many Voices §rSpawn Egg",
   "item.scpff.scp_173_spawn_egg": "SCP-173 - §6The Sculpture §rSpawn Egg",
+  "item.scpff.scp_1507_spawn_egg": "SCP-1507 - §6Pink Flamingos §rSpawn Egg",
 
   "item.scpff.sledgehammer": "Sledgehammer",
   "item.scpff.mop": "Mop",
   "item.scpff.medkit": "Medical Kit",
+  "item.scpff.pillbottle": "Pill Bottle",
   "item.scpff.scp939spine": "SCP-939 Spine",
   "item.scpff.scp939dagger": "SCP-939 Dagger",
 
@@ -49,9 +52,11 @@
 
   "tooltip.scpff.sledgehammer": "§8Cycles through SCP-173 variants",
 
+  "entity.scpff.scp_553": "SCP-553 - §aCrystalline Butterflies",
   "entity.scpff.scp_650": "SCP-650 - §6Startling Statue",
   "entity.scpff.scp_173": "SCP-173 - §6The Sculpture",
   "entity.scpff.scp_049": "SCP-049 - §6The Plague Doctor",
+  "entity.scpff.scp_1507": "SCP-1507 - §6Pink Flamingos",
   "entity.scpff.scp_939": "SCP-939 - §4With Many Voices",
 
   "block.scpff.hcwall": "Heavy Containment Wall",

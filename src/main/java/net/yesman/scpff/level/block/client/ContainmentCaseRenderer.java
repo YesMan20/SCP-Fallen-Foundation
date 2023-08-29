@@ -9,9 +9,7 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemDisplayContext;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.yesman.scpff.SCPFf;
-import net.yesman.scpff.level.block.custom.ContainmentCase;
+import net.yesman.scpff.level.block.decor.ContainmentCase;
 import net.yesman.scpff.level.block.entity.ContainmentBlockEntity;
 
 public class ContainmentCaseRenderer implements BlockEntityRenderer<ContainmentBlockEntity> {

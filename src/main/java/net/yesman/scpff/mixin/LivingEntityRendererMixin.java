@@ -25,7 +25,7 @@ public abstract class LivingEntityRendererMixin<T extends LivingEntity> {
         if (!(pEntity instanceof AbstractClientPlayer clientPlayer)) {
             return;
         }
-        if (clientPlayer.getItemBySlot(EquipmentSlot.HEAD).is(ModItems.SCP035.get()) && clientPlayer.getHealth() <= clientPlayer.getMaxHealth() / 1.5F) {
+        if (clientPlayer.getHealth() <= clientPlayer.getMaxHealth() / 1.5F && clientPlayer.getItemBySlot(EquipmentSlot.HEAD).is(ModItems.SCP035.get())) {
             SCP035WitherSkeletonRenderer renderer = this.getGeckoRenderer();
             if (renderer == null) {
                 return;
