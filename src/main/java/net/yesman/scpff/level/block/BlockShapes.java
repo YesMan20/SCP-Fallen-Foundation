@@ -19,7 +19,6 @@ public class BlockShapes {
     public static final VoxelShape CARPET = box(0, 0, 0, 16, 1, 16);
     public static final VoxelShape BEAKERS = box(1, 0, 1, 15, 2, 15);
     public static final VoxelShape PIPE = box(3, 0, 3, 13, 16, 13);
-    public static final VoxelShape TRASH_BIN = box(3, 0, 3, 13, 14, 13);
     public static final VoxelShape CONTAINMENT_CASE_BOTTOM = Shapes.join(Block.box(2, 0, 2, 14, 3, 14), Block.box(6, 3, 6, 10, 16, 10), BooleanOp.OR);
 
     public static final VoxelShape STEEL_CANISTER = Shapes.or(box(3, 0, 3, 13, 15, 13), box(4, 18, 4, 12, 20, 12));

@@ -3,10 +3,9 @@ package net.yesman.scpff.level.entity.client.models;
 import net.minecraft.resources.ResourceLocation;
 import net.yesman.scpff.SCPFf;
 import net.yesman.scpff.level.entity.custom.SCP049;
-import software.bernie.geckolib.model.GeoModel;
+import software.bernie.geckolib.core.animation.AnimationState;
 
-
-public class SCP049Model extends GeoModel<SCP049> {
+public class SCP049Model extends RotatedHeadModel<SCP049> {
 
     @Override
     public ResourceLocation getModelResource(SCP049 animatable) {
@@ -23,4 +22,8 @@ public class SCP049Model extends GeoModel<SCP049> {
         return new ResourceLocation(SCPFf.MOD_ID, "animations/scp049.animation.json");
     }
 
+    @Override
+    public void setCustomAnimations(SCP049 animatable, long instanceId, AnimationState<SCP049> animationState) {
+        super.setCustomAnimations(animatable, instanceId, animationState);
+    }
 }

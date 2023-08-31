@@ -2,7 +2,6 @@ package net.yesman.scpff.level.item.custom;
 
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -30,8 +29,10 @@ public class SledgeHammerItem extends PickaxeItem {
         level.playSound(pPlayer, pPlayer.getX(), pPlayer.getY(), pPlayer.getZ(), SoundEvents.ANVIL_USE, SoundSource.PLAYERS, 0.7F, 1.0F);
         pPlayer.swing(pUsedHand);
 
-        if (level instanceof ServerLevel serverLevel) {
-            serverLevel.sendParticles(ParticleTypes.CLOUD, (target.getX() + Math.random() * 0.2), (target.getY() + 0.7  + Math.random() * 0.5), (target.getZ() + Math.random() * 0.2), 15, 0.2D, 0.4D, 0.2D, 0.0D);
+        if (pPlayer.level.isClientSide) {
+            for (int i = 0; i < 10; i++) {
+                pPlayer.level.addParticle(ParticleTypes.CLOUD, target.getRandomX(0.5D), target.getRandomY(), target.getRandomZ(0.5D), 0.0D, 0.0D, 0.0D);
+            }
         }
         if (target instanceof SCP173 scp173) {
             SCP173.Variants variant = scp173.getVariant();

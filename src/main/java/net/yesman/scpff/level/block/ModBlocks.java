@@ -12,6 +12,7 @@ import net.minecraftforge.registries.RegistryObject;
 import net.yesman.scpff.SCPFf;
 import net.yesman.scpff.level.block.decor.ContainmentCase;
 import net.yesman.scpff.level.block.decor.*;
+import net.yesman.scpff.level.block.scp.*;
 import net.yesman.scpff.level.item.ModItems;
 
 import java.util.function.Supplier;
@@ -128,7 +129,7 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> WALLLIGHT = registerBlock("walllight", () ->
             new HorizontalDecorationBlock(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL).requiresCorrectToolForDrops().lightLevel(s -> 15).strength(4f).noOcclusion(),
-                    BlockShapes.WALL_LIGHT_BLOCK, BlockShapes.WALL_LIGHT_BLOCK, BlockShapes.WALL_LIGHT_BLOCK, BlockShapes.WALL_LIGHT_BLOCK));
+                    BlockShapes.WALL_LIGHT_BLOCK));
 
     public static final RegistryObject<Block> CHAIR = registerBlock("chair", () ->
             new ChairBlock(BlockBehaviour.Properties.of(Material.METAL).strength(1F).noOcclusion()));
@@ -202,8 +203,7 @@ public class ModBlocks {
                     BlockShapes.DESK_LAMP_S, BlockShapes.DESK_LAMP_N, BlockShapes.DESK_LAMP_E, BlockShapes.DESK_LAMP_W));
 
     public static final RegistryObject<Block> TRASHBIN = registerBlock("trashbin", () ->
-            new TrashBinBlock(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL).strength(1F).noOcclusion(),
-                    BlockShapes.TRASH_BIN));
+            new TrashBinBlock(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL).strength(1F).noOcclusion()));
 
     public static final RegistryObject<Block> FIREEXTINGUISHERCASE = registerBlock("fireextinguishercase", () ->
             new HorizontalDecorationBlock(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL).requiresCorrectToolForDrops().strength(6f).noOcclusion(),
@@ -263,6 +263,10 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> REINFORCEDIRON = registerBlock("reinforcediron", () ->
             new Block(BlockBehaviour.Properties.of(Material.HEAVY_METAL).sound(SoundType.METAL).strength(50F).explosionResistance(1000F).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> SCP_330 = registerBlock("scp_330", () ->
+            new SCP330Block(BlockBehaviour.Properties.of(Material.METAL).strength(3.0F, 10.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
+
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
