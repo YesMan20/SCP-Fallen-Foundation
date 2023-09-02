@@ -1,6 +1,5 @@
 package net.yesman.scpff.events;
 
-import net.minecraft.world.entity.monster.WitherSkeleton;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -18,5 +17,8 @@ public class CommonModEvents {
         event.put(ModEntity.SCP_939.get(), SCP939.createAttributes().build());
         event.put(ModEntity.SCP_173.get(), SCP173.createAttributes().build());
         event.put(ModEntity.SCP_1507.get(), SCP1507.createAttributes().build());
+        event.put(ModEntity.SCP_058.get(), SCP058.createMonsterAttributes().build()); // TODO custom attributes
+        event.put(ModEntity.SCP_2521.get(), SCP2521.createMobAttributes().build());
     }
+
 }

@@ -16,11 +16,13 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.yesman.scpff.SCPFf;
 import net.yesman.scpff.level.block.decor.HorizontalDecorationBlock;
+import net.yesman.scpff.level.item.ModItemTags;
 
+import java.util.HashMap;
 import java.util.List;
 
 public class SCP330Block extends HorizontalDecorationBlock {
-    private static int interactCount = 0;
+    private static final HashMap<Player, Integer> interactCount = new HashMap<>();
 
     public SCP330Block(Properties properties) {
         super(properties, box(3, 0, 3, 13, 3, 13));
@@ -28,22 +30,23 @@ public class SCP330Block extends HorizontalDecorationBlock {
 
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
-        List<Item> candy = ForgeRegistries.ITEMS.tags().getTag(ItemTags.create(new ResourceLocation(SCPFf.MOD_ID, "candies"))).stream().toList();
+        List<Item> candy = ModItemTags.CANDIES;
         Item item = candy.get(RandomSource.create().nextInt(candy.size()));
         level.addFreshEntity(new ItemEntity(level, pos.getX() + 0.5F, pos.getY() + 0.2F, pos.getZ() + 0.5F, new ItemStack(item)));
         if (!level.isClientSide) {
             if (!player.isCreative()) {
-                if (interactCount >= 2) {
+                if (interactCount.get(player) >= 2) {
                     player.hurt(level.damageSources().magic(), 100.0F);
-                    interactCount = 0;
+                    interactCount.put(player, 0);
                 } else {
-                    interactCount++;
+                    interactCount.put(player, interactCount.get(player) + 1);
                 }
-                SCPFf.LOGGER.info("scp-330 ineractCount: " + interactCount);
+                SCPFf.LOGGER.info("scp-330 interactCount for {} : {}", player.getDisplayName(), interactCount.get(player));
+                return InteractionResult.SUCCESS;
             }
         } else {
             return InteractionResult.sidedSuccess(true);
         }
-        return super.use(state, level, pos, player, hand, hit);
+        return InteractionResult.FAIL;
     }
 }

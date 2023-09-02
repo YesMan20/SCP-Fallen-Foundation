@@ -9,22 +9,7 @@ import software.bernie.geckolib.core.animation.AnimationState;
 import software.bernie.geckolib.model.GeoModel;
 import software.bernie.geckolib.model.data.EntityModelData;
 
-public class RotatedHeadModel<E extends GeoEntity> extends GeoModel<E> {
-
-    @Override
-    public ResourceLocation getModelResource(E animatable) {
-        return null;
-    }
-
-    @Override
-    public ResourceLocation getTextureResource(E animatable) {
-        return null;
-    }
-
-    @Override
-    public ResourceLocation getAnimationResource(E animatable) {
-        return null;
-    }
+public abstract class RotatedHeadModel<E extends GeoEntity> extends GeoModel<E> {
 
     @Override
     public void setCustomAnimations(E animatable, long instanceId, AnimationState<E> animationState) {
@@ -35,4 +20,5 @@ public class RotatedHeadModel<E extends GeoEntity> extends GeoModel<E> {
             head.setRotX(head.getRotX() + modelData.headPitch() * Mth.DEG_TO_RAD);
         }
     }
+
 }

@@ -24,6 +24,7 @@ import net.yesman.scpff.level.item.ModItems;
 import net.yesman.scpff.level.item.custom.IgnoreOnLoad;
 import net.yesman.scpff.level.item.scps.SCPArmorItem;
 import net.yesman.scpff.level.painting.ModPaintings;
+import net.yesman.scpff.networking.ModMessages;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -52,7 +53,11 @@ public class SCPFf {
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event) {}
+    private void commonSetup(final FMLCommonSetupEvent event) {
+        event.enqueueWork(() -> {
+            ModMessages.register();
+        });
+    }
 
     public void registerItemTab(CreativeModeTabEvent.Register event) {
         event.registerCreativeModeTab(new ResourceLocation(SCPFf.MOD_ID, "scpfftab_item"),

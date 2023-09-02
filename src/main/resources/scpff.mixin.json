@@ -4,13 +4,18 @@
   "compatibilityLevel": "JAVA_17",
   "client": [
     "EntityRenderDispatcherAccessor",
-    "LivingEntityRendererMixin"
+    "KeyboardInputMixin",
+    "LivingEntityRendererMixin",
+    "LocalPlayerMixin"
   ],
   "server": [
   ],
   "mixins": [
+    "EnchantmentHelperMixin",
     "LivingEntityMixin",
-    "MeleeAttackGoalMixin"
+    "MeleeAttackGoalMixin",
+    "ServerPacketListenerMixin",
+    "SignBlockEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1
