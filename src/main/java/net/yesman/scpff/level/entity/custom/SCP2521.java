@@ -61,8 +61,8 @@ public class SCP2521 extends Monster implements GeoEntity {
 
     public static boolean has2521InString(String s) {
         String base = s.replace(" ", "").replaceAll("[^a-zA-Z0-9]", "");
-        String nums = base.replaceAll("[^a-zA-Z]", "");
-        String letters = base.replaceAll("[^0-9]", "");
+        String letters = base.replaceAll("[^a-zA-Z]", "");
+        String nums = base.replaceAll("[^0-9]", "");
         return base.contains("2521") || letters.contains("twofivetwoone") || base.contains("twofivetwoone") || nums.contains("2521");
     }
 

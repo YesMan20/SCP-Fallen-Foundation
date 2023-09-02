@@ -128,5 +128,5 @@ public class CommonEvents {
         if (item instanceof WeightedArmorItem) {
             event.getToolTip().add(Component.literal("§9+" + WeightedArmorItem.weight + " Weight"));
         }
-    }   
+    }
 }
