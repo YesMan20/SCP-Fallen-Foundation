@@ -107,16 +107,12 @@ public class SCP2521 extends Monster implements GeoEntity {
                 return;
             }
             if (CommonEvents.active2521 == null) {
-                BlockPos summonPos = event1.player == null ? event1.summonPos : BlockPos.containing(event1.player.getEyePosition().add(Helper.calculateViewVector(event1.player.getXRot(), event1.player.getYRot()).scale(-1)));
+                BlockPos summonPos = event1.player == null ? event1.summonPos : BlockPos.containing(event1.player.getEyePosition().add(Helper.calculateViewVector(0, event1.player.getYRot()).scale(-1)));
                 SCP2521 scp2521 = new SCP2521(ModEntity.SCP_2521.get(), event1.level);
                 scp2521.teleportTo(summonPos.getX(), summonPos.getY(), summonPos.getZ());
                 event1.level.addFreshEntity(scp2521);
-                scp2521.lookAt(EntityAnchorArgument.Anchor.EYES, summonPos.getCenter());
+                scp2521.lookAt(EntityAnchorArgument.Anchor.EYES, event1.player == null ? summonPos.getCenter() : event1.player.getEyePosition());
                 CommonEvents.active2521 = scp2521;
-                if (event1.player != null) {
-                    PlayerData playerData = PlayerData.getData(event1.player);
-                    playerData.updateIn2521Event(true);
-                }
             }
             event1.runnable.run();
             if (localCounter >= 100) {
@@ -124,10 +120,6 @@ public class SCP2521 extends Monster implements GeoEntity {
                 CommonEvents.active2521.discard();
                 CommonEvents.active2521 = null;
                 localCounter = 0;
-                if (event1.player != null) {
-                    PlayerData playerData = PlayerData.getData(event1.player);
-                    playerData.updateIn2521Event(false);
-                }
             }
         }
 

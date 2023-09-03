@@ -33,7 +33,6 @@ public class CommonEvents {
 
     public static HashMap<Player, PlayerData> PlayerRuntimeData = new HashMap<>();
     public static SCP2521 active2521 = null;
-
     @SubscribeEvent
     public static void changeTarget(LivingChangeTargetEvent event) {
         if (event.getNewTarget() == null || event.getEntity() == null) return;
@@ -52,12 +51,14 @@ public class CommonEvents {
             return;
         }
         if (!player.isCreative() && SCP2521.has2521InString(event.getRawText())) {
+            PlayerData.getData(player).updateIn2521Event(true);
             BlockPos summonPos = BlockPos.containing(player.getEyePosition().add(Helper.calculateViewVector(player.getXRot(), player.getYRot()).scale(-1)));
             new SCP2521.SCP2521Event(summonPos, player.level, player, () -> {
                 ModMessages.sendToPlayer(new EnableMovementPacketS2CPacket(false), player);
                 RunnableCooldownHandler.addDelayedRunnable(() -> {
                     ModMessages.sendToPlayer(new EnableMovementPacketS2CPacket(true), player);
                     player.kill();
+                    PlayerData.getData(player).updateIn2521Event(false);
                 }, 100);
             });
         }
@@ -83,12 +84,13 @@ public class CommonEvents {
         PlayerData data = PlayerData.getData(serverPlayer);
         if (stack.hasCustomHoverName() && !data.in2521Event()) {
             if (SCP2521.has2521InString(stack.getHoverName().toString())) {
-                data.updateData();
+                PlayerData.getData(serverPlayer).updateIn2521Event(true);
                 new SCP2521.SCP2521Event(null, serverPlayer.level, serverPlayer, () -> {
                     ModMessages.sendToPlayer(new EnableMovementPacketS2CPacket(false), serverPlayer);
                     RunnableCooldownHandler.addDelayedRunnable(() -> {
                         ModMessages.sendToPlayer(new EnableMovementPacketS2CPacket(true), serverPlayer);
                         stack.shrink(stack.getCount());
+                        PlayerData.getData(serverPlayer).updateIn2521Event(false);
                     }, 100);
                 });
             }
