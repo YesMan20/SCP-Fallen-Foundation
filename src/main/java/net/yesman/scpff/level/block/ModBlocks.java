@@ -1,10 +1,13 @@
 package net.yesman.scpff.level.block;
 
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -97,6 +100,13 @@ public class ModBlocks {
 
 
     /** Decoration Blocks **/
+
+    public static final RegistryObject<Block> VENTBLOCK = registerBlock("ventblock", () ->
+            new Block(BlockBehaviour.Properties.of(Material.HEAVY_METAL).explosionResistance(1.8F).strength(2F).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> VENT_COVER = registerBlock("vent_cover", () ->
+            new TrapDoorBlock(BlockBehaviour.Properties.of(Material.HEAVY_METAL, MaterialColor.METAL).noOcclusion().strength(2F).explosionResistance(1.8F).requiresCorrectToolForDrops(), BlockSetType.IRON));
+
     public static final RegistryObject<Block> PIPECORNER = registerBlock("pipecorner", () ->
             new Block(BlockBehaviour.Properties.of(Material.HEAVY_METAL).explosionResistance(1.8F).strength(2F).requiresCorrectToolForDrops()));
 

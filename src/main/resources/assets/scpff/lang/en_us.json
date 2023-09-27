@@ -15,7 +15,9 @@
   "item.scpff.scp_553_spawn_egg": "SCP-553 - §aCrystalline Butterflies §rSpawn Egg",
   "item.scpff.scp_049_spawn_egg": "SCP-049 - §6The Plague Doctor §rSpawn Egg",
   "item.scpff.scp_650_spawn_egg": "SCP-650 - §6Startling Statue §rSpawn Egg",
+  "item.scpff.scp_058_spawn_egg": "SCP-058 - §cHeart Of Darkness §rSpawn Egg",
   "item.scpff.scp_939_spawn_egg": "SCP-939 - §cWith Many Voices §rSpawn Egg",
+  "item.scpff.scp_2521_spawn_egg": "SCP-2521 - §c●●|●●●●●|●●|● §rSpawn Egg",
   "item.scpff.scp_173_spawn_egg": "SCP-173 - §6The Sculpture §rSpawn Egg",
   "item.scpff.scp_1507_spawn_egg": "SCP-1507 - §6Pink Flamingos §rSpawn Egg",
 
@@ -59,7 +61,7 @@
   "entity.scpff.scp_1507": "SCP-1507 - §6Pink Flamingos",
   "entity.scpff.scp_939": "SCP-939 - §4With Many Voices",
   "entity.scpff.scp_058": "SCP-058 - §4Heart Of Darkness",
-  "entity.scpff.scp_2521": "§4●●|●●●●●|●●|●",
+  "entity.scpff.scp_2521": "SCP-§4●●|●●●●●|●●|●",
 
   "block.scpff.hcwall": "Heavy Containment Wall",
   "block.scpff.hcwall_stairs": "Heavy Containment Wall Stairs",
@@ -88,6 +90,8 @@
   "block.scpff.cautionline": "Caution Line",
   "block.scpff.cautionline_stairs": "Caution Line Stairs",
   "block.scpff.cautionline_slab": "Caution Line Slab",
+  "block.scpff.vent_cover": "Vent Cover",
+  "block.scpff.ventblock": "Vent Block",
   "block.scpff.computer": "Computer",
   "block.scpff.chair": "Chair",
   "block.scpff.paperstack": "Stack Of Papers",

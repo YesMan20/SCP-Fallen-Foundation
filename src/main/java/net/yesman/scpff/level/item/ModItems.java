@@ -108,6 +108,8 @@ public class ModItems {
     public static final RegistryObject<ForgeSpawnEggItem> SCP_1507_SPAWN_EGG = ITEMS.register("scp_1507_spawn_egg", () -> new ForgeSpawnEggItem(ModEntity.SCP_1507, 15164807, 16776241,
             new Item.Properties()));
 
+    public static final RegistryObject<ForgeSpawnEggItem> SCP_058_SPAWN_EGG = ITEMS.register("scp_058_spawn_egg", () -> new ForgeSpawnEggItem(ModEntity.SCP_058, 6755637, 16177620,
+            new Item.Properties()));
 
     public static final RegistryObject<ForgeSpawnEggItem> SCP_939_SPAWN_EGG = ITEMS.register("scp_939_spawn_egg", () -> new ForgeSpawnEggItem(ModEntity.SCP_939, 3342336, 10027008,
             new Item.Properties()));
