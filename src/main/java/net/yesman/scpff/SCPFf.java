@@ -24,6 +24,7 @@ import net.yesman.scpff.level.item.ModItems;
 import net.yesman.scpff.level.item.custom.IgnoreOnLoad;
 import net.yesman.scpff.level.item.scps.SCPArmorItem;
 import net.yesman.scpff.level.painting.ModPaintings;
+import net.yesman.scpff.level.sound.ModSounds;
 import net.yesman.scpff.networking.ModMessages;
 import org.slf4j.Logger;
 
@@ -41,6 +42,8 @@ public class SCPFf {
         ModPaintings.register(modEventBus);
         ModBlockEntities.register(modEventBus);
         ModEntity.MOD_ENTITES.register(modEventBus);
+
+        ModSounds.register(modEventBus);
 
         EntityInit.init();
 

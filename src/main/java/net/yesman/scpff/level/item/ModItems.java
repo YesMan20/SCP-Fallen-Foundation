@@ -1,5 +1,8 @@
 package net.yesman.scpff.level.item;
 
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -20,6 +23,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> SCP500 = ITEMS.register("scp500", () -> new SCP500Item(new Item.Properties()
             .food(ModFoods.SCP500).stacksTo(7)));
+
+    public static final RegistryObject<Item> SCP1023ARC = ITEMS.register("scp1023arc", () -> new SCP1023ARC(Tiers.NETHERITE, 99999, -1.0f,
+            new Item.Properties().rarity(Rarity.EPIC).durability(99999)));
 
     public static final RegistryObject<Item> SCP1025 = ITEMS.register("scp1025", () -> new SCP1025Item(new Item.Properties()
             .stacksTo(1)));
@@ -90,9 +96,6 @@ public class ModItems {
 
     public static final RegistryObject<Item> SCP939DAGGER = ITEMS.register("scp939dagger", () -> new SwordItem(Tiers.WOOD, 5, 1.0f,
             new SwordItem.Properties().durability(110)));
-
-    public static final RegistryObject<Item> INSTAKILL = ITEMS.register("instakill", () -> new InstaKillItem(Tiers.NETHERITE, 99999, -1.0f,
-            new Item.Properties().rarity(Rarity.EPIC).durability(99999)));
 
     /** SCP Spawn Eggs **/
 

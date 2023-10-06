@@ -4,6 +4,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.yesman.scpff.SCPFf;
 import net.yesman.scpff.level.entity.custom.SCP049;
 import software.bernie.geckolib.core.animation.AnimationState;
+import software.bernie.geckolib.model.GeoModel;
 
 public class SCP049Model extends RotatedHeadModel<SCP049> {
 

@@ -1,0 +1,20 @@
+{
+  "scp058beating": {
+    "subtitle": "sounds.scpff.scp058beating",
+    "sounds": [
+      "scpff:scp058beating"
+    ]
+  },
+  "scp049breathing": {
+    "subtitle": "sounds.scpff.scp049breathing",
+    "sounds": [
+      "scpff:scp049breathing"
+    ]
+  },
+  "scp106breathing": {
+    "subtitle": "sounds.scpff.scp106breathing",
+    "sounds": [
+      "scpff:scp106breathing"
+    ]
+  }
+}

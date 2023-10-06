@@ -1,6 +1,5 @@
 package net.yesman.scpff.level.entity.client.models;
 
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.constant.DataTickets;

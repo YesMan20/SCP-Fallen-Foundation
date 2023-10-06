@@ -1,8 +1,6 @@
 package net.yesman.scpff.level.entity.custom;
 
-import net.minecraft.commands.arguments.EntityAnchorArgument;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -18,6 +16,10 @@ import net.yesman.scpff.misc.Helper;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.AnimatableManager;
+import software.bernie.geckolib.core.animation.Animation;
+import software.bernie.geckolib.core.animation.AnimationController;
+import software.bernie.geckolib.core.animation.RawAnimation;
+import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 public class SCP650 extends Mob implements GeoEntity {
@@ -50,12 +52,17 @@ public class SCP650 extends Mob implements GeoEntity {
     }
 
     @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar controller) {
-    }
-
-    @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {
         return cache;
+    }
+
+    private static final RawAnimation RANDOM2 = RawAnimation.begin().then("animation.scp650.random", Animation.LoopType.LOOP);
+    private static final RawAnimation RANDOM1 = RawAnimation.begin().then("animation.scp650.random2", Animation.LoopType.LOOP);
+    private static final RawAnimation IDLE_ANIM = RawAnimation.begin().then("animation.scp650.idle", Animation.LoopType.LOOP);
+
+    @Override
+    public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
+        controllerRegistrar.add(new AnimationController<>(this, "controller", 0, state -> PlayState.CONTINUE));
     }
 
     @Override

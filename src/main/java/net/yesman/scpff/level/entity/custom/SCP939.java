@@ -1,6 +1,5 @@
 package net.yesman.scpff.level.entity.custom;
 
-import net.minecraft.client.renderer.entity.WardenRenderer;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -20,6 +19,7 @@ import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.monster.*;
 import net.minecraft.world.entity.monster.piglin.Piglin;
+import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.npc.WanderingTrader;
 import net.minecraft.world.entity.player.Player;
@@ -38,9 +38,7 @@ import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-
 public class SCP939 extends Monster implements GeoEntity {
-    private EntityDimensions dimensions;
     private static final EntityDataAccessor<Byte> DATA_FLAGS_ID = SynchedEntityData.defineId(SCP939.class, EntityDataSerializers.BYTE);
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
     private static final EntityDataAccessor<Boolean> DATA_HAS_TARGET = SynchedEntityData.defineId(SCP939.class, EntityDataSerializers.BOOLEAN);
@@ -54,7 +52,7 @@ public class SCP939 extends Monster implements GeoEntity {
                 .add(Attributes.MOVEMENT_SPEED, 0.3F)
                 .add(Attributes.ATTACK_DAMAGE, 5.0f)
                 .add(Attributes.ATTACK_SPEED, 1.0f)
-                .add(Attributes.MAX_HEALTH, 37.0D);
+                .add(Attributes.MAX_HEALTH, 47.0D);
     }
 
     @Override
@@ -80,7 +78,7 @@ public class SCP939 extends Monster implements GeoEntity {
     }
 
     public double getPassengersRidingOffset() {
-        return (double)(this.getBbHeight() * 0.5F);
+        return this.getBbHeight() * 0.5F;
     }
 
     public boolean isClimbing() {
@@ -129,7 +127,7 @@ public class SCP939 extends Monster implements GeoEntity {
 
     @Override
     public SoundEvent getDeathSound() {
-        return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.pig.death"));
+        return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.villager.death"));
     }
 
     @Override
@@ -169,12 +167,12 @@ public class SCP939 extends Monster implements GeoEntity {
              if (this.swinging) {
                  state.getController().setAnimation(ATTACK_ANIM);
              } else if (this.hasTarget() && state.isMoving()) {
-                state.getController().setAnimation(CHASE_ANIM);
-            } else if (!state.isMoving()) {
-                state.getController().setAnimation(IDLE_ANIM);
-            } else if (state.isMoving()) {
-                state.getController().setAnimation(WALK_ANIM);
-            }
+                 state.getController().setAnimation(CHASE_ANIM);
+             } else if (!state.isMoving()) {
+                 state.getController().setAnimation(IDLE_ANIM);
+             } else if (state.isMoving()) {
+                 state.getController().setAnimation(WALK_ANIM);
+             }
 
             return PlayState.CONTINUE;
         }));

@@ -8,6 +8,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
+import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
 import net.yesman.scpff.level.entity.custom.SCP049;
 import net.yesman.scpff.level.item.ModItems;
@@ -27,12 +28,12 @@ public class SCP049LookForPlayerGoal extends NearestAttackableTargetGoal<Player>
     @Override
     public boolean canUse() {
         Player pendingTarget = this.scp049.level.getNearestPlayer(TargetingConditions.forCombat().range(this.getFollowDistance()).selector((livingEntity -> {
-            if (livingEntity instanceof Player player && player.isCreative()) {
+            if (livingEntity instanceof Player player && player.isCreative() || livingEntity instanceof AbstractVillager villager) {
                 return false;
             }
             return !livingEntity.getItemBySlot(EquipmentSlot.HEAD).is(ModItems.SCP268.get());
         })), this.scp049);
-        if (RandomSource.create().nextFloat() > 0.7F && pendingTarget != null) {
+        if (RandomSource.create().nextFloat() > 0.99F && pendingTarget != null) {
             pendingTarget.displayClientMessage(Component.literal("I SENSE THE DISEASE").withStyle(ChatFormatting.RED).withStyle(ChatFormatting.BOLD), false);
             this.findTarget();
             return true;

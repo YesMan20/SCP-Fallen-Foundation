@@ -6,11 +6,15 @@
   "item.scpff.scp1025": "SCP-1025 - §aEncyclopedia Of Diseases",
   "item.scpff.scp035": "SCP-035 - §cThe Possessive Mask",
 
+  "sounds.scpff.scp058beating": "Heart beats",
+  "sounds.scpff.scp049breathing": "Heavy breathing",
+  "sounds.scpff.scp106breathing": "Breathing",
+
   "item.scpff.candy1": "Purple Candy",
   "item.scpff.candy2": "Red Candy",
   "item.scpff.candy3": "Yellow Candy",
   "item.scpff.candy4": "Green Candy",
-  "item.scpff.instakill": "Insta-Kill",
+  "item.scpff.scp1023arc": "SCP-1023-ARC - A Telekill Sword",
 
   "item.scpff.scp_553_spawn_egg": "SCP-553 - §aCrystalline Butterflies §rSpawn Egg",
   "item.scpff.scp_049_spawn_egg": "SCP-049 - §6The Plague Doctor §rSpawn Egg",
@@ -139,6 +143,8 @@
 
   "painting.scpff.soda.title": "SODA!!!!!",
   "painting.scpff.soda.author": "Lucent",
+  "painting.scpff.soda.title": "Safety First Poster",
+  "painting.scpff.soda.author": "The Foundation",
   "painting.scpff.mason.title": "Mason Troy Adams",
   "painting.scpff.mason.author": "Lucent",
   "painting.scpff.mysteriousrobot.title": "Mysterious Robot",
@@ -150,7 +156,7 @@
   "painting.scpff.106poster.title": "SCP-106 Poster",
   "painting.scpff.106poster.author": "The Foundation",
   "painting.scpff.dclassposter.title": "D-Class Poster",
-  "painting.scpff.dclassposter.author": "The D-Class",
+  "painting.scpff.dclassposter.author": "The D-Class Of Site-19",
 
   "creativemodetab.scpff_item": "SCP Items",
   "creativemodetab.scpff_block": "SCP Blocks",

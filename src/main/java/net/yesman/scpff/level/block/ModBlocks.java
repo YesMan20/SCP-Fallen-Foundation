@@ -1,6 +1,5 @@
 package net.yesman.scpff.level.block;
 
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -15,7 +14,7 @@ import net.minecraftforge.registries.RegistryObject;
 import net.yesman.scpff.SCPFf;
 import net.yesman.scpff.level.block.decor.ContainmentCase;
 import net.yesman.scpff.level.block.decor.*;
-import net.yesman.scpff.level.block.scp.*;
+import net.yesman.scpff.level.block.Scp.*;
 import net.yesman.scpff.level.item.ModItems;
 
 import java.util.function.Supplier;

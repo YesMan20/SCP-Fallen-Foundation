@@ -6,7 +6,7 @@ import net.yesman.scpff.level.entity.custom.SCP058;
 import net.yesman.scpff.level.entity.custom.SCP2521;
 import software.bernie.geckolib.model.GeoModel;
 
-public class SCP2521Model extends GeoModel<SCP2521> {
+public class SCP2521Model extends RotatedHeadModel<SCP2521> {
     @Override
     public ResourceLocation getModelResource(SCP2521 animatable) {
         return new ResourceLocation(SCPFf.MOD_ID, "geo/scp2521.geo.json");

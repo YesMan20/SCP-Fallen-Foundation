@@ -7,7 +7,7 @@ import net.yesman.scpff.level.entity.custom.SCP1507;
 import software.bernie.geckolib.model.GeoModel;
 
 
-public class SCP1507Model extends GeoModel<SCP1507> {
+public class SCP1507Model extends RotatedHeadModel<SCP1507> {
 
     @Override
     public ResourceLocation getModelResource(SCP1507 animatable) {

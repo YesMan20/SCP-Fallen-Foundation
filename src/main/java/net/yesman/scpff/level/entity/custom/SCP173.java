@@ -72,7 +72,7 @@ public class SCP173 extends Monster implements GeoEntity {
         }
         for (Entity entity : this.level.getEntities(this, this.getBoundingBox().inflate(30), (val) -> val instanceof Player)) {
             if (!this.level.isClientSide && entity instanceof Player player) {
-                Entity lookedAt = Helper.lookingAtInRange(player, 10);
+                Entity lookedAt = Helper.lookingAtInRange(player, 30);
                 if ((lookedAt != this && player.hasLineOfSight(this) && this.cooldownTick < this.tickCount)) {
                     this.cooldownTick = this.tickCount;
                     this.setNoAi(false);
@@ -154,10 +154,10 @@ public class SCP173 extends Monster implements GeoEntity {
     }
 
     public enum Variants {
-        SCP_173Y("scp173y"),
         SCP_173("scp173"),
         SCP_173U("scp173u"),
         SCP_173V("scp173v"),
+        SCP_173Y("scp173y"),
         SCP_173R("scp173r"),
         SCP_173B("scp173b"),
         SCP_173FM("scp173fm"),
