@@ -122,7 +122,7 @@ public class SCP058 extends Monster implements GeoEntity {
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
-        controllerRegistrar.add(new AnimationController<>(this, "controller", 0, state -> {
+        controllerRegistrar.add(new AnimationController<>(this, "controller", 3, state -> {
             if (this.swinging) {
                 state.getController().setAnimation(ATTACK);
             } else if (!state.isMoving()) {

@@ -40,8 +40,9 @@ import java.lang.reflect.Method;
 
 public class SCP939 extends Monster implements GeoEntity {
     private static final EntityDataAccessor<Byte> DATA_FLAGS_ID = SynchedEntityData.defineId(SCP939.class, EntityDataSerializers.BYTE);
-    private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
     private static final EntityDataAccessor<Boolean> DATA_HAS_TARGET = SynchedEntityData.defineId(SCP939.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Boolean> DATA_CHASING = SynchedEntityData.defineId(SCP939.class, EntityDataSerializers.BOOLEAN);
+    private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
     public SCP939(EntityType<? extends Monster> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
@@ -58,7 +59,6 @@ public class SCP939 extends Monster implements GeoEntity {
     @Override
     public void checkDespawn() {
     }
-
 
 
     public MobType getMobType() {
@@ -163,10 +163,10 @@ public class SCP939 extends Monster implements GeoEntity {
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controller) {
-        controller.add(new AnimationController<>(this, "Controller", 0, state -> {
+        controller.add(new AnimationController<>(this, "Controller", 3, state -> {
              if (this.swinging) {
                  state.getController().setAnimation(ATTACK_ANIM);
-             } else if (this.hasTarget() && state.isMoving()) {
+             } else if (this.hasTarget() && this.isChasing() && state.isMoving()) {
                  state.getController().setAnimation(CHASE_ANIM);
              } else if (!state.isMoving()) {
                  state.getController().setAnimation(IDLE_ANIM);
@@ -181,6 +181,11 @@ public class SCP939 extends Monster implements GeoEntity {
     public void setTarget(@Nullable LivingEntity pTarget) {
         super.setTarget(pTarget);
         this.setHasTarget(pTarget != null);
+        if (pTarget instanceof Player || pTarget instanceof Villager) {
+            this.setChasing(true);
+        } else {
+            this.setChasing(false);
+        }
     }
 
     @Override
@@ -188,6 +193,15 @@ public class SCP939 extends Monster implements GeoEntity {
         super.defineSynchedData();
         this.entityData.define(DATA_HAS_TARGET, false);
         this.entityData.define(DATA_FLAGS_ID, (byte)0);
+        this.entityData.define(DATA_CHASING, false);
+    }
+
+    public boolean isChasing() {
+        return this.entityData.get(DATA_CHASING);
+    }
+
+    public void setChasing(boolean chasing) {
+        this.entityData.set(DATA_CHASING, chasing);
     }
 
     public boolean hasTarget() {

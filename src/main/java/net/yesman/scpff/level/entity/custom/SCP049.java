@@ -85,7 +85,7 @@ public class SCP049 extends Monster implements GeoEntity, NeutralMob {
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controller) {
-        controller.add(new AnimationController<>(this, "Controller", 0, state -> {
+        controller.add(new AnimationController<>(this, "Controller", 3, state -> {
             if (this.isCuring()) {
                 state.getController().setAnimation(ATTACK_ANIM);
             } else if (this.hasTarget() && state.isMoving()) {

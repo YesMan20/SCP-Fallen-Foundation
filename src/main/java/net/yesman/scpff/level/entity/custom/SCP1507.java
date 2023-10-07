@@ -56,7 +56,7 @@ public class SCP1507 extends Monster implements GeoEntity {
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controller) {
-        controller.add(new AnimationController<>(this, "Controller", 0, state -> {
+        controller.add(new AnimationController<>(this, "Controller", 3, state -> {
             if (this.swinging) {
                 state.getController().setAnimation(ATTACK_ANIM);
             } else if (!state.isMoving()) {
