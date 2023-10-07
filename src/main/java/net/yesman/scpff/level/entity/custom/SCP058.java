@@ -53,6 +53,7 @@ public class SCP058 extends Monster implements GeoEntity {
                 .add(Attributes.MOVEMENT_SPEED, 0.3F)
                 .add(Attributes.ATTACK_DAMAGE, 7.0f)
                 .add(Attributes.ATTACK_SPEED, 1.0f)
+                .add(Attributes.KNOCKBACK_RESISTANCE, 5f)
                 .add(Attributes.MAX_HEALTH, 58.0D);
     }
 

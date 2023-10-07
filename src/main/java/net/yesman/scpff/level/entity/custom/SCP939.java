@@ -53,6 +53,7 @@ public class SCP939 extends Monster implements GeoEntity {
                 .add(Attributes.MOVEMENT_SPEED, 0.3F)
                 .add(Attributes.ATTACK_DAMAGE, 5.0f)
                 .add(Attributes.ATTACK_SPEED, 1.0f)
+                .add(Attributes.KNOCKBACK_RESISTANCE, 5f)
                 .add(Attributes.MAX_HEALTH, 47.0D);
     }
 

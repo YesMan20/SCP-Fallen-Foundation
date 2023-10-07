@@ -1,5 +1,6 @@
 package net.yesman.scpff.level.block;
 
+import com.mojang.blaze3d.shaders.Effect;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -12,9 +13,9 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.yesman.scpff.SCPFf;
+import net.yesman.scpff.level.block.Scp.SCP330Block;
 import net.yesman.scpff.level.block.decor.ContainmentCase;
 import net.yesman.scpff.level.block.decor.*;
-import net.yesman.scpff.level.block.Scp.*;
 import net.yesman.scpff.level.item.ModItems;
 
 import java.util.function.Supplier;
@@ -249,6 +250,12 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> SCP173CRAP = registerBlock("scp173crap", () ->
             new DecorationBlock(BlockBehaviour.Properties.of(Material.SPONGE).noCollission().sound(SoundType.SLIME_BLOCK).strength(2F).noOcclusion().speedFactor(0.2f).requiresCorrectToolForDrops(), BlockShapes.CARPET));
+
+    public static final RegistryObject<Block> SCP106CORROSIONLAYER = registerBlock("scp106corrosionlayer", () ->
+            new DecorationBlock(BlockBehaviour.Properties.of(Material.SPONGE).noCollission().sound(SoundType.SLIME_BLOCK).strength(2F).noOcclusion().speedFactor(0.2f).requiresCorrectToolForDrops(), BlockShapes.CARPET));
+
+    public static final RegistryObject<Block> SCP106CORROSION = registerBlock("scp106corrosion", () ->
+            new DecorationBlock(BlockBehaviour.Properties.of(Material.SPONGE).noCollission().sound(SoundType.SLIME_BLOCK).strength(2F).noOcclusion().speedFactor(0.2f).requiresCorrectToolForDrops(), BlockShapes.BLOCK));
 
     public static final RegistryObject<Block> CONTAINMENT_CASE = registerBlock("containment_case", () ->
             new ContainmentCase(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL).strength(2F).noOcclusion()));

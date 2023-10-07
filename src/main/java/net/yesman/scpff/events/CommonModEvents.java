@@ -14,6 +14,7 @@ public class CommonModEvents {
     public static void entityAttributeCreation(EntityAttributeCreationEvent event) {
         event.put(ModEntity.SCP_650.get(), SCP650.createAttributes().build());
         event.put(ModEntity.SCP_049.get(), SCP049.createAttributes().build());
+        event.put(ModEntity.SCP_106.get(), SCP106.createAttributes().build());
         event.put(ModEntity.SCP_939.get(), SCP939.createAttributes().build());
         event.put(ModEntity.SCP_173.get(), SCP173.createAttributes().build());
         event.put(ModEntity.SCP_1507.get(), SCP1507.createAttributes().build());

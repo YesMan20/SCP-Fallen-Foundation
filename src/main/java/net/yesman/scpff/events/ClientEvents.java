@@ -27,6 +27,7 @@ public class ClientEvents {
         event.registerEntityRenderer(ModEntity.SCP_1507.get(), SCP1507Renderer::new);
         event.registerEntityRenderer(ModEntity.SCP_058.get(), SCP058Renderer::new);
         event.registerEntityRenderer(ModEntity.SCP_2521.get(), SCP2521Renderer::new);
+        event.registerEntityRenderer(ModEntity.SCP_106.get(), SCP106Renderer::new);
         event.registerEntityRenderer(EntityType.PLAYER, SCP035WitherSkeletonRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.CONTAINMENT_BLOCK.get(), ContainmentCaseRenderer::new);
     }

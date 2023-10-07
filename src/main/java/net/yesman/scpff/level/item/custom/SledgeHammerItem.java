@@ -26,10 +26,10 @@ public class SledgeHammerItem extends PickaxeItem {
     @Override
     public InteractionResult interactLivingEntity(ItemStack pStack, Player pPlayer, LivingEntity target, InteractionHand pUsedHand) {
         Level level = pPlayer.getLevel();
-        level.playSound(pPlayer, pPlayer.getX(), pPlayer.getY(), pPlayer.getZ(), SoundEvents.ANVIL_USE, SoundSource.PLAYERS, 0.7F, 1.0F);
-        pPlayer.swing(pUsedHand);
 
-        if (pPlayer.level.isClientSide) {
+        if (pPlayer.level.isClientSide && target instanceof SCP173 scp173) {
+            level.playSound(pPlayer, pPlayer.getX(), pPlayer.getY(), pPlayer.getZ(), SoundEvents.ANVIL_USE, SoundSource.PLAYERS, 0.7F, 1.0F);
+            pPlayer.swing(pUsedHand);
             for (int i = 0; i < 10; i++) {
                 pPlayer.level.addParticle(ParticleTypes.CLOUD, target.getRandomX(0.5D), target.getRandomY(), target.getRandomZ(0.5D), 0.0D, 0.0D, 0.0D);
             }
