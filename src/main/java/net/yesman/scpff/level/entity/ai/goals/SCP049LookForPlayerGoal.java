@@ -1,4 +1,4 @@
-package net.yesman.scpff.level.entity.goals;
+package net.yesman.scpff.level.entity.ai.goals;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;

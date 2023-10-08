@@ -3,7 +3,6 @@ package net.yesman.scpff.level.entity.custom;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.EntityType;
@@ -14,14 +13,12 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
-import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Husk;
 import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.yesman.scpff.level.entity.goals.SCP049LookForPlayerGoal;
+import net.yesman.scpff.level.entity.ai.goals.SCP049LookForPlayerGoal;
+import net.yesman.scpff.level.sound.ModSounds;
 import net.yesman.scpff.misc.RunnableCooldownHandler;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
@@ -47,7 +44,7 @@ public class SCP049 extends Monster implements GeoEntity, NeutralMob {
 
     @Override
     protected SoundEvent getAmbientSound() {
-        return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("scpff:scp049breathing"));
+        return ModSounds.SCP049BREATHING.get();
     }
 
     @Override
@@ -56,7 +53,6 @@ public class SCP049 extends Monster implements GeoEntity, NeutralMob {
         this.goalSelector.addGoal(3, new WaterAvoidingRandomStrollGoal(this, 1.0D));
         this.goalSelector.addGoal(4, new LookAtPlayerGoal(this, Player.class, 6.0F));
         this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
-        this.goalSelector.addGoal(18, new RandomStrollGoal(this, 1));
         this.addBehaviourGoals();
         this.setPersistenceRequired();
     }
