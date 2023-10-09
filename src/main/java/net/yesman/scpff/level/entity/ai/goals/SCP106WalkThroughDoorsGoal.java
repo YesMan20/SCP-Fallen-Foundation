@@ -43,7 +43,7 @@ public class SCP106WalkThroughDoorsGoal extends Goal {
                 for (int i = 0; i < Math.min(path.getNextNodeIndex() + 2, path.getNodeCount()); ++i) {
                     Node node = path.getNode(i);
                     this.doorPos = new BlockPos(node.x, node.y + 1, node.z);
-                    if (!(this.scp106.distanceToSqr(this.doorPos.getX(), this.scp106.getY(), this.doorPos.getZ()) > 1.0D)) {
+                    if (!(this.scp106.distanceToSqr(this.doorPos.getX(), this.scp106.getY(), this.doorPos.getZ()) > 2.0D)) {
                         this.hasDoor = this.scp106.level.getBlockState(this.doorPos).getBlock() instanceof DoorBlock;
                         if (this.hasDoor) {
                             return true;
@@ -67,7 +67,7 @@ public class SCP106WalkThroughDoorsGoal extends Goal {
 
     @Override
     public void start() {
-        this.passed = true;
+        this.passed = false;
         this.doorOpenDirX = (float) ((double) this.doorPos.getX() + 0.5D - this.scp106.getX());
         this.doorOpenDirZ = (float) ((double) this.doorPos.getZ() + 0.5D - this.scp106.getZ());
     }
