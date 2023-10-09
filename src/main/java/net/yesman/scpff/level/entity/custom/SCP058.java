@@ -31,6 +31,7 @@ import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.yesman.scpff.level.sound.ModSounds;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
@@ -77,7 +78,7 @@ public class SCP058 extends Monster implements GeoEntity {
 
     @Override
     protected SoundEvent getAmbientSound() {
-        return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("scpff:scp058beating"));
+        return ModSounds.SCP058BEATING.get();
     }
 
     @Override

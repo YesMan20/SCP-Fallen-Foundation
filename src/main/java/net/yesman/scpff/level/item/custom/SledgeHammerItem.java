@@ -13,6 +13,7 @@ import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import net.yesman.scpff.level.entity.custom.SCP131;
 import net.yesman.scpff.level.entity.custom.SCP173;
 import org.jetbrains.annotations.Nullable;
 
@@ -27,7 +28,7 @@ public class SledgeHammerItem extends PickaxeItem {
     public InteractionResult interactLivingEntity(ItemStack pStack, Player pPlayer, LivingEntity target, InteractionHand pUsedHand) {
         Level level = pPlayer.getLevel();
 
-        if (pPlayer.level.isClientSide && target instanceof SCP173 scp173) {
+        if (pPlayer.level.isClientSide && target instanceof SCP173 scp173 || target instanceof SCP131 scp131) {
             level.playSound(pPlayer, pPlayer.getX(), pPlayer.getY(), pPlayer.getZ(), SoundEvents.ANVIL_USE, SoundSource.PLAYERS, 0.7F, 1.0F);
             pPlayer.swing(pUsedHand);
             for (int i = 0; i < 10; i++) {
@@ -38,6 +39,11 @@ public class SledgeHammerItem extends PickaxeItem {
             SCP173.Variants variant = scp173.getVariant();
             SCP173.Variants newVariant = SCP173.Variants.values().length <= variant.ordinal() + 1 ? SCP173.Variants.values()[0] : SCP173.Variants.values()[variant.ordinal() + 1];
             scp173.setModel(newVariant);
+        }
+        if (target instanceof SCP131 scp131) {
+            SCP131.Variants variant = scp131.getVariant();
+            SCP131.Variants newVariant = SCP131.Variants.values().length <= variant.ordinal() + 1 ? SCP131.Variants.values()[0] : SCP131.Variants.values()[variant.ordinal() + 1];
+            scp131.setModel(newVariant);
         }
         return super.interactLivingEntity(pStack, pPlayer, target, pUsedHand);
     }
