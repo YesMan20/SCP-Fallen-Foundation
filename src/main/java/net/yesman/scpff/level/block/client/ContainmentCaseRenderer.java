@@ -28,5 +28,4 @@ public class ContainmentCaseRenderer implements BlockEntityRenderer<ContainmentB
         itemRenderer.renderStatic(pBlockEntity.currentItem, ItemDisplayContext.FIXED, 255, 0, pPoseStack, pBufferSource, pBlockEntity.getLevel(), 0);
         pPoseStack.popPose();
     }
-
 }

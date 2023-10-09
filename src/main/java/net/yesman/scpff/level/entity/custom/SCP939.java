@@ -27,6 +27,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.yesman.scpff.SCPFf;
+import net.yesman.scpff.data.DeobfuscatedUtil;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
@@ -106,14 +107,14 @@ public class SCP939 extends Monster implements GeoEntity {
             if (entity instanceof Mob mob) {
                 if (RandomSource.create().nextFloat() > 0.99F) {
                     try {
-                        Method ambientSound = Mob.class.getDeclaredMethod("getAmbientSound");
+                        Method ambientSound = DeobfuscatedUtil.MobAmbientSound;
                         ambientSound.setAccessible(true);
 
                         SoundEvent ambientSoundEvent = (SoundEvent) ambientSound.invoke(mob);
                         if (ambientSoundEvent != null) {
                             this.playSound(ambientSoundEvent);
                         }
-                    } catch (InvocationTargetException | NoSuchMethodException | IllegalAccessException e) {
+                    } catch (InvocationTargetException | IllegalAccessException e) {
                         SCPFf.LOGGER.error("Could not fetch sound \n {}", e.getMessage());
                     }
                 }

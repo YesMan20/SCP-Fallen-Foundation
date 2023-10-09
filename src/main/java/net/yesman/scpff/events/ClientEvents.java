@@ -32,9 +32,4 @@ public class ClientEvents {
         event.registerBlockEntityRenderer(ModBlockEntities.CONTAINMENT_BLOCK.get(), ContainmentCaseRenderer::new);
     }
 
-    @SubscribeEvent
-    public static void clientSetup(FMLClientSetupEvent event) {
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.CONTAINMENT_CASE.get(), RenderType.cutout()); // TODO deprecated
-    }
-
 }
