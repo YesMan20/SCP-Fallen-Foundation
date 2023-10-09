@@ -138,7 +138,7 @@ public class SCP173 extends Monster implements GeoEntity {
     @Override
     public void addAdditionalSaveData(CompoundTag pCompound) {
         super.addAdditionalSaveData(pCompound);
-        pCompound.putString("variant", this.getModel());
+        pCompound.putInt("variant", this.getVariant().ordinal());
     }
 
     @Override
