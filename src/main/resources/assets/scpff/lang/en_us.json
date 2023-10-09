@@ -18,6 +18,7 @@
 
   "item.scpff.scp_553_spawn_egg": "SCP-553 - §aCrystalline Butterflies §rSpawn Egg",
   "item.scpff.scp_049_spawn_egg": "SCP-049 - §6The Plague Doctor §rSpawn Egg",
+  "item.scpff.scp_131_spawn_egg": "SCP-131 - §aEye Pods §rSpawn Egg",
   "item.scpff.scp_650_spawn_egg": "SCP-650 - §6Startling Statue §rSpawn Egg",
   "item.scpff.scp_058_spawn_egg": "SCP-058 - §cHeart Of Darkness §rSpawn Egg",
   "item.scpff.scp_939_spawn_egg": "SCP-939 - §cWith Many Voices §rSpawn Egg",
@@ -57,11 +58,12 @@
   "item.scpff.researcher_suit_leggings": "Researcher Suit Leggings",
   "item.scpff.researcher_suit_boots": "Researcher Suit Boots",
 
-  "tooltip.scpff.sledgehammer": "§8Cycles through SCP-173 variants",
+  "tooltip.scpff.sledgehammer": "§8Cycles through SCP-173/131 variants",
 
   "entity.scpff.scp_553": "SCP-553 - §aCrystalline Butterflies",
   "entity.scpff.scp_650": "SCP-650 - §6Startling Statue",
   "entity.scpff.scp_173": "SCP-173 - §6The Sculpture",
+  "entity.scpff.scp_131": "SCP-131 - §aEye Pods",
   "entity.scpff.scp_049": "SCP-049 - §6The Plague Doctor",
   "entity.scpff.scp_1507": "SCP-1507 - §6Pink Flamingos",
   "entity.scpff.scp_939": "SCP-939 - §4With Many Voices",

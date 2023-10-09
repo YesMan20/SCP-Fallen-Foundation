@@ -1,4 +1,4 @@
-package net.yesman.scpff.level.block.Scp;
+package net.yesman.scpff.level.block.scp;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;

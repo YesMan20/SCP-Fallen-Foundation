@@ -19,4 +19,5 @@ public class ModEntity {
     public static final RegistryObject<EntityType<SCP173>> SCP_173 = MOD_ENTITES.register("scp_173", () -> EntityType.Builder.of(SCP173::new, MobCategory.MONSTER).build(SCPFf.MOD_ID + ":scp_173"));
     public static final RegistryObject<EntityType<SCP058>> SCP_058 = MOD_ENTITES.register("scp_058", () -> EntityType.Builder.of(SCP058::new, MobCategory.MONSTER).sized(0.7f, 0.7f).build(SCPFf.MOD_ID + ":scp_058"));
     public static final RegistryObject<EntityType<SCP2521>> SCP_2521 = MOD_ENTITES.register("scp_2521", () -> EntityType.Builder.of(SCP2521::new, MobCategory.MONSTER).build(SCPFf.MOD_ID + ":scp_2521"));
+    public static final RegistryObject<EntityType<SCP131>> SCP_131 = MOD_ENTITES.register("scp_131", () -> EntityType.Builder.of(SCP131::new, MobCategory.CREATURE).sized(0.7f, 0.7f).build(SCPFf.MOD_ID + ":scp_131"));
 }

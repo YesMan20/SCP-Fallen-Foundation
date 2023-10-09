@@ -4,6 +4,7 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -70,7 +71,7 @@ public class SCP650 extends Mob implements GeoEntity {
         for (Entity entity : this.level.getEntities(this, this.getBoundingBox().inflate(30), (val) -> val instanceof Player player && !player.isCreative())) {
             if (!this.level.isClientSide && entity instanceof Player player) {
                 Entity lookedAt = Helper.lookingAtInRange(player, 30);
-                if (lookedAt != this && player.hasLineOfSight(this) && this.cooldownTick + 200 < this.tickCount) {
+                if (lookedAt != this && ((LivingEntity) entity).hasLineOfSight(this) && this.cooldownTick + 200 < this.tickCount) {
                     this.cooldownTick = this.tickCount;
                     Vec3 vec3 = Helper.calculateViewVector(0, entity.getYRot()).scale(-1.0F);
                     Vec3 vec32 = new Vec3(entity.getX(), entity.getY(), entity.getZ()).add(vec3);

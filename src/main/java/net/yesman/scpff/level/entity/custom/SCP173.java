@@ -7,7 +7,6 @@ import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.*;
@@ -20,10 +19,9 @@ import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.event.level.NoteBlockEvent;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.yesman.scpff.SCPFf;
+import net.yesman.scpff.config.SCPFfServerConfigs;
 import net.yesman.scpff.level.block.ModBlocks;
 import net.yesman.scpff.misc.Helper;
 import software.bernie.geckolib.animatable.GeoEntity;
@@ -79,10 +77,21 @@ public class SCP173 extends Monster implements GeoEntity {
                 }
             }
         }
-        if (this.random.nextFloat() > 0.99F) {
-            if (this.level.getBlockState(this.blockPosition()).isAir()) {
-                this.playSound(SoundEvents.SLIME_BLOCK_FALL);
-                this.level.setBlockAndUpdate(this.blockPosition(), ModBlocks.SCP173CRAP.get().defaultBlockState());
+        for (Entity entity : this.level.getEntities(this, this.getBoundingBox().inflate(30), (val) -> val instanceof SCP131)) {
+            if (entity instanceof SCP131 scp131) {
+                Entity lookedAt = Helper.lookingAtInRange(scp131, 30);
+                if ((lookedAt != this && scp131.hasLineOfSight(this) && this.cooldownTick < this.tickCount)) {
+                    this.cooldownTick = this.tickCount;
+                    this.setNoAi(false);
+                }
+            }
+        }
+        if (SCPFfServerConfigs.SCP173CRAP.get()) {
+            if (this.random.nextFloat() > 0.99F) {
+                if (this.level.getBlockState(this.blockPosition()).isAir()) {
+                    this.playSound(SoundEvents.SLIME_BLOCK_FALL);
+                    this.level.setBlockAndUpdate(this.blockPosition(), ModBlocks.SCP173CRAP.get().defaultBlockState());
+                }
             }
         }
         super.tick();
@@ -104,6 +113,8 @@ public class SCP173 extends Monster implements GeoEntity {
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.0D, true));
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Player.class, true));
+        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, SCP131.class, true));
+        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Villager.class, true));
     }
 
     @Override

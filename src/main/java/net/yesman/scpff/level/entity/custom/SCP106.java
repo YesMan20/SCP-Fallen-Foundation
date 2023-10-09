@@ -19,6 +19,7 @@ import net.minecraft.world.entity.monster.piglin.Piglin;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.yesman.scpff.config.SCPFfServerConfigs;
 import net.yesman.scpff.level.block.ModBlocks;
 import net.yesman.scpff.level.entity.ai.goals.SCP106WalkThroughDoorsGoal;
 import net.yesman.scpff.level.sound.ModSounds;
@@ -49,8 +50,10 @@ public class SCP106 extends Monster implements GeoEntity, NeutralMob {
 
     @Override
     public void tick() {
-        if (this.level.getBlockState(this.blockPosition()).isAir()) {
-            this.level.setBlockAndUpdate(this.blockPosition(), ModBlocks.SCP106CORROSIONLAYER.get().defaultBlockState());
+        if (SCPFfServerConfigs.SCP106CORROSION.get()) {
+            if (this.level.getBlockState(this.blockPosition()).isAir()) {
+                this.level.setBlockAndUpdate(this.blockPosition(), ModBlocks.SCP106CORROSIONLAYER.get().defaultBlockState());
+            }
         }
         super.tick();
     }
@@ -87,7 +90,7 @@ public class SCP106 extends Monster implements GeoEntity, NeutralMob {
                 .add(Attributes.FOLLOW_RANGE, 40.0F)
                 .add(Attributes.ATTACK_SPEED, 0.3F)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 7f)
-                .add(Attributes.ATTACK_DAMAGE, 18.0F);
+                .add(Attributes.ATTACK_DAMAGE, 7.0F);
     }
 
     private static final RawAnimation ATTACK_ANIM = RawAnimation.begin().then("animation.scp106.attack", Animation.LoopType.PLAY_ONCE);
