@@ -11,6 +11,7 @@ import net.yesman.scpff.SCPFf;
 
 import java.util.concurrent.CompletableFuture;
 
+
 @Mod.EventBusSubscriber(modid = SCPFf.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class DataGenerators {
 

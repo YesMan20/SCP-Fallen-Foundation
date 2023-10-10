@@ -29,6 +29,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.yesman.scpff.SCPFf;
+import net.yesman.scpff.level.sound.ModSounds;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
@@ -69,6 +70,16 @@ public class SCP131 extends Monster implements GeoEntity {
         }
     }
 
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return ModSounds.SCP131AMBIENT.get();
+    }
+
+    @Override
+    protected SoundEvent getHurtSound(DamageSource pDamageSource) {
+        return ModSounds.SCP131HURT.get();
+    }
+
     protected void defineSynchedData() {
         super.defineSynchedData();
         this.entityData.define(DATA_MODEL, 0);
@@ -94,14 +105,9 @@ public class SCP131 extends Monster implements GeoEntity {
                 .add(Attributes.MOVEMENT_SPEED, 0.3F)
                 .add(Attributes.ATTACK_DAMAGE, 5.0f)
                 .add(Attributes.ATTACK_SPEED, 1.0f)
-                .add(Attributes.KNOCKBACK_RESISTANCE, 5f)
+                .add(Attributes.KNOCKBACK_RESISTANCE, 0f)
                 .add(Attributes.MAX_HEALTH, 47.0D);
     }
-
-    @Override
-    public void checkDespawn() {
-    }
-
 
     public MobType getMobType() {
         return MobType.UNDEFINED;

@@ -5,6 +5,23 @@
       "scpff:scp058beating"
     ]
   },
+  "scp131ambient": {
+    "sounds": [
+      "scpff:scp131/scp131_1",
+      "scpff:scp131/scp131_2",
+      "scpff:scp131/scp131_3",
+      "scpff:scp131/scp131_4",
+      "scpff:scp131/scp131_5",
+      "scpff:scp131/scp131_6"
+    ],
+    "subtitle": "sounds.scpff.scp131ambient"
+  },
+  "scp131hurt": {
+    "sounds": [
+      "scpff:scp131/scp131hurt"
+    ],
+    "subtitle": "sounds.scpff.scp131hurt"
+  },
   "scp049breathing": {
     "subtitle": "sounds.scpff.scp049breathing",
     "sounds": [
