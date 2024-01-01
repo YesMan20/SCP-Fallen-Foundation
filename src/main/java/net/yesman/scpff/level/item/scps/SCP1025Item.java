@@ -16,12 +16,12 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.yesman.scpff.misc.Safe;
+import net.yesman.scpff.misc.Classification;
+import net.yesman.scpff.misc.SCP;
 
 import java.util.Map;
 
-@Safe
-public class SCP1025Item extends Item {
+public class SCP1025Item extends Item implements SCP {
     public SCP1025Item(Properties pProperties) {
         super(pProperties);
     }
@@ -50,4 +50,8 @@ public class SCP1025Item extends Item {
         return InteractionResultHolder.fail(pPlayer.getItemInHand(pUsedHand));
     }
 
+    @Override
+    public Classification getClassification() {
+        return Classification.SAFE;
+    }
 }

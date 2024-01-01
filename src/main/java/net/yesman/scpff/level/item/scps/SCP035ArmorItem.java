@@ -1,39 +1,30 @@
 package net.yesman.scpff.level.item.scps;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
-import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.context.UseOnContext;
-import net.minecraft.world.item.enchantment.Enchantment;
-import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
-import net.yesman.scpff.level.item.client.SCP035Renderer;
-import net.yesman.scpff.level.item.client.SCP268Renderer;
-import net.yesman.scpff.misc.Euclid;
-import net.yesman.scpff.misc.Keter;
+import net.yesman.scpff.SCPFf;
+import net.yesman.scpff.level.item.client.SCP035Model;
+import net.yesman.scpff.misc.Classification;
+import net.yesman.scpff.misc.SCP;
 import org.jetbrains.annotations.NotNull;
-import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.core.animatable.instance.SingletonAnimatableInstanceCache;
-import software.bernie.geckolib.core.animation.*;
-import software.bernie.geckolib.core.object.PlayState;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Consumer;
 
-@Keter
-public class SCP035ArmorItem extends SCPArmorItem {
-    private final AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
-
+public class SCP035ArmorItem extends ArmorItem implements SCP {
     public SCP035ArmorItem(ArmorMaterial material, Type type, Properties properties) {
         super(material, type, properties);
     }
@@ -67,21 +58,20 @@ public class SCP035ArmorItem extends SCPArmorItem {
     @Override
     public void initializeClient(Consumer<IClientItemExtensions> consumer) {
         consumer.accept(new IClientItemExtensions() {
-            private SCP035Renderer renderer;
-
             @Override
-            public @NotNull HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack,
-                                                                   EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
-                if (this.renderer == null)
-                    this.renderer = new SCP035Renderer();
-                this.renderer.prepForRender(livingEntity, itemStack, equipmentSlot, original);
-                return this.renderer;
+            public @NotNull HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack, EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
+                return new SCP035Model(Minecraft.getInstance().getEntityModels().bakeLayer(SCP035Model.LAYER_LOCATION));
             }
         });
     }
 
     @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return cache;
+    public @Nullable String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
+        return SCPFf.MOD_ID + ":textures/armor/scp035.png";
+    }
+
+    @Override
+    public Classification getClassification() {
+        return Classification.KETER;
     }
 }

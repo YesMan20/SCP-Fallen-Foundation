@@ -1,8 +1,6 @@
 package net.yesman.scpff.level.block.scp;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -16,10 +14,13 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.yesman.scpff.SCPFf;
 import net.yesman.scpff.level.block.decor.HorizontalDecorationBlock;
+import net.yesman.scpff.level.item.ModItemTags;
+import net.yesman.scpff.misc.Classification;
+import net.yesman.scpff.misc.SCP;
 
 import java.util.List;
 
-public class SCP330Block extends HorizontalDecorationBlock {
+public class SCP330Block extends HorizontalDecorationBlock implements SCP {
     private static int interactCount = 0;
 
     public SCP330Block(Properties properties) {
@@ -28,7 +29,7 @@ public class SCP330Block extends HorizontalDecorationBlock {
 
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
-        List<Item> candy = ForgeRegistries.ITEMS.tags().getTag(ItemTags.create(new ResourceLocation(SCPFf.MOD_ID, "candies"))).stream().toList();
+        List<Item> candy = ForgeRegistries.ITEMS.tags().getTag(ModItemTags.CANDIES).stream().toList();
         Item item = candy.get(RandomSource.create().nextInt(candy.size()));
         level.addFreshEntity(new ItemEntity(level, pos.getX() + 0.5F, pos.getY() + 0.2F, pos.getZ() + 0.5F, new ItemStack(item)));
         if (!level.isClientSide) {
@@ -39,11 +40,16 @@ public class SCP330Block extends HorizontalDecorationBlock {
                 } else {
                     interactCount++;
                 }
-                SCPFf.LOGGER.info("scp-330 ineractCount: " + interactCount);
+                SCPFf.LOGGER.info("scp-330 interactCount: " + interactCount);
             }
         } else {
             return InteractionResult.sidedSuccess(true);
         }
         return super.use(state, level, pos, player, hand, hit);
+    }
+
+    @Override
+    public Classification getClassification() {
+        return Classification.SAFE;
     }
 }

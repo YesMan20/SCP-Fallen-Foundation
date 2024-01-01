@@ -30,6 +30,8 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.yesman.scpff.SCPFf;
 import net.yesman.scpff.level.sound.ModSounds;
+import net.yesman.scpff.misc.Classification;
+import net.yesman.scpff.misc.SCP;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
@@ -43,7 +45,7 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-public class SCP131 extends Monster implements GeoEntity {
+public class SCP131 extends Monster implements GeoEntity, SCP {
     private static final EntityDataAccessor<Byte> DATA_FLAGS_ID = SynchedEntityData.defineId(SCP131.class, EntityDataSerializers.BYTE);
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
     private static final EntityDataAccessor<Integer> DATA_MODEL = SynchedEntityData.defineId(SCP131.class, EntityDataSerializers.INT);
@@ -168,6 +170,11 @@ public class SCP131 extends Monster implements GeoEntity {
         if (pCompound.contains("variant")) {
             this.entityData.set(DATA_MODEL, pCompound.getInt("variant"));
         }
+    }
+
+    @Override
+    public Classification getClassification() {
+        return Classification.SAFE;
     }
 
     public enum Variants {

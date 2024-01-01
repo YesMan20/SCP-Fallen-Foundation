@@ -32,6 +32,8 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.yesman.scpff.level.sound.ModSounds;
+import net.yesman.scpff.misc.Classification;
+import net.yesman.scpff.misc.SCP;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
@@ -42,7 +44,7 @@ import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class SCP058 extends Monster implements GeoEntity {
+public class SCP058 extends Monster implements GeoEntity, SCP {
     public final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
     private static final EntityDataAccessor<Byte> DATA_FLAGS_ID = SynchedEntityData.defineId(SCP058.class, EntityDataSerializers.BYTE);
     public SCP058(EntityType<? extends Monster> pEntityType, Level pLevel) {
@@ -139,5 +141,10 @@ public class SCP058 extends Monster implements GeoEntity {
     @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {
         return cache;
+    }
+
+    @Override
+    public Classification getClassification() {
+        return Classification.KETER;
     }
 }

@@ -28,6 +28,8 @@ import net.minecraft.world.phys.AABB;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.yesman.scpff.SCPFf;
 import net.yesman.scpff.data.DeobfuscatedUtil;
+import net.yesman.scpff.misc.Classification;
+import net.yesman.scpff.misc.SCP;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
@@ -39,7 +41,7 @@ import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-public class SCP939 extends Monster implements GeoEntity {
+public class SCP939 extends Monster implements GeoEntity, SCP {
     private static final EntityDataAccessor<Byte> DATA_FLAGS_ID = SynchedEntityData.defineId(SCP939.class, EntityDataSerializers.BYTE);
     private static final EntityDataAccessor<Boolean> DATA_HAS_TARGET = SynchedEntityData.defineId(SCP939.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Boolean> DATA_CHASING = SynchedEntityData.defineId(SCP939.class, EntityDataSerializers.BOOLEAN);
@@ -217,5 +219,10 @@ public class SCP939 extends Monster implements GeoEntity {
     @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {
         return cache;
+    }
+
+    @Override
+    public Classification getClassification() {
+        return Classification.KETER;
     }
 }

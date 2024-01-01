@@ -1,25 +1,24 @@
 package net.yesman.scpff.level.item.scps;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.HumanoidModel;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
-import net.yesman.scpff.level.item.client.SCP268Renderer;
-import net.yesman.scpff.misc.Euclid;
+import net.yesman.scpff.SCPFf;
+import net.yesman.scpff.level.item.client.SCP268Model;
+import net.yesman.scpff.misc.Classification;
+import net.yesman.scpff.misc.SCP;
 import org.jetbrains.annotations.NotNull;
-import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.core.animatable.instance.SingletonAnimatableInstanceCache;
-import software.bernie.geckolib.core.animation.*;
-import software.bernie.geckolib.core.object.PlayState;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Consumer;
 
-@Euclid
-public class SCP268ArmorItem extends SCPArmorItem {
-    private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
-
+public class SCP268ArmorItem extends ArmorItem implements SCP {
     public SCP268ArmorItem(ArmorMaterial material, Type type, Properties properties) {
         super(material, type, properties);
     }
@@ -27,31 +26,20 @@ public class SCP268ArmorItem extends SCPArmorItem {
     @Override
     public void initializeClient(Consumer<IClientItemExtensions> consumer) {
         consumer.accept(new IClientItemExtensions() {
-            private SCP268Renderer renderer;
-
             @Override
-            public @NotNull HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack,
-                                                                   EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
-                if(this.renderer == null)
-                    this.renderer = new SCP268Renderer();
-                this.renderer.prepForRender(livingEntity, itemStack, equipmentSlot, original);
-                return this.renderer;
+            public @NotNull HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack, EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
+                return new SCP268Model(Minecraft.getInstance().getEntityModels().bakeLayer(SCP268Model.LAYER_LOCATION));
             }
         });
     }
 
-    private PlayState predicate(AnimationState animationState) {
-        animationState.getController().setAnimation(RawAnimation.begin().then("idle", Animation.LoopType.LOOP));
-        return PlayState.CONTINUE;
+    @Override
+    public @Nullable String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
+        return SCPFf.MOD_ID + ":textures/armor/scp268.png";
     }
 
     @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
-        controllerRegistrar.add(new AnimationController(this, "controller", 0, this::predicate));
-    }
-
-    @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return cache;
+    public Classification getClassification() {
+        return Classification.EUCLID;
     }
 }

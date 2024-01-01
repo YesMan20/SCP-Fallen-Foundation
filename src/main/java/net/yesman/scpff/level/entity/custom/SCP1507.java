@@ -22,7 +22,9 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.yesman.scpff.level.block.ModBlocks;
+import net.yesman.scpff.misc.Classification;
 import net.yesman.scpff.misc.Helper;
+import net.yesman.scpff.misc.SCP;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.AnimatableManager;
@@ -34,7 +36,7 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.Objects;
 
-public class SCP1507 extends Monster implements GeoEntity {
+public class SCP1507 extends Monster implements GeoEntity, SCP {
     AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
     public SCP1507(EntityType<? extends Monster> pEntityType, Level pLevel) {
@@ -90,5 +92,10 @@ public class SCP1507 extends Monster implements GeoEntity {
         this.targetSelector.addGoal(17, new HurtByTargetGoal(this).setAlertOthers());
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.0D, true));
+    }
+
+    @Override
+    public Classification getClassification() {
+        return Classification.EUCLID;
     }
 }

@@ -5,10 +5,10 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
-import net.yesman.scpff.misc.Safe;
+import net.yesman.scpff.misc.Classification;
+import net.yesman.scpff.misc.SCP;
 
-@Safe
-public class SCP207Item extends Item {
+public class SCP207Item extends Item implements SCP {
     public SCP207Item(Properties pProperties) {
         super(pProperties);
     }
@@ -20,5 +20,10 @@ public class SCP207Item extends Item {
 
     public SoundEvent getDrinkingSound() {
         return SoundEvents.GENERIC_DRINK;
+    }
+
+    @Override
+    public Classification getClassification() {
+        return Classification.SAFE;
     }
 }

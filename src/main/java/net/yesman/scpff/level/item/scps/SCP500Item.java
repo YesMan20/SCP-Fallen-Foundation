@@ -8,12 +8,12 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
-import net.yesman.scpff.misc.Safe;
+import net.yesman.scpff.misc.Classification;
+import net.yesman.scpff.misc.SCP;
 
 import java.util.Map;
 
-@Safe
-public class SCP500Item extends Item {
+public class SCP500Item extends Item implements SCP {
     public SCP500Item(Properties pProperties) {
         super(pProperties);
     }
@@ -39,5 +39,10 @@ public class SCP500Item extends Item {
     @Override
     public UseAnim getUseAnimation(ItemStack pStack) {
         return UseAnim.EAT;
+    }
+
+    @Override
+    public Classification getClassification() {
+        return Classification.SAFE;
     }
 }

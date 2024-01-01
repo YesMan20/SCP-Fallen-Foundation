@@ -7,10 +7,10 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
-import net.yesman.scpff.misc.Euclid;
+import net.yesman.scpff.misc.Classification;
+import net.yesman.scpff.misc.SCP;
 
-@Euclid
-public class SCP109Item extends Item {
+public class SCP109Item extends Item implements SCP {
     public SCP109Item(Properties pProperties) {
         super(pProperties);
     }
@@ -27,5 +27,10 @@ public class SCP109Item extends Item {
 
     public SoundEvent getDrinkingSound() {
         return SoundEvents.GENERIC_DRINK;
+    }
+
+    @Override
+    public Classification getClassification() {
+        return Classification.EUCLID;
     }
 }

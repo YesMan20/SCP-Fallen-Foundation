@@ -19,7 +19,9 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.yesman.scpff.level.entity.ai.goals.SCP049LookForPlayerGoal;
 import net.yesman.scpff.level.sound.ModSounds;
+import net.yesman.scpff.misc.Classification;
 import net.yesman.scpff.misc.RunnableCooldownHandler;
+import net.yesman.scpff.misc.SCP;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
@@ -32,7 +34,7 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.UUID;
 
-public class SCP049 extends Monster implements GeoEntity, NeutralMob {
+public class SCP049 extends Monster implements GeoEntity, NeutralMob, SCP {
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
     private static final EntityDataAccessor<Boolean> DATA_HAS_TARGET = SynchedEntityData.defineId(SCP049.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Boolean> DATA_IS_CURING = SynchedEntityData.defineId(SCP049.class, EntityDataSerializers.BOOLEAN);
@@ -180,4 +182,8 @@ public class SCP049 extends Monster implements GeoEntity, NeutralMob {
 
     }
 
+    @Override
+    public Classification getClassification() {
+        return Classification.EUCLID;
+    }
 }

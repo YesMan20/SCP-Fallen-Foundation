@@ -1,14 +1,18 @@
 package net.yesman.scpff.events;
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.client.event.ClientPlayerNetworkEvent;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.event.ServerChatEvent;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.living.LivingChangeTargetEvent;
@@ -114,21 +118,38 @@ public class CommonEvents {
     @SubscribeEvent
     public static void toolTip(ItemTooltipEvent event) {
         Item item = event.getItemStack().getItem();
+        if (item instanceof SCP scp) {
+            if (scp.getClassification() != null) {
+                switch (scp.getClassification()) {
+                    case SAFE -> event.getToolTip().add(Component.literal("Safe").withStyle(ChatFormatting.GREEN));
+                    case EUCLID -> event.getToolTip().add(Component.literal("Euclid").withStyle(ChatFormatting.GOLD));
+                    case KETER -> event.getToolTip().add(Component.literal("Keter").withStyle(ChatFormatting.RED));
+                }
+            }
 
-        // Object classes
-        if (item.getClass().isAnnotationPresent(Safe.class)) {
-            event.getToolTip().add(Component.literal("§aSafe"));
+        } else if (item instanceof BlockItem blockItem && blockItem.getBlock() instanceof SCP scp) {
+            if (scp.getClassification() != null) {
+                switch (scp.getClassification()) {
+                    case SAFE -> event.getToolTip().add(Component.literal("Safe").withStyle(ChatFormatting.GREEN));
+                    case EUCLID -> event.getToolTip().add(Component.literal("Euclid").withStyle(ChatFormatting.GOLD));
+                    case KETER -> event.getToolTip().add(Component.literal("Keter").withStyle(ChatFormatting.RED));
+                }
+            }
 
-        } else if (item.getClass().isAnnotationPresent(Euclid.class)) {
-            event.getToolTip().add(Component.literal("§6Euclid"));
+        } else if (item instanceof ForgeSpawnEggItem spawnEggItem && event.getEntity() != null) {
+            Level level = event.getEntity().level;
+            if (spawnEggItem.getType(null).create(level) instanceof SCP scp) {
+                if (scp.getClassification() != null) {
+                    switch (scp.getClassification()) {
+                        case SAFE -> event.getToolTip().add(Component.literal("Safe").withStyle(ChatFormatting.GREEN));
+                        case EUCLID -> event.getToolTip().add(Component.literal("Euclid").withStyle(ChatFormatting.GOLD));
+                        case KETER -> event.getToolTip().add(Component.literal("Keter").withStyle(ChatFormatting.RED));
+                    }
+                }
+            }
 
-        } else if (item.getClass().isAnnotationPresent(Keter.class)) {
-            event.getToolTip().add(Component.literal("§cKeter"));
-        }
-
-        // Weighted armor
-        if (item instanceof WeightedArmorItem) {
-            event.getToolTip().add(Component.literal("§9+" + WeightedArmorItem.weight + " Weight"));
+        } else if (item instanceof WeightedArmorItem armorItem) {
+            event.getToolTip().add(Component.literal("+" + armorItem.getWeight() + " Weight").withStyle(ChatFormatting.BLUE));
         }
     }
 }

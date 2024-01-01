@@ -23,7 +23,9 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.yesman.scpff.config.SCPFfServerConfigs;
 import net.yesman.scpff.level.block.ModBlocks;
+import net.yesman.scpff.misc.Classification;
 import net.yesman.scpff.misc.Helper;
+import net.yesman.scpff.misc.SCP;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.AnimatableManager;
@@ -34,7 +36,7 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.Objects;
 
-public class SCP173 extends Monster implements GeoEntity {
+public class SCP173 extends Monster implements GeoEntity, SCP {
     private int cooldownTick = 0;
     AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
     private static final EntityDataAccessor<Integer> DATA_MODEL = SynchedEntityData.defineId(SCP173.class, EntityDataSerializers.INT); // Used for SCP-173 rendering.
@@ -162,6 +164,11 @@ public class SCP173 extends Monster implements GeoEntity {
     @Override
     public boolean canBeCollidedWith() {
         return true;
+    }
+
+    @Override
+    public Classification getClassification() {
+        return Classification.EUCLID;
     }
 
     public enum Variants {

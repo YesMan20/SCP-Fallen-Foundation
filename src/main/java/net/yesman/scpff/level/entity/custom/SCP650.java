@@ -14,7 +14,9 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import net.yesman.scpff.level.item.ModItems;
+import net.yesman.scpff.misc.Classification;
 import net.yesman.scpff.misc.Helper;
+import net.yesman.scpff.misc.SCP;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.AnimatableManager;
@@ -24,7 +26,7 @@ import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class SCP650 extends Mob implements GeoEntity {
+public class SCP650 extends Mob implements GeoEntity, SCP {
     AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
     private int cooldownTick = 0;
 
@@ -96,5 +98,10 @@ public class SCP650 extends Mob implements GeoEntity {
     @Override
     public boolean canBeCollidedWith() {
         return true;
+    }
+
+    @Override
+    public Classification getClassification() {
+        return Classification.EUCLID;
     }
 }
