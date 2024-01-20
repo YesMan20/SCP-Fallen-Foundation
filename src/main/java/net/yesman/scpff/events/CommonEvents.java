@@ -120,35 +120,21 @@ public class CommonEvents {
         Item item = event.getItemStack().getItem();
         if (item instanceof SCP scp) {
             if (scp.getClassification() != null) {
-                switch (scp.getClassification()) {
-                    case SAFE -> event.getToolTip().add(Component.literal("Safe").withStyle(ChatFormatting.GREEN));
-                    case EUCLID -> event.getToolTip().add(Component.literal("Euclid").withStyle(ChatFormatting.GOLD));
-                    case KETER -> event.getToolTip().add(Component.literal("Keter").withStyle(ChatFormatting.RED));
-                }
+                event.getToolTip().add(Component.literal(scp.getClassification().getName()).withStyle(scp.getClassification().getColor()));
             }
-
         } else if (item instanceof BlockItem blockItem && blockItem.getBlock() instanceof SCP scp) {
             if (scp.getClassification() != null) {
-                switch (scp.getClassification()) {
-                    case SAFE -> event.getToolTip().add(Component.literal("Safe").withStyle(ChatFormatting.GREEN));
-                    case EUCLID -> event.getToolTip().add(Component.literal("Euclid").withStyle(ChatFormatting.GOLD));
-                    case KETER -> event.getToolTip().add(Component.literal("Keter").withStyle(ChatFormatting.RED));
-                }
+                event.getToolTip().add(Component.literal(scp.getClassification().getName()).withStyle(scp.getClassification().getColor()));
             }
-
         } else if (item instanceof ForgeSpawnEggItem spawnEggItem && event.getEntity() != null) {
             Level level = event.getEntity().level;
             if (spawnEggItem.getType(null).create(level) instanceof SCP scp) {
                 if (scp.getClassification() != null) {
-                    switch (scp.getClassification()) {
-                        case SAFE -> event.getToolTip().add(Component.literal("Safe").withStyle(ChatFormatting.GREEN));
-                        case EUCLID -> event.getToolTip().add(Component.literal("Euclid").withStyle(ChatFormatting.GOLD));
-                        case KETER -> event.getToolTip().add(Component.literal("Keter").withStyle(ChatFormatting.RED));
-                    }
+                    event.getToolTip().add(Component.literal(scp.getClassification().getName()).withStyle(scp.getClassification().getColor()));
                 }
             }
-
-        } else if (item instanceof WeightedArmorItem armorItem) {
+        }
+        if (item instanceof WeightedArmorItem armorItem) {
             event.getToolTip().add(Component.literal("+" + armorItem.getWeight() + " Weight").withStyle(ChatFormatting.BLUE));
         }
     }
