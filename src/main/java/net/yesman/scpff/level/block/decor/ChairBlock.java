@@ -1,8 +1,12 @@
 package net.yesman.scpff.level.block.decor;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.Mirror;
@@ -11,15 +15,25 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.yesman.scpff.level.entity.custom.ChairEntity;
 
 public class ChairBlock extends HorizontalDirectionalBlock {
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
     public ChairBlock(Properties pProperties) {
         super(pProperties);
+    }
+
+    @Override
+    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+        ChairEntity chairEntity = new ChairEntity(pLevel, pPos, pState.getValue(FACING));
+        pLevel.addFreshEntity(chairEntity);
+        pPlayer.startRiding(chairEntity);
+        return super.use(pState, pLevel, pPos, pPlayer, pHand, pHit);
     }
 
     @Override
@@ -31,7 +45,6 @@ public class ChairBlock extends HorizontalDirectionalBlock {
             case WEST -> Shapes.or(box(0, 0, 7, 16, 4, 9), box(7, 0, 0, 9, 4, 16), box(7, 4, 7, 9, 11, 9), box(2, 11, 2, 13, 13, 14), box(13, 12, 2, 15, 27, 14), box(4, 12, 0, 14, 18, 2), box(4, 12, 14, 14, 18, 16));
         };
     }
-
 
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext pContext) {

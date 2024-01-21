@@ -1,12 +1,8 @@
 package net.yesman.scpff.level.block;
 
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.FenceBlock;
-import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-
 import static net.minecraft.world.level.block.Block.box;
 
 public class BlockShapes {
@@ -19,43 +15,44 @@ public class BlockShapes {
     public static final VoxelShape CARPET = box(0, 0, 0, 16, 1, 16);
     public static final VoxelShape BEAKERS = box(1, 0, 1, 15, 2, 15);
     public static final VoxelShape PIPE = box(3, 0, 3, 13, 16, 13);
-    public static final VoxelShape CONTAINMENT_CASE_BOTTOM = Shapes.join(Block.box(2, 0, 2, 14, 3, 14), Block.box(6, 3, 6, 10, 16, 10), BooleanOp.OR);
-
+    public static final VoxelShape FLOOD_LIGHTS = box(6, 0, 6, 10, 23, 10);
+    
+    public static final VoxelShape CONTAINMENT_CASE_BOTTOM = Shapes.join(box(2, 0, 2, 14, 3, 14), box(6, 3, 6, 10, 16, 10), BooleanOp.OR);
     public static final VoxelShape STEEL_CANISTER = Shapes.or(box(3, 0, 3, 13, 15, 13), box(4, 18, 4, 12, 20, 12));
 
     // Rotated shapes:
 
     public static final VoxelShape CAT_WALK_STAIRS_N = Shapes.or(
-            Block.box(0, 14, 0, 16, 16, 8),
-            Block.box(0, 6, 8, 16, 8, 16),
-            Block.box(12, 6, 6, 14, 14, 8),
-            Block.box(2, 6, 6, 4, 14, 8),
-            Block.box(2, 0, 14, 4, 6, 16),
-            Block.box(12, 0, 14, 14, 6, 16)
+            box(0, 14, 0, 16, 16, 8),
+            box(0, 6, 8, 16, 8, 16),
+            box(12, 6, 6, 14, 14, 8),
+            box(2, 6, 6, 4, 14, 8),
+            box(2, 0, 14, 4, 6, 16),
+            box(12, 0, 14, 14, 6, 16)
     );
     public static final VoxelShape CAT_WALK_STAIRS_E = Shapes.or(
-            Block.box(0, 14, 8, 16, 16, 16),
-            Block.box(0, 6, 0, 16, 8, 8),
-            Block.box(2, 6, 8, 4, 14, 10),
-            Block.box(12, 6, 8, 14, 14, 10),
-            Block.box(12, 0, 0, 14, 6, 2),
-            Block.box(2, 0, 0, 4, 6, 2)
+            box(0, 14, 8, 16, 16, 16),
+            box(0, 6, 0, 16, 8, 8),
+            box(2, 6, 8, 4, 14, 10),
+            box(12, 6, 8, 14, 14, 10),
+            box(12, 0, 0, 14, 6, 2),
+            box(2, 0, 0, 4, 6, 2)
     );
     public static final VoxelShape CAT_WALK_STAIRS_S = Shapes.or(
-            Block.box(0, 14, 0, 8, 16, 16),
-            Block.box(8, 6, 0, 16, 8, 16),
-            Block.box(6, 6, 2, 8, 14, 4),
-            Block.box(6, 6, 12, 8, 14, 14),
-            Block.box(14, 0, 12, 16, 6, 14),
-            Block.box(14, 0, 2, 16, 6, 4)
+            box(0, 14, 0, 8, 16, 16),
+            box(8, 6, 0, 16, 8, 16),
+            box(6, 6, 2, 8, 14, 4),
+            box(6, 6, 12, 8, 14, 14),
+            box(14, 0, 12, 16, 6, 14),
+            box(14, 0, 2, 16, 6, 4)
     );
     public static final VoxelShape CAT_WALK_STAIRS_W = Shapes.or(
-            Block.box(8, 14, 0, 16, 16, 16),
-            Block.box(0, 6, 0, 8, 8, 16),
-            Block.box(8, 6, 12, 10, 14, 14),
-            Block.box(8, 6, 2, 10, 14, 4),
-            Block.box(0, 0, 2, 2, 6, 4),
-            Block.box(0, 0, 12, 2, 6, 14)
+            box(8, 14, 0, 16, 16, 16),
+            box(0, 6, 0, 8, 8, 16),
+            box(8, 6, 12, 10, 14, 14),
+            box(8, 6, 2, 10, 14, 4),
+            box(0, 0, 2, 2, 6, 4),
+            box(0, 0, 12, 2, 6, 14)
     );
 
     public static final VoxelShape CAT_WALK_FENCE_S = box(0, 0, 0, 16, 16, 2);

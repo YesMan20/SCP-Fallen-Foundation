@@ -1,5 +1,7 @@
 package net.yesman.scpff.level.item.custom;
 
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -16,13 +18,14 @@ public class MedkitItem extends Item {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
-        // I don't know what values to put, so you can change these
+        int healthHealed = player.getRandom().nextInt(6, 9);
 
         player.getItemInHand(hand).shrink(1);
         player.getCooldowns().addCooldown(this, 35);
-        player.heal(10.0F);
+        player.heal(healthHealed);
         player.swing(hand);
-        level.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.CHAIN_BREAK, SoundSource.BLOCKS, 1.0F, 1.0F);
+        player.displayClientMessage(Component.literal("Restored " + healthHealed + " Health Points").withStyle(ChatFormatting.GREEN), true);
+        level.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.BEACON_ACTIVATE, SoundSource.BLOCKS, 1.0F, 1.0F);
         return super.use(level, player, hand);
     }
 }

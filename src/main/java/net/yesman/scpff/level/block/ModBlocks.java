@@ -5,6 +5,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -134,7 +135,7 @@ public class ModBlocks {
                     BlockShapes.CAT_WALK_BLOCK));
 
     public static final RegistryObject<Block> FLOODLIGHTS = registerBlock("floodlights", () ->
-            new FloodLightsBlock(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL).lightLevel(s -> 15).strength(1F).noOcclusion()));
+            new FloodLightsBlock(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL).lightLevel((s) -> s.getValue(BlockStateProperties.LIT) ? 15 : 0).strength(1F).noOcclusion()));
 
     public static final RegistryObject<Block> WALLLIGHT = registerBlock("walllight", () ->
             new HorizontalDecorationBlock(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL).requiresCorrectToolForDrops().lightLevel(s -> 15).strength(4f).noOcclusion(),
@@ -208,7 +209,7 @@ public class ModBlocks {
             new PipeSideBlock(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL).requiresCorrectToolForDrops().strength(3F).noOcclusion()));
 
     public static final RegistryObject<Block> DESKLAMP = registerBlock("desklamp", () ->
-            new HorizontalDecorationBlock(BlockBehaviour.Properties.of(Material.METAL).lightLevel(s -> 15).sound(SoundType.METAL).strength(1F).noOcclusion(),
+            new LampBlock(BlockBehaviour.Properties.of(Material.METAL).lightLevel((s) -> s.getValue(BlockStateProperties.LIT) ? 15 : 0).sound(SoundType.METAL).strength(1F).noOcclusion(),
                     BlockShapes.DESK_LAMP_S, BlockShapes.DESK_LAMP_N, BlockShapes.DESK_LAMP_E, BlockShapes.DESK_LAMP_W));
 
     public static final RegistryObject<Block> TRASHBIN = registerBlock("trashbin", () ->
