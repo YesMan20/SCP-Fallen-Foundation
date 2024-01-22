@@ -13,10 +13,11 @@ import net.minecraftforge.event.server.ServerStoppingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.yesman.scpff.SCPFf;
-import net.yesman.scpff.data.PlayerData;
 import net.yesman.scpff.events.CommonEvents;
 import net.yesman.scpff.level.entity.ModEntity;
+import net.yesman.scpff.misc.Classification;
 import net.yesman.scpff.misc.Helper;
+import net.yesman.scpff.misc.SCP;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.AnimatableManager;
@@ -28,12 +29,17 @@ import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SCP2521 extends Monster implements GeoEntity {
+public class SCP2521 extends Monster implements GeoEntity, SCP {
 
     public final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
     public SCP2521(EntityType<? extends Monster> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
+    }
+
+    @Override
+    public Classification getClassification() {
+        return Classification.KETER;
     }
 
     @Override

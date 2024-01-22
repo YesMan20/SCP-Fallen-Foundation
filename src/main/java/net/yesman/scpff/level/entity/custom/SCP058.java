@@ -1,16 +1,10 @@
 package net.yesman.scpff.level.entity.custom;
 
-import net.minecraft.client.resources.sounds.SoundInstance;
-import net.minecraft.client.sounds.SoundManager;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
@@ -21,22 +15,17 @@ import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.ai.navigation.WallClimberNavigation;
 import net.minecraft.world.entity.animal.Animal;
-import net.minecraft.world.entity.animal.Cow;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.monster.Spider;
 import net.minecraft.world.entity.monster.ZombifiedPiglin;
 import net.minecraft.world.entity.monster.piglin.Piglin;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.registries.ForgeRegistries;
 import net.yesman.scpff.level.sound.ModSounds;
 import net.yesman.scpff.misc.Classification;
 import net.yesman.scpff.misc.SCP;
-import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
-import software.bernie.geckolib.core.animatable.GeoAnimatable;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.AnimatableManager;
 import software.bernie.geckolib.core.animation.AnimationController;
@@ -49,6 +38,11 @@ public class SCP058 extends Monster implements GeoEntity, SCP {
     private static final EntityDataAccessor<Byte> DATA_FLAGS_ID = SynchedEntityData.defineId(SCP058.class, EntityDataSerializers.BYTE);
     public SCP058(EntityType<? extends Monster> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
+    }
+
+    @Override
+    public Classification getClassification() {
+        return Classification.KETER;
     }
 
     public static AttributeSupplier.Builder createAttributes() {
@@ -141,10 +135,5 @@ public class SCP058 extends Monster implements GeoEntity, SCP {
     @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {
         return cache;
-    }
-
-    @Override
-    public Classification getClassification() {
-        return Classification.KETER;
     }
 }

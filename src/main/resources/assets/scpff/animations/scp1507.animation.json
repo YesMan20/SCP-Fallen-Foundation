@@ -6,27 +6,27 @@
 			"bones": {
 				"Body": {
 					"rotation": {
-						"vector": [-7.5, 0, 0]
+						"vector": [0, 0, 0]
 					}
 				},
 				"Head": {
 					"rotation": {
-						"vector": [7.5, 0, 0]
+						"vector": [0, 0, 0]
 					}
 				},
 				"Rightleg": {
 					"rotation": {
-						"vector": [12.5, 0, 0]
+						"vector": [0, 0, 0]
 					}
 				},
 				"Rightleg2": {
 					"rotation": {
-						"vector": [-92.5, 0, 0]
+						"vector": [-90, 0, 0]
 					}
 				},
 				"Rightleg3": {
 					"rotation": {
-						"vector": [57.5, 0, 0]
+						"vector": [90, 0, 0]
 					}
 				}
 			}
@@ -80,21 +80,7 @@
 			"bones": {
 				"Body": {
 					"rotation": {
-						"0.0": {
-							"vector": [0, 0, 0]
-						},
-						"0.5": {
-							"vector": [7.5, 0, 0]
-						},
-						"1.0": {
-							"vector": [0, 0, 0]
-						},
-						"1.5": {
-							"vector": [7.5, 0, 0]
-						},
-						"2.0": {
-							"vector": [0, 0, 0]
-						}
+						"vector": ["math.sin(query.anim_time*180)*10", 0, 0]
 					},
 					"position": {
 						"0.0": {
@@ -108,25 +94,6 @@
 						},
 						"1.5": {
 							"vector": [0, -1, 0]
-						},
-						"2.0": {
-							"vector": [0, 0, 0]
-						}
-					}
-				},
-				"Head": {
-					"rotation": {
-						"0.0": {
-							"vector": [0, 0, 0]
-						},
-						"0.5": {
-							"vector": [-7.5, 0, 0]
-						},
-						"1.0": {
-							"vector": [0, 0, 0]
-						},
-						"1.5": {
-							"vector": [-7.5, 0, 0]
 						},
 						"2.0": {
 							"vector": [0, 0, 0]
@@ -135,25 +102,14 @@
 				},
 				"Leftleg": {
 					"rotation": {
-						"0.0": {
-							"vector": [0, 0, 0]
-						},
-						"0.5": {
-							"vector": [-17.5, 0, 0]
-						},
-						"1.0": {
-							"vector": [0, 0, 0]
-						},
-						"1.5": {
-							"vector": [17.5, 0, 0]
-						},
-						"2.0": {
-							"vector": [0, 0, 0]
-						}
+						"vector": ["math.sin(query.anim_time*180)*-10", 0, 0]
 					},
 					"position": {
 						"0.0": {
 							"vector": [0, 0, 0]
+						},
+						"0.25": {
+							"vector": [0, 0.5, -1]
 						},
 						"0.5": {
 							"vector": [0, -1, 0]
@@ -171,21 +127,7 @@
 				},
 				"Rightleg": {
 					"rotation": {
-						"0.0": {
-							"vector": [0, 0, 0]
-						},
-						"0.5": {
-							"vector": [17.5, 0, 0]
-						},
-						"1.0": {
-							"vector": [0, 0, 0]
-						},
-						"1.5": {
-							"vector": [-17.5, 0, 0]
-						},
-						"2.0": {
-							"vector": [0, 0, 0]
-						}
+						"vector": ["math.sin(query.anim_time*180)*10", 0, 0]
 					},
 					"position": {
 						"0.0": {
@@ -196,6 +138,9 @@
 						},
 						"1.0": {
 							"vector": [0, 0, 0]
+						},
+						"1.25": {
+							"vector": [0, 0.5, -1]
 						},
 						"1.5": {
 							"vector": [0, -1, 0]

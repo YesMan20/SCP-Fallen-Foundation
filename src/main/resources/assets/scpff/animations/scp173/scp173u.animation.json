@@ -4,34 +4,22 @@
 		"animation.scp173u.idle": {
 			"loop": true,
 			"bones": {
-				"Scp173u": {
+				"RightArm": {
+					"rotation": {
+						"vector": [20, 0, 5]
+					}
+				},
+				"LeftArm": {
+					"rotation": {
+						"vector": [15, 0, -5]
+					}
+				},
+				"UpperBody": {
+					"rotation": {
+						"vector": [-10, 0, 0]
+					},
 					"position": {
-						"vector": [0, 0, 0]
-					}
-				}
-			}
-		},
-		"animation.scp173u.randomu": {
-			"loop": true,
-			"bones": {
-				"Upperbody": {
-					"rotation": {
-						"vector": [0, 0, 0]
-					}
-				},
-				"Leftarm": {
-					"rotation": {
-						"vector": [-112.5, 0, 0]
-					}
-				},
-				"Rightarm": {
-					"rotation": {
-						"vector": [-120, 0, 0]
-					}
-				},
-				"Head": {
-					"rotation": {
-						"vector": [-53.06458, -85.88636, 67.84716]
+						"vector": [0, -0.45, -0.025]
 					}
 				}
 			}
@@ -39,24 +27,27 @@
 		"animation.scp173u.pose1": {
 			"loop": true,
 			"bones": {
-				"Upperbody": {
+				"UpperBody": {
 					"rotation": {
-						"vector": [2.5, 0, 0]
-					}
-				},
-				"Leftarm": {
-					"rotation": {
-						"vector": [-107.5, 0, 0]
-					}
-				},
-				"Rightarm": {
-					"rotation": {
-						"vector": [-107.5, 0, 0]
+						"vector": [22.5, 0, 0]
+					},
+					"position": {
+						"vector": [0, -1, 0]
 					}
 				},
 				"Head": {
 					"rotation": {
-						"vector": [-75, -75, 90]
+						"vector": [-17.5, 0, 0]
+					}
+				},
+				"LeftArm": {
+					"rotation": {
+						"vector": [-91.51666, -7.75745, -7.23328]
+					}
+				},
+				"RightArm": {
+					"rotation": {
+						"vector": [-95, 0, 5]
 					}
 				}
 			}
@@ -64,55 +55,14 @@
 		"animation.scp173u.pose2": {
 			"loop": true,
 			"bones": {
-				"Upperbody": {
+				"LeftArm": {
 					"rotation": {
-						"vector": [57.5, 0, 0]
-					},
-					"position": {
-						"vector": [0, 0.5, -1.5]
+						"vector": [0, 0, -7.5]
 					}
 				},
-				"Leftarm": {
+				"RightArm": {
 					"rotation": {
-						"vector": [-95, 0, 0]
-					}
-				},
-				"Rightarm": {
-					"rotation": {
-						"vector": [-125, 0, 0]
-					}
-				},
-				"Head": {
-					"rotation": {
-						"vector": [-19.8423, -2.55868, -7.05239]
-					}
-				}
-			}
-		},
-		"animation.scp173u.pose3": {
-			"loop": true,
-			"bones": {
-				"Upperbody": {
-					"rotation": {
-						"vector": [15, 0, 0]
-					},
-					"position": {
-						"vector": [0, 0.25, -0.5]
-					}
-				},
-				"Leftarm": {
-					"rotation": {
-						"vector": [-37.5, 0, 0]
-					}
-				},
-				"Rightarm": {
-					"rotation": {
-						"vector": [-42.5, 0, 0]
-					}
-				},
-				"Head": {
-					"rotation": {
-						"vector": [7.5, 0, 0]
+						"vector": [2.5, 0, 10]
 					}
 				}
 			}

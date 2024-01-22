@@ -22,7 +22,6 @@ import net.yesman.scpff.level.sound.ModSounds;
 import net.yesman.scpff.misc.Classification;
 import net.yesman.scpff.misc.RunnableCooldownHandler;
 import net.yesman.scpff.misc.SCP;
-import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.AnimatableManager;
@@ -32,6 +31,7 @@ import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
+import javax.annotation.Nullable;
 import java.util.UUID;
 
 public class SCP049 extends Monster implements GeoEntity, NeutralMob, SCP {
@@ -42,6 +42,11 @@ public class SCP049 extends Monster implements GeoEntity, NeutralMob, SCP {
 
     public SCP049(EntityType<? extends Monster> entityType, Level level) {
         super(entityType, level);
+    }
+
+    @Override
+    public Classification getClassification() {
+        return Classification.EUCLID;
     }
 
     @Override
@@ -182,8 +187,4 @@ public class SCP049 extends Monster implements GeoEntity, NeutralMob, SCP {
 
     }
 
-    @Override
-    public Classification getClassification() {
-        return Classification.EUCLID;
-    }
 }

@@ -6,6 +6,7 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
@@ -14,12 +15,12 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.ai.navigation.GroundPathNavigation;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.yesman.scpff.config.SCPFfServerConfigs;
 import net.yesman.scpff.level.block.ModBlocks;
@@ -43,14 +44,23 @@ public class SCP173 extends Monster implements GeoEntity, SCP {
 
     public SCP173(EntityType<? extends Monster> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
+        ((GroundPathNavigation)this.getNavigation()).setCanOpenDoors(true);
     }
 
     public static AttributeSupplier.Builder createAttributes() {
         return Monster.createMonsterAttributes()
-                .add(Attributes.MOVEMENT_SPEED, 0.7)
+                .add(Attributes.MOVEMENT_SPEED, 0.5)
                 .add(Attributes.ATTACK_DAMAGE, 100.0f)
                 .add(Attributes.ATTACK_SPEED, 1.0f)
                 .add(Attributes.MAX_HEALTH, 37.0D);
+    }
+
+    protected SoundEvent getHurtSound(DamageSource pDamageSource) {
+        return SoundEvents.IRON_GOLEM_HURT;
+    }
+
+    protected SoundEvent getDeathSound() {
+        return SoundEvents.IRON_GOLEM_DEATH;
     }
 
     @Override
@@ -60,17 +70,15 @@ public class SCP173 extends Monster implements GeoEntity, SCP {
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controller) {
-        controller.add(new AnimationController<>(this, "controller", state -> {
-            return state.setAndContinue(RawAnimation.begin().then("animation." + this.getModel() + ".idle", Animation.LoopType.LOOP));
-        }));
+        controller.add(new AnimationController<>(this, "controller", state -> state.setAndContinue(RawAnimation.begin().then("animation." + this.getModel() + ".idle", Animation.LoopType.LOOP))));
     }
 
     @Override
     public void tick() {
-        if (this.isOnGround()) {
-            this.setNoAi(true);
+        if (!this.isOnGround()) {
+            this.setNoAi(false);
         }
-        for (Entity entity : this.level.getEntities(this, this.getBoundingBox().inflate(30), (val) -> val instanceof Player)) {
+        for (Entity entity : this.level.getEntities(this, this.getBoundingBox().inflate(10), (val) -> val instanceof Player)) {
             if (!this.level.isClientSide && entity instanceof Player player) {
                 Entity lookedAt = Helper.lookingAtInRange(player, 30);
                 if ((lookedAt != this && player.hasLineOfSight(this) && this.cooldownTick < this.tickCount)) {

@@ -1,19 +1,16 @@
 package net.yesman.scpff.level.block.entity;
 
-import io.netty.buffer.Unpooled;
+import net.minecraft.core.Direction;
+import net.minecraft.core.Vec3i;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.*;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.ChestMenu;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.BarrelBlock;
 import net.minecraft.world.level.block.ChestBlock;
-import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.ChestBlockEntity;
-import net.minecraftforge.items.wrapper.SidedInvWrapper;
-import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.common.capabilities.ForgeCapabilities;
-import net.minecraftforge.common.capabilities.Capability;
-
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity;
 import net.minecraft.world.item.ItemStack;
@@ -21,22 +18,40 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.core.NonNullList;
-import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
-import net.yesman.scpff.level.block.decor.FileCabinetBlock;
-
-import javax.annotation.Nullable;
-
-import java.util.stream.IntStream;
+import net.minecraft.world.level.block.state.properties.ChestType;
 
 public class FileCabinetBlockEntity extends RandomizableContainerBlockEntity {
     private NonNullList<ItemStack> items = NonNullList.withSize(27, ItemStack.EMPTY);
 
     public FileCabinetBlockEntity(BlockPos position, BlockState state) {
         super(ModBlockEntities.FILECABINET.get(), position, state);
+    }
+
+    protected void onOpen(Level p_155357_, BlockPos p_155358_, BlockState p_155359_) {
+        LockerBlockEntity.playSound(p_155357_, p_155358_, p_155359_, SoundEvents.BARREL_OPEN);
+    }
+
+    protected void onClose(Level p_155367_, BlockPos p_155368_, BlockState p_155369_) {
+        LockerBlockEntity.playSound(p_155367_, p_155368_, p_155369_, SoundEvents.BARREL_CLOSE);
+    }
+
+    static void playSound(Level pLevel, BlockPos pPos, BlockState pState, SoundEvent pSound) {
+        ChestType chesttype = pState.getValue(ChestBlock.TYPE);
+        if (chesttype != ChestType.LEFT) {
+            double d0 = (double)pPos.getX() + 0.5D;
+            double d1 = (double)pPos.getY() + 0.5D;
+            double d2 = (double)pPos.getZ() + 0.5D;
+            if (chesttype == ChestType.RIGHT) {
+                Direction direction = ChestBlock.getConnectedDirection(pState);
+                d0 += (double)direction.getStepX() * 0.5D;
+                d2 += (double)direction.getStepZ() * 0.5D;
+            }
+
+            pLevel.playSound((Player)null, d0, d1, d2, pSound, SoundSource.BLOCKS, 0.5F, pLevel.random.nextFloat() * 0.1F + 0.9F);
+        }
     }
 
     @Override

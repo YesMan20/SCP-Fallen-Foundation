@@ -1,5 +1,7 @@
 package net.yesman.scpff.level.entity.custom;
 
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.Entity;
@@ -13,7 +15,6 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
-import net.yesman.scpff.level.item.ModItems;
 import net.yesman.scpff.misc.Classification;
 import net.yesman.scpff.misc.Helper;
 import net.yesman.scpff.misc.SCP;
@@ -35,6 +36,11 @@ public class SCP650 extends Mob implements GeoEntity, SCP {
     }
 
     @Override
+    public Classification getClassification() {
+        return Classification.EUCLID;
+    }
+
+    @Override
     protected void registerGoals() {
         this.addBehaviourGoals();
     }
@@ -53,6 +59,14 @@ public class SCP650 extends Mob implements GeoEntity, SCP {
                 .add(Attributes.ATTACK_SPEED, 0.3F)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 7f)
                 .add(Attributes.ATTACK_DAMAGE, 0.0F);
+    }
+
+    protected SoundEvent getHurtSound(DamageSource pDamageSource) {
+        return SoundEvents.IRON_GOLEM_HURT;
+    }
+
+    protected SoundEvent getDeathSound() {
+        return SoundEvents.IRON_GOLEM_DEATH;
     }
 
     @Override
@@ -98,10 +112,5 @@ public class SCP650 extends Mob implements GeoEntity, SCP {
     @Override
     public boolean canBeCollidedWith() {
         return true;
-    }
-
-    @Override
-    public Classification getClassification() {
-        return Classification.EUCLID;
     }
 }

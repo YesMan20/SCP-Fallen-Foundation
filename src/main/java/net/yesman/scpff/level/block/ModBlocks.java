@@ -159,10 +159,6 @@ public class ModBlocks {
     public static final RegistryObject<Block> WIRES_THREEWAY2 = registerBlock("wires_threeway2", () ->
             new WireBlock(BlockShapes.CARPET, BlockShapes.CARPET, BlockShapes.CARPET, BlockShapes.CARPET));
 
-    public static final RegistryObject<Block> STEELCANISTER = registerBlock("steelcanister", () ->
-            new DecorationBlock(BlockBehaviour.Properties.of(Material.METAL).strength(3F).sound(SoundType.METAL).noOcclusion(),
-                    BlockShapes.STEEL_CANISTER));
-
     public static final RegistryObject<Block> MICROSCOPE = registerBlock("microscope", () ->
             new HorizontalDecorationBlock(BlockBehaviour.Properties.of(Material.METAL).strength(2F).sound(SoundType.METAL).requiresCorrectToolForDrops().noOcclusion(),
                     BlockShapes.MICROSCOPE_S, BlockShapes.MICROSCOPE_N, BlockShapes.MICROSCOPE_E, BlockShapes.MICROSCOPE_W));
@@ -224,6 +220,9 @@ public class ModBlocks {
                     BlockShapes.ELECTRICAL_BOX_S, BlockShapes.ELECTRICAL_BOX_N, BlockShapes.ELECTRICAL_BOX_E, BlockShapes.ELECTRICAL_BOX_W));
 
     public static final RegistryObject<Block> VENDINGMACHINE = registerBlock("vendingmachine", () ->
+            new VendingMachineBlock(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL).requiresCorrectToolForDrops().lightLevel(s -> 4).strength(6F).noOcclusion()));
+
+    public static final RegistryObject<Block> VENDINGMACHINETWO = registerBlock("vendingmachine2", () ->
             new VendingMachineBlock(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL).requiresCorrectToolForDrops().lightLevel(s -> 4).strength(6F).noOcclusion()));
 
     public static final RegistryObject<Block> BULLETINBOARD = registerBlock("bulletinboard", () ->

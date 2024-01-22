@@ -1,5 +1,5 @@
 {
-	"credit": "YesMan",
+	"credit": "Made with Blockbench",
 	"parent": "pipe",
 	"render_type": "minecraft:cutout",
 	"texture_size": [64, 64],
@@ -35,23 +35,21 @@
 	],
 	"display": {
 		"thirdperson_righthand": {
-			"rotation": [75, 45, 90],
-			"translation": [0, 2, 0],
+			"rotation": [75, 45, 0],
+			"translation": [0, 2.5, 0],
 			"scale": [0.375, 0.375, 0.375]
 		},
 		"thirdperson_lefthand": {
-			"rotation": [75, 45, 90],
-			"translation": [0, 2, 0],
+			"rotation": [75, 45, 0],
+			"translation": [0, 2.5, 0],
 			"scale": [0.375, 0.375, 0.375]
 		},
 		"firstperson_righthand": {
-			"rotation": [0, 135, 90],
-			"translation": [0, 0.5, 0],
+			"rotation": [0, 45, 0],
 			"scale": [0.4, 0.4, 0.4]
 		},
 		"firstperson_lefthand": {
-			"rotation": [0, 135, 90],
-			"translation": [0, 0.5, 0],
+			"rotation": [0, 225, 0],
 			"scale": [0.4, 0.4, 0.4]
 		},
 		"ground": {
@@ -59,13 +57,11 @@
 			"scale": [0.25, 0.25, 0.25]
 		},
 		"gui": {
-			"rotation": [30, 225, 90],
-			"translation": [0, -0.25, 0],
-			"scale": [0.65, 0.65, 0.65]
+			"rotation": [30, 225, 0],
+			"scale": [0.625, 0.625, 0.625]
 		},
 		"fixed": {
-			"translation": [0, 0, 0.5],
-			"scale": [0.55, 0.55, 0.55]
+			"scale": [0.5, 0.5, 0.5]
 		}
 	},
 	"groups": [
@@ -73,6 +69,7 @@
 			"name": "pipe",
 			"origin": [0, 0, 0],
 			"color": 0,
+			"nbt": "{}",
 			"children": [0, 1]
 		}
 	]

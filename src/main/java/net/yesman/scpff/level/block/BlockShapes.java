@@ -18,7 +18,6 @@ public class BlockShapes {
     public static final VoxelShape FLOOD_LIGHTS = box(6, 0, 6, 10, 23, 10);
     
     public static final VoxelShape CONTAINMENT_CASE_BOTTOM = Shapes.join(box(2, 0, 2, 14, 3, 14), box(6, 3, 6, 10, 16, 10), BooleanOp.OR);
-    public static final VoxelShape STEEL_CANISTER = Shapes.or(box(3, 0, 3, 13, 15, 13), box(4, 18, 4, 12, 20, 12));
 
     // Rotated shapes:
 

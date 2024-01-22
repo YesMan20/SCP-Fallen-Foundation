@@ -1,29 +1,13 @@
 package net.yesman.scpff.level.entity.custom;
 
-import net.minecraft.core.BlockPos;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.syncher.EntityDataAccessor;
-import net.minecraft.network.syncher.EntityDataSerializers;
-import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.damagesource.DamageTypes;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
-import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.yesman.scpff.level.block.ModBlocks;
 import net.yesman.scpff.misc.Classification;
-import net.yesman.scpff.misc.Helper;
 import net.yesman.scpff.misc.SCP;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
@@ -34,13 +18,16 @@ import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-import java.util.Objects;
-
 public class SCP1507 extends Monster implements GeoEntity, SCP {
     AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
     public SCP1507(EntityType<? extends Monster> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
+    }
+
+    @Override
+    public Classification getClassification() {
+        return Classification.EUCLID;
     }
 
     public static AttributeSupplier.Builder createAttributes() {
@@ -92,10 +79,5 @@ public class SCP1507 extends Monster implements GeoEntity, SCP {
         this.targetSelector.addGoal(17, new HurtByTargetGoal(this).setAlertOthers());
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.0D, true));
-    }
-
-    @Override
-    public Classification getClassification() {
-        return Classification.EUCLID;
     }
 }
