@@ -19,6 +19,7 @@ build
 
 # other
 eclipse
+src/main/resources/assets/scpff
 run
 
 # Files from Forge MDK
