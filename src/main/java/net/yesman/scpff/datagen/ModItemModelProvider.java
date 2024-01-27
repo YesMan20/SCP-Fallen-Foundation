@@ -1,6 +1,5 @@
 package net.yesman.scpff.datagen;
 
-import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -9,7 +8,6 @@ import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 import net.yesman.scpff.SCPFf;
-import net.yesman.scpff.level.item.ModItems;
 
 public class ModItemModelProvider extends ItemModelProvider {
     public ModItemModelProvider(PackOutput gen, ExistingFileHelper existingFileHelper) {

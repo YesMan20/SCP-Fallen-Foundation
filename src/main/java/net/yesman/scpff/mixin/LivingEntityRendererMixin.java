@@ -10,8 +10,8 @@ import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
-import net.yesman.scpff.level.entity.client.renderer.SCP035WitherSkeletonRenderer;
-import net.yesman.scpff.level.item.ModItems;
+import net.yesman.scpff.server.entity.client.renderer.SCP035WitherSkeletonRenderer;
+import net.yesman.scpff.server.item.FFItemsRegistry;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -25,7 +25,7 @@ public abstract class LivingEntityRendererMixin<T extends LivingEntity> {
         if (!(pEntity instanceof AbstractClientPlayer clientPlayer)) {
             return;
         }
-        if (clientPlayer.getHealth() <= clientPlayer.getMaxHealth() / 1.5F && clientPlayer.getItemBySlot(EquipmentSlot.HEAD).is(ModItems.SCP035.get())) {
+        if (clientPlayer.getHealth() <= clientPlayer.getMaxHealth() / 1.5F && clientPlayer.getItemBySlot(EquipmentSlot.HEAD).is(FFItemsRegistry.SCP035.get())) {
             SCP035WitherSkeletonRenderer renderer = this.getGeckoRenderer();
             if (renderer == null) {
                 return;

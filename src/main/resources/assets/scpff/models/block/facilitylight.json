@@ -1,6 +1,7 @@
 {
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "scpff:block/facilitylight"
-  }
+	"parent": "block/cube_all",
+	"textures": {
+		"all": "scpff:block/facilitylight",
+		"particle": "scpff:block/facilitylight"
+	}
 }

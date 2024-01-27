@@ -6,14 +6,12 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.yesman.scpff.level.item.ModItems;
+import net.yesman.scpff.server.item.FFItemsRegistry;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-
-import javax.annotation.Nullable;
 
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityMixin extends Entity {
@@ -26,7 +24,7 @@ public abstract class LivingEntityMixin extends Entity {
 
     @Inject(at = @At("HEAD"), method = "setSprinting", cancellable = true)
     public void setSprintInject(boolean pSprinting, CallbackInfo ci) {
-        if (this.getItemBySlot(EquipmentSlot.HEAD).is(ModItems.SCP035.get())) {
+        if (this.getItemBySlot(EquipmentSlot.HEAD).is(FFItemsRegistry.SCP035.get())) {
             ci.cancel();
         }
     }

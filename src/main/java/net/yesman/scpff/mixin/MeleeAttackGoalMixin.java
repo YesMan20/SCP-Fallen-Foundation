@@ -4,7 +4,7 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
-import net.yesman.scpff.level.item.ModItems;
+import net.yesman.scpff.server.item.FFItemsRegistry;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -26,7 +26,7 @@ public class MeleeAttackGoalMixin {
             cir.setReturnValue(false);
             return;
         }
-        if (livingentity.getItemBySlot(EquipmentSlot.HEAD).is(ModItems.SCP268.get())) cir.setReturnValue(false);
+        if (livingentity.getItemBySlot(EquipmentSlot.HEAD).is(FFItemsRegistry.SCP268.get())) cir.setReturnValue(false);
     }
 
     @Inject(at = @At("HEAD"), method = "canUse", cancellable = true)
@@ -36,6 +36,6 @@ public class MeleeAttackGoalMixin {
             cir.setReturnValue(false);
             return;
         }
-        if (livingentity.getItemBySlot(EquipmentSlot.HEAD).is(ModItems.SCP268.get())) cir.setReturnValue(false);
+        if (livingentity.getItemBySlot(EquipmentSlot.HEAD).is(FFItemsRegistry.SCP268.get())) cir.setReturnValue(false);
     }
 }

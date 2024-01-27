@@ -1,25 +1,19 @@
 package net.yesman.scpff.mixin;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.SignBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.entity.SignBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.yesman.scpff.events.CommonEvents;
-import net.yesman.scpff.level.entity.ModEntity;
-import net.yesman.scpff.level.entity.custom.SCP2521;
+import net.yesman.scpff.server.entity.scp.SCP2521;
 import net.yesman.scpff.misc.RunnableCooldownHandler;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(SignBlockEntity.class)

@@ -23,9 +23,9 @@ import net.minecraftforge.fml.common.Mod;
 import net.yesman.scpff.SCPFf;
 import net.yesman.scpff.data.PlayerData;
 import net.yesman.scpff.data.client.GeneralClientData;
-import net.yesman.scpff.level.entity.custom.SCP2521;
-import net.yesman.scpff.level.item.ModItems;
-import net.yesman.scpff.level.item.custom.WeightedArmorItem;
+import net.yesman.scpff.server.entity.scp.SCP2521;
+import net.yesman.scpff.server.item.FFItemsRegistry;
+import net.yesman.scpff.server.item.custom.WeightedArmorItem;
 import net.yesman.scpff.misc.*;
 import net.yesman.scpff.networking.ModMessages;
 import net.yesman.scpff.networking.packet.S2C.EnableMovementPacketS2CPacket;
@@ -40,7 +40,7 @@ public class CommonEvents {
     @SubscribeEvent
     public static void changeTarget(LivingChangeTargetEvent event) {
         if (event.getNewTarget() == null || event.getEntity() == null) return;
-        if (event.getNewTarget().getItemBySlot(EquipmentSlot.HEAD).getItem() == ModItems.SCP268.get()) {
+        if (event.getNewTarget().getItemBySlot(EquipmentSlot.HEAD).getItem() == FFItemsRegistry.SCP268.get()) {
             event.setCanceled(true);
         }
     }
@@ -57,7 +57,7 @@ public class CommonEvents {
         if (!player.isCreative() && SCP2521.has2521InString(event.getRawText())) {
             PlayerData.getData(player).updateIn2521Event(true);
             BlockPos summonPos = BlockPos.containing(player.getEyePosition().add(Helper.calculateViewVector(player.getXRot(), player.getYRot()).scale(-1)));
-            new SCP2521.SCP2521Event(summonPos, player.level, player, () -> {
+            new SCP2521.SCP2521Event(summonPos, player.level(), player, () -> {
                 ModMessages.sendToPlayer(new EnableMovementPacketS2CPacket(false), player);
                 RunnableCooldownHandler.addDelayedRunnable(() -> {
                     ModMessages.sendToPlayer(new EnableMovementPacketS2CPacket(true), player);
@@ -89,7 +89,7 @@ public class CommonEvents {
         if (stack.hasCustomHoverName() && !data.in2521Event()) {
             if (SCP2521.has2521InString(stack.getHoverName().toString())) {
                 PlayerData.getData(serverPlayer).updateIn2521Event(true);
-                new SCP2521.SCP2521Event(null, serverPlayer.level, serverPlayer, () -> {
+                new SCP2521.SCP2521Event(null, serverPlayer.level(), serverPlayer, () -> {
                     ModMessages.sendToPlayer(new EnableMovementPacketS2CPacket(false), serverPlayer);
                     RunnableCooldownHandler.addDelayedRunnable(() -> {
                         ModMessages.sendToPlayer(new EnableMovementPacketS2CPacket(true), serverPlayer);
@@ -103,7 +103,7 @@ public class CommonEvents {
 
     @SubscribeEvent
     public static void playerLogIn(PlayerEvent.PlayerLoggedInEvent event) {
-        if (event.getEntity().level.isClientSide) return;
+        if (event.getEntity().level().isClientSide) return;
         PlayerData data = PlayerData.getData(event.getEntity());
         data.player = (ServerPlayer) event.getEntity();
         data.updateData();
@@ -127,7 +127,7 @@ public class CommonEvents {
                 event.getToolTip().add(Component.literal(scp.getClassification().getName()).withStyle(scp.getClassification().getColor()));
             }
         } else if (item instanceof ForgeSpawnEggItem spawnEggItem && event.getEntity() != null) {
-            Level level = event.getEntity().level;
+            Level level = event.getEntity().level();
             if (spawnEggItem.getType(null).create(level) instanceof SCP scp) {
                 if (scp.getClassification() != null) {
                     event.getToolTip().add(Component.literal(scp.getClassification().getName()).withStyle(scp.getClassification().getColor()));

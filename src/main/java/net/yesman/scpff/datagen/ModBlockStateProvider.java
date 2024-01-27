@@ -8,7 +8,7 @@ import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 import net.yesman.scpff.SCPFf;
-import net.yesman.scpff.level.block.ModBlocks;
+import net.yesman.scpff.server.block.FFBlocksRegistry;
 
 public class ModBlockStateProvider extends BlockStateProvider {
     public ModBlockStateProvider(PackOutput gen, ExistingFileHelper exFileHelper) {
@@ -17,8 +17,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        horizontalBlockWithItem(ModBlocks.CONTAINMENT_CASE);
-        horizontalBlockWithItem(ModBlocks.CONTAINMENT_CASE_BOTTOM);
+        horizontalBlockWithItem(FFBlocksRegistry.CONTAINMENT_CASE);
+        horizontalBlockWithItem(FFBlocksRegistry.CONTAINMENT_CASE_BOTTOM);
     }
 
 

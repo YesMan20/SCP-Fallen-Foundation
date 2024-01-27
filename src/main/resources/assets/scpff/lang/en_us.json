@@ -167,8 +167,8 @@
   "painting.scpff.dclassposter.title": "D-Class Poster",
   "painting.scpff.dclassposter.author": "The D-Class Of Site-19",
 
-  "creativemodetab.scpff_item": "SCP Items",
-  "creativemodetab.scpff_block": "SCP Blocks",
-  "creativemodetab.scpff_scps": "SCP Spawn Eggs",
-  "creativemodetab.scpff_armory": "SCP Armory"
+  "creativemodetab.scpff_items": "SCP FF Items",
+  "creativemodetab.scpff_blocks": "Facility Blocks",
+  "creativemodetab.scpff_scps": "SCPs",
+  "creativemodetab.scpff_armory": "SCP FF Combat"
 }

@@ -6,30 +6,30 @@ import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.yesman.scpff.SCPFf;
-import net.yesman.scpff.level.block.client.ContainmentCaseRenderer;
-import net.yesman.scpff.level.block.entity.ModBlockEntities;
-import net.yesman.scpff.level.entity.client.renderer.*;
-import net.yesman.scpff.level.entity.ModEntity;
-import net.yesman.scpff.level.item.client.SCP035Model;
-import net.yesman.scpff.level.item.client.SCP268Model;
+import net.yesman.scpff.server.block.client.ContainmentCaseRenderer;
+import net.yesman.scpff.server.block.entity.FFBlockEntitiesRegistry;
+import net.yesman.scpff.server.entity.client.renderer.*;
+import net.yesman.scpff.server.entity.FFEntitiesRegistry;
+import net.yesman.scpff.server.item.client.SCP035Model;
+import net.yesman.scpff.server.item.client.SCP268Model;
 
 @Mod.EventBusSubscriber(modid = SCPFf.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ClientEvents {
     @SubscribeEvent
     public static void registerRenderers(final EntityRenderersEvent.RegisterRenderers event) {
-        event.registerEntityRenderer(ModEntity.SCP_650.get(), SCP650Renderer::new);
-        event.registerEntityRenderer(ModEntity.SCP_049.get(), SCP049Renderer::new);
-        event.registerEntityRenderer(ModEntity.SCP_939.get(), SCP939Renderer::new);
-        event.registerEntityRenderer(ModEntity.SCP_173.get(), SCP173Renderer::new);
-        event.registerEntityRenderer(ModEntity.SCP_1507.get(), SCP1507Renderer::new);
-        event.registerEntityRenderer(ModEntity.SCP_058.get(), SCP058Renderer::new);
-        event.registerEntityRenderer(ModEntity.SCP_2521.get(), SCP2521Renderer::new);
-        event.registerEntityRenderer(ModEntity.SCP_106.get(), SCP106Renderer::new);
-        event.registerEntityRenderer(ModEntity.SCP_131.get(), SCP131Renderer::new);
+        event.registerEntityRenderer(FFEntitiesRegistry.SCP_650.get(), SCP650Renderer::new);
+        event.registerEntityRenderer(FFEntitiesRegistry.SCP_049.get(), SCP049Renderer::new);
+        event.registerEntityRenderer(FFEntitiesRegistry.SCP_939.get(), SCP939Renderer::new);
+        event.registerEntityRenderer(FFEntitiesRegistry.SCP_173.get(), SCP173Renderer::new);
+        event.registerEntityRenderer(FFEntitiesRegistry.SCP_1507.get(), SCP1507Renderer::new);
+        event.registerEntityRenderer(FFEntitiesRegistry.SCP_058.get(), SCP058Renderer::new);
+        event.registerEntityRenderer(FFEntitiesRegistry.SCP_2521.get(), SCP2521Renderer::new);
+        event.registerEntityRenderer(FFEntitiesRegistry.SCP_106.get(), SCP106Renderer::new);
+        event.registerEntityRenderer(FFEntitiesRegistry.SCP_131.get(), SCP131Renderer::new);
         event.registerEntityRenderer(EntityType.PLAYER, SCP035WitherSkeletonRenderer::new);
-        event.registerEntityRenderer(ModEntity.CHAIR.get(), ChairRenderer::new);
+        event.registerEntityRenderer(FFEntitiesRegistry.CHAIR.get(), ChairRenderer::new);
 
-        event.registerBlockEntityRenderer(ModBlockEntities.CONTAINMENT_BLOCK.get(), ContainmentCaseRenderer::new);
+        event.registerBlockEntityRenderer(FFBlockEntitiesRegistry.CONTAINMENT_BLOCK.get(), ContainmentCaseRenderer::new);
     }
 
     @SubscribeEvent
