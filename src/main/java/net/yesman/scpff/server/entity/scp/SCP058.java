@@ -22,7 +22,7 @@ import net.minecraft.world.entity.monster.piglin.Piglin;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import net.yesman.scpff.server.sound.FFSoundsRegistry;
+import net.yesman.scpff.server.misc.FFSoundsRegistry;
 import net.yesman.scpff.misc.Classification;
 import net.yesman.scpff.misc.SCP;
 import software.bernie.geckolib.animatable.GeoEntity;
@@ -47,6 +47,11 @@ public class SCP058 extends Monster implements GeoEntity, SCP {
     @Override
     public Classification getClassification() {
         return Classification.KETER;
+    }
+
+    @Override
+    public String getNameId() {
+        return "Heart of Darkness";
     }
 
     public static AttributeSupplier.Builder createAttributes() {

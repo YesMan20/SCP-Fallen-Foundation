@@ -119,23 +119,24 @@ public class CommonEvents {
     public static void toolTip(ItemTooltipEvent event) {
         Item item = event.getItemStack().getItem();
         if (item instanceof SCP scp) {
-            if (scp.getClassification() != null) {
-                event.getToolTip().add(Component.literal(scp.getClassification().getName()).withStyle(scp.getClassification().getColor()));
+            if (scp.getClassification() != null && scp.getNameId() != null) {
+                event.getToolTip().add(Component.literal(scp.getNameId() + " - " + scp.getClassification().getName()).withStyle(scp.getClassification().getColor()));
             }
         } else if (item instanceof BlockItem blockItem && blockItem.getBlock() instanceof SCP scp) {
-            if (scp.getClassification() != null) {
-                event.getToolTip().add(Component.literal(scp.getClassification().getName()).withStyle(scp.getClassification().getColor()));
+            if (scp.getClassification() != null && scp.getNameId() != null) {
+                event.getToolTip().add(Component.literal(scp.getNameId() + " - " + scp.getClassification().getName()).withStyle(scp.getClassification().getColor()));
             }
         } else if (item instanceof ForgeSpawnEggItem spawnEggItem && event.getEntity() != null) {
             Level level = event.getEntity().level();
             if (spawnEggItem.getType(null).create(level) instanceof SCP scp) {
-                if (scp.getClassification() != null) {
-                    event.getToolTip().add(Component.literal(scp.getClassification().getName()).withStyle(scp.getClassification().getColor()));
+                if (scp.getClassification() != null && scp.getNameId() != null) {
+                    event.getToolTip().add(Component.literal(scp.getNameId() + " - " + scp.getClassification().getName()).withStyle(scp.getClassification().getColor()));
                 }
             }
         }
+
         if (item instanceof WeightedArmorItem armorItem) {
-            event.getToolTip().add(Component.literal("+" + armorItem.getWeight() + " Weight").withStyle(ChatFormatting.BLUE));
+            event.getToolTip().add(Component.literal("+" + armorItem.getWeight() * 10 + " Weight").withStyle(ChatFormatting.BLUE));
         }
     }
 }

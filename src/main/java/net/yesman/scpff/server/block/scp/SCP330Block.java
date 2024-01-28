@@ -14,7 +14,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.yesman.scpff.SCPFf;
 import net.yesman.scpff.server.block.decor.HorizontalDecorationBlock;
-import net.yesman.scpff.server.item.FFItemTagsRegistry;
+import net.yesman.scpff.server.tag.FFItemTags;
 import net.yesman.scpff.misc.Classification;
 import net.yesman.scpff.misc.SCP;
 
@@ -29,7 +29,7 @@ public class SCP330Block extends HorizontalDecorationBlock implements SCP {
 
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
-        List<Item> candy = ForgeRegistries.ITEMS.tags().getTag(FFItemTagsRegistry.CANDIES).stream().toList();
+        List<Item> candy = ForgeRegistries.ITEMS.tags().getTag(FFItemTags.CANDIES).stream().toList();
         Item item = candy.get(RandomSource.create().nextInt(candy.size()));
         level.addFreshEntity(new ItemEntity(level, pos.getX() + 0.5F, pos.getY() + 0.2F, pos.getZ() + 0.5F, new ItemStack(item)));
         if (!level.isClientSide) {
@@ -51,5 +51,10 @@ public class SCP330Block extends HorizontalDecorationBlock implements SCP {
     @Override
     public Classification getClassification() {
         return Classification.SAFE;
+    }
+
+    @Override
+    public String getNameId() {
+        return "Take Only Two";
     }
 }

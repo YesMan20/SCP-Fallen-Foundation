@@ -15,7 +15,7 @@ import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.ai.navigation.WallClimberNavigation;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.level.Level;
-import net.yesman.scpff.server.sound.FFSoundsRegistry;
+import net.yesman.scpff.server.misc.FFSoundsRegistry;
 import net.yesman.scpff.misc.Classification;
 import net.yesman.scpff.misc.SCP;
 import software.bernie.geckolib.animatable.GeoEntity;
@@ -43,6 +43,11 @@ public class SCP131 extends Monster implements GeoEntity, SCP {
     @Override
     public Classification getClassification() {
         return Classification.SAFE;
+    }
+
+    @Override
+    public String getNameId() {
+        return "The \"Eye Pods\"";
     }
 
     public static AttributeSupplier.Builder createAttributes() {

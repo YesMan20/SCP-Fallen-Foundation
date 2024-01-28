@@ -22,7 +22,7 @@ import net.minecraft.world.level.Level;
 import net.yesman.scpff.server.config.FFServerConfigsRegistry;
 import net.yesman.scpff.server.block.FFBlocksRegistry;
 import net.yesman.scpff.server.entity.ai.goals.SCP106WalkThroughDoorsGoal;
-import net.yesman.scpff.server.sound.FFSoundsRegistry;
+import net.yesman.scpff.server.misc.FFSoundsRegistry;
 import net.yesman.scpff.misc.Classification;
 import net.yesman.scpff.misc.SCP;
 import org.jetbrains.annotations.Nullable;
@@ -52,6 +52,11 @@ public class SCP106 extends Monster implements GeoEntity, NeutralMob, SCP {
     @Override
     public Classification getClassification() {
         return Classification.KETER;
+    }
+
+    @Override
+    public String getNameId() {
+        return "The Old Man";
     }
 
     @Override

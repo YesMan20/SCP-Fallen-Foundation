@@ -1,5 +1,7 @@
 package net.yesman.scpff.server.block;
 
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -11,10 +13,10 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.yesman.scpff.SCPFf;
+import net.yesman.scpff.server.item.FFItemsRegistry;
 import net.yesman.scpff.server.block.decor.ContainmentCase;
 import net.yesman.scpff.server.block.decor.*;
 import net.yesman.scpff.server.block.scp.SCP330Block;
-import net.yesman.scpff.server.item.FFItemsRegistry;
 
 import java.util.function.Supplier;
 
@@ -60,10 +62,10 @@ public class FFBlocksRegistry {
 
     /** EZ Blocks **/
     public static final RegistryObject<Block> EZWALL1 = registerBlock("ezwall1", () ->
-            new TooltipBlock(BlockBehaviour.Properties.of().explosionResistance(1.8f).strength(1.8f).destroyTime(9f).requiresCorrectToolForDrops(), "§8§oCan be used with White Concrete"));
+            new TooltipBlock(Component.translatable("tooltip.scpff.decorationBlock").withStyle(ChatFormatting.BLUE), BlockBehaviour.Properties.of().explosionResistance(1.8f).strength(1.8f).destroyTime(9f).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> EZWALL2 = registerBlock("ezwall2", () ->
-            new TooltipBlock(BlockBehaviour.Properties.of().explosionResistance(1.8f).strength(1.8f).destroyTime(9f).requiresCorrectToolForDrops(), "§8§oCan be used with White Concrete"));
+            new TooltipBlock(Component.translatable("tooltip.scpff.decorationBlock").withStyle(ChatFormatting.BLUE), BlockBehaviour.Properties.of().explosionResistance(1.8f).strength(1.8f).destroyTime(9f).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> TILES = registerBlock("tiles", () ->
             new Block(BlockBehaviour.Properties.of().strength(10f).requiresCorrectToolForDrops()));
@@ -88,13 +90,13 @@ public class FFBlocksRegistry {
 
     /** LC Blocks **/
     public static final RegistryObject<Block> LCWALL1 = registerBlock("lcwall1", () ->
-            new TooltipBlock(BlockBehaviour.Properties.of().explosionResistance(1.8f).strength(1.8f).requiresCorrectToolForDrops(), "§8§oCan be used with White Concrete"));
+            new TooltipBlock(Component.translatable("tooltip.scpff.decorationBlock").withStyle(ChatFormatting.BLUE), BlockBehaviour.Properties.of().explosionResistance(1.8f).strength(1.8f).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> LCWALL2 = registerBlock("lcwall2", () ->
-            new TooltipBlock(BlockBehaviour.Properties.of().explosionResistance(1.8f).strength(1.8f).requiresCorrectToolForDrops(), "§8§oCan be used with White Concrete"));
+            new TooltipBlock(Component.translatable("tooltip.scpff.decorationBlock").withStyle(ChatFormatting.BLUE), BlockBehaviour.Properties.of().explosionResistance(1.8f).strength(1.8f).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> LCWALL3 = registerBlock("lcwall3", () ->
-            new TooltipBlock(BlockBehaviour.Properties.of().explosionResistance(1.8F).strength(1.8F).requiresCorrectToolForDrops(), "§8§oCan be used with White Concrete"));
+            new TooltipBlock(Component.translatable("tooltip.scpff.decorationBlock").withStyle(ChatFormatting.BLUE), BlockBehaviour.Properties.of().explosionResistance(1.8F).strength(1.8F).requiresCorrectToolForDrops()));
 
 
     /** Decoration Blocks **/

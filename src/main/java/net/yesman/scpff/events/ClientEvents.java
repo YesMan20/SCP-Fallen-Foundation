@@ -6,12 +6,12 @@ import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.yesman.scpff.SCPFf;
-import net.yesman.scpff.server.block.client.ContainmentCaseRenderer;
+import net.yesman.scpff.client.renderer.block.ContainmentCaseRenderer;
+import net.yesman.scpff.client.renderer.entity.*;
 import net.yesman.scpff.server.block.entity.FFBlockEntitiesRegistry;
-import net.yesman.scpff.server.entity.client.renderer.*;
 import net.yesman.scpff.server.entity.FFEntitiesRegistry;
-import net.yesman.scpff.server.item.client.SCP035Model;
-import net.yesman.scpff.server.item.client.SCP268Model;
+import net.yesman.scpff.client.model.armor.SCP035Model;
+import net.yesman.scpff.client.model.armor.SCP268Model;
 
 @Mod.EventBusSubscriber(modid = SCPFf.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ClientEvents {

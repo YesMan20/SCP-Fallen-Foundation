@@ -34,6 +34,11 @@ public class SCP1507 extends Monster implements GeoEntity, SCP {
         return Classification.EUCLID;
     }
 
+    @Override
+    public String getNameId() {
+        return "Pink Flamingos";
+    }
+
     public static AttributeSupplier.Builder createAttributes() {
         return Monster.createMonsterAttributes()
                 .add(Attributes.MOVEMENT_SPEED, 0.3f)

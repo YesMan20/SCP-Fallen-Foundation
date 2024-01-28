@@ -18,7 +18,7 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.yesman.scpff.server.entity.ai.goals.SCP049LookForPlayerGoal;
-import net.yesman.scpff.server.sound.FFSoundsRegistry;
+import net.yesman.scpff.server.misc.FFSoundsRegistry;
 import net.yesman.scpff.misc.Classification;
 import net.yesman.scpff.misc.RunnableCooldownHandler;
 import net.yesman.scpff.misc.SCP;
@@ -51,6 +51,11 @@ public class SCP049 extends Monster implements GeoEntity, NeutralMob, SCP {
     @Override
     public Classification getClassification() {
         return Classification.EUCLID;
+    }
+
+    @Override
+    public String getNameId() {
+        return "Plague Doctor";
     }
 
     @Override

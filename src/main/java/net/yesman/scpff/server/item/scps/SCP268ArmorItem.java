@@ -10,7 +10,7 @@ import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import net.yesman.scpff.SCPFf;
-import net.yesman.scpff.server.item.client.SCP268Model;
+import net.yesman.scpff.client.model.armor.SCP268Model;
 import net.yesman.scpff.misc.Classification;
 import net.yesman.scpff.misc.SCP;
 import org.jetbrains.annotations.NotNull;
@@ -41,5 +41,10 @@ public class SCP268ArmorItem extends ArmorItem implements SCP {
     @Override
     public Classification getClassification() {
         return Classification.EUCLID;
+    }
+
+    @Override
+    public String getNameId() {
+        return "Cap of Neglect";
     }
 }

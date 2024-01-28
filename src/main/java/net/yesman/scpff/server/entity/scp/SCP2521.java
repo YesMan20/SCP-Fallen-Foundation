@@ -58,6 +58,11 @@ public class SCP2521 extends Monster implements GeoEntity, SCP {
     }
 
     @Override
+    public String getNameId() {
+        return "●●|●●●●●|●●|●";
+    }
+
+    @Override
     public boolean hurt(DamageSource pSource, float pAmount) {
         return pSource.is(DamageTypes.FELL_OUT_OF_WORLD) && super.hurt(pSource, pAmount);
     }

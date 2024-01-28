@@ -44,6 +44,11 @@ public class SCP650 extends Mob implements GeoEntity, SCP {
     }
 
     @Override
+    public String getNameId() {
+        return "Startling Statue";
+    }
+
+    @Override
     protected void registerGoals() {
         this.addBehaviourGoals();
     }

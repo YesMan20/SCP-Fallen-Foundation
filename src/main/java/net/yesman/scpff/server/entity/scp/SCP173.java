@@ -5,7 +5,6 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
@@ -20,7 +19,6 @@ import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.registries.ForgeRegistries;
 import net.yesman.scpff.server.config.FFServerConfigsRegistry;
 import net.yesman.scpff.server.block.FFBlocksRegistry;
 import net.yesman.scpff.misc.Classification;
@@ -33,8 +31,6 @@ import software.bernie.geckolib.core.animation.Animation;
 import software.bernie.geckolib.core.animation.AnimationController;
 import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.util.GeckoLibUtil;
-
-import java.util.Objects;
 
 public class SCP173 extends Monster implements GeoEntity, SCP {
     private int cooldownTick = 0;
@@ -53,6 +49,11 @@ public class SCP173 extends Monster implements GeoEntity, SCP {
     @Override
     public Classification getClassification() {
         return Classification.EUCLID;
+    }
+
+    @Override
+    public String getNameId() {
+        return "The Sculpture";
     }
 
     @Override
@@ -88,7 +89,7 @@ public class SCP173 extends Monster implements GeoEntity, SCP {
 
     @Override
     public void playStepSound(BlockPos pos, BlockState blockIn) {
-        this.playSound(Objects.requireNonNull(ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.grindstone.use"))), 0.15f, 1);
+        this.playSound(SoundEvents.GRINDSTONE_USE, 0.15f, 1);
     }
 
     @Override

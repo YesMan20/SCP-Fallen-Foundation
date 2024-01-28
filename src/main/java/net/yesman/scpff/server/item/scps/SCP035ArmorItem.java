@@ -16,7 +16,7 @@ import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import net.yesman.scpff.SCPFf;
-import net.yesman.scpff.server.item.client.SCP035Model;
+import net.yesman.scpff.client.model.armor.SCP035Model;
 import net.yesman.scpff.misc.Classification;
 import net.yesman.scpff.misc.SCP;
 import org.jetbrains.annotations.NotNull;
@@ -73,5 +73,10 @@ public class SCP035ArmorItem extends ArmorItem implements SCP {
     @Override
     public Classification getClassification() {
         return Classification.KETER;
+    }
+
+    @Override
+    public String getNameId() {
+        return "Possessive Mask";
     }
 }

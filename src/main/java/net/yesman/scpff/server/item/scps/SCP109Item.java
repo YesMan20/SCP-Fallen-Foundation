@@ -33,4 +33,9 @@ public class SCP109Item extends Item implements SCP {
     public Classification getClassification() {
         return Classification.EUCLID;
     }
+
+    @Override
+    public String getNameId() {
+        return "Infinite Canteen";
+    }
 }

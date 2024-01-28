@@ -19,7 +19,7 @@ public class FFEntitiesRegistry {
     public static final RegistryObject<EntityType<SCP1507>> SCP_1507 = register("scp_1507", EntityType.Builder.of(SCP1507::new, MobCategory.CREATURE).sized(1f, 1.2f));
     public static final RegistryObject<EntityType<SCP173>> SCP_173 = register("scp_173", EntityType.Builder.of(SCP173::new, MobCategory.MONSTER));
     public static final RegistryObject<EntityType<SCP058>> SCP_058 = register("scp_058", EntityType.Builder.of(SCP058::new, MobCategory.MONSTER).sized(0.7f, 0.7f));
-    public static final RegistryObject<EntityType<SCP2521>> SCP_2521 = register("scp_2521", EntityType.Builder.of(SCP2521::new, MobCategory.MONSTER));
+    public static final RegistryObject<EntityType<SCP2521>> SCP_2521 = register("scp_2521", EntityType.Builder.of(SCP2521::new, MobCategory.MONSTER).noSummon());
     public static final RegistryObject<EntityType<SCP131>> SCP_131 = register("scp_131", EntityType.Builder.of(SCP131::new, MobCategory.CREATURE).sized(0.7f, 0.7f));
 
     public static final RegistryObject<EntityType<ChairEntity>> CHAIR = register("chair", EntityType.Builder.<ChairEntity>of(ChairEntity::new, MobCategory.MISC).sized(0.0F, 0.0F));

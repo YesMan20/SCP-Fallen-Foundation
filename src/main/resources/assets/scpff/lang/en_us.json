@@ -1,15 +1,15 @@
 {
-  "item.scpff.scp207": "SCP-207 - §aCola Bottles",
-  "item.scpff.scp268": "SCP-268 - §6Cap Of Neglect",
-  "item.scpff.scp500": "SCP-500 - §aPanacea",
-  "item.scpff.scp109": "SCP-109 - §6Infinite Canteen",
-  "item.scpff.scp1025": "SCP-1025 - §aEncyclopedia Of Diseases",
-  "item.scpff.scp035": "SCP-035 - §cThe Possessive Mask",
+  "item.scpff.scp207": "SCP-207",
+  "item.scpff.scp268": "SCP-268",
+  "item.scpff.scp500": "SCP-500",
+  "item.scpff.scp109": "SCP-109",
+  "item.scpff.scp1025": "SCP-1025",
+  "item.scpff.scp035": "SCP-035",
 
-  "sounds.scpff.scp058beating": "Heart beats",
-  "sounds.scpff.scp049breathing": "Heavy breathing",
-  "sounds.scpff.scp106breathing": "Breathing",
-  "sounds.scpff.scp131ambient": "Beeping",
+  "sounds.scpff.scp058beating": "SCP-058's heart beats",
+  "sounds.scpff.scp049breathing": "SCP-049 heavily breaths",
+  "sounds.scpff.scp106breathing": "SCP-106 breaths",
+  "sounds.scpff.scp131ambient": "SCP-131 beeps",
   "sounds.scpff.scp131hurt": "You monster.",
 
   "item.scpff.candy1": "Purple Candy",
@@ -18,16 +18,14 @@
   "item.scpff.candy4": "Green Candy",
   "item.scpff.scp1023arc": "SCP-1023-ARC - A Telekill Sword",
 
-  "item.scpff.scp_553_spawn_egg": "SCP-553 - §aCrystalline Butterflies §rSpawn Egg",
-  "item.scpff.scp_049_spawn_egg": "SCP-049 - §6The Plague Doctor §rSpawn Egg",
-  "item.scpff.scp_131_spawn_egg": "SCP-131 - §aEye Pods §rSpawn Egg",
-  "item.scpff.scp_650_spawn_egg": "SCP-650 - §6Startling Statue §rSpawn Egg",
-  "item.scpff.scp_058_spawn_egg": "SCP-058 - §cHeart Of Darkness §rSpawn Egg",
-  "item.scpff.scp_939_spawn_egg": "SCP-939 - §cWith Many Voices §rSpawn Egg",
-  "item.scpff.scp_106_spawn_egg": "SCP-106 - §cThe Old Man §rSpawn Egg",
-  "item.scpff.scp_2521_spawn_egg": "SCP-2521 - §c●●|●●●●●|●●|● §rSpawn Egg",
-  "item.scpff.scp_173_spawn_egg": "SCP-173 - §6The Sculpture §rSpawn Egg",
-  "item.scpff.scp_1507_spawn_egg": "SCP-1507 - §6Pink Flamingos §rSpawn Egg",
+  "item.scpff.scp_049_spawn_egg": "SCP-049 Spawn Egg",
+  "item.scpff.scp_131_spawn_egg": "SCP-131 Spawn Egg",
+  "item.scpff.scp_650_spawn_egg": "SCP-650 Spawn Egg",
+  "item.scpff.scp_058_spawn_egg": "SCP-058 Spawn Egg",
+  "item.scpff.scp_939_spawn_egg": "SCP-939 Spawn Egg",
+  "item.scpff.scp_106_spawn_egg": "SCP-106 Spawn Egg",
+  "item.scpff.scp_173_spawn_egg": "SCP-173 Spawn Egg",
+  "item.scpff.scp_1507_spawn_egg": "SCP-1507 Spawn Egg",
 
   "item.scpff.sledgehammer": "Sledgehammer",
   "item.scpff.mop": "Mop",
@@ -60,9 +58,9 @@
   "item.scpff.researcher_suit_leggings": "Researcher Suit Leggings",
   "item.scpff.researcher_suit_boots": "Researcher Suit Boots",
 
-  "tooltip.scpff.sledgehammer": "§8Cycles through SCP-173/131 variants",
+  "tooltip.scpff.decorationBlock": "Can be used with White Concrete",
+  "tooltip.scpff.sledgehammer": "Cycles through SCP variants",
 
-  "entity.scpff.scp_553": "SCP-553 - §aCrystalline Butterflies",
   "entity.scpff.scp_650": "SCP-650 - §6Startling Statue",
   "entity.scpff.scp_173": "SCP-173 - §6The Sculpture",
   "entity.scpff.scp_131": "SCP-131 - §aEye Pods",
@@ -167,8 +165,8 @@
   "painting.scpff.dclassposter.title": "D-Class Poster",
   "painting.scpff.dclassposter.author": "The D-Class Of Site-19",
 
-  "creativemodetab.scpff_items": "SCP FF Items",
-  "creativemodetab.scpff_blocks": "Facility Blocks",
-  "creativemodetab.scpff_scps": "SCPs",
-  "creativemodetab.scpff_armory": "SCP FF Combat"
+  "creativemodetab.scpff_items": "SCP FF - Items",
+  "creativemodetab.scpff_blocks": "SCP FF - Facility Blocks",
+  "creativemodetab.scpff_scps": "SCP FF - SCPs",
+  "creativemodetab.scpff_armory": "SCP FF - Combat"
 }

@@ -3,8 +3,8 @@ package net.yesman.scpff.server.entity.scp;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
@@ -23,7 +23,6 @@ import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.npc.WanderingTrader;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.registries.ForgeRegistries;
 import net.yesman.scpff.SCPFf;
 import net.yesman.scpff.data.DeobfuscatedUtil;
 import net.yesman.scpff.misc.Classification;
@@ -36,22 +35,21 @@ import software.bernie.geckolib.core.animation.Animation;
 import software.bernie.geckolib.core.animation.AnimationController;
 import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
-import software.bernie.geckolib.util.GeckoLibUtil;import java.lang.reflect.InvocationTargetException;
+import software.bernie.geckolib.util.GeckoLibUtil;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 public class SCP939 extends Monster implements GeoEntity, SCP {
     private static final EntityDataAccessor<Byte> DATA_FLAGS_ID = SynchedEntityData.defineId(SCP939.class, EntityDataSerializers.BYTE);
     private static final EntityDataAccessor<Boolean> DATA_HAS_TARGET = SynchedEntityData.defineId(SCP939.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Boolean> DATA_CHASING = SynchedEntityData.defineId(SCP939.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDimensions standingDimensions = EntityDimensions.scalable(0.8F, 1.8F);
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
     public SCP939(EntityType<? extends Monster> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
+        this.setPersistenceRequired();
     }
-
-    /**
-     * Basic Entity Stuff
-     */
 
     public static AttributeSupplier.Builder createAttributes() {
         return Monster.createMonsterAttributes()
@@ -62,72 +60,11 @@ public class SCP939 extends Monster implements GeoEntity, SCP {
                 .add(Attributes.MAX_HEALTH, 47.0D);
     }
 
-    @Override
-    public SoundEvent getHurtSound(DamageSource ds) {
-        return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.villager.hurt"));
-    }
-
-    @Override
-    public SoundEvent getDeathSound() {
-        return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.villager.death"));
-    }
-
-    @Override
-    protected void registerGoals() {
-        this.goalSelector.addGoal(13, new BreakDoorGoal(this, e -> true));
-        this.goalSelector.addGoal(14, new RandomSwimmingGoal(this, 1, 40));
-        this.goalSelector.addGoal(16, new RandomLookAroundGoal(this));
-        this.goalSelector.addGoal(18, new FollowMobGoal(this, (float) 1, 10, 5));
-        this.goalSelector.addGoal(18, new RandomStrollGoal(this, 1));
-        this.targetSelector.addGoal(17, new HurtByTargetGoal(this).setAlertOthers());
-        this.targetSelector.addGoal(17, new RestrictSunGoal(this));
-        this.addBehaviourGoals();
-        this.setPersistenceRequired();
-    }
-
-    protected void addBehaviourGoals() {
-        this.goalSelector.addGoal(0, new FloatGoal(this));
-        this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.0D, false));
-        this.targetSelector.addGoal(2, (new HurtByTargetGoal(this)));
-        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Player.class, true));
-        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Animal.class, true));
-        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Villager.class, true));
-        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, IronGolem.class, true));
-        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, WanderingTrader.class, true, true));
-        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Piglin.class, true, true));
-        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, ZombifiedPiglin.class, true, true));
-    }
-
-    private static final RawAnimation ATTACK_ANIM = RawAnimation.begin().then("animation.scp939.attack", Animation.LoopType.PLAY_ONCE);
-    private static final RawAnimation CHASE_ANIM = RawAnimation.begin().then("animation.scp939.aggresive", Animation.LoopType.LOOP);
-    private static final RawAnimation IDLE_ANIM = RawAnimation.begin().then("animation.scp939.idle", Animation.LoopType.LOOP);
-    private static final RawAnimation WALK_ANIM = RawAnimation.begin().then("animation.scp939.moving", Animation.LoopType.LOOP);
-
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar controller) {
-        controller.add(new AnimationController<>(this, "Controller", 3, state -> {
-            if (this.swinging) {
-                state.getController().setAnimation(ATTACK_ANIM);
-            } else if (this.hasTarget() && this.isChasing() && state.isMoving()) {
-                state.getController().setAnimation(CHASE_ANIM);
-            } else if (!state.isMoving()) {
-                state.getController().setAnimation(IDLE_ANIM);
-            } else if (state.isMoving()) {
-                state.getController().setAnimation(WALK_ANIM);
-            }
-
-            return PlayState.CONTINUE;
-        }));
-    }
-
-    @Override
-    public void checkDespawn() {
-    }
-
-
     public MobType getMobType() {
         return MobType.ARTHROPOD;
     }
+
+    /** Blindness **/
 
     /** Climbing **/
 
@@ -182,9 +119,68 @@ public class SCP939 extends Monster implements GeoEntity, SCP {
         }
     }
 
-    /**
-     * Entity Mechanics
-     */
+    @Override
+    public SoundEvent getHurtSound(DamageSource ds) {
+        return SoundEvents.VILLAGER_HURT;
+    }
+
+    @Override
+    public SoundEvent getDeathSound() {
+        return SoundEvents.VILLAGER_DEATH;
+    }
+
+    @Override
+    protected void registerGoals() {
+        this.goalSelector.addGoal(13, new BreakDoorGoal(this, e -> true));
+        this.goalSelector.addGoal(14, new RandomSwimmingGoal(this, 1, 40));
+        this.goalSelector.addGoal(16, new RandomLookAroundGoal(this));
+        this.goalSelector.addGoal(18, new FollowMobGoal(this, (float) 1, 10, 5));
+        this.goalSelector.addGoal(18, new RandomStrollGoal(this, 1));
+        this.targetSelector.addGoal(17, new HurtByTargetGoal(this).setAlertOthers());
+        this.targetSelector.addGoal(17, new RestrictSunGoal(this));
+        this.addBehaviourGoals();
+        this.setPersistenceRequired();
+    }
+
+    protected void addBehaviourGoals() {
+        this.goalSelector.addGoal(0, new FloatGoal(this));
+        this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.0D, false));
+        this.targetSelector.addGoal(2, (new HurtByTargetGoal(this)));
+        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Player.class, true));
+        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Animal.class, true));
+        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Villager.class, true));
+        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, IronGolem.class, true));
+        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, WanderingTrader.class, true, true));
+        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Piglin.class, true, true));
+        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, ZombifiedPiglin.class, true, true));
+    }
+
+    @Override
+    public EntityDimensions getDimensions(Pose pPose) {
+        return pPose == Pose.STANDING ? standingDimensions.scale(this.getScale()) : super.getDimensions(pPose);
+    }
+
+    private static final RawAnimation ATTACK_ANIM = RawAnimation.begin().then("animation.scp939.attack", Animation.LoopType.PLAY_ONCE);
+    private static final RawAnimation CHASE_ANIM = RawAnimation.begin().then("animation.scp939.aggresive", Animation.LoopType.LOOP);
+    private static final RawAnimation IDLE_ANIM = RawAnimation.begin().then("animation.scp939.idle", Animation.LoopType.LOOP);
+    private static final RawAnimation WALK_ANIM = RawAnimation.begin().then("animation.scp939.moving", Animation.LoopType.LOOP);
+
+    @Override
+    public void registerControllers(AnimatableManager.ControllerRegistrar controller) {
+        controller.add(new AnimationController<>(this, "Controller", 3, state -> {
+            if (this.swinging) {
+                state.getController().setAnimation(ATTACK_ANIM);
+            } else if (this.hasTarget() && this.isChasing() && state.isMoving()) {
+                state.getController().setAnimation(CHASE_ANIM);
+            } else if (!state.isMoving()) {
+                state.getController().setAnimation(IDLE_ANIM);
+            } else if (state.isMoving()) {
+                state.getController().setAnimation(WALK_ANIM);
+            }
+
+            return PlayState.CONTINUE;
+        }));
+    }
 
     public void setTarget(@Nullable LivingEntity pTarget) {
         super.setTarget(pTarget);
@@ -210,6 +206,7 @@ public class SCP939 extends Monster implements GeoEntity, SCP {
 
     public void setChasing(boolean chasing) {
         this.entityData.set(DATA_CHASING, chasing);
+        this.setPose(chasing ? Pose.STANDING : Pose.SITTING);
     }
 
     public boolean hasTarget() {
@@ -228,5 +225,10 @@ public class SCP939 extends Monster implements GeoEntity, SCP {
     @Override
     public Classification getClassification() {
         return Classification.KETER;
+    }
+
+    @Override
+    public String getNameId() {
+        return "With Many Voices";
     }
 }

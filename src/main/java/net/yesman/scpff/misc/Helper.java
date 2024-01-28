@@ -1,7 +1,9 @@
 package net.yesman.scpff.misc;
 
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
@@ -15,9 +17,7 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
-import org.jetbrains.annotations.NotNull;
 
-import javax.annotation.Nullable;
 import java.util.*;
 import java.util.function.Predicate;
 
@@ -74,5 +74,13 @@ public class Helper {
 
     public static DamageSource damageSource(ResourceKey<DamageType> damageType, Level level) {
         return new DamageSource(level.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(damageType));
+    }
+
+    public static void showTooltipOnShift(Component message, List<Component> tooltip) {
+        if (Screen.hasShiftDown()) {
+            tooltip.add(message);
+        } else {
+            tooltip.add(Component.literal("§8Shift+ for Info"));
+        }
     }
 }

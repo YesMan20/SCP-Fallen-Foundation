@@ -8,16 +8,16 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.yesman.scpff.server.config.FFServerConfigsRegistry;
 import net.yesman.scpff.server.block.FFBlocksRegistry;
+import net.yesman.scpff.server.config.FFServerConfigsRegistry;
 import net.yesman.scpff.server.block.entity.FFBlockEntitiesRegistry;
 import net.yesman.scpff.server.entity.FFEntitiesRegistry;
-import net.yesman.scpff.server.entity.init.EntityInit;
 import net.yesman.scpff.server.item.FFItemsRegistry;
-import net.yesman.scpff.server.misc.FFCreativeTabRegistry;
-import net.yesman.scpff.server.painting.FFPaintingsRegistry;
-import net.yesman.scpff.server.sound.FFSoundsRegistry;
+import net.yesman.scpff.server.misc.FFPaintingsRegistry;
+import net.yesman.scpff.server.entity.init.EntityInit;
 import net.yesman.scpff.networking.ModMessages;
+import net.yesman.scpff.server.misc.FFCreativeTabRegistry;
+import net.yesman.scpff.server.misc.FFSoundsRegistry;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file

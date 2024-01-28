@@ -6,7 +6,7 @@ public enum Classification {
     SAFE("Safe", ChatFormatting.GREEN),
     EUCLID("Euclid", ChatFormatting.GOLD),
     KETER("Keter", ChatFormatting.RED),
-    OTHER("Other", ChatFormatting.GRAY);
+    OTHER("Other", ChatFormatting.DARK_GRAY);
 
     private final String name;
     private final ChatFormatting textColor;

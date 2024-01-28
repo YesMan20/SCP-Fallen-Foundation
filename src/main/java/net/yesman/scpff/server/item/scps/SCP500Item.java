@@ -45,4 +45,9 @@ public class SCP500Item extends Item implements SCP {
     public Classification getClassification() {
         return Classification.SAFE;
     }
+
+    @Override
+    public String getNameId() {
+        return "Panacea";
+    }
 }

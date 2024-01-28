@@ -8,12 +8,13 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.yesman.scpff.SCPFf;
 import net.yesman.scpff.server.entity.FFEntitiesRegistry;
+import net.yesman.scpff.server.item.FFArmorMaterialsRegistry;
+import net.yesman.scpff.server.item.FFFoodsRegistry;
 import net.yesman.scpff.server.item.custom.*;
 import net.yesman.scpff.server.item.scps.*;
 
 public class FFItemsRegistry {
-    public static final DeferredRegister<Item> ITEMS =
-            DeferredRegister.create(ForgeRegistries.ITEMS, SCPFf.MOD_ID);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, SCPFf.MOD_ID);
 
     public static final RegistryObject<Item> SCP207 = ITEMS.register("scp207", () -> new SCP207Item(new Item.Properties()
             .food(FFFoodsRegistry.SCP207).stacksTo(3)));
@@ -96,29 +97,21 @@ public class FFItemsRegistry {
 
     /** SCP Spawn Eggs **/
 
-    public static final RegistryObject<ForgeSpawnEggItem> SCP_049_SPAWN_EGG = ITEMS.register("scp_049_spawn_egg", () -> new ForgeSpawnEggItem(FFEntitiesRegistry.SCP_049, 3289650, 1820927,
-            new Item.Properties()));
+    public static final RegistryObject<ForgeSpawnEggItem> SCP_049_SPAWN_EGG = ITEMS.register("scp_049_spawn_egg", () -> new ForgeSpawnEggItem(FFEntitiesRegistry.SCP_049, 3289650, 1820927, new Item.Properties()));
 
-    public static final RegistryObject<ForgeSpawnEggItem> SCP_106_SPAWN_EGG = ITEMS.register("scp_106_spawn_egg", () -> new ForgeSpawnEggItem(FFEntitiesRegistry.SCP_106, 0, 16777215,
-            new Item.Properties()));
+    public static final RegistryObject<ForgeSpawnEggItem> SCP_058_SPAWN_EGG = ITEMS.register("scp_058_spawn_egg", () -> new ForgeSpawnEggItem(FFEntitiesRegistry.SCP_058, 6755637, 16177620, new Item.Properties()));
 
-    public static final RegistryObject<ForgeSpawnEggItem> SCP_131_SPAWN_EGG = ITEMS.register("scp_131_spawn_egg", () -> new ForgeSpawnEggItem(FFEntitiesRegistry.SCP_131, 12669494, 56575,
-            new Item.Properties()));
+    public static final RegistryObject<ForgeSpawnEggItem> SCP_106_SPAWN_EGG = ITEMS.register("scp_106_spawn_egg", () -> new ForgeSpawnEggItem(FFEntitiesRegistry.SCP_106, 0, 16777215, new Item.Properties()));
 
-    public static final RegistryObject<ForgeSpawnEggItem> SCP_173_SPAWN_EGG = ITEMS.register("scp_173_spawn_egg", () -> new ForgeSpawnEggItem(FFEntitiesRegistry.SCP_173, 15385721, 16721446,
-            new Item.Properties()));
+    public static final RegistryObject<ForgeSpawnEggItem> SCP_131_SPAWN_EGG = ITEMS.register("scp_131_spawn_egg", () -> new ForgeSpawnEggItem(FFEntitiesRegistry.SCP_131, 12669494, 56575, new Item.Properties()));
 
-    public static final RegistryObject<ForgeSpawnEggItem> SCP_650_SPAWN_EGG = ITEMS.register("scp_650_spawn_egg", () -> new ForgeSpawnEggItem(FFEntitiesRegistry.SCP_650, 0, 1710618,
-            new Item.Properties()));
+    public static final RegistryObject<ForgeSpawnEggItem> SCP_173_SPAWN_EGG = ITEMS.register("scp_173_spawn_egg", () -> new ForgeSpawnEggItem(FFEntitiesRegistry.SCP_173, 15385721, 16721446, new Item.Properties()));
 
-    public static final RegistryObject<ForgeSpawnEggItem> SCP_1507_SPAWN_EGG = ITEMS.register("scp_1507_spawn_egg", () -> new ForgeSpawnEggItem(FFEntitiesRegistry.SCP_1507, 15164807, 16776241,
-            new Item.Properties()));
+    public static final RegistryObject<ForgeSpawnEggItem> SCP_650_SPAWN_EGG = ITEMS.register("scp_650_spawn_egg", () -> new ForgeSpawnEggItem(FFEntitiesRegistry.SCP_650, 0, 1710618, new Item.Properties()));
 
-    public static final RegistryObject<ForgeSpawnEggItem> SCP_058_SPAWN_EGG = ITEMS.register("scp_058_spawn_egg", () -> new ForgeSpawnEggItem(FFEntitiesRegistry.SCP_058, 6755637, 16177620,
-            new Item.Properties()));
+    public static final RegistryObject<ForgeSpawnEggItem> SCP_939_SPAWN_EGG = ITEMS.register("scp_939_spawn_egg", () -> new ForgeSpawnEggItem(FFEntitiesRegistry.SCP_939, 3342336, 10027008, new Item.Properties()));
 
-    public static final RegistryObject<ForgeSpawnEggItem> SCP_939_SPAWN_EGG = ITEMS.register("scp_939_spawn_egg", () -> new ForgeSpawnEggItem(FFEntitiesRegistry.SCP_939, 3342336, 10027008,
-            new Item.Properties()));
+    public static final RegistryObject<ForgeSpawnEggItem> SCP_1507_SPAWN_EGG = ITEMS.register("scp_1507_spawn_egg", () -> new ForgeSpawnEggItem(FFEntitiesRegistry.SCP_1507, 15164807, 16776241, new Item.Properties()));
 
     /** Armor Items **/
 
