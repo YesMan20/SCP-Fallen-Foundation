@@ -20,6 +20,7 @@ build
 # other
 eclipse
 run
+/main/resources/assets
 
 # Files from Forge MDK
 forge*changelog.txt
