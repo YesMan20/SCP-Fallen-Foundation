@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "scpff:block/hcfloor",
-    "side": "scpff:block/hcfloor",
-    "top": "scpff:block/hcfloor"
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "scpff:block/hcwall",
-    "side": "scpff:block/hcwall",
-    "top": "scpff:block/hcwall"
-  }
-}

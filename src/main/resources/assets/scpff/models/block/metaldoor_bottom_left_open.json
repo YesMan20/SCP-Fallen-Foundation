@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/door_bottom_left_open",
-  "ambientocclusion": false,
-  "textures": {
-    "bottom": "scpff:block/metaldoor_bottom",
-    "top": "scpff:block/metaldoor_top"
-  }
-}
