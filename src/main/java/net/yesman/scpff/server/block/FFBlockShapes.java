@@ -1,5 +1,6 @@
 package net.yesman.scpff.server.block;
 
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -110,10 +111,10 @@ public class FFBlockShapes {
     public static final VoxelShape LABEL_W = box(15, 2, 0, 16, 14, 16);
 
 
-    public static final VoxelShape COMPUTER_S = Shapes.or(box(2.5, 0, 0, 13.5, 4, 11), box(2.5, 0, 11, 13.5, 1, 16), box(2.5, 5, 8.5, 13.5, 14, 9.5), box(3, 5.5, 0.5, 13, 13.5, 8.5));
-    public static final VoxelShape COMPUTER_N = Shapes.or(box(2.5, 0, 0, 13.5, 1, 5), box(2.5, 0, 5, 13.5, 4, 16), box(2.5, 5, 6.5, 13.5, 14, 7.5), box(3, 5.5, 7.5, 13, 13.5, 15.5));
-    public static final VoxelShape COMPUTER_E = Shapes.or(box(0, 0, 2.5, 11, 4, 13.5), box(11, 0, 2.5, 16, 1, 13.5), box(8.5, 5, 2.5, 9.5, 14, 13.5), box(0.5, 5.5, 3, 8.5, 13.5, 13));
-    public static final VoxelShape COMPUTER_W = Shapes.or(box(0, 0, 2.5, 5, 1, 13.5), box(5, 0, 2.5, 16, 4, 13.5), box(6.5, 5, 2.5, 7.5, 14, 13.5), box(7.5, 5.5, 3, 15.5, 13.5, 13));
+    public static final VoxelShape COMPUTER_S = Shapes.or(Block.box(2.5, 0, 0, 13.5, 4, 11), Block.box(2.5, 0, 11, 13.5, 1, 16), Block.box(3.5, 5, 0, 12.5, 14, 10), Block.box(4.5, 4, 2.5, 11.5, 5, 9.5), Block.box(3, 6, 7, 13, 15, 11));
+    public static final VoxelShape COMPUTER_N = Shapes.or(Block.box(2.5, 0, 5, 13.5, 4, 16), Block.box(2.5, 0, 0, 13.5, 1, 5), Block.box(3.5, 5, 6, 12.5, 14, 16), Block.box(4.5, 4, 6.5, 11.5, 5, 13.5), Block.box(3, 6, 5, 13, 15, 9));
+    public static final VoxelShape COMPUTER_E = Shapes.or(Block.box(0, 0, 2.5, 11, 4, 13.5), Block.box(11, 0, 2.5, 16, 1, 13.5), Block.box(0, 5, 3.5, 10, 14, 12.5), Block.box(2.5, 4, 4.5, 9.5, 5, 11.5), Block.box(7, 6, 3, 11, 15, 13));
+    public static final VoxelShape COMPUTER_W = Shapes.or(Block.box(5, 0, 2.5, 16, 4, 13.5), Block.box(0, 0, 2.5, 5, 1, 13.5), Block.box(6, 5, 3.5, 16, 14, 12.5), Block.box(6.5, 4, 4.5, 13.5, 5, 11.5), Block.box(5, 6, 3, 9, 15, 13));
 
     public static final VoxelShape DESK_LAMP_S = Shapes.or(box(5, 0, 5, 11, 2, 11), box(7, 2, 7, 9, 3, 9), box(6.5, 12.92, 10.27, 9.5, 15.92, 19.27));
     public static final VoxelShape DESK_LAMP_N = Shapes.or(box(5, 0, 5, 11, 2, 11), box(7, 2, 7, 9, 3, 9), box(6.5, 12.92, -3.27, 9.5, 15.92, 5.73));

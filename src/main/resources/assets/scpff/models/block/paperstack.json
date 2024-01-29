@@ -1,6 +1,7 @@
 {
 	"credit": "YesMan",
 	"parent": "paperstack",
+	"ambientocclusion": false,
 	"texture_size": [64, 64],
 	"textures": {
 		"2": "scpff:block/paperstack",

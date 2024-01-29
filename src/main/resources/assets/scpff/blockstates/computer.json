@@ -1,18 +1,34 @@
 {
   "variants": {
-    "facing=north": {
+    "facing=north,powered=false": {
       "model": "scpff:block/computer"
     },
-    "facing=east": {
+    "facing=east,powered=false": {
       "model": "scpff:block/computer",
       "y": 90
     },
-    "facing=south": {
+    "facing=south,powered=false": {
       "model": "scpff:block/computer",
       "y": 180
     },
-    "facing=west": {
+    "facing=west,powered=false": {
       "model": "scpff:block/computer",
+      "y": 270
+    },
+
+    "facing=north,powered=true": {
+      "model": "scpff:block/computer_on"
+    },
+    "facing=east,powered=true": {
+      "model": "scpff:block/computer_on",
+      "y": 90
+    },
+    "facing=south,powered=true": {
+      "model": "scpff:block/computer_on",
+      "y": 180
+    },
+    "facing=west,powered=true": {
+      "model": "scpff:block/computer_on",
       "y": 270
     }
   }

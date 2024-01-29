@@ -8,6 +8,7 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -22,7 +23,6 @@ import java.util.function.Supplier;
 
 public class FFBlocksRegistry {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, SCPFf.MOD_ID);
-
 
     /** HC Blocks **/
     public static final RegistryObject<Block> HCWALL = registerBlock("hcwall", () ->
@@ -105,7 +105,7 @@ public class FFBlocksRegistry {
             new Block(BlockBehaviour.Properties.of().explosionResistance(1.8F).strength(2F).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> VENT_COVER = registerBlock("vent_cover", () ->
-            new TrapDoorBlock(BlockBehaviour.Properties.of().noOcclusion().strength(2F).explosionResistance(1.8F).requiresCorrectToolForDrops(), BlockSetType.IRON));
+            new TrapDoorBlock(BlockBehaviour.Properties.of().noOcclusion().strength(2F).explosionResistance(1.8F).requiresCorrectToolForDrops(), BlockSetType.OAK));
 
     public static final RegistryObject<Block> PIPECORNER = registerBlock("pipecorner", () ->
             new Block(BlockBehaviour.Properties.of().explosionResistance(1.8F).strength(2F).requiresCorrectToolForDrops()));
@@ -114,7 +114,7 @@ public class FFBlocksRegistry {
             new FileCabinetBlock(BlockBehaviour.Properties.of().strength(1.8F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> COMPUTER = registerBlock("computer", () ->
-            new HorizontalDecorationBlock(BlockBehaviour.Properties.of().strength(2F).sound(SoundType.METAL).requiresCorrectToolForDrops().noOcclusion(),
+            new ComputerBlock(BlockBehaviour.Properties.of().strength(2F).sound(SoundType.METAL).requiresCorrectToolForDrops().noOcclusion(),
                     FFBlockShapes.COMPUTER_S, FFBlockShapes.COMPUTER_N, FFBlockShapes.COMPUTER_E, FFBlockShapes.COMPUTER_W));
 
     public static final RegistryObject<Block> CATWALKFENCE = registerBlock("catwalkfence", () ->
@@ -197,6 +197,11 @@ public class FFBlocksRegistry {
             new HorizontalDecorationBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOL).strength(1F).noOcclusion(),
                     FFBlockShapes.PAPER_STACK_S, FFBlockShapes.PAPER_STACK_N, FFBlockShapes.PAPER_STACK_E, FFBlockShapes.PAPER_STACK_W));
 
+    public static final RegistryObject<Block> PAPER = registerBlock("paper", () ->
+            new HorizontalDecorationBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOL).strength(1F).noOcclusion(),
+                    FFBlockShapes.PAPER_STACK_S, FFBlockShapes.PAPER_STACK_N, FFBlockShapes.PAPER_STACK_E, FFBlockShapes.PAPER_STACK_W));
+
+
     public static final RegistryObject<Block> PIPE = registerBlock("pipe", () ->
             new DecorationBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).requiresCorrectToolForDrops().strength(3F).noOcclusion(),
                     FFBlockShapes.PIPE));
@@ -205,7 +210,7 @@ public class FFBlocksRegistry {
             new PipeSideBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).requiresCorrectToolForDrops().strength(3F).noOcclusion()));
 
     public static final RegistryObject<Block> DESKLAMP = registerBlock("desklamp", () ->
-            new LampBlock(BlockBehaviour.Properties.of().lightLevel((s) -> s.getValue(BlockStateProperties.LIT) ? 15 : 0).sound(SoundType.METAL).strength(1F).noOcclusion(),
+            new LampBlock(BlockBehaviour.Properties.of().lightLevel((s) -> s.getValue(BlockStateProperties.LIT) ? 7 : 0).sound(SoundType.METAL).strength(1F).noOcclusion(),
                     FFBlockShapes.DESK_LAMP_S, FFBlockShapes.DESK_LAMP_N, FFBlockShapes.DESK_LAMP_E, FFBlockShapes.DESK_LAMP_W));
 
     public static final RegistryObject<Block> TRASHBIN = registerBlock("trashbin", () ->
@@ -263,6 +268,10 @@ public class FFBlocksRegistry {
             new HorizontalDecorationBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(2F).noOcclusion(), FFBlockShapes.CONTAINMENT_CASE_BOTTOM));
 
     /** MISC Blocks **/
+
+    public static final RegistryObject<Block> METALDOOR = registerBlock("metaldoor", () ->
+            new DoorBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(0.8F).explosionResistance(0.8F).pushReaction(PushReaction.DESTROY).noOcclusion(), BlockSetType.MANGROVE));
+
 
     public static final RegistryObject<Block> CAUTIONLINE = registerBlock("cautionline", () ->
             new Block(BlockBehaviour.Properties.of().sound(SoundType.WOOL).strength(0.8F).explosionResistance(0.8F)));

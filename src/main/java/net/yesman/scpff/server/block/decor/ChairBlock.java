@@ -39,10 +39,10 @@ public class ChairBlock extends HorizontalDirectionalBlock {
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
         return switch (state.getValue(FACING)) {
-            default -> Shapes.or(box(7, 0, 0, 9, 4, 16), box(0, 0, 7, 16, 4, 9), box(7, 4, 7, 9, 11, 9), box(2, 11, 3, 14, 13, 14), box(2, 12, 1, 14, 27, 3), box(0, 12, 2, 2, 18, 12), box(14, 12, 2, 16, 18, 12));
-            case NORTH -> Shapes.or(box(7, 0, 0, 9, 4, 16), box(0, 0, 7, 16, 4, 9), box(7, 4, 7, 9, 11, 9), box(2, 11, 2, 14, 13, 13), box(2, 12, 13, 14, 27, 15), box(14, 12, 4, 16, 18, 14), box(0, 12, 4, 2, 18, 14));
-            case EAST -> Shapes.or(box(0, 0, 7, 16, 4, 9), box(7, 0, 0, 9, 4, 16), box(7, 4, 7, 9, 11, 9), box(3, 11, 2, 14, 13, 14), box(1, 12, 2, 3, 27, 14), box(2, 12, 14, 12, 18, 16), box(2, 12, 0, 12, 18, 2));
-            case WEST -> Shapes.or(box(0, 0, 7, 16, 4, 9), box(7, 0, 0, 9, 4, 16), box(7, 4, 7, 9, 11, 9), box(2, 11, 2, 13, 13, 14), box(13, 12, 2, 15, 27, 14), box(4, 12, 0, 14, 18, 2), box(4, 12, 14, 14, 18, 16));
+            default -> Shapes.or(Block.box(3, 11, 3, 13, 13, 13), Block.box(7, 4, 7, 9, 11, 9), Block.box(2, 0, 7, 14, 4, 9), Block.box(7, 0, 2, 9, 4, 14), Block.box(3, 16, 1, 13, 23, 3));
+            case NORTH -> Shapes.or(Block.box(3, 11, 3, 13, 13, 13), Block.box(7, 4, 7, 9, 11, 9), Block.box(2, 0, 7, 14, 4, 9), Block.box(7, 0, 2, 9, 4, 14), Block.box(3, 16, 13, 13, 23, 15));
+            case EAST -> Shapes.or(Block.box(3, 11, 3, 13, 13, 13), Block.box(7, 4, 7, 9, 11, 9), Block.box(7, 0, 2, 9, 4, 14), Block.box(2, 0, 7, 14, 4, 9), Block.box(1, 16, 3, 3, 23, 13));
+            case WEST -> Shapes.or(Block.box(3, 11, 3, 13, 13, 13), Block.box(7, 4, 7, 9, 11, 9), Block.box(7, 0, 2, 9, 4, 14), Block.box(2, 0, 7, 14, 4, 9), Block.box(13, 16, 3, 15, 23, 13));
         };
     }
 

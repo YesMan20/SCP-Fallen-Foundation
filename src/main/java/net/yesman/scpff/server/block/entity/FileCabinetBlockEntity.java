@@ -1,6 +1,6 @@
 package net.yesman.scpff.server.block.entity;
 
-import net.minecraft.core.Direction;
+import net.minecraft.core.Vec3i;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -8,7 +8,8 @@ import net.minecraft.world.*;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.ChestMenu;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.ChestBlock;
+import net.minecraft.world.level.block.BarrelBlock;
+import net.minecraft.world.level.block.entity.ContainerOpenersCounter;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity;
 import net.minecraft.world.item.ItemStack;
@@ -19,37 +20,34 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.BlockPos;
-import net.minecraft.world.level.block.state.properties.ChestType;
+import net.yesman.scpff.server.block.decor.FileCabinetBlock;
 
 public class FileCabinetBlockEntity extends RandomizableContainerBlockEntity {
     private NonNullList<ItemStack> items = NonNullList.withSize(27, ItemStack.EMPTY);
+    private final ContainerOpenersCounter openersCounter = new ContainerOpenersCounter() {
+        protected void onOpen(Level level, BlockPos blockPos, BlockState blockState) {
+            FileCabinetBlockEntity.this.playSound(blockState, SoundEvents.BARREL_OPEN);
+        }
+
+        protected void onClose(Level level, BlockPos blockPos, BlockState blockState) {
+            FileCabinetBlockEntity.this.playSound(blockState, SoundEvents.BARREL_CLOSE);
+        }
+
+        protected void openerCountChanged(Level level, BlockPos blockPos, BlockState blockState, int p_155069_, int p_155070_) {
+        }
+
+        protected boolean isOwnContainer(Player player) {
+            if (player.containerMenu instanceof ChestMenu) {
+                Container container = ((ChestMenu) player.containerMenu).getContainer();
+                return container == FileCabinetBlockEntity.this;
+            } else {
+                return false;
+            }
+        }
+    };
 
     public FileCabinetBlockEntity(BlockPos position, BlockState state) {
         super(FFBlockEntitiesRegistry.FILECABINET.get(), position, state);
-    }
-
-    protected void onOpen(Level p_155357_, BlockPos p_155358_, BlockState p_155359_) {
-        LockerBlockEntity.playSound(p_155357_, p_155358_, p_155359_, SoundEvents.BARREL_OPEN);
-    }
-
-    protected void onClose(Level p_155367_, BlockPos p_155368_, BlockState p_155369_) {
-        LockerBlockEntity.playSound(p_155367_, p_155368_, p_155369_, SoundEvents.BARREL_CLOSE);
-    }
-
-    static void playSound(Level pLevel, BlockPos pPos, BlockState pState, SoundEvent pSound) {
-        ChestType chesttype = pState.getValue(ChestBlock.TYPE);
-        if (chesttype != ChestType.LEFT) {
-            double d0 = (double)pPos.getX() + 0.5D;
-            double d1 = (double)pPos.getY() + 0.5D;
-            double d2 = (double)pPos.getZ() + 0.5D;
-            if (chesttype == ChestType.RIGHT) {
-                Direction direction = ChestBlock.getConnectedDirection(pState);
-                d0 += (double)direction.getStepX() * 0.5D;
-                d2 += (double)direction.getStepZ() * 0.5D;
-            }
-
-            pLevel.playSound((Player)null, d0, d1, d2, pSound, SoundSource.BLOCKS, 0.5F, pLevel.random.nextFloat() * 0.1F + 0.9F);
-        }
     }
 
     @Override
@@ -60,35 +58,17 @@ public class FileCabinetBlockEntity extends RandomizableContainerBlockEntity {
         }
     }
 
-    @Override
-    public ClientboundBlockEntityDataPacket getUpdatePacket() {
-        return ClientboundBlockEntityDataPacket.create(this);
-    }
-
-    @Override
-    public CompoundTag getUpdateTag() {
-        return this.saveWithFullMetadata();
-    }
-
-    @Override
-    public int getContainerSize() {
-        return 27;
-    }
-
-    @Override
-    public boolean isEmpty() {
-        for (ItemStack itemstack : this.items)
-            if (!itemstack.isEmpty())
-                return false;
-        return true;
-    }
-
     public void load(CompoundTag pTag) {
         super.load(pTag);
         this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
         if (!this.tryLoadLootTable(pTag)) {
             ContainerHelper.loadAllItems(pTag, this.items);
         }
+    }
+
+    @Override
+    public int getContainerSize() {
+        return 27;
     }
 
     protected NonNullList<ItemStack> getItems() {
@@ -108,12 +88,51 @@ public class FileCabinetBlockEntity extends RandomizableContainerBlockEntity {
         return ChestMenu.threeRows(pId, pPlayer, this);
     }
 
+    public void startOpen(Player pPlayer) {
+        if (!this.remove && !pPlayer.isSpectator()) {
+            this.openersCounter.incrementOpeners(pPlayer, this.getLevel(), this.getBlockPos(), this.getBlockState());
+        }
+
+    }
+
+    public void stopOpen(Player pPlayer) {
+        if (!this.remove && !pPlayer.isSpectator()) {
+            this.openersCounter.decrementOpeners(pPlayer, this.getLevel(), this.getBlockPos(), this.getBlockState());
+        }
+
+    }
+
+    public void recheckOpen() {
+        if (!this.remove) {
+            this.openersCounter.recheckOpeners(this.getLevel(), this.getBlockPos(), this.getBlockState());
+        }
+
+    }
+
+    @Override
+    public ClientboundBlockEntityDataPacket getUpdatePacket() {
+        return ClientboundBlockEntityDataPacket.create(this);
+    }
+
+    @Override
+    public CompoundTag getUpdateTag() {
+        return this.saveWithFullMetadata();
+    }
+
+    @Override
+    public boolean isEmpty() {
+        for (ItemStack itemstack : this.items)
+            if (!itemstack.isEmpty())
+                return false;
+        return true;
+    }
+
     protected boolean isOwnContainer(Player p_155355_) {
         if (!(p_155355_.containerMenu instanceof ChestMenu)) {
             return false;
         } else {
-            Container container = ((ChestMenu)p_155355_.containerMenu).getContainer();
-            return container == FileCabinetBlockEntity.this || container instanceof CompoundContainer && ((CompoundContainer)container).contains(FileCabinetBlockEntity.this);
+            Container container = ((ChestMenu) p_155355_.containerMenu).getContainer();
+            return container == FileCabinetBlockEntity.this || container instanceof CompoundContainer && ((CompoundContainer) container).contains(FileCabinetBlockEntity.this);
         }
     }
 
@@ -124,7 +143,7 @@ public class FileCabinetBlockEntity extends RandomizableContainerBlockEntity {
 
     @Override
     public Component getDisplayName() {
-        return Component.literal("Filecabinet");
+        return Component.literal("File Cabinet");
     }
 
     @Override
@@ -132,4 +151,13 @@ public class FileCabinetBlockEntity extends RandomizableContainerBlockEntity {
         return true;
     }
 
+    private void playSound(BlockState state, SoundEvent sound) {
+        if (level == null) return;
+
+        Vec3i cabinetFacingVector = state.getValue(FileCabinetBlock.FACING).getNormal();
+        double x = (double) worldPosition.getX() + 0.5D + (double) cabinetFacingVector.getX() / 2.0D;
+        double y = (double) worldPosition.getY() + 0.5D + (double) cabinetFacingVector.getY() / 2.0D;
+        double z = (double) worldPosition.getZ() + 0.5D + (double) cabinetFacingVector.getZ() / 2.0D;
+        level.playSound(null, x, y, z, sound, SoundSource.BLOCKS, 0.5F, level.random.nextFloat() * 0.1F + 0.9F);
+    }
 }

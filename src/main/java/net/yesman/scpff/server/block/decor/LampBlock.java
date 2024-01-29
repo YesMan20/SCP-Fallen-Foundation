@@ -20,12 +20,12 @@ public class LampBlock extends HorizontalDecorationBlock {
 
     public LampBlock(Properties property, VoxelShape shape, VoxelShape northShape, VoxelShape eastShape, VoxelShape westShape) {
         super(property, shape, northShape, eastShape, westShape);
-        this.registerDefaultState(this.defaultBlockState().setValue(LIT, true));
+        this.registerDefaultState(this.defaultBlockState().setValue(LIT, false));
     }
 
     public LampBlock(Properties property, VoxelShape shape) {
         super(property, shape);
-        this.registerDefaultState(this.defaultBlockState().setValue(LIT, true));
+        this.registerDefaultState(this.defaultBlockState().setValue(LIT, false));
     }
 
     @Override
