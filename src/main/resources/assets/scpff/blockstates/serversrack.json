@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "scpff:block/serversrack"
+    },
+    "facing=east": {
+      "model": "scpff:block/serversrack",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "scpff:block/serversrack",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "scpff:block/serversrack",
+      "y": 270
+    }
+  }
+}

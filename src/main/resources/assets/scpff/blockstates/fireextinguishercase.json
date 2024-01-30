@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "scpff:block/fireextinguishercase"
+    },
+    "facing=east": {
+      "model": "scpff:block/fireextinguishercase",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "scpff:block/fireextinguishercase",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "scpff:block/fireextinguishercase",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,103 @@
+{
+	"credit": "Made with Blockbench",
+	"render_type": "minecraft:cutout",
+	"ambientocclusion": false,
+	"texture_size": [64, 64],
+	"textures": {
+		"0": "scpff:block/locker",
+		"particle": "scpff:block/locker"
+	},
+	"elements": [
+		{
+			"from": [2, 0, 3],
+			"to": [5, 1, 6],
+			"faces": {
+				"north": {"uv": [10.5, 6, 11.25, 6.25], "texture": "#0"},
+				"east": {"uv": [10.5, 6.25, 11.25, 6.5], "texture": "#0"},
+				"south": {"uv": [10.5, 6.5, 11.25, 6.75], "texture": "#0"},
+				"west": {"uv": [10.5, 6.75, 11.25, 7], "texture": "#0"},
+				"up": {"uv": [11.25, 0.75, 10.5, 0], "texture": "#0"},
+				"down": {"uv": [11.25, 0.75, 10.5, 1.5], "texture": "#0"}
+			}
+		},
+		{
+			"from": [2, 0, 12],
+			"to": [5, 1, 15],
+			"faces": {
+				"north": {"uv": [10.5, 7, 11.25, 7.25], "texture": "#0"},
+				"east": {"uv": [10.5, 7.25, 11.25, 7.5], "texture": "#0"},
+				"south": {"uv": [10.5, 7.5, 11.25, 7.75], "texture": "#0"},
+				"west": {"uv": [10.5, 7.75, 11.25, 8], "texture": "#0"},
+				"up": {"uv": [11.25, 2.25, 10.5, 1.5], "texture": "#0"},
+				"down": {"uv": [11.25, 2.25, 10.5, 3], "texture": "#0"}
+			}
+		},
+		{
+			"from": [11, 0, 12],
+			"to": [14, 1, 15],
+			"faces": {
+				"north": {"uv": [10.5, 8, 11.25, 8.25], "texture": "#0"},
+				"east": {"uv": [10.5, 8.25, 11.25, 8.5], "texture": "#0"},
+				"south": {"uv": [10.5, 8.5, 11.25, 8.75], "texture": "#0"},
+				"west": {"uv": [10.5, 8.75, 11.25, 9], "texture": "#0"},
+				"up": {"uv": [11.25, 3.75, 10.5, 3], "texture": "#0"},
+				"down": {"uv": [11.25, 3.75, 10.5, 4.5], "texture": "#0"}
+			}
+		},
+		{
+			"from": [11, 0, 3],
+			"to": [14, 1, 6],
+			"faces": {
+				"north": {"uv": [10.5, 9, 11.25, 9.25], "texture": "#0"},
+				"east": {"uv": [10.5, 9.25, 11.25, 9.5], "texture": "#0"},
+				"south": {"uv": [10.5, 9.5, 11.25, 9.75], "texture": "#0"},
+				"west": {"uv": [10.5, 9.75, 11.25, 10], "texture": "#0"},
+				"up": {"uv": [11.25, 5.25, 10.5, 4.5], "texture": "#0"},
+				"down": {"uv": [11.25, 5.25, 10.5, 6], "texture": "#0"}
+			}
+		},
+		{
+			"from": [1, 1, 2],
+			"to": [15, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 4, 3.5, 7.75], "texture": "#0"},
+				"east": {"uv": [3.5, 4, 7, 7.75], "texture": "#0"},
+				"south": {"uv": [7, 4, 10.5, 7.75], "texture": "#0"},
+				"west": {"uv": [0, 11.75, 3.5, 15.5], "texture": "#0"},
+				"up": {"uv": [7, 11.25, 3.5, 7.75], "texture": "#0"},
+				"down": {"uv": [10.5, 7.75, 7, 11.25], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"scale": [0.41, 0.41, 0.41]
+		},
+		"thirdperson_lefthand": {
+			"scale": [0.41, 0.41, 0.41]
+		},
+		"firstperson_righthand": {
+			"scale": [0.41, 0.41, 0.41]
+		},
+		"firstperson_lefthand": {
+			"scale": [0.41, 0.41, 0.41]
+		},
+		"ground": {
+			"scale": [0.41, 0.41, 0.41]
+		},
+		"gui": {
+			"rotation": [-151.25, 53.25, -180],
+			"translation": [0, -2.75, 0],
+			"scale": [0.41, 0.41, 0.41]
+		}
+	},
+	"groups": [
+		{
+			"name": "locker",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"nbt": "{}",
+			"children": [0, 1, 2, 3, 4]
+		}
+	]
+}

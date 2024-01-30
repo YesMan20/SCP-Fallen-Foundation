@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "down": "scpff:block/filecabinet_top",
+    "up": "scpff:block/filecabinet_top",
+    "north": "scpff:block/filecabinet_front",
+    "east": "scpff:block/filecabinet_side",
+    "south": "scpff:block/filecabinet_side",
+    "west": "scpff:block/filecabinet_side",
+    "particle": "scpff:block/filecabinet_side"
+  }
+}

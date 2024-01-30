@@ -1,0 +1,31 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.scp173v",
+				"texture_width": 46,
+				"texture_height": 40,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "sculpture",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-4, 13.5, -3], "size": [8, 9, 6], "uv": [0, 15]},
+						{"origin": [-1, 21.75, -1], "size": [2, 3, 2], "uv": [22, 16]},
+						{"origin": [-3.5, 24, -3.5], "size": [7, 8, 7], "uv": [0, 0]},
+						{"origin": [-3, 3.5, -2], "size": [6, 10, 4], "uv": [26, 26]},
+						{"origin": [-6, 0, -3.5], "size": [5, 4, 4], "pivot": [-1, 4, 0.5], "rotation": [0, -57.5, 0], "uv": [28, 0]},
+						{"origin": [0, 0, -6.25], "size": [0, 5, 6], "pivot": [0, 4, 0.5], "rotation": [0, -2.5, 0], "uv": [0, 29]},
+						{"origin": [-1, 0, -6], "size": [0, 5, 6], "pivot": [-1, 4, 0], "rotation": [0, 142.5, 0], "uv": [12, 29]},
+						{"origin": [1, 0, -5], "size": [0, 5, 5], "pivot": [1, 4, 0], "rotation": [0, -142.5, 0], "uv": [16, 25]}
+					]
+				}
+			]
+		}
+	]
+}

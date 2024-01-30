@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "down": "scpff:block/white_concrete",
+    "up": "scpff:block/white_concrete",
+    "north": "scpff:block/lcwall3",
+    "east": "scpff:block/lcwall3",
+    "south": "scpff:block/lcwall3",
+    "west": "scpff:block/lcwall3",
+    "particle": "scpff:block/white_concrete"
+  }
+}

@@ -1,0 +1,75 @@
+{
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"textures": {
+		"0": "scpff:block/containment_case",
+		"particle": "scpff:block/containment_case"
+	},
+	"elements": [
+		{
+			"from": [2, 0, 2],
+			"to": [14, 3, 14],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"north": {"uv": [12.70588, 9.88235, 15.52941, 10.58824], "texture": "#0"},
+				"east": {"uv": [12.70588, 1.88235, 15.52941, 2.58824], "texture": "#0"},
+				"south": {"uv": [12.70588, 2.58824, 15.52941, 3.29412], "texture": "#0"},
+				"west": {"uv": [12.70588, 3.29412, 15.52941, 4], "texture": "#0"},
+				"up": {"uv": [3.76471, 11.52941, 0.94118, 8.70588], "texture": "#0"},
+				"down": {"uv": [12.70588, 1.17647, 9.88235, 4], "texture": "#0"}
+			}
+		},
+		{
+			"from": [6, 3, 6],
+			"to": [10, 16, 10],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"north": {"uv": [6.58824, 12.94118, 7.52941, 16], "texture": "#0"},
+				"east": {"uv": [7.52941, 12.94118, 8.47059, 16], "texture": "#0"},
+				"south": {"uv": [8.47059, 12.94118, 9.41176, 16], "texture": "#0"},
+				"west": {"uv": [9.41176, 12.94118, 10.35294, 16], "texture": "#0"},
+				"up": {"uv": [4.70588, 9.64706, 3.76471, 8.70588], "texture": "#0"},
+				"down": {"uv": [4.70588, 9.64706, 3.76471, 10.58824], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, 45, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, 225, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"ground": {
+			"translation": [0, 3, 0],
+			"scale": [0.25, 0.25, 0.25]
+		},
+		"gui": {
+			"rotation": [30, 225, 0],
+			"scale": [0.625, 0.625, 0.625]
+		},
+		"fixed": {
+			"scale": [0.5, 0.5, 0.5]
+		}
+	},
+	"groups": [
+		{
+			"name": "Case",
+			"origin": [0, 8, 0],
+			"color": 0,
+			"children": [0, 1]
+		}
+	]
+}
