@@ -20,12 +20,6 @@ build
 # other
 eclipse
 run
-run/
-build/
-.gradle/
-src/main/resources/assets/
-bbmodels/
-.idea/
 
 # Files from Forge MDK
 forge*changelog.txt

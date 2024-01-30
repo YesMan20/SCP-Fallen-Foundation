@@ -9,8 +9,8 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 import net.yesman.scpff.SCPFf;
 
-public class ModItemModelProvider extends ItemModelProvider {
-    public ModItemModelProvider(PackOutput gen, ExistingFileHelper existingFileHelper) {
+public class FFItemModelProvider extends ItemModelProvider {
+    public FFItemModelProvider(PackOutput gen, ExistingFileHelper existingFileHelper) {
         super(gen, SCPFf.MOD_ID, existingFileHelper);
     }
 

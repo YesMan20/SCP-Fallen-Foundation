@@ -10,8 +10,8 @@ import net.minecraftforge.registries.RegistryObject;
 import net.yesman.scpff.SCPFf;
 import net.yesman.scpff.server.block.FFBlocksRegistry;
 
-public class ModBlockStateProvider extends BlockStateProvider {
-    public ModBlockStateProvider(PackOutput gen, ExistingFileHelper exFileHelper) {
+public class FFBlockStateProvider extends BlockStateProvider {
+    public FFBlockStateProvider(PackOutput gen, ExistingFileHelper exFileHelper) {
         super(gen, SCPFf.MOD_ID, exFileHelper);
     }
 

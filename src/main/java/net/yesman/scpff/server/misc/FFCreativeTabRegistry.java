@@ -68,6 +68,7 @@ public class FFCreativeTabRegistry {
                 output.accept(FFBlocksRegistry.TILE_SLAB.get());
                 output.accept(FFBlocksRegistry.METALDOOR.get());
                 output.accept(FFBlocksRegistry.FACILITYLIGHT.get());
+                output.accept(FFBlocksRegistry.MIRROR.get());
                 output.accept(FFBlocksRegistry.REINFORCEDIRON.get());
                 output.accept(FFBlocksRegistry.WHITE_CONCRETE_STAIRS.get());
                 output.accept(FFBlocksRegistry.WHITE_CONCRETE_SLAB.get());

@@ -120,4 +120,9 @@ public class FFBlockShapes {
     public static final VoxelShape DESK_LAMP_N = Shapes.or(box(5, 0, 5, 11, 2, 11), box(7, 2, 7, 9, 3, 9), box(6.5, 12.92, -3.27, 9.5, 15.92, 5.73));
     public static final VoxelShape DESK_LAMP_E = Shapes.or(box(5, 0, 5, 11, 2, 11), box(7, 2, 7, 9, 3, 9), box(10.27, 12.91, 6.5, 19.27, 15.91, 9.5));
     public static final VoxelShape DESK_LAMP_W = Shapes.or(box(5, 0, 5, 11, 2, 11), box(7, 2, 7, 9, 3, 9), box(-3.27, 12.92, 6.5, 5.73, 15.92, 9.5));
+
+    public static final VoxelShape MIRROR_S = Shapes.or(box(0, -1, 0, 16, 17, 1));
+    public static final VoxelShape MIRROR_N = Shapes.or(box(0, -1, 15, 16, 17, 16));
+    public static final VoxelShape MIRROR_E = Shapes.or(box(0, -1, 0, 1, 17, 16));
+    public static final VoxelShape MIRROR_W = Shapes.or(box(15, -1, 0, 16, 17, 16));
 }

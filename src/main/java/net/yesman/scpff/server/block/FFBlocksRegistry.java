@@ -272,7 +272,6 @@ public class FFBlocksRegistry {
     public static final RegistryObject<Block> METALDOOR = registerBlock("metaldoor", () ->
             new DoorBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(0.8F).explosionResistance(0.8F).pushReaction(PushReaction.DESTROY).noOcclusion(), BlockSetType.MANGROVE));
 
-
     public static final RegistryObject<Block> CAUTIONLINE = registerBlock("cautionline", () ->
             new Block(BlockBehaviour.Properties.of().sound(SoundType.WOOL).strength(0.8F).explosionResistance(0.8F)));
 
@@ -287,6 +286,11 @@ public class FFBlocksRegistry {
 
     public static final RegistryObject<Block> REINFORCEDIRON = registerBlock("reinforcediron", () ->
             new Block(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(50F).explosionResistance(1000F).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> MIRROR = registerBlock("mirror", () ->
+            new HorizontalDecorationBlock(BlockBehaviour.Properties.of().sound(SoundType.GLASS).strength(0.5F),
+                    FFBlockShapes.MIRROR_S, FFBlockShapes.MIRROR_N, FFBlockShapes.MIRROR_E, FFBlockShapes.MIRROR_W));
+
 
     public static final RegistryObject<Block> SCP_330 = registerBlock("scp_330", () ->
             new SCP330Block(BlockBehaviour.Properties.of().strength(3.0F, 10.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
