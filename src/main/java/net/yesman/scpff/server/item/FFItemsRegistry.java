@@ -37,13 +37,13 @@ public class FFItemsRegistry {
 
     /** Icons for tabs **/
 
-    public static final RegistryObject<IgnoreOnLoad> ITEMICON = ITEMS.register("itemicon", () -> new IgnoreOnLoad(new Item.Properties()));
+    public static final RegistryObject<Item> ITEMICON = ITEMS.register("itemicon", () -> new IgnoreOnLoad(new Item.Properties()));
 
-    public static final RegistryObject<IgnoreOnLoad> SCPICON = ITEMS.register("scpicon", () -> new IgnoreOnLoad(new Item.Properties()));
+    public static final RegistryObject<Item> SCPICON = ITEMS.register("scpicon", () -> new IgnoreOnLoad(new Item.Properties()));
 
-    public static final RegistryObject<IgnoreOnLoad> BLOCKICON = ITEMS.register("blockicon", () -> new IgnoreOnLoad(new Item.Properties()));
+    public static final RegistryObject<Item> BLOCKICON = ITEMS.register("blockicon", () -> new IgnoreOnLoad(new Item.Properties()));
 
-    public static final RegistryObject<IgnoreOnLoad> ARMORYICON = ITEMS.register("armoryicon", () -> new IgnoreOnLoad(new Item.Properties()));
+    public static final RegistryObject<Item> ARMORYICON = ITEMS.register("armoryicon", () -> new IgnoreOnLoad(new Item.Properties()));
 
     /** Keycards **/
 
@@ -86,7 +86,7 @@ public class FFItemsRegistry {
     public static final RegistryObject<Item> MEDKIT = ITEMS.register("medkit", () -> new MedkitItem(new Item.Properties()
             .stacksTo(15)));
 
-    public static final RegistryObject<Item> SCP500PILLBOTTLE = ITEMS.register("pillbottle", () -> new BundleItem(new Item.Properties()
+    public static final RegistryObject<Item> SCP500PILLBOTTLE = ITEMS.register("scp500pillbottle", () -> new BundleItem(new Item.Properties()
             .stacksTo(1)));
 
     public static final RegistryObject<Item> SCP939SPINE = ITEMS.register("scp939spine", () -> new Item(new Item.Properties()
@@ -97,64 +97,64 @@ public class FFItemsRegistry {
 
     /** SCP Spawn Eggs **/
 
-    public static final RegistryObject<ForgeSpawnEggItem> SCP_049_SPAWN_EGG = ITEMS.register("scp_049_spawn_egg", () -> new ForgeSpawnEggItem(FFEntitiesRegistry.SCP_049, 3289650, 1820927, new Item.Properties()));
+    public static final RegistryObject<Item> SCP_049_SPAWN_EGG = ITEMS.register("scp_049_spawn_egg", () -> new ForgeSpawnEggItem(FFEntitiesRegistry.SCP_049, 3289650, 1820927, new Item.Properties()));
 
-    public static final RegistryObject<ForgeSpawnEggItem> SCP_058_SPAWN_EGG = ITEMS.register("scp_058_spawn_egg", () -> new ForgeSpawnEggItem(FFEntitiesRegistry.SCP_058, 6755637, 16177620, new Item.Properties()));
+    public static final RegistryObject<Item> SCP_058_SPAWN_EGG = ITEMS.register("scp_058_spawn_egg", () -> new ForgeSpawnEggItem(FFEntitiesRegistry.SCP_058, 6755637, 16177620, new Item.Properties()));
 
-    public static final RegistryObject<ForgeSpawnEggItem> SCP_106_SPAWN_EGG = ITEMS.register("scp_106_spawn_egg", () -> new ForgeSpawnEggItem(FFEntitiesRegistry.SCP_106, 0, 16777215, new Item.Properties()));
+    public static final RegistryObject<Item> SCP_106_SPAWN_EGG = ITEMS.register("scp_106_spawn_egg", () -> new ForgeSpawnEggItem(FFEntitiesRegistry.SCP_106, 0, 16777215, new Item.Properties()));
 
-    public static final RegistryObject<ForgeSpawnEggItem> SCP_131_SPAWN_EGG = ITEMS.register("scp_131_spawn_egg", () -> new ForgeSpawnEggItem(FFEntitiesRegistry.SCP_131, 12669494, 56575, new Item.Properties()));
+    public static final RegistryObject<Item> SCP_131_SPAWN_EGG = ITEMS.register("scp_131_spawn_egg", () -> new ForgeSpawnEggItem(FFEntitiesRegistry.SCP_131, 12669494, 56575, new Item.Properties()));
 
-    public static final RegistryObject<ForgeSpawnEggItem> SCP_173_SPAWN_EGG = ITEMS.register("scp_173_spawn_egg", () -> new ForgeSpawnEggItem(FFEntitiesRegistry.SCP_173, 15385721, 16721446, new Item.Properties()));
+    public static final RegistryObject<Item> SCP_173_SPAWN_EGG = ITEMS.register("scp_173_spawn_egg", () -> new ForgeSpawnEggItem(FFEntitiesRegistry.SCP_173, 15385721, 16721446, new Item.Properties()));
 
-    public static final RegistryObject<ForgeSpawnEggItem> SCP_650_SPAWN_EGG = ITEMS.register("scp_650_spawn_egg", () -> new ForgeSpawnEggItem(FFEntitiesRegistry.SCP_650, 0, 1710618, new Item.Properties()));
+    public static final RegistryObject<Item> SCP_650_SPAWN_EGG = ITEMS.register("scp_650_spawn_egg", () -> new ForgeSpawnEggItem(FFEntitiesRegistry.SCP_650, 0, 1710618, new Item.Properties()));
 
-    public static final RegistryObject<ForgeSpawnEggItem> SCP_939_SPAWN_EGG = ITEMS.register("scp_939_spawn_egg", () -> new ForgeSpawnEggItem(FFEntitiesRegistry.SCP_939, 3342336, 10027008, new Item.Properties()));
+    public static final RegistryObject<Item> SCP_939_SPAWN_EGG = ITEMS.register("scp_939_spawn_egg", () -> new ForgeSpawnEggItem(FFEntitiesRegistry.SCP_939, 3342336, 10027008, new Item.Properties()));
 
-    public static final RegistryObject<ForgeSpawnEggItem> SCP_1507_SPAWN_EGG = ITEMS.register("scp_1507_spawn_egg", () -> new ForgeSpawnEggItem(FFEntitiesRegistry.SCP_1507, 15164807, 16776241, new Item.Properties()));
+    public static final RegistryObject<Item> SCP_1507_SPAWN_EGG = ITEMS.register("scp_1507_spawn_egg", () -> new ForgeSpawnEggItem(FFEntitiesRegistry.SCP_1507, 15164807, 16776241, new Item.Properties()));
 
     /** Armor Items **/
 
-    public static final RegistryObject<Item> DCLASS_ARMOR_CHESTPLATE = ITEMS.register("dclass_suit_chestplate", () -> new DClassArmorItem(
+    public static final RegistryObject<Item> DCLASS_ARMOR_CHESTPLATE = ITEMS.register("dclass_shirt", () -> new DClassArmorItem(
             FFArmorMaterialsRegistry.DCLASS_ARMOR, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
 
-    public static final RegistryObject<Item> DCLASS_ARMOR_LEGGINGS = ITEMS.register("dclass_suit_leggings", () -> new DClassArmorItem(
+    public static final RegistryObject<Item> DCLASS_ARMOR_LEGGINGS = ITEMS.register("dclass_leggings", () -> new DClassArmorItem(
             FFArmorMaterialsRegistry.DCLASS_ARMOR, ArmorItem.Type.LEGGINGS, new Item.Properties()));
 
-    public static final RegistryObject<Item> DCLASS_ARMOR_BOOTS = ITEMS.register("dclass_suit_boots", () -> new DClassArmorItem(
+    public static final RegistryObject<Item> DCLASS_ARMOR_BOOTS = ITEMS.register("dclass_boots", () -> new DClassArmorItem(
             FFArmorMaterialsRegistry.DCLASS_ARMOR, ArmorItem.Type.BOOTS, new Item.Properties()));
 
-    public static final RegistryObject<Item> RESEARCHER_ARMOR_CHESTPLATE = ITEMS.register("researcher_suit_chestplate", () -> new ResearcherArmorItem(
+    public static final RegistryObject<Item> RESEARCHER_ARMOR_CHESTPLATE = ITEMS.register("researcher_suit", () -> new ResearcherArmorItem(
             FFArmorMaterialsRegistry.RESEARCHER_SUIT, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
 
-    public static final RegistryObject<Item> RESEARCHER_ARMOR_LEGGINGS = ITEMS.register("researcher_suit_leggings", () -> new ResearcherArmorItem(
+    public static final RegistryObject<Item> RESEARCHER_ARMOR_LEGGINGS = ITEMS.register("researcher_leggings", () -> new ResearcherArmorItem(
             FFArmorMaterialsRegistry.RESEARCHER_SUIT, ArmorItem.Type.LEGGINGS, new Item.Properties()));
 
-    public static final RegistryObject<Item> RESEARCHER_ARMOR_BOOTS = ITEMS.register("researcher_suit_boots", () -> new ResearcherArmorItem(
+    public static final RegistryObject<Item> RESEARCHER_ARMOR_BOOTS = ITEMS.register("researcher_boots", () -> new ResearcherArmorItem(
             FFArmorMaterialsRegistry.RESEARCHER_SUIT, ArmorItem.Type.BOOTS, new Item.Properties()));
 
-    public static final RegistryObject<Item> GUARD_ARMOR_HELMET = ITEMS.register("guard_armor_helmet", () -> new GuardArmorItem(
+    public static final RegistryObject<Item> GUARD_ARMOR_HELMET = ITEMS.register("guard_helmet", () -> new GuardArmorItem(
             0.01F, FFArmorMaterialsRegistry.GUARD_ARMOR, ArmorItem.Type.HELMET, new Item.Properties()));
 
-    public static final RegistryObject<Item> GUARD_ARMOR_CHESTPLATE = ITEMS.register("guard_armor_chestplate", () -> new GuardArmorItem(
+    public static final RegistryObject<Item> GUARD_ARMOR_CHESTPLATE = ITEMS.register("guard_chestplate", () -> new GuardArmorItem(
             0.01F, FFArmorMaterialsRegistry.GUARD_ARMOR, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
 
-    public static final RegistryObject<Item> GUARD_ARMOR_LEGGINGS = ITEMS.register("guard_armor_leggings", () -> new GuardArmorItem(
+    public static final RegistryObject<Item> GUARD_ARMOR_LEGGINGS = ITEMS.register("guard_leggings", () -> new GuardArmorItem(
             0.01F, FFArmorMaterialsRegistry.GUARD_ARMOR, ArmorItem.Type.LEGGINGS, new Item.Properties()));
 
-    public static final RegistryObject<Item> GUARD_ARMOR_BOOTS = ITEMS.register("guard_armor_boots", () -> new GuardArmorItem(
+    public static final RegistryObject<Item> GUARD_ARMOR_BOOTS = ITEMS.register("guard_boots", () -> new GuardArmorItem(
             0.01F, FFArmorMaterialsRegistry.GUARD_ARMOR, ArmorItem.Type.BOOTS, new Item.Properties()));
 
-    public static final RegistryObject<Item> NTF_ARMOR_HELMET = ITEMS.register("ntf_armor_helmet", () -> new NtfArmorItem(
+    public static final RegistryObject<Item> NTF_ARMOR_HELMET = ITEMS.register("ntf_helmet", () -> new NtfArmorItem(
             FFArmorMaterialsRegistry.NTF_ARMOR, ArmorItem.Type.HELMET, new Item.Properties()));
 
-    public static final RegistryObject<Item> NTF_ARMOR_CHESTPLATE = ITEMS.register("ntf_armor_chestplate", () -> new NtfArmorItem(
+    public static final RegistryObject<Item> NTF_ARMOR_CHESTPLATE = ITEMS.register("ntf_chestplate", () -> new NtfArmorItem(
             FFArmorMaterialsRegistry.NTF_ARMOR, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
 
-    public static final RegistryObject<Item> NTF_ARMOR_LEGGINGS = ITEMS.register("ntf_armor_leggings", () -> new NtfArmorItem(
+    public static final RegistryObject<Item> NTF_ARMOR_LEGGINGS = ITEMS.register("ntf_leggings", () -> new NtfArmorItem(
             FFArmorMaterialsRegistry.NTF_ARMOR, ArmorItem.Type.LEGGINGS, new Item.Properties()));
 
-    public static final RegistryObject<Item> NTF_ARMOR_BOOTS = ITEMS.register("ntf_armor_boots", () -> new NtfArmorItem(
+    public static final RegistryObject<Item> NTF_ARMOR_BOOTS = ITEMS.register("ntf_boots", () -> new NtfArmorItem(
             FFArmorMaterialsRegistry.NTF_ARMOR, ArmorItem.Type.BOOTS, new Item.Properties()));
 
     public static void register(IEventBus eventBus) {

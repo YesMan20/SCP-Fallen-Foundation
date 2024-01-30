@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "scpff:block/electricalbox",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "scpff:block/electricalbox"
+    },
+    "facing=south": {
+      "model": "scpff:block/electricalbox",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "scpff:block/electricalbox",
+      "y": 270
+    }
+  }
+}

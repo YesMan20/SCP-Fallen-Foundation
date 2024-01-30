@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "scpff:block/cautionline_slab"
+    },
+    "type=double": {
+      "model": "scpff:block/cautionline"
+    },
+    "type=top": {
+      "model": "scpff:block/cautionline_slab_top"
+    }
+  }
+}

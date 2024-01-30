@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "scpff:block/whiteconcreteslab"
+    },
+    "type=double": {
+      "model": "minecraft:block/white_concrete"
+    },
+    "type=top": {
+      "model": "scpff:block/whiteconcreteslab_top"
+    }
+  }
+}

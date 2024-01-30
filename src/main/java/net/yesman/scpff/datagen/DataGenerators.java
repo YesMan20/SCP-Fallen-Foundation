@@ -24,5 +24,6 @@ public class DataGenerators {
 
         generator.addProvider(true, new FFBlockStateProvider(packOutput, existingFileHelper));
         generator.addProvider(true, new FFItemModelProvider(packOutput, existingFileHelper));
+        //generator.addProvider(true, new FFLanguageProvider(packOutput));
     }
 }

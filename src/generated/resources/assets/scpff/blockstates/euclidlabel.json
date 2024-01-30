@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "scpff:block/euclidlabel",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "scpff:block/euclidlabel"
+    },
+    "facing=south": {
+      "model": "scpff:block/euclidlabel",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "scpff:block/euclidlabel",
+      "y": 270
+    }
+  }
+}

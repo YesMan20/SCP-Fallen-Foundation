@@ -259,7 +259,7 @@ public class FFBlocksRegistry {
             new DecorationBlock(BlockBehaviour.Properties.of().noCollission().sound(SoundType.SLIME_BLOCK).strength(2F).noOcclusion().requiresCorrectToolForDrops(), FFBlockShapes.CARPET));
 
     public static final RegistryObject<Block> SCP106CORROSION = registerBlock("scp106corrosion", () ->
-            new DecorationBlock(BlockBehaviour.Properties.of().noCollission().sound(SoundType.SLIME_BLOCK).strength(2F).noOcclusion().speedFactor(0.2f).requiresCorrectToolForDrops(), FFBlockShapes.BLOCK));
+            new Block(BlockBehaviour.Properties.of().noCollission().sound(SoundType.SLIME_BLOCK).strength(2F).noOcclusion().speedFactor(0.2f).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> CONTAINMENT_CASE = registerBlock("containment_case", () ->
             new ContainmentCase(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(2F).noOcclusion()));

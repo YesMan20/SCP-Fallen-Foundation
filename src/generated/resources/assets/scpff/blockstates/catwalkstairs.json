@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "scpff:block/catwalkstairs",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "scpff:block/catwalkstairs"
+    },
+    "facing=south": {
+      "model": "scpff:block/catwalkstairs",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "scpff:block/catwalkstairs",
+      "y": 270
+    }
+  }
+}

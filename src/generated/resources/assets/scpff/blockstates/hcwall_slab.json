@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "scpff:block/hcwall_slab"
+    },
+    "type=double": {
+      "model": "scpff:block/hcwall"
+    },
+    "type=top": {
+      "model": "scpff:block/hcwall_slab_top"
+    }
+  }
+}

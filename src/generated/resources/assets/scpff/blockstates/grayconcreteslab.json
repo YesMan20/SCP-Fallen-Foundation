@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "scpff:block/grayconcreteslab"
+    },
+    "type=double": {
+      "model": "minecraft:block/gray_concrete"
+    },
+    "type=top": {
+      "model": "scpff:block/grayconcreteslab_top"
+    }
+  }
+}
