@@ -3,9 +3,15 @@ package net.yesman.scpff.level.block.decor;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.Mth;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -18,10 +24,15 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.yesman.scpff.SCPFf;
+import net.yesman.scpff.level.tag.FFItemTags;
 
 import javax.annotation.Nullable;
+import java.util.List;
 
 public class VendingMachineBlock extends HorizontalDirectionalBlock {
     public static final EnumProperty<DoubleBlockHalf> HALF = BlockStateProperties.DOUBLE_BLOCK_HALF;
@@ -40,6 +51,18 @@ public class VendingMachineBlock extends HorizontalDirectionalBlock {
         ;} else {
             return null;
         }
+    }
+
+    @Override
+    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+        List<Item> soda = ForgeRegistries.ITEMS.tags().getTag(FFItemTags.SODAS).stream().toList();
+        if (player.getItemInHand(InteractionHand.MAIN_HAND).is(Items.IRON_NUGGET) && !player.getCooldowns().isOnCooldown(Items.IRON_NUGGET)) {
+            player.getCooldowns().addCooldown(Items.IRON_NUGGET, 40);
+            Item item = soda.get(RandomSource.create().nextInt(soda.size()));
+            level.addFreshEntity(new ItemEntity(level, pos.getX() + 0.5F, pos.getY() + 0.2F, pos.getZ() + 1.2F, new ItemStack(item)));
+            return InteractionResult.SUCCESS;
+        }
+        return super.use(state, level, pos, player, hand, hit);
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {

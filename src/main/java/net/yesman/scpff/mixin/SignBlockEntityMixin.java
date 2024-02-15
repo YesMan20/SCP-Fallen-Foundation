@@ -11,7 +11,7 @@ import net.yesman.scpff.level.entity.scp.SCP2521;
 import net.yesman.scpff.misc.RunnableCooldownHandler;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
@@ -19,7 +19,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(SignBlockEntity.class)
 public abstract class SignBlockEntityMixin extends BlockEntity {
 
-    @Shadow
+    @Unique
     @Final
     private Component[] messages;
 

@@ -36,12 +36,16 @@ public class FFItemModelProvider extends ItemModelProvider {
         simpleItem(FFItemsRegistry.CANDY2);
         simpleItem(FFItemsRegistry.CANDY3);
         simpleItem(FFItemsRegistry.CANDY4);
+        simpleItem(FFItemsRegistry.FANTACY);
+        simpleItem(FFItemsRegistry.SPRINT);
+        simpleItem(FFItemsRegistry.PEBIS);
+        simpleItem(FFItemsRegistry.MOUNTDELICIOUS);
         simpleItem(FFItemsRegistry.MEDKIT);
         simpleItem(FFItemsRegistry.SCP500PILLBOTTLE);
         simpleItem(FFItemsRegistry.SCP939SPINE);
         simpleItem(FFItemsRegistry.DCLASS_ARMOR_CHESTPLATE);
         simpleItem(FFItemsRegistry.DCLASS_ARMOR_LEGGINGS);
-        simpleItem(FFItemsRegistry.DCLASS_ARMOR_LEGGINGS);
+        simpleItem(FFItemsRegistry.DCLASS_ARMOR_BOOTS);
         simpleItem(FFItemsRegistry.RESEARCHER_ARMOR_CHESTPLATE);
         simpleItem(FFItemsRegistry.RESEARCHER_ARMOR_LEGGINGS);
         simpleItem(FFItemsRegistry.RESEARCHER_ARMOR_BOOTS);

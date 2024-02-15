@@ -18,6 +18,9 @@ public class FFSoundsRegistry {
     public static final RegistryObject<SoundEvent> SCP131AMBIENT = registerSoundEvent("scp131ambient");
     public static final RegistryObject<SoundEvent> SCP131HURT = registerSoundEvent("scp131hurt");
 
+    public static final RegistryObject<SoundEvent> LOCKEROPEN = registerSoundEvent("locker_open");
+    public static final RegistryObject<SoundEvent> LOCKERCLOSE = registerSoundEvent("locker_close");
+
     public static RegistryObject<SoundEvent> registerSoundEvent(String name) {
         ResourceLocation id = new ResourceLocation(SCPFf.MOD_ID, name);
         return SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(id));

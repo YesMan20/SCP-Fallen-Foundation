@@ -12,7 +12,6 @@ public class FFLanguageProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
-        // Blocks
-        addBlock(FFBlocksRegistry.MIRROR, "Mirror");
+        add(FFBlocksRegistry.MIRROR.get(), "Mirror");
     }
 }

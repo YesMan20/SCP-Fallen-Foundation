@@ -1,0 +1,9 @@
+{
+  "replaces": false,
+  "values": [
+    "scpff:sprint",
+    "scpff:mountdelicious",
+    "scpff:pebis",
+    "scpff:fantacy"
+  ]
+}

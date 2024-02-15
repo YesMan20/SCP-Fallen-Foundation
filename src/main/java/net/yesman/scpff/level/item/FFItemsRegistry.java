@@ -1,7 +1,7 @@
 package net.yesman.scpff.level.item;
 
 import net.minecraft.world.item.*;
-import net.minecraftforge.common.ForgeSpawnEggItem;
+        import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -9,7 +9,8 @@ import net.minecraftforge.registries.RegistryObject;
 import net.yesman.scpff.SCPFf;
 import net.yesman.scpff.level.entity.FFEntitiesRegistry;
 import net.yesman.scpff.level.item.custom.*;
-import net.yesman.scpff.level.item.scps.*;
+        import net.yesman.scpff.level.item.scps.*;
+        import net.yesman.scpff.server.item.custom.SodaItem;
 
 public class FFItemsRegistry {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, SCPFf.MOD_ID);
@@ -93,6 +94,18 @@ public class FFItemsRegistry {
     public static final RegistryObject<Item> SCP939DAGGER = ITEMS.register("scp939dagger", () -> new SwordItem(Tiers.WOOD, 5, 1.0f,
             new SwordItem.Properties().durability(110)));
 
+    public static final RegistryObject<Item> FANTACY = ITEMS.register("fantacy", () -> new SodaItem(new Item.Properties()
+            .stacksTo(3).food(FFFoodsRegistry.SODA)));
+
+    public static final RegistryObject<Item> SPRINT = ITEMS.register("sprint", () -> new SodaItem(new Item.Properties()
+            .stacksTo(3).food(FFFoodsRegistry.SODA)));
+
+    public static final RegistryObject<Item> PEBIS = ITEMS.register("pebis", () -> new SodaItem(new Item.Properties()
+            .stacksTo(3).food(FFFoodsRegistry.SODA)));
+
+    public static final RegistryObject<Item> MOUNTDELICIOUS = ITEMS.register("mountdelicious", () -> new SodaItem(new Item.Properties()
+            .stacksTo(3).food(FFFoodsRegistry.SODA)));
+
     /** SCP Spawn Eggs **/
 
     public static final RegistryObject<Item> SCP_049_SPAWN_EGG = ITEMS.register("scp_049_spawn_egg", () -> new ForgeSpawnEggItem(FFEntitiesRegistry.SCP_049, 3289650, 1820927, new Item.Properties()));
@@ -159,3 +172,4 @@ public class FFItemsRegistry {
         ITEMS.register(eventBus);
     }
 }
+

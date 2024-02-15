@@ -5,21 +5,21 @@
       "y": 90
     },
     "facing=east,powered=true": {
-      "model": "scpff:block/computer",
+      "model": "scpff:block/computer_on",
       "y": 90
     },
     "facing=north,powered=false": {
       "model": "scpff:block/computer"
     },
     "facing=north,powered=true": {
-      "model": "scpff:block/computer"
+      "model": "scpff:block/computer_on"
     },
     "facing=south,powered=false": {
       "model": "scpff:block/computer",
       "y": 180
     },
     "facing=south,powered=true": {
-      "model": "scpff:block/computer",
+      "model": "scpff:block/computer_on",
       "y": 180
     },
     "facing=west,powered=false": {
@@ -27,7 +27,7 @@
       "y": 270
     },
     "facing=west,powered=true": {
-      "model": "scpff:block/computer",
+      "model": "scpff:block/computer_on",
       "y": 270
     }
   }

@@ -22,7 +22,9 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.network.NetworkHooks;
 import net.yesman.scpff.level.block.entity.LockerBlockEntity;
@@ -82,12 +84,14 @@ public class LockerBlock extends BaseEntityBlock {
         pLevel.setBlock(pPos.above(), pState.setValue(HALF, DoubleBlockHalf.UPPER), 3);
     }
 
-    private static final VoxelShape SHAPE =
-            Block.box(0, 0, 0, 16, 16, 16);
-
     @Override
-    public VoxelShape getShape(BlockState p_60555_, BlockGetter p_60556_, BlockPos p_60557_, CollisionContext p_60558_) {
-        return SHAPE;
+    public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+        return switch (state.getValue(FACING)) {
+            default -> Block.box(1, 0, 0, 15, 16, 14);
+            case NORTH -> Block.box(1, 0, 2, 15, 16, 16);
+            case EAST ->  Block.box(0, 0, 1, 14, 16, 15);
+            case WEST -> Block.box(2, 0, 1, 16, 16, 15);
+        };
     }
 
     @Override

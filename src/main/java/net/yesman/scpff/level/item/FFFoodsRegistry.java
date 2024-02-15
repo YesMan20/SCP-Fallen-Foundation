@@ -5,6 +5,10 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 
 public class FFFoodsRegistry {
+    public static final FoodProperties SODA = new FoodProperties.Builder()
+            .nutrition(4).saturationMod(0.3f).alwaysEat().fast().build();
+
+
     public static final FoodProperties CANDY = new FoodProperties.Builder()
             .nutrition(4).saturationMod(0.3f).alwaysEat().fast().build();
 

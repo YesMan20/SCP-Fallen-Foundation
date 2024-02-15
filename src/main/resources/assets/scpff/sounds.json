@@ -1,4 +1,16 @@
 {
+  "locker_open": {
+    "subtitle": "sounds.scpff.locker_open",
+    "sounds": [
+      "scpff:locker_open"
+    ]
+  },
+  "locker_close": {
+    "subtitle": "sounds.scpff.locker_close",
+    "sounds": [
+      "scpff:locker_close"
+    ]
+  },
   "scp058beating": {
     "subtitle": "sounds.scpff.scp058beating",
     "sounds": [

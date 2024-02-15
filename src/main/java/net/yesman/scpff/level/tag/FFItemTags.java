@@ -8,6 +8,7 @@ import net.yesman.scpff.SCPFf;
 
 public class FFItemTags {
     public static final TagKey<Item> CANDIES = getTag("candies");
+    public static final TagKey<Item> SODAS = getTag("sodas");
     public static final TagKey<Item> HAS_WEIGHT = getTag("has_weight");
 
     private static TagKey<Item> getTag(String tag) {

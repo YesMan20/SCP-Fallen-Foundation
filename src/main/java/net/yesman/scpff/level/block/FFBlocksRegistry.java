@@ -18,6 +18,7 @@ import net.yesman.scpff.level.item.FFItemsRegistry;
 import net.yesman.scpff.level.block.decor.ContainmentCase;
 import net.yesman.scpff.level.block.decor.*;
 import net.yesman.scpff.level.block.scp.SCP330Block;
+import net.yesman.scpff.server.block.decor.VentBlock;
 
 import java.util.function.Supplier;
 
@@ -36,13 +37,13 @@ public class FFBlocksRegistry {
             new SlabBlock(BlockBehaviour.Properties.of().explosionResistance(1.8f).strength(1.8f).destroyTime(9f).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> HCFLOOR = registerBlock("hcfloor", () ->
-            new Block(BlockBehaviour.Properties.of().strength(10f).requiresCorrectToolForDrops()));
+            new Block(BlockBehaviour.Properties.of().sound(SoundType.BAMBOO).strength(10f).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> HCFLOOR_SLAB = registerBlock("hcfloor_slab", () ->
-            new SlabBlock(BlockBehaviour.Properties.of().strength(10f).requiresCorrectToolForDrops()));
+            new SlabBlock(BlockBehaviour.Properties.copy(FFBlocksRegistry.HCFLOOR.get()).strength(10f).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> HCFLOOR_STAIRS = registerBlock("hcfloor_stairs", () ->
-            new StairBlock(() -> FFBlocksRegistry.HCFLOOR.get().defaultBlockState(), BlockBehaviour.Properties.of().strength(10f).requiresCorrectToolForDrops()));
+            new StairBlock(() -> FFBlocksRegistry.HCFLOOR.get().defaultBlockState(), BlockBehaviour.Properties.copy(FFBlocksRegistry.HCFLOOR.get()).strength(10f).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> METALWALL1 = registerBlock("metalwall1", () ->
             new Block(BlockBehaviour.Properties.of().explosionResistance(1.8f).strength(1.8f).destroyTime(9f).requiresCorrectToolForDrops()));
@@ -68,13 +69,13 @@ public class FFBlocksRegistry {
             new TooltipBlock(Component.translatable("tooltip.scpff.decorationBlock").withStyle(ChatFormatting.BLUE), BlockBehaviour.Properties.of().explosionResistance(1.8f).strength(1.8f).destroyTime(9f).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> TILES = registerBlock("tiles", () ->
-            new Block(BlockBehaviour.Properties.of().strength(10f).requiresCorrectToolForDrops()));
+            new Block(BlockBehaviour.Properties.of().sound(SoundType.DECORATED_POT).strength(10f).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> TILE_SLAB = registerBlock("tile_slab", () ->
-            new SlabBlock(BlockBehaviour.Properties.of().strength(10f).requiresCorrectToolForDrops()));
+            new SlabBlock(BlockBehaviour.Properties.copy(FFBlocksRegistry.TILES.get()).strength(10f).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> TILE_STAIRS = registerBlock("tile_stairs", () ->
-            new StairBlock(() -> FFBlocksRegistry.TILES.get().defaultBlockState(), BlockBehaviour.Properties.of().strength(10f).requiresCorrectToolForDrops()));
+            new StairBlock(() -> FFBlocksRegistry.TILES.get().defaultBlockState(), BlockBehaviour.Properties.copy(FFBlocksRegistry.TILES.get()).strength(10f).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> WHITE_CONCRETE_STAIRS = registerBlock("whiteconcretestairs", () ->
             new StairBlock(Blocks.WHITE_CONCRETE::defaultBlockState, BlockBehaviour.Properties.of().explosionResistance(1.8f).strength(1.8f).destroyTime(9f).requiresCorrectToolForDrops()));
@@ -102,7 +103,7 @@ public class FFBlocksRegistry {
     /** Decoration Blocks **/
 
     public static final RegistryObject<Block> VENTBLOCK = registerBlock("ventblock", () ->
-            new Block(BlockBehaviour.Properties.of().explosionResistance(1.8F).strength(2F).requiresCorrectToolForDrops()));
+            new VentBlock(BlockBehaviour.Properties.of().sound(SoundType.BASALT).explosionResistance(1.8F).strength(2F).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> VENT_COVER = registerBlock("vent_cover", () ->
             new TrapDoorBlock(BlockBehaviour.Properties.of().noOcclusion().strength(2F).explosionResistance(1.8F).requiresCorrectToolForDrops(), BlockSetType.OAK));
@@ -176,7 +177,7 @@ public class FFBlocksRegistry {
                     FFBlockShapes.BEAKERS, FFBlockShapes.BEAKERS, FFBlockShapes.BEAKERS, FFBlockShapes.BEAKERS));
 
     public static final RegistryObject<Block> CRATE = registerBlock("crate", () ->
-            new Block(BlockBehaviour.Properties.of().strength(4F).sound(SoundType.METAL).requiresCorrectToolForDrops().noOcclusion()));
+            new Block(BlockBehaviour.Properties.of().strength(4F).sound(SoundType.NETHER_BRICKS).requiresCorrectToolForDrops().noOcclusion()));
 
     public static final RegistryObject<Block> SERVERSRACK = registerBlock("serversrack", () ->
             new HorizontalDecorationBlock(BlockBehaviour.Properties.of().strength(4F).sound(SoundType.METAL).requiresCorrectToolForDrops().noOcclusion(),
@@ -285,7 +286,7 @@ public class FFBlocksRegistry {
             new Block(BlockBehaviour.Properties.of().lightLevel(s -> 15).sound(SoundType.GLASS).strength(0.8F).explosionResistance(0.8F).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> REINFORCEDIRON = registerBlock("reinforcediron", () ->
-            new Block(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(50F).explosionResistance(1000F).requiresCorrectToolForDrops()));
+            new Block(BlockBehaviour.Properties.of().sound(SoundType.NETHER_BRICKS).strength(50F).explosionResistance(1000F).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> MIRROR = registerBlock("mirror", () ->
             new HorizontalDecorationBlock(BlockBehaviour.Properties.of().sound(SoundType.GLASS).strength(0.5F),

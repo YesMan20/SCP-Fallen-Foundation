@@ -24,7 +24,6 @@ public class FFBlockStateProvider extends BlockStateProvider {
         blockWithItem(FFBlocksRegistry.HCWALL);
         blockWithItem(FFBlocksRegistry.REINFORCEDIRON);
         blockWithItem(FFBlocksRegistry.SCP106CORROSION);
-        blockWithItem(FFBlocksRegistry.VENTBLOCK);
         blockWithItem(FFBlocksRegistry.TILES);
         blockWithItem(FFBlocksRegistry.CAUTIONLINE);
 
@@ -50,8 +49,6 @@ public class FFBlockStateProvider extends BlockStateProvider {
         horizontalBlockWithItem(FFBlocksRegistry.CATWALKFENCE2);
         horizontalBlockWithItem(FFBlocksRegistry.CATWALKSTAIRS);
         horizontalBlockWithItem(FFBlocksRegistry.CHAIR);
-        horizontalBlockWithItem(FFBlocksRegistry.COMPUTER);
-        horizontalBlockWithItem(FFBlocksRegistry.DESKLAMP);
         horizontalBlockWithItem(FFBlocksRegistry.FIREEXTINGUISHERCASE);
         horizontalBlockWithItem(FFBlocksRegistry.ELECTRICALBOX);
         horizontalBlockWithItem(FFBlocksRegistry.EUCLIDLABEL);

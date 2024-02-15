@@ -1,12 +1,14 @@
-// 1.20.1	2024-01-30T19:40:39.5635861	Item Models: scpff
+// 1.20.1	2024-02-13T01:34:21.0178566	Item Models: scpff
 eb438f68caf0293ee8f2aa0bff8f59c4cbeed325 assets/scpff/models/item/armoryicon.json
 7aafae4bf285cef600753bab4884212322789631 assets/scpff/models/item/blockicon.json
 5def9125f716cc9ee2418ede339a97836fded352 assets/scpff/models/item/candy1.json
 b2de946255242fd0932edb50630da0452469db33 assets/scpff/models/item/candy2.json
 1bdc30039e8d99f58da11ff5691fd96c9b4a4165 assets/scpff/models/item/candy3.json
 23c272f2813733250b080d7018fa21a015822daa assets/scpff/models/item/candy4.json
+818c129996777a40ce3d488eca799edc6ea15b67 assets/scpff/models/item/dclass_boots.json
 c44c281190f848b748816320535fcbad68b6e62f assets/scpff/models/item/dclass_leggings.json
 80ca5c0c8c2107c9916458c8f42f166779a5ab4c assets/scpff/models/item/dclass_shirt.json
+7dd5c2fc2cc1494659b352823a719aa659d335a1 assets/scpff/models/item/fantacy.json
 e59d358d8266c2cab48257d901773cb47ea47eed assets/scpff/models/item/guard_boots.json
 e1bdb8a8bb3f98ff0166767cd0214950f759742d assets/scpff/models/item/guard_chestplate.json
 2b3da8c338577487e406e37930b959cc2f4b41ef assets/scpff/models/item/guard_helmet.json
@@ -19,10 +21,12 @@ cd403e32b51ff3036622c227d8b2bdda4ff082a6 assets/scpff/models/item/guard_leggings
 2ba0292354a49f560dc520739ece084bab7c6d4a assets/scpff/models/item/keycard5.json
 da0f5c7de1c57de065e246360650b4bd76927fa3 assets/scpff/models/item/medkit.json
 1815a190c2e100f583d3f66a476fdc46dd8714c6 assets/scpff/models/item/mop.json
+e68d9617bfafea857ce639e400d4628766bcda43 assets/scpff/models/item/mountdelicious.json
 e59d358d8266c2cab48257d901773cb47ea47eed assets/scpff/models/item/ntf_boots.json
 64593858620fcc972ed39ccc9ae6893c67ff084b assets/scpff/models/item/ntf_chestplate.json
 61c6cecd9ca7a7d31f98423d945f854499472a6f assets/scpff/models/item/ntf_helmet.json
 2c447751bd9d01e05e6152c735bb99c0b160a259 assets/scpff/models/item/ntf_leggings.json
+68db0a680de07fa870d9591cb07363266c7be832 assets/scpff/models/item/pebis.json
 5334c48ac93fb9b2774d6f1148de308c22aa9f06 assets/scpff/models/item/researcher_boots.json
 5ded972375f63ed59599608fcf0bee81d6dbceb2 assets/scpff/models/item/researcher_leggings.json
 e8a3a7cd6667e7cc66b561ab833fead6393483d7 assets/scpff/models/item/researcher_suit.json
@@ -46,3 +50,4 @@ f0dee61a47da02032d59c10f8710f788dd853a7a assets/scpff/models/item/scpicon.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/scpff/models/item/scp_650_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/scpff/models/item/scp_939_spawn_egg.json
 1ecf9114efef3a1449f0a4f6fa8bcd99d396ac5a assets/scpff/models/item/sledgehammer.json
+d6dbf3feb15c045de08001b9fd7c376c88f5e58c assets/scpff/models/item/sprint.json

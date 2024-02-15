@@ -10,7 +10,10 @@
   "sounds.scpff.scp049breathing": "SCP-049 heavily breaths",
   "sounds.scpff.scp106breathing": "SCP-106 breaths",
   "sounds.scpff.scp131ambient": "SCP-131 beeps",
-  "sounds.scpff.scp131hurt": "You monster.",
+  "sounds.scpff.scp131hurt": "SCP-131 hurt",
+
+  "sounds.scpff.locker_open": "Locker opening",
+  "sounds.scpff.locker_close": "Locker closing",
 
   "item.scpff.candy1": "Purple Candy",
   "item.scpff.candy2": "Red Candy",
@@ -30,7 +33,7 @@
   "item.scpff.sledgehammer": "Sledgehammer",
   "item.scpff.mop": "Mop",
   "item.scpff.medkit": "Medical Kit",
-  "item.scpff.pillbottle": "Pill Bottle",
+  "item.scpff.scp500pillbottle": "Pill Bottle",
   "item.scpff.scp939spine": "SCP-939 Spine",
   "item.scpff.scp939dagger": "SCP-939 Dagger",
 
@@ -39,6 +42,11 @@
   "item.scpff.keycard3": "Keycard - §6Level 3",
   "item.scpff.keycard4": "Keycard - §6Level 4",
   "item.scpff.keycard5": "Keycard - §cLevel 5",
+
+  "item.scpff.sprint": "Sprint",
+  "item.scpff.mountdelicious": "Mount Delicious",
+  "item.scpff.pebis": "Pebis",
+  "item.scpff.fantacy": "Fantacy",
 
   "item.scpff.dclass_suit_chestplate": "D-Class Suit Chestplate",
   "item.scpff.dclass_suit_leggings": "D-Class Suit Leggings",
@@ -149,6 +157,7 @@
   "block.scpff.containment_case_bottom": "Containment Case Bottom",
   "block.scpff.scp_330": "SCP-330",
   "block.scpff.metaldoor": "Metal Door",
+  "block.scpff.mirror": "Mirror",
 
   "painting.scpff.soda.title": "SODA!!!!!",
   "painting.scpff.soda.author": "Lucent",
