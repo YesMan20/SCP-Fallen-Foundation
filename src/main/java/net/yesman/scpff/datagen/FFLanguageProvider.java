@@ -3,7 +3,7 @@ package net.yesman.scpff.datagen;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.yesman.scpff.SCPFf;
-import net.yesman.scpff.server.block.FFBlocksRegistry;
+import net.yesman.scpff.level.block.FFBlocksRegistry;
 
 public class FFLanguageProvider extends LanguageProvider {
     public FFLanguageProvider(PackOutput output) {

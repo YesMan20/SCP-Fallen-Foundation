@@ -2,7 +2,7 @@ package net.yesman.scpff.client.model;
 
 import net.minecraft.resources.ResourceLocation;
 import net.yesman.scpff.SCPFf;
-import net.yesman.scpff.server.entity.scp.SCP2521;
+import net.yesman.scpff.level.entity.scp.SCP2521;
 
 public class SCP2521Model extends RotatedHeadModel<SCP2521> {
     @Override

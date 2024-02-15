@@ -2,7 +2,7 @@ package net.yesman.scpff.client.model;
 
 import net.minecraft.resources.ResourceLocation;
 import net.yesman.scpff.SCPFf;
-import net.yesman.scpff.server.entity.scp.SCP035WitherSkeleton;
+import net.yesman.scpff.level.entity.scp.SCP035WitherSkeleton;
 import software.bernie.geckolib.model.GeoModel;
 
 public class SCP035WitherSkeletonModel extends GeoModel<SCP035WitherSkeleton> {

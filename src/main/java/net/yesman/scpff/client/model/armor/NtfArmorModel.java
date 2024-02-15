@@ -2,7 +2,7 @@ package net.yesman.scpff.client.model.armor;
 
 import net.minecraft.resources.ResourceLocation;
 import net.yesman.scpff.SCPFf;
-import net.yesman.scpff.server.item.custom.NtfArmorItem;
+import net.yesman.scpff.level.item.custom.NtfArmorItem;
 import software.bernie.geckolib.model.GeoModel;
 
 public class NtfArmorModel extends GeoModel<NtfArmorItem> {

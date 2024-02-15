@@ -9,6 +9,7 @@ import net.minecraftforge.network.PacketDistributor;
 import net.minecraftforge.network.simple.SimpleChannel;
 import net.yesman.scpff.SCPFf;
 import net.yesman.scpff.networking.packet.Packet;
+import net.yesman.scpff.networking.packet.S2C.BlinkS2CPacket;
 import net.yesman.scpff.networking.packet.S2C.EnableMovementPacketS2CPacket;
 import net.yesman.scpff.networking.packet.S2C.Update2521InfoS2CPacket;
 
@@ -30,6 +31,7 @@ public class ModMessages {
     public static void register() {
         registerPacket(EnableMovementPacketS2CPacket.class, NetworkDirection.PLAY_TO_CLIENT);
         registerPacket(Update2521InfoS2CPacket.class, NetworkDirection.PLAY_TO_CLIENT);
+        registerPacket(BlinkS2CPacket.class, NetworkDirection.PLAY_TO_CLIENT);
     }
 
     public static <MSG> void sendToServer(MSG message) {

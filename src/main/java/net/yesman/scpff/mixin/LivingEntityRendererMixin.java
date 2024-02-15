@@ -11,7 +11,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.yesman.scpff.client.renderer.entity.SCP035WitherSkeletonRenderer;
-import net.yesman.scpff.server.item.FFItemsRegistry;
+import net.yesman.scpff.level.item.FFItemsRegistry;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

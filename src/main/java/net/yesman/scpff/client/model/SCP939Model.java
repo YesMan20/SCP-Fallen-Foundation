@@ -2,7 +2,7 @@ package net.yesman.scpff.client.model;
 
 import net.minecraft.resources.ResourceLocation;
 import net.yesman.scpff.SCPFf;
-import net.yesman.scpff.server.entity.scp.SCP939;
+import net.yesman.scpff.level.entity.scp.SCP939;
 import software.bernie.geckolib.model.GeoModel;
 
 public class SCP939Model extends GeoModel<SCP939> {

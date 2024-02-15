@@ -2,7 +2,7 @@ package net.yesman.scpff.client.renderer.entity;
 
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.yesman.scpff.client.model.SCP106Model;
-import net.yesman.scpff.server.entity.scp.SCP106;
+import net.yesman.scpff.level.entity.scp.SCP106;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;
 
 public class SCP106Renderer extends GeoEntityRenderer<SCP106> {

@@ -8,7 +8,7 @@ import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 import net.yesman.scpff.SCPFf;
-import net.yesman.scpff.server.item.FFItemsRegistry;
+import net.yesman.scpff.level.item.FFItemsRegistry;
 
 public class FFItemModelProvider extends ItemModelProvider {
     public FFItemModelProvider(PackOutput gen, ExistingFileHelper existingFileHelper) {

@@ -4,8 +4,8 @@ import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.yesman.scpff.SCPFf;
-import net.yesman.scpff.server.entity.FFEntitiesRegistry;
-import net.yesman.scpff.server.entity.scp.*;
+import net.yesman.scpff.level.entity.FFEntitiesRegistry;
+import net.yesman.scpff.level.entity.scp.*;
 
 @Mod.EventBusSubscriber(modid = SCPFf.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class CommonModEvents {

@@ -9,8 +9,8 @@ import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.yesman.scpff.SCPFf;
-import net.yesman.scpff.server.entity.scp.SCP049;
-import net.yesman.scpff.server.item.FFItemsRegistry;
+import net.yesman.scpff.level.entity.scp.SCP049;
+import net.yesman.scpff.level.item.FFItemsRegistry;
 
 @Mod.EventBusSubscriber(modid = SCPFf.MOD_ID)
 public class ModEvents {

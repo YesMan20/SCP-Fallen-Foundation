@@ -72,6 +72,15 @@ public class Helper {
         return null;
     }
 
+    /**
+     * TODO - Method from refraction, but since it's not out yet, I'll just copy it here. -- Zeus
+     */
+    public static boolean isInAngle(Entity entity, BlockPos blockPos, double angle) {
+        Vec3 dirVec = (new Vec3((double)blockPos.getX() - entity.getX(), (double)blockPos.getY() - entity.getY(), (double)blockPos.getZ() - entity.getZ())).normalize();
+        double dot = dirVec.dot(calculateViewVector(entity.getXRot(), entity.getYRot()).normalize());
+        return dot >= Mth.lerp(angle / 360.0, 1.0, -1.0);
+    }
+
     public static DamageSource damageSource(ResourceKey<DamageType> damageType, Level level) {
         return new DamageSource(level.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(damageType));
     }
