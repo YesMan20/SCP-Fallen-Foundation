@@ -18,7 +18,7 @@ import net.yesman.scpff.level.item.FFItemsRegistry;
 import net.yesman.scpff.level.block.decor.ContainmentCase;
 import net.yesman.scpff.level.block.decor.*;
 import net.yesman.scpff.level.block.scp.SCP330Block;
-import net.yesman.scpff.server.block.decor.VentBlock;
+import net.yesman.scpff.level.block.decor.VentBlock;
 
 import java.util.function.Supplier;
 

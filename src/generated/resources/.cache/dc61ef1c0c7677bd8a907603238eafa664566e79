@@ -1,4 +1,4 @@
-// 1.20.1	2024-01-30T21:15:03.57393	Block States: scpff
+// 1.20.1	2024-02-16T00:45:44.9526766	Block States: scpff
 765b5b0aaf4531e0b2d246269fd33d4f7d5c5788 assets/scpff/blockstates/beakers.json
 7e3dde1ffd08d23f12b060ce7d1dfab474be378e assets/scpff/blockstates/bulletinboard.json
 f2c59635f6209a22c8f0b5cd493120e5398f9bc0 assets/scpff/blockstates/catwalkfence.json
@@ -8,10 +8,8 @@ bdb4d681c6d491c0bec9d5cf7606979150125001 assets/scpff/blockstates/catwalkstairs.
 2d9bd8459323143491b08a946e0f53389508218e assets/scpff/blockstates/cautionline_slab.json
 950443961d1bd0bc253acd143947f45cbdaa1d70 assets/scpff/blockstates/cautionline_stairs.json
 b8e629a0573bbac490556fe139c4a4304e0d6486 assets/scpff/blockstates/chair.json
-bd2bf48fa4e16a23803cd616152badca4175d3df assets/scpff/blockstates/computer.json
 bd05461b6e67594d6a20eee6ffa57c362f659aea assets/scpff/blockstates/containment_case.json
 bc91c87fa2965461ecff8fb8641d1b4d23963c62 assets/scpff/blockstates/containment_case_bottom.json
-2cc56d37de472faa57f9bde43ca924fb9ae27b22 assets/scpff/blockstates/desklamp.json
 d793fa8a0cce7dc5a9fda42cd83ae7fe28cb8934 assets/scpff/blockstates/electricalbox.json
 97ad5cc64dd09cf03505021656cf0161cc849425 assets/scpff/blockstates/euclidlabel.json
 14ace3db823126e33310d8f33e9dcb84b84998f9 assets/scpff/blockstates/facilitylight.json
@@ -34,7 +32,6 @@ a27702f00ec6d602262a63a90e3b2cfbd89e9efb assets/scpff/blockstates/reinforcediron
 6f67592028fe8eb05d4a4144fce05b6bf70fb030 assets/scpff/blockstates/tiles.json
 a9975417403192260572e6575a85bb98f6ae7a0d assets/scpff/blockstates/tile_slab.json
 233733178ea9ff1d884bd8249514984d907a3d48 assets/scpff/blockstates/tile_stairs.json
-0261eb8173116fb63f2d9a6ce33b93794a2329d4 assets/scpff/blockstates/ventblock.json
 24aae8a231c716c4d6abcb65c33f8b6c585da263 assets/scpff/blockstates/whiteconcreteslab.json
 440428fb0119fa9e91774a9b7ba4f26964f257eb assets/scpff/blockstates/whiteconcretestairs.json
 598ac3c7b578138523045ed7ea7a20ed7a12c3a7 assets/scpff/models/block/cautionline.json
@@ -69,7 +66,6 @@ f7785ba410cadedc49e64ab184fdc2cf5e9d5b17 assets/scpff/models/block/hcwall_stairs
 5afa71392c694e53e2ac88c1dc0196e38d5bc26f assets/scpff/models/block/tile_stairs.json
 5a0c69b9cae69900fdcb823713ddb36a46637b6f assets/scpff/models/block/tile_stairs_inner.json
 c4b747df3d19a1e5b487f0264cef35e0c3d6d650 assets/scpff/models/block/tile_stairs_outer.json
-404e4092902583593164976323aa8b9c353853b5 assets/scpff/models/block/ventblock.json
 43f61a5b1e582b7939c67ca2f0b3e6f5aca7bf72 assets/scpff/models/block/whiteconcreteslab.json
 0c3a2f41601c4043d161251c8b7316d588226fa3 assets/scpff/models/block/whiteconcreteslab_top.json
 09bc090ca9cbfe4b99724a3698743194b7941d5a assets/scpff/models/block/whiteconcretestairs.json
@@ -84,10 +80,8 @@ b93e89427d1761dc93277e9e77271862370d5c04 assets/scpff/models/item/bulletinboard.
 07399d4dd8425fe644d4b39b535349b6e1c4607f assets/scpff/models/item/cautionline_slab.json
 50ab1279c6c6d54285c5bba7f2c556aba7a6b12d assets/scpff/models/item/cautionline_stairs.json
 0f2d910de9c24df4cb6e2518356e296404264e57 assets/scpff/models/item/chair.json
-03d3c58b61eee93628a1701959a54ea2d76ead2b assets/scpff/models/item/computer.json
 64eb668dda84653340b2a55ddf7882a7d52439cc assets/scpff/models/item/containment_case.json
 d01ae41e86b8b90c9b667231633798ec6827badb assets/scpff/models/item/containment_case_bottom.json
-e97f119ac80471e0c914f55443849850d4422a09 assets/scpff/models/item/desklamp.json
 e46b7753ab65269472fc723a5f8e2fea9a8d20f1 assets/scpff/models/item/electricalbox.json
 80769712f34a549225eb6ceab222635539674fbd assets/scpff/models/item/euclidlabel.json
 d999fb362429cee4a623da40b8af9ffa3dc9dd11 assets/scpff/models/item/facilitylight.json
@@ -110,6 +104,5 @@ dc103da0434317d2414931637e2063f32e487449 assets/scpff/models/item/scp106corrosio
 7367e68a76c19b300a0186c90aea381b0e6ce9a6 assets/scpff/models/item/tiles.json
 73e3226aef39264f4821134b69d87f0087c3431b assets/scpff/models/item/tile_slab.json
 0c7088a704b5a3cb9cc33e551f8de1d4a1751711 assets/scpff/models/item/tile_stairs.json
-6b9466fa9711fec8d3b26efb2ae4d0853c5360a0 assets/scpff/models/item/ventblock.json
 519f70ca5c5b6ef9dc0730676735328e9c399519 assets/scpff/models/item/whiteconcreteslab.json
 2ed523816e32f7d21f5a22beeb558d9311024216 assets/scpff/models/item/whiteconcretestairs.json

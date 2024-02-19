@@ -11,6 +11,7 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -75,6 +76,7 @@ public class SCP173 extends Monster implements GeoEntity, SCP {
     public static AttributeSupplier.Builder createAttributes() {
         return Monster.createMonsterAttributes()
                 .add(Attributes.MOVEMENT_SPEED, 0.5)
+                .add(Attributes.KNOCKBACK_RESISTANCE, 100.0f)
                 .add(Attributes.ATTACK_DAMAGE, 100.0f)
                 .add(Attributes.ATTACK_SPEED, 1.0f)
                 .add(Attributes.MAX_HEALTH, 37.0D);
@@ -179,7 +181,7 @@ public class SCP173 extends Monster implements GeoEntity, SCP {
     }
 
     public int blinkDuration() {
-        return 15;
+        return 10;
     }
 
     @Override
@@ -219,10 +221,14 @@ public class SCP173 extends Monster implements GeoEntity, SCP {
         }
     }
 
-    @Override
+    /*@Override
     public boolean hurt(DamageSource pSource, float pAmount) {
-        return super.hurt(pSource, pAmount);
-    }
+        return pSource.is(DamageTypes.IN_WALL)
+                || pSource.is(DamageTypes.LAVA)
+                || pSource.is(DamageTypes.EXPLOSION)
+                || pSource.is(DamageTypes.CACTUS)
+                || pSource.is(DamageTypes.FREEZE) && super.hurt(pSource, pAmount);
+    }*/
 
     @Override
     public boolean canCollideWith(Entity pEntity) {

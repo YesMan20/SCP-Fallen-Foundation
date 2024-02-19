@@ -10,7 +10,7 @@ import net.yesman.scpff.SCPFf;
 import net.yesman.scpff.level.entity.FFEntitiesRegistry;
 import net.yesman.scpff.level.item.custom.*;
         import net.yesman.scpff.level.item.scps.*;
-        import net.yesman.scpff.server.item.custom.SodaItem;
+        import net.yesman.scpff.level.item.custom.SodaItem;
 
 public class FFItemsRegistry {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, SCPFf.MOD_ID);
