@@ -109,8 +109,8 @@ public class FFCreativeTabRegistry {
                 output.accept(FFBlocksRegistry.INTERCOMSPEAKER.get());
                 output.accept(FFBlocksRegistry.FIREEXTINGUISHERCASE.get());
                 output.accept(FFBlocksRegistry.ELECTRICALBOX.get());
-                output.accept(FFBlocksRegistry.VENDINGMACHINE.get());
-                output.accept(FFBlocksRegistry.VENDINGMACHINETWO.get());
+                output.accept(FFBlocksRegistry.VENDINGMACHINERED.get());
+                output.accept(FFBlocksRegistry.VENDINGMACHINEBLU.get());
                 output.accept(FFBlocksRegistry.SAFELABEL.get());
                 output.accept(FFBlocksRegistry.EUCLIDLABEL.get());
                 output.accept(FFBlocksRegistry.KETERLABEL.get());
@@ -153,6 +153,12 @@ public class FFCreativeTabRegistry {
                 output.accept(FFItemsRegistry.CANDY2.get());
                 output.accept(FFItemsRegistry.CANDY3.get());
                 output.accept(FFItemsRegistry.CANDY4.get());
+                output.accept(FFItemsRegistry.MOUNTDELICIOUS.get());
+                output.accept(FFItemsRegistry.PEBIS.get());
+                output.accept(FFItemsRegistry.SPRINT.get());
+                output.accept(FFItemsRegistry.FANTACY.get());
+                output.accept(FFItemsRegistry.BONK_ATOMIC_PUNCH_RED.get());
+                output.accept(FFItemsRegistry.BONK_ATOMIC_PUNCH_BLU.get());
                 output.accept(FFItemsRegistry.MOP.get());
                 output.accept(FFItemsRegistry.SLEDGEHAMMER.get());
                 output.accept(FFItemsRegistry.MEDKIT.get());

@@ -106,6 +106,13 @@ public class FFItemsRegistry {
     public static final RegistryObject<Item> MOUNTDELICIOUS = ITEMS.register("mountdelicious", () -> new SodaItem(new Item.Properties()
             .stacksTo(3).food(FFFoodsRegistry.SODA)));
 
+    public static final RegistryObject<Item> BONK_ATOMIC_PUNCH_RED = ITEMS.register("bonk_atomic_punch_red", () -> new SodaItem(new Item.Properties()
+            .stacksTo(3).food(FFFoodsRegistry.SODA)));
+
+    public static final RegistryObject<Item> BONK_ATOMIC_PUNCH_BLU = ITEMS.register("bonk_atomic_punch_blu", () -> new SodaItem(new Item.Properties()
+            .stacksTo(3).food(FFFoodsRegistry.SODA)));
+
+
     /** SCP Spawn Eggs **/
 
     public static final RegistryObject<Item> SCP_049_SPAWN_EGG = ITEMS.register("scp_049_spawn_egg", () -> new ForgeSpawnEggItem(FFEntitiesRegistry.SCP_049, 3289650, 1820927, new Item.Properties()));

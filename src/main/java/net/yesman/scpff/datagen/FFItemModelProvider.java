@@ -40,6 +40,8 @@ public class FFItemModelProvider extends ItemModelProvider {
         simpleItem(FFItemsRegistry.SPRINT);
         simpleItem(FFItemsRegistry.PEBIS);
         simpleItem(FFItemsRegistry.MOUNTDELICIOUS);
+        simpleItem(FFItemsRegistry.BONK_ATOMIC_PUNCH_RED);
+        simpleItem(FFItemsRegistry.BONK_ATOMIC_PUNCH_BLU);
         simpleItem(FFItemsRegistry.MEDKIT);
         simpleItem(FFItemsRegistry.SCP500PILLBOTTLE);
         simpleItem(FFItemsRegistry.SCP939SPINE);

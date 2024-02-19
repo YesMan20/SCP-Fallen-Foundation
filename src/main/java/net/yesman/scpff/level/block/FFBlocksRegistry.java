@@ -225,10 +225,10 @@ public class FFBlocksRegistry {
             new HorizontalDecorationBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).requiresCorrectToolForDrops().strength(6f).noOcclusion(),
                     FFBlockShapes.ELECTRICAL_BOX_S, FFBlockShapes.ELECTRICAL_BOX_N, FFBlockShapes.ELECTRICAL_BOX_E, FFBlockShapes.ELECTRICAL_BOX_W));
 
-    public static final RegistryObject<Block> VENDINGMACHINE = registerBlock("vendingmachine", () ->
+    public static final RegistryObject<Block> VENDINGMACHINERED = registerBlock("vendingmachinered", () ->
             new VendingMachineBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).requiresCorrectToolForDrops().lightLevel(s -> 4).strength(6F).noOcclusion()));
 
-    public static final RegistryObject<Block> VENDINGMACHINETWO = registerBlock("vendingmachine2", () ->
+    public static final RegistryObject<Block> VENDINGMACHINEBLU = registerBlock("vendingmachineblu", () ->
             new VendingMachineBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).requiresCorrectToolForDrops().lightLevel(s -> 4).strength(6F).noOcclusion()));
 
     public static final RegistryObject<Block> BULLETINBOARD = registerBlock("bulletinboard", () ->

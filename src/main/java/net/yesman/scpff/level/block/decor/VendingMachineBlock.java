@@ -2,6 +2,8 @@ package net.yesman.scpff.level.block.decor;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
@@ -26,6 +28,7 @@ import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.yesman.scpff.SCPFf;
@@ -59,6 +62,7 @@ public class VendingMachineBlock extends HorizontalDirectionalBlock {
         if (player.getItemInHand(InteractionHand.MAIN_HAND).is(Items.IRON_NUGGET) && !player.getCooldowns().isOnCooldown(Items.IRON_NUGGET)) {
             player.getCooldowns().addCooldown(Items.IRON_NUGGET, 40);
             Item item = soda.get(RandomSource.create().nextInt(soda.size()));
+            level.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.PISTON_EXTEND, SoundSource.BLOCKS, 1.0F, 0.9F);
             level.addFreshEntity(new ItemEntity(level, pos.getX() + 0.5F, pos.getY() + 0.2F, pos.getZ() + 1.2F, new ItemStack(item)));
             return InteractionResult.SUCCESS;
         }
@@ -88,12 +92,14 @@ public class VendingMachineBlock extends HorizontalDirectionalBlock {
         pLevel.setBlock(pPos.above(), pState.setValue(HALF, DoubleBlockHalf.UPPER), 3);
     }
 
-    private static final VoxelShape SHAPE =
-            Block.box(0, 0, 0, 16, 16, 16);
-
     @Override
-    public VoxelShape getShape(BlockState p_60555_, BlockGetter p_60556_, BlockPos p_60557_, CollisionContext p_60558_) {
-        return SHAPE;
+    public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+        return switch (state.getValue(FACING)) {
+            default -> Block.box(0.5, 0, 1, 15.5, 16, 13);
+            case NORTH -> Block.box(0.5, 0, 3, 15.5, 16, 15);
+            case EAST -> Block.box(1, 0, 0.5, 13, 16, 15.5);
+            case WEST -> Block.box(3, 0, 0.5, 15, 16, 15.5);
+        };
     }
 
     public BlockState updateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pFacingPos) {
