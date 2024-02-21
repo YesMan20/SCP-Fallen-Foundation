@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "scpff:block/brickwall3",
+    "side": "scpff:block/brickwall2",
+    "top": "scpff:block/brickwall3"
+  }
+}

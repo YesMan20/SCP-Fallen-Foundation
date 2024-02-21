@@ -21,7 +21,7 @@ public class FFCreativeTabRegistry {
     }
 
     public static final RegistryObject<CreativeModeTab> SCP_SPAWN_EGGS = CREATIVE_TABS.register("scpff_scps", () -> CreativeModeTab.builder()
-            .title(Component.translatable("creativemodetab.scpff_scps"))
+            .title(Component.translatable("itemGroup.scpff_scps"))
             .icon(() -> new ItemStack(FFItemsRegistry.SCPICON.get()))
             .displayItems((parameters, output) -> {
                 output.accept(FFBlocksRegistry.SCP106CORROSION.get());
@@ -46,7 +46,7 @@ public class FFCreativeTabRegistry {
             }).build());
 
     public static final RegistryObject<CreativeModeTab> SCP_BLOCKS = CREATIVE_TABS.register("scpff_blocks", () -> CreativeModeTab.builder()
-            .title(Component.translatable("creativemodetab.scpff_blocks"))
+            .title(Component.translatable("itemGroup.scpff_blocks"))
             .icon(() -> new ItemStack(FFItemsRegistry.BLOCKICON.get()))
             .displayItems((parameters, output) -> {
                 output.accept(FFBlocksRegistry.BRICKWALL1.get());
@@ -121,7 +121,7 @@ public class FFCreativeTabRegistry {
             }).build());
 
     public static final RegistryObject<CreativeModeTab> SCP_ARMOR = CREATIVE_TABS.register("scpff_armory", () -> CreativeModeTab.builder()
-            .title(Component.translatable("creativemodetab.scpff_armory"))
+            .title(Component.translatable("itemGroup.scpff_armory"))
             .icon(() -> new ItemStack(FFItemsRegistry.ARMORYICON.get()))
             .displayItems((parameters, output) -> {
                 output.accept(FFItemsRegistry.DCLASS_ARMOR_BOOTS.get());
@@ -141,7 +141,7 @@ public class FFCreativeTabRegistry {
             }).build());
 
     public static final RegistryObject<CreativeModeTab> SCP_ITEMS = CREATIVE_TABS.register("scpff_items", () -> CreativeModeTab.builder()
-            .title(Component.translatable("creativemodetab.scpff_items"))
+            .title(Component.translatable("itemGroup.scpff_items"))
             .icon(() -> new ItemStack(FFItemsRegistry.ITEMICON.get()))
             .displayItems((parameters, output) -> {
                 output.accept(FFItemsRegistry.KEYCARD1.get());

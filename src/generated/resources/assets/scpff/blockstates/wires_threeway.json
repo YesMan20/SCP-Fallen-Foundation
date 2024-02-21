@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "scpff:block/wires_threeway",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "scpff:block/wires_threeway"
+    },
+    "facing=south": {
+      "model": "scpff:block/wires_threeway",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "scpff:block/wires_threeway",
+      "y": 270
+    }
+  }
+}

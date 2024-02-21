@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "scpff:block/paper",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "scpff:block/paper"
+    },
+    "facing=south": {
+      "model": "scpff:block/paper",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "scpff:block/paper",
+      "y": 270
+    }
+  }
+}

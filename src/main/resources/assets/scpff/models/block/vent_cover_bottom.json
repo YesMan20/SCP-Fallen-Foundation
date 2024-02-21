@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/template_orientable_trapdoor_bottom",
-  "textures": {
-    "texture": "scpff:block/vent_cover"
-  },
-  "render_type": "minecraft:cutout"
-}

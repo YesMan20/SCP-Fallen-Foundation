@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "scpff:block/mirror",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "scpff:block/mirror"
+    },
+    "facing=south": {
+      "model": "scpff:block/mirror",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "scpff:block/mirror",
+      "y": 270
+    }
+  }
+}

@@ -3,11 +3,13 @@ package net.yesman.scpff.datagen;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 import net.yesman.scpff.SCPFf;
+import net.yesman.scpff.level.block.FFBlocksRegistry;
 import net.yesman.scpff.level.item.FFItemsRegistry;
 
 public class FFItemModelProvider extends ItemModelProvider {
@@ -36,12 +38,6 @@ public class FFItemModelProvider extends ItemModelProvider {
         simpleItem(FFItemsRegistry.CANDY2);
         simpleItem(FFItemsRegistry.CANDY3);
         simpleItem(FFItemsRegistry.CANDY4);
-        simpleItem(FFItemsRegistry.FANTACY);
-        simpleItem(FFItemsRegistry.SPRINT);
-        simpleItem(FFItemsRegistry.PEBIS);
-        simpleItem(FFItemsRegistry.MOUNTDELICIOUS);
-        simpleItem(FFItemsRegistry.BONK_ATOMIC_PUNCH_RED);
-        simpleItem(FFItemsRegistry.BONK_ATOMIC_PUNCH_BLU);
         simpleItem(FFItemsRegistry.MEDKIT);
         simpleItem(FFItemsRegistry.SCP500PILLBOTTLE);
         simpleItem(FFItemsRegistry.SCP939SPINE);
@@ -58,6 +54,12 @@ public class FFItemModelProvider extends ItemModelProvider {
         simpleItem(FFItemsRegistry.NTF_ARMOR_HELMET);
         simpleItem(FFItemsRegistry.NTF_ARMOR_CHESTPLATE);
         simpleItem(FFItemsRegistry.NTF_ARMOR_LEGGINGS);
+        simpleItem(FFItemsRegistry.FANTACY);
+        simpleItem(FFItemsRegistry.SPRINT);
+        simpleItem(FFItemsRegistry.PEBIS);
+        simpleItem(FFItemsRegistry.MOUNTDELICIOUS);
+        simpleItem(FFItemsRegistry.BONK_ATOMIC_PUNCH_RED);
+        simpleItem(FFItemsRegistry.BONK_ATOMIC_PUNCH_BLU);
 
         simpleItem(FFItemsRegistry.SCP1023ARC, true);
         simpleItem(FFItemsRegistry.MOP, true);
@@ -73,7 +75,14 @@ public class FFItemModelProvider extends ItemModelProvider {
         spawnEggItem(FFItemsRegistry.SCP_939_SPAWN_EGG);
         spawnEggItem(FFItemsRegistry.SCP_1507_SPAWN_EGG);
 
-        simpleItemWithTexture(FFItemsRegistry.NTF_ARMOR_BOOTS, "guard_boots");
+        simpleItemWithTexture(FFItemsRegistry.NTF_ARMOR_BOOTS, new ResourceLocation(SCPFf.MOD_ID, "item/guard_boots"));
+
+        blockItem(FFBlocksRegistry.COMPUTER);
+        blockItem(FFBlocksRegistry.DESKLAMP);
+
+        blockItemWithTexture(FFBlocksRegistry.METALDOOR, new ResourceLocation(SCPFf.MOD_ID, "item/metaldoor"));
+
+        trapDoorBlockItem(FFBlocksRegistry.VENT_COVER);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
@@ -88,7 +97,19 @@ public class FFItemModelProvider extends ItemModelProvider {
         return withExistingParent(item.getId().getPath(), new ResourceLocation("item/template_spawn_egg"));
     }
 
-    private ItemModelBuilder simpleItemWithTexture(RegistryObject<Item> item, String texture) {
-        return withExistingParent(item.getId().getPath(), new ResourceLocation("item/generated")).texture("layer0", new ResourceLocation(SCPFf.MOD_ID,"item/" + texture));
+    private ItemModelBuilder simpleItemWithTexture(RegistryObject<Item> item, ResourceLocation texture) {
+        return withExistingParent(item.getId().getPath(), new ResourceLocation("item/generated")).texture("layer0", texture);
+    }
+
+    private ItemModelBuilder blockItem(RegistryObject<Block> block) {
+        return withExistingParent(block.getId().getPath(), new ResourceLocation(SCPFf.MOD_ID, "block/" + block.getId().getPath()));
+    }
+
+    private ItemModelBuilder blockItemWithTexture(RegistryObject<Block> block, ResourceLocation texture) {
+        return withExistingParent(block.getId().getPath(), new ResourceLocation("item/generated")).texture("layer0", texture);
+    }
+
+    private ItemModelBuilder trapDoorBlockItem(RegistryObject<Block> block) {
+        return withExistingParent(block.getId().getPath(), new ResourceLocation(SCPFf.MOD_ID, "block/" + block.getId().getPath() + "_bottom"));
     }
 }
