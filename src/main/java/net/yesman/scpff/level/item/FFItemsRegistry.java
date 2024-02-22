@@ -123,7 +123,7 @@ public class FFItemsRegistry {
 
     public static final RegistryObject<Item> SCP_131_SPAWN_EGG = ITEMS.register("scp_131_spawn_egg", () -> new ForgeSpawnEggItem(FFEntitiesRegistry.SCP_131, 12669494, 56575, new Item.Properties()));
 
-    public static final RegistryObject<Item> SCP_173_SPAWN_EGG = ITEMS.register("scp_173_spawn_egg", () -> new ForgeSpawnEggItem(FFEntitiesRegistry.SCP_173, 15385721, 16721446, new Item.Properties()));
+    public static final RegistryObject<Item> SCP_173_SPAWN_EGG = ITEMS.register("scp_173_spawn_egg", () -> new ForgeSpawnEggItem(FFEntitiesRegistry.SCP_173, 7700852, 16721446, new Item.Properties()));
 
     public static final RegistryObject<Item> SCP_650_SPAWN_EGG = ITEMS.register("scp_650_spawn_egg", () -> new ForgeSpawnEggItem(FFEntitiesRegistry.SCP_650, 0, 1710618, new Item.Properties()));
 

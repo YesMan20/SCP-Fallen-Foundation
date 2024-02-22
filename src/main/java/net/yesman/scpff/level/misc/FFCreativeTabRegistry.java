@@ -63,6 +63,9 @@ public class FFCreativeTabRegistry {
                 output.accept(FFBlocksRegistry.HCFLOOR.get());
                 output.accept(FFBlocksRegistry.HCFLOOR_STAIRS.get());
                 output.accept(FFBlocksRegistry.HCFLOOR_SLAB.get());
+                output.accept(FFBlocksRegistry.TILE.get());
+                output.accept(FFBlocksRegistry.BIG_TILE_STAIRS.get());
+                output.accept(FFBlocksRegistry.BIG_TILE_SLAB.get());
                 output.accept(FFBlocksRegistry.TILES.get());
                 output.accept(FFBlocksRegistry.TILE_STAIRS.get());
                 output.accept(FFBlocksRegistry.TILE_SLAB.get());

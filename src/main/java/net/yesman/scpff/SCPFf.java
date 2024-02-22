@@ -16,6 +16,7 @@ import net.yesman.scpff.level.entity.FFEntitiesRegistry;
 import net.yesman.scpff.level.item.FFItemsRegistry;
 import net.yesman.scpff.level.misc.FFPaintingsRegistry;
 import net.yesman.scpff.level.entity.init.EntityInit;
+import net.yesman.scpff.level.misc.FFParticlesRegistry;
 import net.yesman.scpff.networking.ModMessages;
 import net.yesman.scpff.level.misc.FFCreativeTabRegistry;
 import net.yesman.scpff.level.misc.FFSoundsRegistry;
@@ -31,6 +32,7 @@ public class SCPFf {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         FFItemsRegistry.register(modEventBus);
+        FFParticlesRegistry.register(modEventBus);
         FFBlocksRegistry.register(modEventBus);
         FFPaintingsRegistry.register(modEventBus);
         FFBlockEntitiesRegistry.register(modEventBus);

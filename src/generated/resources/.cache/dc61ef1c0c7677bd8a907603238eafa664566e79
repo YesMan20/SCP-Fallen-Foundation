@@ -1,5 +1,7 @@
-// 1.20.1	2024-02-21T15:18:11.8959896	Block States: scpff
+// 1.20.1	2024-02-22T12:40:57.0833792	Block States: scpff
 765b5b0aaf4531e0b2d246269fd33d4f7d5c5788 assets/scpff/blockstates/beakers.json
+25b5091c9f419c86760288bdfa595e26dc5e35eb assets/scpff/blockstates/big_tile_slab.json
+25411a73bdd51ab05a5ef0f1032c7dee726cbf2b assets/scpff/blockstates/big_tile_stairs.json
 9460abad49a0c0a0a722e5df9f5096f16587fd17 assets/scpff/blockstates/brickwall1.json
 1af40b54b5f038d7b3bde458389778e719e16c15 assets/scpff/blockstates/brickwall2.json
 26e9141fbbdafe5472a6ffa22f23340c6bf73f95 assets/scpff/blockstates/brickwall3.json
@@ -52,8 +54,8 @@ e0c24dc144eac856dc079be5c779b96a2499ea02 assets/scpff/blockstates/safelabel.json
 d55b87fedf56d9e7dcebfd96205940036af290ae assets/scpff/blockstates/scp106corrosionlayer.json
 871d4f79247f346da1ae9fe44cab9ce6bd663e82 assets/scpff/blockstates/scp173crap.json
 7b9ce016a66f61ebfa44ddfaac82a2fb01a85a0f assets/scpff/blockstates/scp_330.json
-e3e2cf538ba856d494fde8e409cb6ef65051ebbe assets/scpff/blockstates/serversrack.json
 0bf08afafc98bf2aeb4fb5e77d02ceb17f3c5061 assets/scpff/blockstates/testtubes.json
+7554aacd87adddb77d1b4c27b5ad9cba199f6617 assets/scpff/blockstates/tile.json
 6f67592028fe8eb05d4a4144fce05b6bf70fb030 assets/scpff/blockstates/tiles.json
 a9975417403192260572e6575a85bb98f6ae7a0d assets/scpff/blockstates/tile_slab.json
 233733178ea9ff1d884bd8249514984d907a3d48 assets/scpff/blockstates/tile_stairs.json
@@ -70,6 +72,11 @@ ffc6475f6a0bbde3e3f1a40090f70aec0b8b1ef2 assets/scpff/blockstates/whiteconcretes
 1af64dbac423feab38bb932afc69259c97d82fb6 assets/scpff/blockstates/wires_right.json
 9b04ea0ac1c1ce2046043688f639a606145b3ff0 assets/scpff/blockstates/wires_threeway.json
 126f1a4b87ea24030cb1c202d909a4acbd58a966 assets/scpff/blockstates/wires_threeway2.json
+eb092b0ee81b81281b995a79f860133ff81eb722 assets/scpff/models/block/big_tile_slab.json
+d952ab5d6c81b81d9e4451cbe3e0449a6de1a2ed assets/scpff/models/block/big_tile_slab_top.json
+e170f030b0d8994fd9f674ce35b5eee79727a781 assets/scpff/models/block/big_tile_stairs.json
+f8b86c5a7626e96901a296c7e8ff0a7432694616 assets/scpff/models/block/big_tile_stairs_inner.json
+743e1928bec2fbba1000d54ae5212a224e850c3e assets/scpff/models/block/big_tile_stairs_outer.json
 4126480a9a21ffcd4964e0c4b1f3951736c7e0fc assets/scpff/models/block/brickwall1.json
 d6ea2f543be9e0e065e407eaa702e9caa5e1cdef assets/scpff/models/block/brickwall2.json
 12f8f55815dbbb6e487f2a9820aa5ca1a638a3e8 assets/scpff/models/block/brickwall3.json
@@ -115,6 +122,7 @@ e8f3e632f63d4e64d9cfd3420b78111b406fdbdf assets/scpff/models/block/metalwall2.js
 3b85b5277689f857e2a8822897f5f07e69ecb8f8 assets/scpff/models/block/pipecorner.json
 54ff10fb1054149a34ea6ece5c38c6999e5da6dd assets/scpff/models/block/reinforcediron.json
 89475598c45f8d602ed196565fc0a1b4ddd96d35 assets/scpff/models/block/scp106corrosion.json
+141d29a0be5d3fafae62c4ab7c3b144d622d2082 assets/scpff/models/block/tile.json
 2ef35a21448b36272ef4f90d603dd958fdb32859 assets/scpff/models/block/tiles.json
 415f4e6922a27d7a327ae0ca4819c4d007c08672 assets/scpff/models/block/tile_slab.json
 13bf7c170be091f079912aad0006a776c15925b3 assets/scpff/models/block/tile_slab_top.json
@@ -131,6 +139,8 @@ ac73faad5fe38c5ce7154ac8e66ad7c440cd1f4a assets/scpff/models/block/vent_cover_to
 092b83d709370752a4e030b58b54e81d49bcb4e9 assets/scpff/models/block/whiteconcretestairs_inner.json
 d1b83e49f6c525e977f3bb288169dbba02fcd288 assets/scpff/models/block/whiteconcretestairs_outer.json
 7951f528bf5a1394d8bfa26b56f2844acf4dfa97 assets/scpff/models/item/beakers.json
+1128ce00d82698b540ed28ead1e1338c94ac751e assets/scpff/models/item/big_tile_slab.json
+ae3c526858433bd12922930e602b0b2e4573d239 assets/scpff/models/item/big_tile_stairs.json
 54be610ec9cbc5aa95c887617a923dda03abb47e assets/scpff/models/item/brickwall1.json
 f34a3238f024e5c0a59dcb351bfb9cc38c892452 assets/scpff/models/item/brickwall2.json
 d03596bed277aab40dcd5ca2180665f332ad44d1 assets/scpff/models/item/brickwall3.json
@@ -182,8 +192,8 @@ dc103da0434317d2414931637e2063f32e487449 assets/scpff/models/item/scp106corrosio
 975cbbcf9e0c672d5e7cf611b7c952a59f43c677 assets/scpff/models/item/scp106corrosionlayer.json
 a2eb93ff0a1e18511f540637613593020f1afc06 assets/scpff/models/item/scp173crap.json
 7298bcee599800cad8858ee40675d276d8a4cef8 assets/scpff/models/item/scp_330.json
-dbf2b0c419e92609237612249240368d97e5e35a assets/scpff/models/item/serversrack.json
 6f517b89748f2e15448d492e0abc117ad4cab338 assets/scpff/models/item/testtubes.json
+a529f267670b68ba3ec9546d1dc12b538a9a14ee assets/scpff/models/item/tile.json
 7367e68a76c19b300a0186c90aea381b0e6ce9a6 assets/scpff/models/item/tiles.json
 73e3226aef39264f4821134b69d87f0087c3431b assets/scpff/models/item/tile_slab.json
 0c7088a704b5a3cb9cc33e551f8de1d4a1751711 assets/scpff/models/item/tile_stairs.json

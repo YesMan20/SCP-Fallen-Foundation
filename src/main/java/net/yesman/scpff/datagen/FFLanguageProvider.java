@@ -36,6 +36,9 @@ public class FFLanguageProvider extends LanguageProvider {
         addBlock(FFBlocksRegistry.WHITE_CONCRETE_SLAB, "White Concrete Slab");
         addBlock(FFBlocksRegistry.GRAY_CONCRETE_STAIRS, "Gray Concrete Stairs");
         addBlock(FFBlocksRegistry.GRAY_CONCRETE_SLAB, "Gray Concrete Slab");
+        addBlock(FFBlocksRegistry.TILE, "Tile");
+        addBlock(FFBlocksRegistry.BIG_TILE_STAIRS, "Big Tile Stairs");
+        addBlock(FFBlocksRegistry.BIG_TILE_SLAB, "Big Tile Slab");
         addBlock(FFBlocksRegistry.TILES, "Tiles");
         addBlock(FFBlocksRegistry.TILE_STAIRS, "Tiles Stairs");
         addBlock(FFBlocksRegistry.TILE_SLAB, "Tiles Slab");
@@ -55,6 +58,8 @@ public class FFLanguageProvider extends LanguageProvider {
         addBlock(FFBlocksRegistry.TRASHBIN, "Trash Bin");
         addBlock(FFBlocksRegistry.BULLETINBOARD, "Bulletin Board");
         addBlock(FFBlocksRegistry.PIPE, "Pipe");
+        addBlock(FFBlocksRegistry.PIPECORNER, "Pipe Corner");
+        addBlock(FFBlocksRegistry.PIPESIDE, "Pipe Side");
         addBlock(FFBlocksRegistry.DESKLAMP, "Desk Lamp");
         addBlock(FFBlocksRegistry.FACILITYLIGHT, "Facility Light");
         addBlock(FFBlocksRegistry.SAFELABEL, "Safe Label");

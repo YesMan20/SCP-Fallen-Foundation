@@ -24,6 +24,7 @@ public class FFBlockStateProvider extends BlockStateProvider {
         blockWithItem(FFBlocksRegistry.SCP106CORROSION);
         blockWithItem(FFBlocksRegistry.VENTBLOCK);
         blockWithItem(FFBlocksRegistry.TILES);
+        blockWithItem(FFBlocksRegistry.TILE);
         blockWithItem(FFBlocksRegistry.CAUTIONLINE);
         blockWithItem(FFBlocksRegistry.PIPECORNER);
         blockWithItem(FFBlocksRegistry.BRICKWALL1);
@@ -42,6 +43,7 @@ public class FFBlockStateProvider extends BlockStateProvider {
         stairBlock(FFBlocksRegistry.HCFLOOR_STAIRS, FFBlocksRegistry.HCFLOOR);
         stairBlock(FFBlocksRegistry.HCWALL_STAIRS, FFBlocksRegistry.HCWALL);
         stairBlock(FFBlocksRegistry.TILE_STAIRS, FFBlocksRegistry.TILES);
+        stairBlock(FFBlocksRegistry.BIG_TILE_STAIRS, FFBlocksRegistry.TILE);
         stairBlock(FFBlocksRegistry.GRAY_CONCRETE_STAIRS, new ResourceLocation("block/gray_concrete"));
         stairBlock(FFBlocksRegistry.WHITE_CONCRETE_STAIRS, new ResourceLocation("block/gray_concrete"));
 
@@ -49,6 +51,7 @@ public class FFBlockStateProvider extends BlockStateProvider {
         slabBlock(FFBlocksRegistry.HCFLOOR_SLAB, FFBlocksRegistry.HCFLOOR);
         slabBlock(FFBlocksRegistry.HCWALL_SLAB, FFBlocksRegistry.HCWALL);
         slabBlock(FFBlocksRegistry.TILE_SLAB, FFBlocksRegistry.TILES);
+        slabBlock(FFBlocksRegistry.BIG_TILE_SLAB, FFBlocksRegistry.TILE);
         slabBlock(FFBlocksRegistry.GRAY_CONCRETE_SLAB, new ResourceLocation("block/gray_concrete"));
         slabBlock(FFBlocksRegistry.WHITE_CONCRETE_SLAB, new ResourceLocation("block/gray_concrete"));
 
@@ -76,7 +79,6 @@ public class FFBlockStateProvider extends BlockStateProvider {
         horizontalBlockWithItem(FFBlocksRegistry.SAFELABEL);
         horizontalBlockWithItem(FFBlocksRegistry.SCALE);
         horizontalBlockWithItem(FFBlocksRegistry.SCP_330);
-        horizontalBlockWithItem(FFBlocksRegistry.SERVERSRACK);
         horizontalBlockWithItem(FFBlocksRegistry.TESTTUBES);
         horizontalBlockWithItem(FFBlocksRegistry.TRUSSBEAM_FENCE);
         horizontalBlockWithItem(FFBlocksRegistry.WALLLIGHT);

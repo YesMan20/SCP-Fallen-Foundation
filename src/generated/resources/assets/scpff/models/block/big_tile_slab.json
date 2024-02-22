@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "scpff:block/tile",
+    "side": "scpff:block/tile",
+    "top": "scpff:block/tile"
+  }
+}

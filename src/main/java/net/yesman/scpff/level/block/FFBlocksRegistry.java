@@ -14,6 +14,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.yesman.scpff.SCPFf;
+import net.yesman.scpff.level.block.scp.SCP173CrapBlock;
 import net.yesman.scpff.level.item.FFItemsRegistry;
 import net.yesman.scpff.level.block.decor.ContainmentCase;
 import net.yesman.scpff.level.block.decor.*;
@@ -69,6 +70,16 @@ public class FFBlocksRegistry {
             new TooltipBlock(Component.translatable("tooltip.scpff.decorationBlock").withStyle(ChatFormatting.BLUE), BlockBehaviour.Properties.of().explosionResistance(1.8f).strength(1.8f).destroyTime(9f).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> TILES = registerBlock("tiles", () ->
+            new Block(BlockBehaviour.Properties.of().sound(SoundType.DECORATED_POT).strength(10f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> BIG_TILE_SLAB = registerBlock("big_tile_slab", () ->
+            new SlabBlock(BlockBehaviour.Properties.copy(FFBlocksRegistry.TILES.get()).strength(10f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> BIG_TILE_STAIRS = registerBlock("big_tile_stairs", () ->
+            new StairBlock(() -> FFBlocksRegistry.TILES.get().defaultBlockState(), BlockBehaviour.Properties.copy(FFBlocksRegistry.TILES.get()).strength(10f).requiresCorrectToolForDrops()));
+
+
+    public static final RegistryObject<Block> TILE = registerBlock("tile", () ->
             new Block(BlockBehaviour.Properties.of().sound(SoundType.DECORATED_POT).strength(10f).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> TILE_SLAB = registerBlock("tile_slab", () ->
@@ -254,10 +265,10 @@ public class FFBlocksRegistry {
                     FFBlockShapes.TRUSSBEAM_FENCE_S, FFBlockShapes.TRUSSBEAM_FENCE_N, FFBlockShapes.TRUSSBEAM_FENCE_E, FFBlockShapes.TRUSSBEAM_FENCE_W));
 
     public static final RegistryObject<Block> SCP173CRAP = registerBlock("scp173crap", () ->
-            new DecorationBlock(BlockBehaviour.Properties.of().noCollission().sound(SoundType.SLIME_BLOCK).strength(2F).noOcclusion().requiresCorrectToolForDrops(), FFBlockShapes.CARPET));
+            new SCP173CrapBlock(true, BlockBehaviour.Properties.of().pushReaction(PushReaction.DESTROY).sound(SoundType.SLIME_BLOCK).speedFactor(0.2f).strength(2F).noOcclusion().requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> SCP106CORROSIONLAYER = registerBlock("scp106corrosionlayer", () ->
-            new DecorationBlock(BlockBehaviour.Properties.of().noCollission().sound(SoundType.SLIME_BLOCK).strength(2F).noOcclusion().requiresCorrectToolForDrops(), FFBlockShapes.CARPET));
+            new DecorationBlock(BlockBehaviour.Properties.of().pushReaction(PushReaction.DESTROY).noCollission().sound(SoundType.SLIME_BLOCK).strength(2F).noOcclusion().requiresCorrectToolForDrops(), FFBlockShapes.CARPET));
 
     public static final RegistryObject<Block> SCP106CORROSION = registerBlock("scp106corrosion", () ->
             new Block(BlockBehaviour.Properties.of().noCollission().sound(SoundType.SLIME_BLOCK).strength(2F).noOcclusion().speedFactor(0.2f).requiresCorrectToolForDrops()));

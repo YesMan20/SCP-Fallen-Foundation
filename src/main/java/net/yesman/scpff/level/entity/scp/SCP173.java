@@ -165,6 +165,8 @@ public class SCP173 extends Monster implements GeoEntity, SCP {
             int nodeToTP = Mth.lerpInt((float) Math.min(path.getNodeCount(), 25) / 32, 0, 20);
             Node node = path.getNode(nodeToTP);
             this.teleportTo(node.x, node.y, node.z);
+            if (getVariant().equals(Variants.SCP_173F)) {}
+            this.playSound(SoundEvents.GRINDSTONE_USE);
         }
 
     }
