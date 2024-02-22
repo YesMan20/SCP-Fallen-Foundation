@@ -18,6 +18,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.navigation.GroundPathNavigation;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.Node;
@@ -70,7 +71,6 @@ public class SCP173 extends Monster implements GeoEntity, SCP {
     }
 
     protected void addBehaviourGoals() {
-        this.goalSelector.addGoal(0, new FloatGoal(this));
     }
 
     public static AttributeSupplier.Builder createAttributes() {
@@ -82,6 +82,7 @@ public class SCP173 extends Monster implements GeoEntity, SCP {
                 .add(Attributes.MAX_HEALTH, 37.0D);
     }
 
+    @Override
     protected SoundEvent getHurtSound(DamageSource pDamageSource) {
         return SoundEvents.IRON_GOLEM_HURT;
     }
@@ -221,15 +222,6 @@ public class SCP173 extends Monster implements GeoEntity, SCP {
         }
     }
 
-    /*@Override
-    public boolean hurt(DamageSource pSource, float pAmount) {
-        return pSource.is(DamageTypes.IN_WALL)
-                || pSource.is(DamageTypes.LAVA)
-                || pSource.is(DamageTypes.EXPLOSION)
-                || pSource.is(DamageTypes.CACTUS)
-                || pSource.is(DamageTypes.FREEZE) && super.hurt(pSource, pAmount);
-    }*/
-
     @Override
     public boolean canCollideWith(Entity pEntity) {
         return true;
@@ -241,14 +233,12 @@ public class SCP173 extends Monster implements GeoEntity, SCP {
     }
 
     public enum Variants {
+        SCP_173F("scp173f"),
         SCP_173("scp173"),
         SCP_173U("scp173u"),
         SCP_173V("scp173v"),
-        SCP_173Y("scp173y"),
         SCP_173R("scp173r"),
-        SCP_173B("scp173b"),
-        SCP_173FM("scp173fm"),
-        ;
+        SCP_173B("scp173b");
 
         public final String resourceName;
 
@@ -257,4 +247,62 @@ public class SCP173 extends Monster implements GeoEntity, SCP {
         }
 
     }
+
+    /**
+     * damage related stuff
+     */
+
+    @Override
+    public boolean isFreezing() {
+        return false;
+    }
+
+    @Override
+    public boolean fireImmune() {
+        return true;
+    }
+
+    @Override
+    public boolean canFreeze() {
+        return false;
+    }
+
+    @Override
+    public boolean isAffectedByPotions() {
+        return false;
+    }
+
+    @Override
+    protected boolean isAffectedByFluids() {
+        return false;
+    }
+
+    @Override
+    public boolean isPreventingPlayerRest(Player pPlayer) {
+        return true;
+    }
+
+    @Override
+    public boolean causeFallDamage(float pFallDistance, float pMultiplier, DamageSource pSource) {
+        return false;
+    }
+
+    @Override
+    public boolean ignoreExplosion() {
+        return true;
+    }
+
+    @Override
+    public boolean canBeHitByProjectile() {
+        return false;
+    }
+
+    /*@Override
+    public boolean hurt(DamageSource pSource, float pAmount) {
+        return pSource.is(DamageTypes.IN_WALL)
+                || pSource.is(DamageTypes.LAVA)
+                || pSource.is(DamageTypes.EXPLOSION)
+                || pSource.is(DamageTypes.CACTUS)
+                || pSource.is(DamageTypes.FREEZE) && super.hurt(pSource, pAmount);
+    }*/
 }
