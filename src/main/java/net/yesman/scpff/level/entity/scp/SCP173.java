@@ -2,16 +2,24 @@ package net.yesman.scpff.level.entity.scp;
 
 import net.minecraft.commands.arguments.EntityAnchorArgument;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageSources;
 import net.minecraft.world.damagesource.DamageTypes;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -23,6 +31,9 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.Node;
 import net.minecraft.world.level.pathfinder.Path;
+import net.yesman.scpff.level.misc.FFDamageSources;
+import net.yesman.scpff.level.misc.FFDamageTypes;
+import net.yesman.scpff.level.misc.FFSoundsRegistry;
 import net.yesman.scpff.misc.Classification;
 import net.yesman.scpff.misc.Helper;
 import net.yesman.scpff.misc.SCP;
@@ -101,15 +112,17 @@ public class SCP173 extends Monster implements GeoEntity, SCP {
         controller.add(new AnimationController<>(this, "controller", state -> state.setAndContinue(RawAnimation.begin().then("animation." + this.getModel() + ".idle", Animation.LoopType.LOOP))));
     }
 
-
     @Override
     public void tick() {
         super.tick();
         List<ServerPlayer> playersLookingAtMe = new ArrayList<>();
 
+        int pBlinkInt = this.tickCount - this.blink - this.blinkCooldown();
+        float pBlinkPercent = (float) (this.tickCount - this.blink - this.blinkCooldown()) / this.blinkCooldown();
+
         for (Entity entity : this.level().getEntities(this, this.getBoundingBox().inflate(this.blinkRadius()))) {
             if (entity instanceof ServerPlayer player && !player.isCreative()) {
-
+                player.displayClientMessage(Component.literal("Blink: " + pBlinkInt), true);
                 if (Helper.isInAngle(player, this.blockPosition(), 90) && this.hasLineOfSight(player)) {
                     playersLookingAtMe.add(player);
                 }
@@ -119,7 +132,6 @@ public class SCP173 extends Monster implements GeoEntity, SCP {
 
         for (Entity entity : this.level().getEntities(this, this.getBoundingBox().inflate(this.blinkRadius()))) {
             if (entity instanceof ServerPlayer player && !player.isCreative()) {
-
                 if (!playersLookingAtMe.isEmpty()) {
                     if (this.blink + this.blinkCooldown() < this.tickCount) {
                         this.blink = this.tickCount;
@@ -139,8 +151,16 @@ public class SCP173 extends Monster implements GeoEntity, SCP {
 
             }
         }
+    }
 
+    public boolean doHurtTarget(Entity pEntity) {
+        DamageSource scp173 = new FFDamageSources(pEntity.level().registryAccess()).scp173();
+        boolean flag = pEntity.hurt(scp173, (float)((int)this.getAttributeValue(Attributes.ATTACK_DAMAGE)));
+        if (flag) {
+            this.playSound(FFSoundsRegistry.SCP173_KILL.get(), 1.0F, 1.0F);
+        }
 
+        return flag;
     }
 
     public void tryToAttack(LivingEntity enemy, double distToEnemySqr) {
@@ -165,8 +185,10 @@ public class SCP173 extends Monster implements GeoEntity, SCP {
             int nodeToTP = Mth.lerpInt((float) Math.min(path.getNodeCount(), 25) / 32, 0, 20);
             Node node = path.getNode(nodeToTP);
             this.teleportTo(node.x, node.y, node.z);
-            if (getVariant().equals(Variants.SCP_173F)) {}
-            this.playSound(SoundEvents.GRINDSTONE_USE);
+            if (getVariant().equals(Variants.SCP_173)) {
+                this.playSound(FFSoundsRegistry.STINGER.get());
+            }
+            this.playSound(SoundEvents.GRINDSTONE_USE, 0.2F, 1.0F);
         }
 
     }
@@ -250,61 +272,17 @@ public class SCP173 extends Monster implements GeoEntity, SCP {
 
     }
 
-    /**
-     * damage related stuff
-     */
-
-    @Override
-    public boolean isFreezing() {
-        return false;
-    }
-
-    @Override
-    public boolean fireImmune() {
-        return true;
-    }
-
-    @Override
-    public boolean canFreeze() {
-        return false;
-    }
-
-    @Override
-    public boolean isAffectedByPotions() {
-        return false;
-    }
-
-    @Override
-    protected boolean isAffectedByFluids() {
-        return false;
-    }
-
     @Override
     public boolean isPreventingPlayerRest(Player pPlayer) {
         return true;
     }
 
     @Override
-    public boolean causeFallDamage(float pFallDistance, float pMultiplier, DamageSource pSource) {
-        return false;
-    }
-
-    @Override
-    public boolean ignoreExplosion() {
-        return true;
-    }
-
-    @Override
-    public boolean canBeHitByProjectile() {
-        return false;
-    }
-
-    /*@Override
     public boolean hurt(DamageSource pSource, float pAmount) {
-        return pSource.is(DamageTypes.IN_WALL)
-                || pSource.is(DamageTypes.LAVA)
-                || pSource.is(DamageTypes.EXPLOSION)
-                || pSource.is(DamageTypes.CACTUS)
-                || pSource.is(DamageTypes.FREEZE) && super.hurt(pSource, pAmount);
-    }*/
+        return pSource.is(DamageTypes.FELL_OUT_OF_WORLD)
+                || pSource.is(DamageTypes.DRAGON_BREATH)
+                || pSource.is(FFDamageTypes.SLEDGEHAMMER)
+                || pSource.is(DamageTypes.FALLING_ANVIL)
+                || pSource.is(DamageTypes.GENERIC_KILL) && super.hurt(pSource, pAmount);
+    }
 }

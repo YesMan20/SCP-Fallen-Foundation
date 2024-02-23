@@ -178,6 +178,20 @@ public class FFLanguageProvider extends LanguageProvider {
         add("itemGroup.scpff_blocks", "SCP FF - Facility Blocks");
         add("itemGroup.scpff_scps", "SCP FF - SCPs");
         add("itemGroup.scpff_armory", "SCP FF - Combat");
+
+        add("sounds.scpff.locker_open", "Locker opening");
+        add("sounds.scpff.locker_close", "Locker closing");
+        add("sounds.scpff.stinger", "Stinger");
+        add("sounds.scpff.scp173_kill", "Neck breaking");
+        add("sounds.scpff.scp058beating", "Heart beats");
+        add("sounds.scpff.scp131ambient", "Beeping");
+        add("sounds.scpff.scp131hurt", "SCP-131 Hurt");
+        add("sounds.scpff.scp049breathing", "Breathing");
+        add("sounds.scpff.scp106breathing", "Heavy breathing");
+
+        // Death messages
+        add("death.attack.scp173", "%1$s\'s neck was snapped");
+        add("death.attack.scp173.player", "%1$s\'s neck was snapped while fighting %2$s");
     }
 
     private void addPainting(RegistryObject<PaintingVariant> painting, String title, String author) {

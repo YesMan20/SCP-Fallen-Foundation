@@ -18,6 +18,10 @@ public class FFSoundsRegistry {
     public static final RegistryObject<SoundEvent> SCP131AMBIENT = registerSoundEvent("scp131ambient");
     public static final RegistryObject<SoundEvent> SCP131HURT = registerSoundEvent("scp131hurt");
 
+    public static final RegistryObject<SoundEvent> SCP173_KILL = registerSoundEvent("scp173_kill");
+
+    public static final RegistryObject<SoundEvent> STINGER = registerSoundEvent("stinger");
+
     public static final RegistryObject<SoundEvent> LOCKEROPEN = registerSoundEvent("locker_open");
     public static final RegistryObject<SoundEvent> LOCKERCLOSE = registerSoundEvent("locker_close");
 

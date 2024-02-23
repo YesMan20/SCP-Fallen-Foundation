@@ -5,6 +5,25 @@
       "scpff:locker_open"
     ]
   },
+  "stinger": {
+    "subtitle": "sounds.scpff.stinger",
+    "sounds": [
+      "scpff:stingers/horror0",
+      "scpff:stingers/horror1",
+      "scpff:stingers/horror2",
+      "scpff:stingers/horror3",
+      "scpff:stingers/horror4",
+      "scpff:stingers/horror5"
+    ]
+  },
+  "scp173_kill": {
+    "subtitle": "sounds.scpff.scp173_kill",
+    "sounds": [
+      "scpff:scp173/snap1",
+      "scpff:scp173/snap2",
+      "scpff:scp173/snap3"
+    ]
+  },
   "locker_close": {
     "subtitle": "sounds.scpff.locker_close",
     "sounds": [
