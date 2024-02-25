@@ -22,7 +22,6 @@ public class FFBlockStateProvider extends BlockStateProvider {
         blockWithItem(FFBlocksRegistry.HCWALL);
         blockWithItem(FFBlocksRegistry.REINFORCEDIRON);
         blockWithItem(FFBlocksRegistry.SCP106CORROSION);
-        blockWithItem(FFBlocksRegistry.VENTBLOCK);
         blockWithItem(FFBlocksRegistry.TILES);
         blockWithItem(FFBlocksRegistry.TILE);
         blockWithItem(FFBlocksRegistry.CAUTIONLINE);

@@ -11,6 +11,11 @@ public class FFBlockShapes {
 
     public static final VoxelShape BLOCK = box(0, 0, 0, 16, 16, 16);
 
+    public static final VoxelShape BLOCK_N = box(0, 0, 0, 16, 16, 16);
+    public static final VoxelShape BLOCK_S = box(0, 0, 0, 16, 16, 16);
+    public static final VoxelShape BLOCK_E = box(0, 0, 0, 16, 16, 16);
+    public static final VoxelShape BLOCK_W = box(0, 0, 0, 16, 16, 16);
+
     public static final VoxelShape CAT_WALK_BLOCK = box(0, 14, 0, 16, 16, 16);
     public static final VoxelShape WALL_LIGHT_BLOCK = box(2, 1, 2, 14, 12, 14);
     public static final VoxelShape CARPET = box(0, 0, 0, 16, 1, 16);

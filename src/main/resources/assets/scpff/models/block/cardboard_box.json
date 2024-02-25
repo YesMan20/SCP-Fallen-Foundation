@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "down": "scpff:block/cardboard_down",
+    "up": "scpff:block/cardboard_up",
+    "north": "scpff:block/cardboard_north",
+    "east": "scpff:block/cardboard_east",
+    "south": "scpff:block/cardboard_south",
+    "west": "scpff:block/cardboard_west",
+    "particle": "scpff:block/cardboard_east"
+  }
+}

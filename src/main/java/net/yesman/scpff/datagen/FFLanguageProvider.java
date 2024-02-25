@@ -95,6 +95,7 @@ public class FFLanguageProvider extends LanguageProvider {
         addBlock(FFBlocksRegistry.CONTAINMENT_CASE_BOTTOM, "Containment Case Bottom");
         addBlock(FFBlocksRegistry.SCP_330, "SCP-330");
         addBlock(FFBlocksRegistry.METALDOOR, "Metal Door");
+        addBlock(FFBlocksRegistry.CARDBOARD_BOX, "Cardboard Box");
 
         // Items
         addItem(FFItemsRegistry.SCP207, "SCP-207");

@@ -113,6 +113,10 @@ public class FFBlocksRegistry {
 
     /** Decoration Blocks **/
 
+    public static final RegistryObject<Block> CARDBOARD_BOX = registerBlock("cardboard_box", () ->
+            new VentBlock(BlockBehaviour.Properties.of().sound(SoundType.CORAL_BLOCK).explosionResistance(1.8F).strength(2F).requiresCorrectToolForDrops()));
+
+
     public static final RegistryObject<Block> VENTBLOCK = registerBlock("ventblock", () ->
             new VentBlock(BlockBehaviour.Properties.of().sound(SoundType.BASALT).explosionResistance(1.8F).strength(2F).requiresCorrectToolForDrops()));
 
