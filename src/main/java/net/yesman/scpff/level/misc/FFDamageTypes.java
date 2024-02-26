@@ -8,6 +8,7 @@ import net.yesman.scpff.SCPFf;
 
 public class FFDamageTypes {
     public static final ResourceKey<DamageType> SCP173 = register("scp173");
+    public static final ResourceKey<DamageType> BARBEDWIRE = register("barbedwire");
     public static final ResourceKey<DamageType> SLEDGEHAMMER = register("sledgehammer");
 
     private static ResourceKey<DamageType> register(String name)

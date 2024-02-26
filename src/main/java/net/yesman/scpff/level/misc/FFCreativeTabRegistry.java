@@ -88,6 +88,9 @@ public class FFCreativeTabRegistry {
                 output.accept(FFBlocksRegistry.CAUTIONLINE_STAIRS.get());
                 output.accept(FFBlocksRegistry.CAUTIONLINE_SLAB.get());
                 output.accept(FFBlocksRegistry.SAFETYBARRIER.get());
+                output.accept(FFBlocksRegistry.CONCRETEBARRIER.get());
+                output.accept(FFBlocksRegistry.CHAINLINKFENCE.get());
+                output.accept(FFBlocksRegistry.BARBEDWIRE.get());
                 output.accept(FFBlocksRegistry.VENTBLOCK.get());
                 output.accept(FFBlocksRegistry.VENT_COVER.get());
                 output.accept(FFBlocksRegistry.PIPE.get());

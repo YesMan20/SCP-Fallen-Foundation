@@ -101,6 +101,9 @@ public class FFLanguageProvider extends LanguageProvider {
         addBlock(FFBlocksRegistry.BARREL_BLUE, "Blue Barrel");
         addBlock(FFBlocksRegistry.BARREL_GREEN, "Green Barrel");
         addBlock(FFBlocksRegistry.SAFETYBARRIER, "Safety Barrier");
+        addBlock(FFBlocksRegistry.CONCRETEBARRIER, "Concrete Barrier");
+        addBlock(FFBlocksRegistry.CHAINLINKFENCE, "Chain Link Fence");
+        addBlock(FFBlocksRegistry.BARBEDWIRE, "Barbed Wire Block");
 
         // Items
         addItem(FFItemsRegistry.SCP207, "SCP-207");
@@ -197,8 +200,11 @@ public class FFLanguageProvider extends LanguageProvider {
         add("sounds.scpff.scp106breathing", "Heavy breathing");
 
         // Death messages
-        add("death.attack.scp173", "%1$s\'s neck was snapped");
-        add("death.attack.scp173.player", "%1$s\'s neck was snapped while fighting %2$s");
+        add("death.attack.scp173", "%1$s's neck was snapped");
+        add("death.attack.scp173.player", "%1$s's neck was snapped while fighting %2$s");
+
+        add("death.attack.barbedwire", "%1$s was pricked to death by barbed wire");
+        add("death.attack.barbedwire.player", "%1$s was pricked to death by barbed wire while fighting %2$s");
     }
 
     private void addPainting(RegistryObject<PaintingVariant> painting, String title, String author) {

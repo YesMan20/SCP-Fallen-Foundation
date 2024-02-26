@@ -132,6 +132,16 @@ public class FFBlocksRegistry {
             new DecorationBlock(BlockBehaviour.Properties.of().explosionResistance(1.8F).strength(2F).requiresCorrectToolForDrops(),
                     FFBlockShapes.SAFETYBARRIER));
 
+    public static final RegistryObject<Block> CONCRETEBARRIER = registerBlock("concretebarrier", () ->
+            new HorizontalDecorationBlock(BlockBehaviour.Properties.of().explosionResistance(1.8F).strength(2F).requiresCorrectToolForDrops(),
+                    FFBlockShapes.BARRIER_S, FFBlockShapes.BARRIER_N, FFBlockShapes.BARRIER_E, FFBlockShapes.BARRIER_W));
+
+    public static final RegistryObject<Block> CHAINLINKFENCE = registerBlock("chainlinkfence", () ->
+            new IronBarsBlock(BlockBehaviour.Properties.of().sound(SoundType.CHISELED_BOOKSHELF).explosionResistance(1.8F).strength(2F).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> BARBEDWIRE = registerBlock("barbedwire", () ->
+            new BarbedWireBlock(BlockBehaviour.Properties.of().noCollission().sound(SoundType.CHISELED_BOOKSHELF).explosionResistance(1.8F).strength(2F).requiresCorrectToolForDrops()));
+
     public static final RegistryObject<Block> VENTBLOCK = registerBlock("ventblock", () ->
             new RotateableFullBlock(BlockBehaviour.Properties.of().sound(SoundType.BASALT).explosionResistance(1.8F).strength(2F).requiresCorrectToolForDrops()));
 

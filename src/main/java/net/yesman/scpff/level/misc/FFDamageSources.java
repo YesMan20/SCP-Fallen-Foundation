@@ -14,12 +14,14 @@ public class FFDamageSources {
     private final Registry<DamageType> damageTypes;
 
     private final DamageSource scp173;
+    private final DamageSource barbedwire;
     private final DamageSource sledgehammer;
 
 
     public FFDamageSources(RegistryAccess pRegistry) {
         this.damageTypes = pRegistry.registryOrThrow(Registries.DAMAGE_TYPE);
         this.scp173 = this.source(FFDamageTypes.SCP173);
+        this.barbedwire = this.source(FFDamageTypes.BARBEDWIRE);
         this.sledgehammer = this.source(FFDamageTypes.SLEDGEHAMMER);
     }
 
@@ -37,6 +39,10 @@ public class FFDamageSources {
 
     public DamageSource scp173() {
         return this.scp173;
+    }
+
+    public DamageSource barbedwire() {
+        return this.barbedwire;
     }
 
     public DamageSource sledgehammer() {

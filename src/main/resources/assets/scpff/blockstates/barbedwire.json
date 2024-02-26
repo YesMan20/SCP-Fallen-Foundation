@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "scpff:block/barbedwire"
+    },
+    "facing=east": {
+      "model": "scpff:block/barbedwire",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "scpff:block/barbedwire",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "scpff:block/barbedwire",
+      "y": 270
+    }
+  }
+}

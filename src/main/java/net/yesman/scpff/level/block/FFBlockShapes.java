@@ -127,4 +127,9 @@ public class FFBlockShapes {
     public static final VoxelShape MIRROR_N = Shapes.or(box(0, -1, 15, 16, 17, 16));
     public static final VoxelShape MIRROR_E = Shapes.or(box(0, -1, 0, 1, 17, 16));
     public static final VoxelShape MIRROR_W = Shapes.or(box(15, -1, 0, 16, 17, 16));
+
+    public static final VoxelShape BARRIER_E = Shapes.or(Block.box(3, 0, 0, 13, 4, 16), Block.box(5, 4, 0, 11, 14, 16));
+    public static final VoxelShape BARRIER_N = Shapes.or(Block.box(0, 0, 3, 16, 4, 13), Block.box(0, 4, 5, 16, 14, 11));
+    public static final VoxelShape BARRIER_W = Shapes.or(Block.box(3, 0, 0, 13, 4, 16), Block.box(5, 4, 0, 11, 14, 16));
+    public static final VoxelShape BARRIER_S = Shapes.or(Block.box(0, 0, 3, 16, 4, 13), Block.box(0, 4, 5, 16, 14, 11));
 }
