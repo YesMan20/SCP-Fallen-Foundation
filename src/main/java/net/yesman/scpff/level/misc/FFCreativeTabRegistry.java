@@ -73,6 +73,10 @@ public class FFCreativeTabRegistry {
                 output.accept(FFBlocksRegistry.FACILITYLIGHT.get());
                 output.accept(FFBlocksRegistry.MIRROR.get());
                 output.accept(FFBlocksRegistry.CARDBOARD_BOX.get());
+                output.accept(FFBlocksRegistry.BARREL.get());
+                output.accept(FFBlocksRegistry.BARREL_YELLOW.get());
+                output.accept(FFBlocksRegistry.BARREL_GREEN.get());
+                output.accept(FFBlocksRegistry.BARREL_BLUE.get());
                 output.accept(FFBlocksRegistry.REINFORCEDIRON.get());
                 output.accept(FFBlocksRegistry.WHITE_CONCRETE_STAIRS.get());
                 output.accept(FFBlocksRegistry.WHITE_CONCRETE_SLAB.get());
@@ -83,6 +87,7 @@ public class FFCreativeTabRegistry {
                 output.accept(FFBlocksRegistry.CAUTIONLINE.get());
                 output.accept(FFBlocksRegistry.CAUTIONLINE_STAIRS.get());
                 output.accept(FFBlocksRegistry.CAUTIONLINE_SLAB.get());
+                output.accept(FFBlocksRegistry.SAFETYBARRIER.get());
                 output.accept(FFBlocksRegistry.VENTBLOCK.get());
                 output.accept(FFBlocksRegistry.VENT_COVER.get());
                 output.accept(FFBlocksRegistry.PIPE.get());
@@ -165,6 +170,7 @@ public class FFCreativeTabRegistry {
                 output.accept(FFItemsRegistry.BONK_ATOMIC_PUNCH_BLU.get());
                 output.accept(FFItemsRegistry.MOP.get());
                 output.accept(FFItemsRegistry.SLEDGEHAMMER.get());
+                output.accept(FFItemsRegistry.CROWBAR.get());
                 output.accept(FFItemsRegistry.MEDKIT.get());
                 output.accept(FFItemsRegistry.SCP500PILLBOTTLE.get());
                 output.accept(FFItemsRegistry.SCP939SPINE.get());

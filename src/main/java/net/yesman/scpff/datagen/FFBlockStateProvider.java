@@ -62,8 +62,6 @@ public class FFBlockStateProvider extends BlockStateProvider {
         horizontalBlockWithItem(FFBlocksRegistry.CATWALKFENCE2);
         horizontalBlockWithItem(FFBlocksRegistry.CATWALKSTAIRS);
         horizontalBlockWithItem(FFBlocksRegistry.CHAIR);
-        //horizontalBlockWithItem(FFBlocksRegistry.COMPUTER);
-        //horizontalBlockWithItem(FFBlocksRegistry.DESKLAMP);
         horizontalBlockWithItem(FFBlocksRegistry.FIREEXTINGUISHERCASE);
         horizontalBlockWithItem(FFBlocksRegistry.ELECTRICALBOX);
         horizontalBlockWithItem(FFBlocksRegistry.EUCLIDLABEL);

@@ -77,19 +77,23 @@ public class FFItemsRegistry {
 
     /** Generic Items **/
 
-    public static final RegistryObject<Item> MOP = ITEMS.register("mop", () -> new MopItem(new ShearsItem.Properties().stacksTo(1).durability(64)));
+    public static final RegistryObject<Item> MOP = ITEMS.register("mop", () -> new MopItem(
+            new ShearsItem.Properties().stacksTo(1).durability(64)));
 
     public static final RegistryObject<Item> SLEDGEHAMMER = ITEMS.register("sledgehammer", () -> new SledgeHammerItem(Tiers.IRON, 4, 1f,
             new Item.Properties().durability(100)));
 
-    public static final RegistryObject<Item> MEDKIT = ITEMS.register("medkit", () -> new MedkitItem(new Item.Properties()
-            .stacksTo(15)));
+    public static final RegistryObject<Item> CROWBAR = ITEMS.register("crowbar", () -> new AxeItem(Tiers.IRON, 7, 1.7f,
+            new AxeItem.Properties().durability(110)));
 
-    public static final RegistryObject<Item> SCP500PILLBOTTLE = ITEMS.register("scp500pillbottle", () -> new BundleItem(new Item.Properties()
-            .stacksTo(1)));
+    public static final RegistryObject<Item> MEDKIT = ITEMS.register("medkit", () -> new MedkitItem(
+            new Item.Properties().stacksTo(15)));
 
-    public static final RegistryObject<Item> SCP939SPINE = ITEMS.register("scp939spine", () -> new Item(new Item.Properties()
-            .stacksTo(64)));
+    public static final RegistryObject<Item> SCP500PILLBOTTLE = ITEMS.register("scp500pillbottle", () -> new BundleItem(
+            new Item.Properties().stacksTo(1)));
+
+    public static final RegistryObject<Item> SCP939SPINE = ITEMS.register("scp939spine", () -> new Item(
+            new Item.Properties().stacksTo(64)));
 
     public static final RegistryObject<Item> SCP939DAGGER = ITEMS.register("scp939dagger", () -> new SwordItem(Tiers.WOOD, 5, 1.0f,
             new SwordItem.Properties().durability(110)));

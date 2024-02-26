@@ -16,6 +16,8 @@ public class FFBlockEntitiesRegistry {
 
     public static final RegistryObject<BlockEntityType<FileCabinetBlockEntity>> FILECABINET = register("filecabinet", FFBlocksRegistry.FILECABINET, FileCabinetBlockEntity::new);
 
+    public static final RegistryObject<BlockEntityType<IronBarrelBlockEntity>> IRONBARREL = register("ironbarrel", FFBlocksRegistry.BARREL, IronBarrelBlockEntity::new);
+
     public static final RegistryObject<BlockEntityType<LockerBlockEntity>> LOCKER = register("locker", FFBlocksRegistry.LOCKER, LockerBlockEntity::new);
     public static final RegistryObject<BlockEntityType<ContainmentBlockEntity>> CONTAINMENT_BLOCK = register("containment_block", FFBlocksRegistry.CONTAINMENT_CASE, ContainmentBlockEntity::new);
 

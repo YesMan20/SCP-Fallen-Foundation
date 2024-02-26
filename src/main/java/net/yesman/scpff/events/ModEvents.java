@@ -14,7 +14,6 @@ import net.yesman.scpff.SCPFf;
 import net.yesman.scpff.level.entity.scp.SCP049;
 import net.yesman.scpff.level.item.FFItemsRegistry;
 import net.yesman.scpff.level.misc.FFParticlesRegistry;
-import net.yesman.scpff.level.misc.SCP173SmokeParticles;
 
 @Mod.EventBusSubscriber(modid = SCPFf.MOD_ID)
 public class ModEvents {
@@ -37,9 +36,9 @@ public class ModEvents {
         }
     }
 
-    @SubscribeEvent
-    public static void registerParticleFactories(final RegisterParticleProvidersEvent event) {
-        Minecraft.getInstance().particleEngine.register(FFParticlesRegistry.SCP173SMOKE_PARTICLES.get(),
-                SCP173SmokeParticles.Provider::new);
-    }
+    //@SubscribeEvent
+    //public static void registerParticleFactories(final RegisterParticleProvidersEvent event) {
+        //Minecraft.getInstance().particleEngine.register(FFParticlesRegistry.SCP173SMOKE_PARTICLES.get(),
+                //SCP173SmokeParticles.Provider::new);
+    //}
 }

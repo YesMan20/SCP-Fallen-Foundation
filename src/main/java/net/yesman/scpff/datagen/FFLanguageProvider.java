@@ -96,6 +96,11 @@ public class FFLanguageProvider extends LanguageProvider {
         addBlock(FFBlocksRegistry.SCP_330, "SCP-330");
         addBlock(FFBlocksRegistry.METALDOOR, "Metal Door");
         addBlock(FFBlocksRegistry.CARDBOARD_BOX, "Cardboard Box");
+        addBlock(FFBlocksRegistry.BARREL, "Red Barrel");
+        addBlock(FFBlocksRegistry.BARREL_YELLOW, "Yellow Barrel");
+        addBlock(FFBlocksRegistry.BARREL_BLUE, "Blue Barrel");
+        addBlock(FFBlocksRegistry.BARREL_GREEN, "Green Barrel");
+        addBlock(FFBlocksRegistry.SAFETYBARRIER, "Safety Barrier");
 
         // Items
         addItem(FFItemsRegistry.SCP207, "SCP-207");
@@ -110,6 +115,7 @@ public class FFLanguageProvider extends LanguageProvider {
         addItem(FFItemsRegistry.CANDY4, "Green Candy");
         addItem(FFItemsRegistry.SCP1023ARC, "SCP-1023-ARC - A Telekill Sword");
         addItem(FFItemsRegistry.SLEDGEHAMMER, "Sledgehammer");
+        addItem(FFItemsRegistry.CROWBAR, "Crowbar");
         addItem(FFItemsRegistry.MOP, "Mop");
         addItem(FFItemsRegistry.MEDKIT, "Medical Kit");
         addItem(FFItemsRegistry.SCP500PILLBOTTLE, "Pill Bottle");

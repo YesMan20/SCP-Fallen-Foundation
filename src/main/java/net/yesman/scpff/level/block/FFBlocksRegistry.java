@@ -19,7 +19,7 @@ import net.yesman.scpff.level.item.FFItemsRegistry;
 import net.yesman.scpff.level.block.decor.ContainmentCase;
 import net.yesman.scpff.level.block.decor.*;
 import net.yesman.scpff.level.block.scp.SCP330Block;
-import net.yesman.scpff.level.block.decor.VentBlock;
+import net.yesman.scpff.level.block.decor.RotateableFullBlock;
 
 import java.util.function.Supplier;
 
@@ -114,11 +114,26 @@ public class FFBlocksRegistry {
     /** Decoration Blocks **/
 
     public static final RegistryObject<Block> CARDBOARD_BOX = registerBlock("cardboard_box", () ->
-            new VentBlock(BlockBehaviour.Properties.of().sound(SoundType.CORAL_BLOCK).explosionResistance(1.8F).strength(2F).requiresCorrectToolForDrops()));
+            new RotateableFullBlock(BlockBehaviour.Properties.of().sound(SoundType.SCAFFOLDING).explosionResistance(1.8F).strength(2F).requiresCorrectToolForDrops()));
 
+    public static final RegistryObject<Block> BARREL = registerBlock("barrel", () ->
+            new IronBarrelBlock(BlockBehaviour.Properties.of().sound(SoundType.CHISELED_BOOKSHELF).explosionResistance(1.8F).strength(2F).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> BARREL_YELLOW = registerBlock("barrel_yellow", () ->
+            new IronBarrelBlock(BlockBehaviour.Properties.of().sound(SoundType.CHISELED_BOOKSHELF).explosionResistance(1.8F).strength(2F).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> BARREL_GREEN = registerBlock("barrel_green", () ->
+            new IronBarrelBlock(BlockBehaviour.Properties.of().sound(SoundType.CHISELED_BOOKSHELF).explosionResistance(1.8F).strength(2F).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> BARREL_BLUE = registerBlock("barrel_blue", () ->
+            new IronBarrelBlock(BlockBehaviour.Properties.of().sound(SoundType.CHISELED_BOOKSHELF).explosionResistance(1.8F).strength(2F).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> SAFETYBARRIER = registerBlock("safetybarrier", () ->
+            new DecorationBlock(BlockBehaviour.Properties.of().explosionResistance(1.8F).strength(2F).requiresCorrectToolForDrops(),
+                    FFBlockShapes.SAFETYBARRIER));
 
     public static final RegistryObject<Block> VENTBLOCK = registerBlock("ventblock", () ->
-            new VentBlock(BlockBehaviour.Properties.of().sound(SoundType.BASALT).explosionResistance(1.8F).strength(2F).requiresCorrectToolForDrops()));
+            new RotateableFullBlock(BlockBehaviour.Properties.of().sound(SoundType.BASALT).explosionResistance(1.8F).strength(2F).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> VENT_COVER = registerBlock("vent_cover", () ->
             new TrapDoorBlock(BlockBehaviour.Properties.of().noOcclusion().strength(2F).explosionResistance(1.8F).requiresCorrectToolForDrops(), BlockSetType.OAK));

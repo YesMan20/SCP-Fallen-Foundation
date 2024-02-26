@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "axis=x,open=false": {
+      "model": "scpff:block/barrel_blue_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y,open=false": {
+      "model": "scpff:block/barrel_blue"
+    },
+    "axis=z,open=false": {
+      "model": "scpff:block/barrel_blue_horizontal",
+      "x": 90
+    },
+    "axis=x,open=true": {
+      "model": "scpff:block/barrel_blue_horizontal_open",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y,open=true": {
+      "model": "scpff:block/barrel_blue_open"
+    },
+    "axis=z,open=true": {
+      "model": "scpff:block/barrel_blue_horizontal_open",
+      "x": 90
+    }
+  }
+}

@@ -64,6 +64,7 @@ public class FFItemModelProvider extends ItemModelProvider {
         simpleItem(FFItemsRegistry.SCP1023ARC, true);
         simpleItem(FFItemsRegistry.MOP, true);
         simpleItem(FFItemsRegistry.SLEDGEHAMMER, true);
+        simpleItem(FFItemsRegistry.CROWBAR, true);
         simpleItem(FFItemsRegistry.SCP939DAGGER, true);
 
         spawnEggItem(FFItemsRegistry.SCP_049_SPAWN_EGG);

@@ -1,4 +1,4 @@
-// 1.20.1	2024-02-21T16:16:36.2719655	Item Models: scpff
+// 1.20.1	2024-02-25T19:05:57.8320336	Item Models: scpff
 eb438f68caf0293ee8f2aa0bff8f59c4cbeed325 assets/scpff/models/item/armoryicon.json
 7aafae4bf285cef600753bab4884212322789631 assets/scpff/models/item/blockicon.json
 31c2dbd98ac46d510f6b21bfb4f75d8cf8daf1a5 assets/scpff/models/item/bonk_atomic_punch_blu.json
@@ -8,6 +8,7 @@ b2de946255242fd0932edb50630da0452469db33 assets/scpff/models/item/candy2.json
 1bdc30039e8d99f58da11ff5691fd96c9b4a4165 assets/scpff/models/item/candy3.json
 23c272f2813733250b080d7018fa21a015822daa assets/scpff/models/item/candy4.json
 03d3c58b61eee93628a1701959a54ea2d76ead2b assets/scpff/models/item/computer.json
+de9d40d1e16ce1fe0a6ef8f40b8a44d7eba9b04b assets/scpff/models/item/crowbar.json
 818c129996777a40ce3d488eca799edc6ea15b67 assets/scpff/models/item/dclass_boots.json
 c44c281190f848b748816320535fcbad68b6e62f assets/scpff/models/item/dclass_leggings.json
 80ca5c0c8c2107c9916458c8f42f166779a5ab4c assets/scpff/models/item/dclass_shirt.json
