@@ -1,4 +1,4 @@
-// 1.20.1	2024-02-25T03:06:14.0135584	Block States: scpff
+// 1.20.1	2024-02-26T18:43:29.3783041	Block States: scpff
 765b5b0aaf4531e0b2d246269fd33d4f7d5c5788 assets/scpff/blockstates/beakers.json
 25b5091c9f419c86760288bdfa595e26dc5e35eb assets/scpff/blockstates/big_tile_slab.json
 25411a73bdd51ab05a5ef0f1032c7dee726cbf2b assets/scpff/blockstates/big_tile_stairs.json
@@ -44,6 +44,7 @@ ce3468fdb903d7d696c4469ef3e5ac57f76e1bcb assets/scpff/blockstates/metalwall1.jso
 43e6a394575b33d446b93fe1c5f2c7c458212197 assets/scpff/blockstates/metalwall2.json
 3d48cb8f3e94a80ce975a86ff9171e89ec473b5b assets/scpff/blockstates/microscope.json
 56eb6405f798ded1c3166d3ad27d37d4969d4095 assets/scpff/blockstates/mirror.json
+f7abe01adac80bc85a2c65f40d807f09c619c7e5 assets/scpff/blockstates/officedoor.json
 86b85c0b6a25494551111b3de7509c287a588c8c assets/scpff/blockstates/paper.json
 12d5539a0b8a9a45a2048dc648cfadeeff3db331 assets/scpff/blockstates/paperstack.json
 e32422bb4a5036907c84c3608ac3725b6bda710d assets/scpff/blockstates/pipecorner.json
@@ -118,6 +119,14 @@ d6ef5c42285371e6a62e60c5d7592550ed77b27b assets/scpff/models/block/metaldoor_top
 424dbfc02ede6b04d566d2ea97787c2864d8e54f assets/scpff/models/block/metaldoor_top_right_open.json
 239b2b17b3a608f01fd6714842f594e3742a5305 assets/scpff/models/block/metalwall1.json
 e8f3e632f63d4e64d9cfd3420b78111b406fdbdf assets/scpff/models/block/metalwall2.json
+e87b7533943bb4b39af814e43c86ad2df40e2c9d assets/scpff/models/block/officedoor_bottom_left.json
+1d5680c754c002424aaa5d03ba85e0e27419090b assets/scpff/models/block/officedoor_bottom_left_open.json
+4c0536ac9aeb53562d33e244628bc525fd602631 assets/scpff/models/block/officedoor_bottom_right.json
+9251a4f1afe4be0ca389a6c8f2c1de66e3edad34 assets/scpff/models/block/officedoor_bottom_right_open.json
+bf0c18dd410a1bf9ce22443708acf4d68de26052 assets/scpff/models/block/officedoor_top_left.json
+73d91fed6b75d6a29552a5170d4ea85ea7872212 assets/scpff/models/block/officedoor_top_left_open.json
+1ae8a30dbddda0e2404bf59c1cfeb048738945f1 assets/scpff/models/block/officedoor_top_right.json
+13525768dd9ab3920b300c8f6f772f8912729d66 assets/scpff/models/block/officedoor_top_right_open.json
 3b85b5277689f857e2a8822897f5f07e69ecb8f8 assets/scpff/models/block/pipecorner.json
 54ff10fb1054149a34ea6ece5c38c6999e5da6dd assets/scpff/models/block/reinforcediron.json
 89475598c45f8d602ed196565fc0a1b4ddd96d35 assets/scpff/models/block/scp106corrosion.json

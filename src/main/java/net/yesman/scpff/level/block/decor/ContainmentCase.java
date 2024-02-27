@@ -22,6 +22,8 @@ import net.yesman.scpff.level.block.FFBlockShapes;
 import net.yesman.scpff.level.block.entity.ContainmentBlockEntity;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.stream.Stream;
+
 public class ContainmentCase extends HorizontalDecorationBlock implements EntityBlock {
 
     public ContainmentCase(Properties property) {
@@ -31,10 +33,47 @@ public class ContainmentCase extends HorizontalDecorationBlock implements Entity
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
         return switch (state.getValue(FACING)) {
-            default -> Shapes.join(Block.box(2, 0, 2, 14, 3, 16), Block.box(2, 3, 2, 14, 14, 14), BooleanOp.OR);
-            case NORTH -> Shapes.join(Block.box(2, 0, 0, 14, 3, 14), Block.box(2, 3, 2, 14, 14, 14), BooleanOp.OR);
-            case EAST ->  Shapes.join(Block.box(2, 0, 2, 16, 3, 14), Block.box(2, 3, 2, 14, 14, 14), BooleanOp.OR);
-            case WEST -> Shapes.join(Block.box(0, 0, 2, 14, 3, 14), Block.box(2, 3, 2, 14, 14, 14), BooleanOp.OR);
+            default -> Stream.of(
+                    Block.box(6, 0, 6, 10, 3, 10),
+                    Block.box(2, 0, 12, 14, 2, 16),
+                    Block.box(-3, -1, 11, 2, 2, 13),
+                    Block.box(-3, 0, 9, 2, 3, 11),
+                    Block.box(-3, 1, 7, 2, 4, 9),
+                    Block.box(2, 2, 4, 14, 5, 8),
+                    Block.box(2, 3, 1, 14, 6, 4),
+                    Block.box(2, 1, 8, 14, 4, 12)
+            ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
+            case NORTH ->
+                    Stream.of(
+                            Block.box(6, 0, 6, 10, 3, 10),
+                            Block.box(2, 0, 0, 14, 2, 4),
+                            Block.box(14, -1, 3, 19, 2, 5),
+                            Block.box(14, 0, 5, 19, 3, 7),
+                            Block.box(14, 1, 7, 19, 4, 9),
+                            Block.box(2, 2, 8, 14, 5, 12),
+                            Block.box(2, 3, 12, 14, 6, 15),
+                            Block.box(2, 1, 4, 14, 4, 8)
+                    ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
+            case EAST ->  Stream.of(
+                    Block.box(6, 0, 6, 10, 3, 10),
+                    Block.box(12, 0, 2, 16, 2, 14),
+                    Block.box(11, -1, 14, 13, 2, 19),
+                    Block.box(9, 0, 14, 11, 3, 19),
+                    Block.box(7, 1, 14, 9, 4, 19),
+                    Block.box(4, 2, 2, 8, 5, 14),
+                    Block.box(1, 3, 2, 4, 6, 14),
+                    Block.box(8, 1, 2, 12, 4, 14)
+            ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
+            case WEST -> Stream.of(
+                    Block.box(6, 0, 6, 10, 3, 10),
+                    Block.box(0, 0, 2, 4, 2, 14),
+                    Block.box(3, -1, -3, 5, 2, 2),
+                    Block.box(5, 0, -3, 7, 3, 2),
+                    Block.box(7, 1, -3, 9, 4, 2),
+                    Block.box(8, 2, 2, 12, 5, 14),
+                    Block.box(12, 3, 2, 15, 6, 14),
+                    Block.box(4, 1, 2, 8, 4, 14)
+            ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
         };
     }
 

@@ -63,6 +63,13 @@ public class FFCreativeTabRegistry {
                 output.accept(FFBlocksRegistry.HCFLOOR.get());
                 output.accept(FFBlocksRegistry.HCFLOOR_STAIRS.get());
                 output.accept(FFBlocksRegistry.HCFLOOR_SLAB.get());
+                output.accept(FFBlocksRegistry.SUBLEVEL2FLOOR.get());
+                output.accept(FFBlocksRegistry.SUBLEVEL2WALL_BOTTOM.get());
+                output.accept(FFBlocksRegistry.SUBLEVEL2WALL_MIDDLE.get());
+                output.accept(FFBlocksRegistry.SUBLEVEL2WALL_TOP.get());
+                output.accept(FFBlocksRegistry.SUBLEVEL2WALL_BOTTOM2.get());
+                output.accept(FFBlocksRegistry.SUBLEVEL2WALL_MIDDLE2.get());
+                output.accept(FFBlocksRegistry.SUBLEVEL2WALL_TOP2.get());
                 output.accept(FFBlocksRegistry.TILE.get());
                 output.accept(FFBlocksRegistry.BIG_TILE_STAIRS.get());
                 output.accept(FFBlocksRegistry.BIG_TILE_SLAB.get());
@@ -70,6 +77,7 @@ public class FFCreativeTabRegistry {
                 output.accept(FFBlocksRegistry.TILE_STAIRS.get());
                 output.accept(FFBlocksRegistry.TILE_SLAB.get());
                 output.accept(FFBlocksRegistry.METALDOOR.get());
+                output.accept(FFBlocksRegistry.OFFICEDOOR.get());
                 output.accept(FFBlocksRegistry.FACILITYLIGHT.get());
                 output.accept(FFBlocksRegistry.MIRROR.get());
                 output.accept(FFBlocksRegistry.CARDBOARD_BOX.get());
@@ -77,6 +85,7 @@ public class FFCreativeTabRegistry {
                 output.accept(FFBlocksRegistry.BARREL_YELLOW.get());
                 output.accept(FFBlocksRegistry.BARREL_GREEN.get());
                 output.accept(FFBlocksRegistry.BARREL_BLUE.get());
+                output.accept(FFBlocksRegistry.BARREL_GRAY.get());
                 output.accept(FFBlocksRegistry.REINFORCEDIRON.get());
                 output.accept(FFBlocksRegistry.WHITE_CONCRETE_STAIRS.get());
                 output.accept(FFBlocksRegistry.WHITE_CONCRETE_SLAB.get());

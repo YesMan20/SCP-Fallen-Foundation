@@ -19,22 +19,19 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
-import net.minecraft.world.level.block.state.properties.Property;
+import net.minecraft.world.level.block.state.properties.*;
 import net.minecraft.world.phys.BlockHitResult;
 import net.yesman.scpff.level.block.entity.IronBarrelBlockEntity;
 import org.jetbrains.annotations.Nullable;
 
 
 public class IronBarrelBlock extends BaseEntityBlock {
-    public static final EnumProperty<Direction.Axis> AXIS;
+    public static final DirectionProperty FACING;
     public static final BooleanProperty OPEN;
 
     public IronBarrelBlock(Properties pProperties) {
         super(pProperties);
-        this.registerDefaultState((BlockState)this.defaultBlockState().setValue(AXIS, Direction.Axis.Y).setValue(OPEN, false));
+        this.registerDefaultState((BlockState)((BlockState)((BlockState)this.stateDefinition.any()).setValue(FACING, Direction.NORTH)).setValue(OPEN, false));
     }
 
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
@@ -100,37 +97,20 @@ public class IronBarrelBlock extends BaseEntityBlock {
         return AbstractContainerMenu.getRedstoneSignalFromBlockEntity(pLevel.getBlockEntity(pPos));
     }
 
-    public BlockState rotate(BlockState pState, Rotation pRot) {
-        return rotatePillar(pState, pRot);
-    }
-
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-        pBuilder.add(new Property[]{AXIS, OPEN});
+        pBuilder.add(new Property[]{FACING, OPEN});
     }
 
     public BlockState getStateForPlacement(BlockPlaceContext pContext) {
-        return (BlockState)this.defaultBlockState().setValue(AXIS, pContext.getClickedFace().getAxis());
+        return (BlockState)this.defaultBlockState().setValue(FACING, pContext.getNearestLookingDirection().getOpposite());
     }
 
-    public static BlockState rotatePillar(BlockState pState, Rotation pRotation) {
-        switch (pRotation) {
-            case COUNTERCLOCKWISE_90:
-            case CLOCKWISE_90:
-                switch ((Direction.Axis)pState.getValue(AXIS)) {
-                    case X:
-                        return (BlockState)pState.setValue(AXIS, Direction.Axis.Z);
-                    case Z:
-                        return (BlockState)pState.setValue(AXIS, Direction.Axis.X);
-                    default:
-                        return pState;
-                }
-            default:
-                return pState;
-        }
+    public BlockState rotate(BlockState pState, Rotation pRotation) {
+        return (BlockState)pState.setValue(FACING, pRotation.rotate((Direction)pState.getValue(FACING)));
     }
 
     static {
-        AXIS = BlockStateProperties.AXIS;
+        FACING = BlockStateProperties.FACING;
         OPEN = BlockStateProperties.OPEN;
     }
 

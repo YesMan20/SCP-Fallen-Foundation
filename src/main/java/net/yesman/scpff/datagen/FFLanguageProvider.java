@@ -95,15 +95,24 @@ public class FFLanguageProvider extends LanguageProvider {
         addBlock(FFBlocksRegistry.CONTAINMENT_CASE_BOTTOM, "Containment Case Bottom");
         addBlock(FFBlocksRegistry.SCP_330, "SCP-330");
         addBlock(FFBlocksRegistry.METALDOOR, "Metal Door");
+        addBlock(FFBlocksRegistry.OFFICEDOOR, "Office Door");
         addBlock(FFBlocksRegistry.CARDBOARD_BOX, "Cardboard Box");
         addBlock(FFBlocksRegistry.BARREL, "Red Barrel");
         addBlock(FFBlocksRegistry.BARREL_YELLOW, "Yellow Barrel");
         addBlock(FFBlocksRegistry.BARREL_BLUE, "Blue Barrel");
         addBlock(FFBlocksRegistry.BARREL_GREEN, "Green Barrel");
+        addBlock(FFBlocksRegistry.BARREL_GRAY, "Gray Barrel");
         addBlock(FFBlocksRegistry.SAFETYBARRIER, "Safety Barrier");
         addBlock(FFBlocksRegistry.CONCRETEBARRIER, "Concrete Barrier");
         addBlock(FFBlocksRegistry.CHAINLINKFENCE, "Chain Link Fence");
         addBlock(FFBlocksRegistry.BARBEDWIRE, "Barbed Wire Block");
+        addBlock(FFBlocksRegistry.SUBLEVEL2FLOOR, "Sub Level 2 Floor");
+        addBlock(FFBlocksRegistry.SUBLEVEL2WALL_BOTTOM, "Sub Level 2 Wall Bottom");
+        addBlock(FFBlocksRegistry.SUBLEVEL2WALL_MIDDLE, "Sub Level 2 Wall Middle");
+        addBlock(FFBlocksRegistry.SUBLEVEL2WALL_TOP, "Sub Level 2 Wall Top");
+        addBlock(FFBlocksRegistry.SUBLEVEL2WALL_BOTTOM2, "Sub Level 2 Wall Bottom 2");
+        addBlock(FFBlocksRegistry.SUBLEVEL2WALL_MIDDLE2, "Sub Level 2 Wall Middle 2");
+        addBlock(FFBlocksRegistry.SUBLEVEL2WALL_TOP2, "Sub Level 2 Wall Top 2");
 
         // Items
         addItem(FFItemsRegistry.SCP207, "SCP-207");

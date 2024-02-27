@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "down": "scpff:block/barrel_bottom_gray",
+    "up": "scpff:block/barrel_top_gray",
+    "north": "scpff:block/barrel_side_gray",
+    "east": "scpff:block/barrel_side_gray",
+    "south": "scpff:block/barrel_side_gray",
+    "west": "scpff:block/barrel_side_gray",
+    "particle": "scpff:block/barrel_side_gray"
+  }
+}

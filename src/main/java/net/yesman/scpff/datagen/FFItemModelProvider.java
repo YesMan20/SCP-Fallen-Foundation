@@ -82,6 +82,7 @@ public class FFItemModelProvider extends ItemModelProvider {
         blockItem(FFBlocksRegistry.DESKLAMP);
 
         blockItemWithTexture(FFBlocksRegistry.METALDOOR, new ResourceLocation(SCPFf.MOD_ID, "item/metaldoor"));
+        blockItemWithTexture(FFBlocksRegistry.OFFICEDOOR, new ResourceLocation(SCPFf.MOD_ID, "item/officedoor"));
 
         trapDoorBlockItem(FFBlocksRegistry.VENT_COVER);
     }

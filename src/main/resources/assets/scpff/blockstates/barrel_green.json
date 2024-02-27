@@ -1,28 +1,56 @@
 {
   "variants": {
-    "axis=x,open=false": {
-      "model": "scpff:block/barrel_green_horizontal",
+    "facing=down,open=false": {
+      "model": "scpff:block/barrel_green",
+      "x": 180
+    },
+    "facing=down,open=true": {
+      "model": "scpff:block/barrel_green_open",
+      "x": 180
+    },
+    "facing=east,open=false": {
+      "model": "scpff:block/barrel_green",
       "x": 90,
       "y": 90
     },
-    "axis=y,open=false": {
+    "facing=east,open=true": {
+      "model": "scpff:block/barrel_green_open",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north,open=false": {
+      "model": "scpff:block/barrel_green",
+      "x": 90
+    },
+    "facing=north,open=true": {
+      "model": "scpff:block/barrel_green_open",
+      "x": 90
+    },
+    "facing=south,open=false": {
+      "model": "scpff:block/barrel_green",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,open=true": {
+      "model": "scpff:block/barrel_green_open",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up,open=false": {
       "model": "scpff:block/barrel_green"
     },
-    "axis=z,open=false": {
-      "model": "scpff:block/barrel_green_horizontal",
-      "x": 90
-    },
-    "axis=x,open=true": {
-      "model": "scpff:block/barrel_green_horizontal_open",
-      "x": 90,
-      "y": 90
-    },
-    "axis=y,open=true": {
+    "facing=up,open=true": {
       "model": "scpff:block/barrel_green_open"
     },
-    "axis=z,open=true": {
-      "model": "scpff:block/barrel_green_horizontal_open",
-      "x": 90
+    "facing=west,open=false": {
+      "model": "scpff:block/barrel_green",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,open=true": {
+      "model": "scpff:block/barrel_green_open",
+      "x": 90,
+      "y": 270
     }
   }
 }

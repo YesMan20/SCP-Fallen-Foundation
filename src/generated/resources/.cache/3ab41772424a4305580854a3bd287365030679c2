@@ -1,4 +1,4 @@
-// 1.20.1	2024-02-25T19:05:57.8320336	Item Models: scpff
+// 1.20.1	2024-02-26T19:03:21.9629054	Item Models: scpff
 eb438f68caf0293ee8f2aa0bff8f59c4cbeed325 assets/scpff/models/item/armoryicon.json
 7aafae4bf285cef600753bab4884212322789631 assets/scpff/models/item/blockicon.json
 31c2dbd98ac46d510f6b21bfb4f75d8cf8daf1a5 assets/scpff/models/item/bonk_atomic_punch_blu.json
@@ -32,6 +32,7 @@ e59d358d8266c2cab48257d901773cb47ea47eed assets/scpff/models/item/ntf_boots.json
 64593858620fcc972ed39ccc9ae6893c67ff084b assets/scpff/models/item/ntf_chestplate.json
 61c6cecd9ca7a7d31f98423d945f854499472a6f assets/scpff/models/item/ntf_helmet.json
 2c447751bd9d01e05e6152c735bb99c0b160a259 assets/scpff/models/item/ntf_leggings.json
+18b556f51ae9fc797d6e06a105d9776289730388 assets/scpff/models/item/officedoor.json
 68db0a680de07fa870d9591cb07363266c7be832 assets/scpff/models/item/pebis.json
 5334c48ac93fb9b2774d6f1148de308c22aa9f06 assets/scpff/models/item/researcher_boots.json
 5ded972375f63ed59599608fcf0bee81d6dbceb2 assets/scpff/models/item/researcher_leggings.json

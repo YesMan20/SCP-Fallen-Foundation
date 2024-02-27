@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "scpff:block/sublevel2floor",
+    "particle": "scpff:block/sublevel2floor"
+  }
+}

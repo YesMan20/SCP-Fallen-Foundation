@@ -26,6 +26,31 @@ import java.util.function.Supplier;
 public class FFBlocksRegistry {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, SCPFf.MOD_ID);
 
+    /**
+     * Sub Level 2 blocks
+     */
+
+    public static final RegistryObject<Block> SUBLEVEL2WALL_BOTTOM = registerBlock("sublevel2wall_bottom", () ->
+            new Block(BlockBehaviour.Properties.of().explosionResistance(1.8f).strength(1.8f).destroyTime(9f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> SUBLEVEL2WALL_BOTTOM2 = registerBlock("sublevel2wall_bottom2", () ->
+            new Block(BlockBehaviour.Properties.of().explosionResistance(1.8f).strength(1.8f).destroyTime(9f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> SUBLEVEL2WALL_MIDDLE = registerBlock("sublevel2wall_middle", () ->
+            new Block(BlockBehaviour.Properties.of().explosionResistance(1.8f).strength(1.8f).destroyTime(9f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> SUBLEVEL2WALL_MIDDLE2 = registerBlock("sublevel2wall_middle2", () ->
+            new Block(BlockBehaviour.Properties.of().explosionResistance(1.8f).strength(1.8f).destroyTime(9f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> SUBLEVEL2WALL_TOP = registerBlock("sublevel2wall_top", () ->
+            new Block(BlockBehaviour.Properties.of().explosionResistance(1.8f).strength(1.8f).destroyTime(9f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> SUBLEVEL2WALL_TOP2 = registerBlock("sublevel2wall_top2", () ->
+            new Block(BlockBehaviour.Properties.of().explosionResistance(1.8f).strength(1.8f).destroyTime(9f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> SUBLEVEL2FLOOR = registerBlock("sublevel2floor", () ->
+            new Block(BlockBehaviour.Properties.of().explosionResistance(1.8f).strength(1.8f).destroyTime(9f).requiresCorrectToolForDrops()));
+
     /** HC Blocks **/
     public static final RegistryObject<Block> HCWALL = registerBlock("hcwall", () ->
             new Block(BlockBehaviour.Properties.of().explosionResistance(1.8f).strength(1.8f).destroyTime(9f).requiresCorrectToolForDrops()));
@@ -117,6 +142,9 @@ public class FFBlocksRegistry {
             new RotateableFullBlock(BlockBehaviour.Properties.of().sound(SoundType.SCAFFOLDING).explosionResistance(1.8F).strength(2F).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> BARREL = registerBlock("barrel", () ->
+            new IronBarrelBlock(BlockBehaviour.Properties.of().sound(SoundType.CHISELED_BOOKSHELF).explosionResistance(1.8F).strength(2F).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> BARREL_GRAY = registerBlock("barrel_gray", () ->
             new IronBarrelBlock(BlockBehaviour.Properties.of().sound(SoundType.CHISELED_BOOKSHELF).explosionResistance(1.8F).strength(2F).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> BARREL_YELLOW = registerBlock("barrel_yellow", () ->
@@ -311,6 +339,9 @@ public class FFBlocksRegistry {
     /** MISC Blocks **/
 
     public static final RegistryObject<Block> METALDOOR = registerBlock("metaldoor", () ->
+            new DoorBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(0.8F).explosionResistance(0.8F).pushReaction(PushReaction.DESTROY).noOcclusion(), BlockSetType.MANGROVE));
+
+    public static final RegistryObject<Block> OFFICEDOOR = registerBlock("officedoor", () ->
             new DoorBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(0.8F).explosionResistance(0.8F).pushReaction(PushReaction.DESTROY).noOcclusion(), BlockSetType.MANGROVE));
 
     public static final RegistryObject<Block> CAUTIONLINE = registerBlock("cautionline", () ->

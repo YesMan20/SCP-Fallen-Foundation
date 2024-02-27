@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "down": "scpff:block/sublevel2wall_top",
+    "up": "scpff:block/sublevel2wall_top",
+    "north": "scpff:block/sublevel2wall_top2",
+    "east": "scpff:block/sublevel2wall_top2",
+    "south": "scpff:block/sublevel2wall_top2",
+    "west": "scpff:block/sublevel2wall_top2",
+    "particle": "scpff:block/sublevel2wall_top2"
+  }
+}

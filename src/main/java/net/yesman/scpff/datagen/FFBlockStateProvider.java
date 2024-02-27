@@ -94,6 +94,7 @@ public class FFBlockStateProvider extends BlockStateProvider {
         blockWithBlockState(FFBlocksRegistry.TRUSSBEAM);
 
         doorBlock(FFBlocksRegistry.METALDOOR, true, new ResourceLocation(SCPFf.MOD_ID, "block/metaldoor_bottom"), new ResourceLocation(SCPFf.MOD_ID, "block/metaldoor_top"));
+        doorBlock(FFBlocksRegistry.OFFICEDOOR, true, new ResourceLocation(SCPFf.MOD_ID, "block/officedoor_bottom"), new ResourceLocation(SCPFf.MOD_ID, "block/officedoor_top"));
 
         trapDoorBlock(FFBlocksRegistry.VENT_COVER, true, true, new ResourceLocation(SCPFf.MOD_ID, "block/vent_cover"));
     }

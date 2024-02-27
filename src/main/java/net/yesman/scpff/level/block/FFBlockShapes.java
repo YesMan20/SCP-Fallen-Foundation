@@ -20,7 +20,7 @@ public class FFBlockShapes {
     public static final VoxelShape PIPE = box(3, 0, 3, 13, 16, 13);
     public static final VoxelShape FLOOD_LIGHTS = box(6, 0, 6, 10, 23, 10);
     
-    public static final VoxelShape CONTAINMENT_CASE_BOTTOM = Shapes.join(box(2, 0, 2, 14, 3, 14), box(6, 3, 6, 10, 16, 10), BooleanOp.OR);
+    public static final VoxelShape CONTAINMENT_CASE_BOTTOM = Shapes.join(Block.box(4, 0, 4, 12, 6, 12), Block.box(6, 3, 6, 10, 16, 10), BooleanOp.OR);
 
     // Rotated shapes:
 
