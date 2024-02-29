@@ -18,6 +18,6 @@ public class NtfArmorModel extends GeoModel<NtfArmorItem> {
 
     @Override
     public ResourceLocation getAnimationResource(NtfArmorItem animatable) {
-        return new ResourceLocation(SCPFf.MOD_ID, "animations/ntf_armor.animation.json");
+        return new ResourceLocation(SCPFf.MOD_ID, "animations/armor/ntf_armor.animation.json");
     }
 }

@@ -18,6 +18,6 @@ public class ResearcherArmorModel extends GeoModel<ResearcherArmorItem> {
 
     @Override
     public ResourceLocation getAnimationResource(ResearcherArmorItem animatable) {
-        return new ResourceLocation(SCPFf.MOD_ID, "animations/researcher_suit.animation.json");
+        return new ResourceLocation(SCPFf.MOD_ID, "animations/armor/researcher_suit.animation.json");
     }
 }

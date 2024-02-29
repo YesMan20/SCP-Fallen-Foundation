@@ -3,22 +3,10 @@ package net.yesman.scpff.client.model;
 import net.minecraft.resources.ResourceLocation;
 import net.yesman.scpff.SCPFf;
 import net.yesman.scpff.level.entity.scp.SCP035WitherSkeleton;
-import software.bernie.geckolib.model.GeoModel;
+import software.bernie.geckolib.model.DefaultedEntityGeoModel;
 
-public class SCP035WitherSkeletonModel extends GeoModel<SCP035WitherSkeleton> {
-    @Override
-    public ResourceLocation getModelResource(SCP035WitherSkeleton animatable) {
-        return new ResourceLocation(SCPFf.MOD_ID, "geo/wither_skeleton.geo.json");
+public class SCP035WitherSkeletonModel extends DefaultedEntityGeoModel<SCP035WitherSkeleton> {
+    public SCP035WitherSkeletonModel() {
+        super(new ResourceLocation(SCPFf.MOD_ID, "wither_skeleton"), true);
     }
-
-    @Override
-    public ResourceLocation getTextureResource(SCP035WitherSkeleton animatable) {
-        return new ResourceLocation(SCPFf.MOD_ID, "textures/entity/wither_skeleton.png");
-    }
-
-    @Override
-    public ResourceLocation getAnimationResource(SCP035WitherSkeleton animatable) {
-        return new ResourceLocation(SCPFf.MOD_ID, "animations/wither_skeleton.animation.json");
-    }
-
 }

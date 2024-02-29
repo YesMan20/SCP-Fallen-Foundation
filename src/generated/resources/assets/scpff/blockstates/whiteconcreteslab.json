@@ -4,7 +4,7 @@
       "model": "scpff:block/whiteconcreteslab"
     },
     "type=double": {
-      "model": "minecraft:block/gray_concrete"
+      "model": "minecraft:block/white_concrete"
     },
     "type=top": {
       "model": "scpff:block/whiteconcreteslab_top"

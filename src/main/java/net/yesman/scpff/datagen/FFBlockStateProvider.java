@@ -44,7 +44,7 @@ public class FFBlockStateProvider extends BlockStateProvider {
         stairBlock(FFBlocksRegistry.TILE_STAIRS, FFBlocksRegistry.TILES);
         stairBlock(FFBlocksRegistry.BIG_TILE_STAIRS, FFBlocksRegistry.TILE);
         stairBlock(FFBlocksRegistry.GRAY_CONCRETE_STAIRS, new ResourceLocation("block/gray_concrete"));
-        stairBlock(FFBlocksRegistry.WHITE_CONCRETE_STAIRS, new ResourceLocation("block/gray_concrete"));
+        stairBlock(FFBlocksRegistry.WHITE_CONCRETE_STAIRS, new ResourceLocation("block/white_concrete"));
 
         slabBlock(FFBlocksRegistry.CAUTIONLINE_SLAB, FFBlocksRegistry.CAUTIONLINE);
         slabBlock(FFBlocksRegistry.HCFLOOR_SLAB, FFBlocksRegistry.HCFLOOR);
@@ -52,7 +52,7 @@ public class FFBlockStateProvider extends BlockStateProvider {
         slabBlock(FFBlocksRegistry.TILE_SLAB, FFBlocksRegistry.TILES);
         slabBlock(FFBlocksRegistry.BIG_TILE_SLAB, FFBlocksRegistry.TILE);
         slabBlock(FFBlocksRegistry.GRAY_CONCRETE_SLAB, new ResourceLocation("block/gray_concrete"));
-        slabBlock(FFBlocksRegistry.WHITE_CONCRETE_SLAB, new ResourceLocation("block/gray_concrete"));
+        slabBlock(FFBlocksRegistry.WHITE_CONCRETE_SLAB, new ResourceLocation("block/white_concrete"));
 
         horizontalBlockWithItem(FFBlocksRegistry.CONTAINMENT_CASE);
         horizontalBlockWithItem(FFBlocksRegistry.CONTAINMENT_CASE_BOTTOM);

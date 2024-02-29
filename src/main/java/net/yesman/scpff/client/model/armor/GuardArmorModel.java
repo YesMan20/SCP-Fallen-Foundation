@@ -18,6 +18,6 @@ public class GuardArmorModel extends GeoModel<GuardArmorItem> {
 
     @Override
     public ResourceLocation getAnimationResource(GuardArmorItem animatable) {
-        return new ResourceLocation(SCPFf.MOD_ID, "animations/guard_armor.animation.json");
+        return new ResourceLocation(SCPFf.MOD_ID, "animations/armor/guard_armor.animation.json");
     }
 }
