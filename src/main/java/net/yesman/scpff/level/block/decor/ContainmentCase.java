@@ -1,33 +1,57 @@
 package net.yesman.scpff.level.block.decor;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.commands.data.BlockDataAccessor;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.datafix.fixes.BlockStateData;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.yesman.scpff.SCPFf;
 import net.yesman.scpff.level.block.FFBlockShapes;
 import net.yesman.scpff.level.block.entity.ContainmentBlockEntity;
+import net.yesman.scpff.level.entity.scp.SCP131;
+import net.yesman.scpff.level.entity.scp.SCP173;
+import net.yesman.scpff.level.item.FFItemsRegistry;
+import net.yesman.scpff.level.tag.FFItemTags;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.stream.Stream;
 
 public class ContainmentCase extends HorizontalDecorationBlock implements EntityBlock {
+    public static final BooleanProperty OPEN;
 
     public ContainmentCase(Properties property) {
         super(property, FFBlockShapes.BLOCK, FFBlockShapes.BLOCK, FFBlockShapes.BLOCK, FFBlockShapes.BLOCK);
+        this.registerDefaultState((BlockState)((BlockState)((BlockState)this.stateDefinition.any()).setValue(FACING, Direction.NORTH)).setValue(OPEN, true));
     }
 
     @Override
@@ -80,8 +104,16 @@ public class ContainmentCase extends HorizontalDecorationBlock implements Entity
     @Override
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         ContainmentBlockEntity entity = (ContainmentBlockEntity) pLevel.getBlockEntity(pPos);
-        if (entity == null || pLevel.isClientSide || pHand.equals(InteractionHand.OFF_HAND) || pPlayer.getItemInHand(pHand).getItem() instanceof BlockItem || pPlayer.getItemInHand(pHand).getItem() instanceof ArmorItem) return InteractionResult.FAIL;
-        entity.updateItem(pPlayer, pPlayer.getItemInHand(InteractionHand.MAIN_HAND));
+        if (pPlayer.getItemInHand(InteractionHand.MAIN_HAND).is(FFItemTags.KEYCARDS)) {
+            pLevel.setBlock(pPos, pState.cycle(OPEN), 2);
+            pLevel.playSound(pPlayer, pPos, pState.getValue(OPEN) ? SoundEvents.STONE_BUTTON_CLICK_OFF : SoundEvents.STONE_BUTTON_CLICK_ON, SoundSource.BLOCKS);
+            return InteractionResult.SUCCESS;
+        }
+        if (pState.getValue(OPEN).equals(true) && !pPlayer.getItemInHand(InteractionHand.MAIN_HAND).is(FFItemsRegistry.KEYCARD1.get())) {
+            if (entity == null || pLevel.isClientSide || pHand.equals(InteractionHand.OFF_HAND) || pPlayer.getItemInHand(pHand).getItem() instanceof BlockItem || pPlayer.getItemInHand(pHand).getItem() instanceof ArmorItem) return InteractionResult.FAIL;
+            entity.updateItem(pPlayer, pPlayer.getItemInHand(InteractionHand.MAIN_HAND));
+            return InteractionResult.SUCCESS;
+        }
         return InteractionResult.SUCCESS;
     }
 
@@ -89,6 +121,14 @@ public class ContainmentCase extends HorizontalDecorationBlock implements Entity
     @Override
     public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
         return new ContainmentBlockEntity(pPos, pState);
+    }
+
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
+        pBuilder.add(new Property[]{FACING, OPEN});
+    }
+
+    static {
+        OPEN = BlockStateProperties.OPEN;
     }
 
     @Override
@@ -104,9 +144,8 @@ public class ContainmentCase extends HorizontalDecorationBlock implements Entity
     @Override
     public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
         ContainmentBlockEntity blockEntity = (ContainmentBlockEntity) pLevel.getBlockEntity(pPos);
-        if (blockEntity != null && !blockEntity.currentItem.isEmpty()) {
-            ItemEntity itemEntity = new ItemEntity(pLevel, pPos.getX(), pPos.getY(), pPos.getZ(), blockEntity.currentItem, 0.2F * pLevel.getRandom().nextFloat(), 0.2F, 0.2F * pLevel.getRandom().nextFloat());
-            pLevel.addFreshEntity(itemEntity);
+        if (blockEntity != null && !blockEntity.currentItem.isEmpty() && !pState.is(pNewState.getBlock())) {
+            Block.popResource(pLevel, pPos, blockEntity.getDisplayedStack());
         }
         super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);
     }

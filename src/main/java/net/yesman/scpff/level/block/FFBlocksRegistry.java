@@ -36,6 +36,9 @@ public class FFBlocksRegistry {
     public static final RegistryObject<Block> SUBLEVEL2WALL_BOTTOM2 = registerBlock("sublevel2wall_bottom2", () ->
             new Block(BlockBehaviour.Properties.of().explosionResistance(1.8f).strength(1.8f).destroyTime(9f).requiresCorrectToolForDrops()));
 
+    public static final RegistryObject<Block> SUBLEVEL2WALL_BOTTOM3 = registerBlock("sublevel2wall_bottom3", () ->
+            new Block(BlockBehaviour.Properties.of().explosionResistance(1.8f).strength(1.8f).destroyTime(9f).requiresCorrectToolForDrops()));
+
     public static final RegistryObject<Block> SUBLEVEL2WALL_MIDDLE = registerBlock("sublevel2wall_middle", () ->
             new Block(BlockBehaviour.Properties.of().explosionResistance(1.8f).strength(1.8f).destroyTime(9f).requiresCorrectToolForDrops()));
 
@@ -49,6 +52,9 @@ public class FFBlocksRegistry {
             new Block(BlockBehaviour.Properties.of().explosionResistance(1.8f).strength(1.8f).destroyTime(9f).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> SUBLEVEL2FLOOR = registerBlock("sublevel2floor", () ->
+            new Block(BlockBehaviour.Properties.of().explosionResistance(1.8f).strength(1.8f).destroyTime(9f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> SUBLEVEL2CEILING = registerBlock("sublevel2ceiling", () ->
             new Block(BlockBehaviour.Properties.of().explosionResistance(1.8f).strength(1.8f).destroyTime(9f).requiresCorrectToolForDrops()));
 
     /** HC Blocks **/
@@ -270,7 +276,6 @@ public class FFBlocksRegistry {
             new HorizontalDecorationBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOL).strength(1F).noOcclusion(),
                     FFBlockShapes.PAPER_STACK_S, FFBlockShapes.PAPER_STACK_N, FFBlockShapes.PAPER_STACK_E, FFBlockShapes.PAPER_STACK_W));
 
-
     public static final RegistryObject<Block> PIPE = registerBlock("pipe", () ->
             new DecorationBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).requiresCorrectToolForDrops().strength(3F).noOcclusion(),
                     FFBlockShapes.PIPE));
@@ -358,6 +363,9 @@ public class FFBlocksRegistry {
 
     public static final RegistryObject<Block> REINFORCEDIRON = registerBlock("reinforcediron", () ->
             new Block(BlockBehaviour.Properties.of().sound(SoundType.NETHER_BRICKS).strength(50F).explosionResistance(1000F).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> REINFORCEDGLASS = registerBlock("reinforcedglass", () ->
+            new IronBarsBlock(BlockBehaviour.Properties.of().explosionResistance(1.8f).strength(1.8f).destroyTime(9f).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> MIRROR = registerBlock("mirror", () ->
             new HorizontalDecorationBlock(BlockBehaviour.Properties.of().sound(SoundType.GLASS).strength(0.5F),

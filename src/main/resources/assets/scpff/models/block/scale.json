@@ -1,6 +1,5 @@
 {
 	"credit": "YesMan",
-	"parent": "scale",
 	"ambientocclusion": false,
 	"texture_size": [32, 32],
 	"textures": {

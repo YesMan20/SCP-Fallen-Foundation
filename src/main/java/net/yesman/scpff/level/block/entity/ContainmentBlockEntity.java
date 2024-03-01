@@ -21,6 +21,10 @@ public class ContainmentBlockEntity extends BlockEntity {
         super(FFBlockEntitiesRegistry.CONTAINMENT_BLOCK.get(), pPos, pBlockState);
     }
 
+    public ItemStack getDisplayedStack() {
+        return currentItem;
+    }
+
     /**
      * Updates the currently displayed item in the case.
      *

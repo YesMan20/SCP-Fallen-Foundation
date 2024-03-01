@@ -13,6 +13,7 @@ public class CommonModEvents {
     @SubscribeEvent
     public static void entityAttributeCreation(EntityAttributeCreationEvent event) {
         event.put(FFEntitiesRegistry.SCP_650.get(), SCP650.createAttributes().build());
+        event.put(FFEntitiesRegistry.SCP_111.get(), SCP111.createAttributes().build());
         event.put(FFEntitiesRegistry.SCP_049.get(), SCP049.createAttributes().build());
         event.put(FFEntitiesRegistry.SCP_106.get(), SCP106.createAttributes().build());
         event.put(FFEntitiesRegistry.SCP_939.get(), SCP939.createAttributes().build());

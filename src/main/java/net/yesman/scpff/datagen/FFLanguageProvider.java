@@ -46,6 +46,7 @@ public class FFLanguageProvider extends LanguageProvider {
         addBlock(FFBlocksRegistry.LCWALL2, "Light Containment Wall Middle");
         addBlock(FFBlocksRegistry.LCWALL3, "Light Containment Wall Top");
         addBlock(FFBlocksRegistry.REINFORCEDIRON, "Block of Reinforced Iron");
+        addBlock(FFBlocksRegistry.REINFORCEDGLASS, "Reinforced Glass Pane");
         addBlock(FFBlocksRegistry.CAUTIONLINE, "Caution Line");
         addBlock(FFBlocksRegistry.CAUTIONLINE_STAIRS, "Caution Line Stairs");
         addBlock(FFBlocksRegistry.CAUTIONLINE_SLAB, "Caution Line Slab");
@@ -107,12 +108,14 @@ public class FFLanguageProvider extends LanguageProvider {
         addBlock(FFBlocksRegistry.CHAINLINKFENCE, "Chain Link Fence");
         addBlock(FFBlocksRegistry.BARBEDWIRE, "Barbed Wire Block");
         addBlock(FFBlocksRegistry.SUBLEVEL2FLOOR, "Sub Level 2 Floor");
+        addBlock(FFBlocksRegistry.SUBLEVEL2CEILING, "Sub Level 2 Ceiling");
         addBlock(FFBlocksRegistry.SUBLEVEL2WALL_BOTTOM, "Sub Level 2 Wall Bottom");
         addBlock(FFBlocksRegistry.SUBLEVEL2WALL_MIDDLE, "Sub Level 2 Wall Middle");
         addBlock(FFBlocksRegistry.SUBLEVEL2WALL_TOP, "Sub Level 2 Wall Top");
         addBlock(FFBlocksRegistry.SUBLEVEL2WALL_BOTTOM2, "Sub Level 2 Wall Bottom 2");
         addBlock(FFBlocksRegistry.SUBLEVEL2WALL_MIDDLE2, "Sub Level 2 Wall Middle 2");
         addBlock(FFBlocksRegistry.SUBLEVEL2WALL_TOP2, "Sub Level 2 Wall Top 2");
+        addBlock(FFBlocksRegistry.SUBLEVEL2WALL_BOTTOM3, "Sub Level 2 Wall Bottom 3");
 
         // Items
         addItem(FFItemsRegistry.SCP207, "SCP-207");
@@ -160,6 +163,7 @@ public class FFLanguageProvider extends LanguageProvider {
         addItem(FFItemsRegistry.BONK_ATOMIC_PUNCH_BLU, "Blue Bonk Atomic Punch");
         addItem(FFItemsRegistry.SCP_049_SPAWN_EGG, "SCP-049 Spawn Egg");
         addItem(FFItemsRegistry.SCP_131_SPAWN_EGG, "SCP-131 Spawn Egg");
+        addItem(FFItemsRegistry.SCP_111_SPAWN_EGG, "SCP-111 Spawn Egg");
         addItem(FFItemsRegistry.SCP_650_SPAWN_EGG, "SCP-650 Spawn Egg");
         addItem(FFItemsRegistry.SCP_058_SPAWN_EGG, "SCP-058 Spawn Egg");
         addItem(FFItemsRegistry.SCP_939_SPAWN_EGG, "SCP-939 Spawn Egg");

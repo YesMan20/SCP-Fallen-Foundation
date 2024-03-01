@@ -54,7 +54,6 @@ public class FFBlockStateProvider extends BlockStateProvider {
         slabBlock(FFBlocksRegistry.GRAY_CONCRETE_SLAB, new ResourceLocation("block/gray_concrete"));
         slabBlock(FFBlocksRegistry.WHITE_CONCRETE_SLAB, new ResourceLocation("block/white_concrete"));
 
-        horizontalBlockWithItem(FFBlocksRegistry.CONTAINMENT_CASE);
         horizontalBlockWithItem(FFBlocksRegistry.CONTAINMENT_CASE_BOTTOM);
         horizontalBlockWithItem(FFBlocksRegistry.BEAKERS);
         horizontalBlockWithItem(FFBlocksRegistry.BULLETINBOARD);

@@ -1,0 +1,9 @@
+{
+  "replaces": false,
+  "values": [
+    "scpff:keycard1",
+    "scpff:keycard2",
+    "scpff:keycard3",
+    "scpff:keycard4"
+  ]
+}

@@ -32,7 +32,9 @@ public class ChairBlock extends HorizontalDirectionalBlock {
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         ChairEntity chairEntity = new ChairEntity(pLevel, pPos, pState.getValue(FACING));
         pLevel.addFreshEntity(chairEntity);
-        pPlayer.startRiding(chairEntity);
+        if (!chairEntity.hasPassenger(pPlayer)) {
+            pPlayer.startRiding(chairEntity);
+        }
         return super.use(pState, pLevel, pPos, pPlayer, pHand, pHit);
     }
 

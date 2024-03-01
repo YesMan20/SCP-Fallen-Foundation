@@ -26,6 +26,15 @@ import org.slf4j.Logger;
 @Mod(SCPFf.MOD_ID)
 public class SCPFf {
     public static final String MOD_ID = "scpff";
+    public static final String DEV_CAPE =
+            "Dev" +
+            "YesMan2" + //Me :3
+            "ChrisLira" +
+            "Phoillows" +
+            "ZeusIGN" +
+            "Lucentic";
+    public static final String CAPE_CAPE = "Yirmiri";
+    public static final String LOLCAT_CAPE = "Tac0dile";
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public SCPFf() {

@@ -1,6 +1,5 @@
 {
 	"credit": "YesMan",
-	"parent": "catwalkfence_2",
 	"ambientocclusion": false,
 	"render_type": "minecraft:cutout",
 	"texture_size": [64, 64],

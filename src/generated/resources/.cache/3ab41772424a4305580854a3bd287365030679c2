@@ -1,4 +1,4 @@
-// 1.20.1	2024-02-26T19:03:21.9629054	Item Models: scpff
+// 1.20.1	2024-02-29T15:53:47.6334009	Item Models: scpff
 eb438f68caf0293ee8f2aa0bff8f59c4cbeed325 assets/scpff/models/item/armoryicon.json
 7aafae4bf285cef600753bab4884212322789631 assets/scpff/models/item/blockicon.json
 31c2dbd98ac46d510f6b21bfb4f75d8cf8daf1a5 assets/scpff/models/item/bonk_atomic_punch_blu.json
@@ -34,6 +34,7 @@ e59d358d8266c2cab48257d901773cb47ea47eed assets/scpff/models/item/ntf_boots.json
 2c447751bd9d01e05e6152c735bb99c0b160a259 assets/scpff/models/item/ntf_leggings.json
 18b556f51ae9fc797d6e06a105d9776289730388 assets/scpff/models/item/officedoor.json
 68db0a680de07fa870d9591cb07363266c7be832 assets/scpff/models/item/pebis.json
+e8775b8a901d4e804488fd90bec2068821ac5d5e assets/scpff/models/item/reinforcedglass.json
 5334c48ac93fb9b2774d6f1148de308c22aa9f06 assets/scpff/models/item/researcher_boots.json
 5ded972375f63ed59599608fcf0bee81d6dbceb2 assets/scpff/models/item/researcher_leggings.json
 e8a3a7cd6667e7cc66b561ab833fead6393483d7 assets/scpff/models/item/researcher_suit.json
@@ -51,6 +52,7 @@ f0dee61a47da02032d59c10f8710f788dd853a7a assets/scpff/models/item/scpicon.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/scpff/models/item/scp_049_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/scpff/models/item/scp_058_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/scpff/models/item/scp_106_spawn_egg.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/scpff/models/item/scp_111_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/scpff/models/item/scp_131_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/scpff/models/item/scp_1507_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/scpff/models/item/scp_173_spawn_egg.json

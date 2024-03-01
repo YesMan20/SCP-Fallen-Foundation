@@ -1,6 +1,5 @@
 {
 	"credit": "YesMan",
-	"parent": "testtubes",
 	"render_type": "minecraft:cutout",
 	"ambientocclusion": false,
 	"texture_size": [32, 32],

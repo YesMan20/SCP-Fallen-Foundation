@@ -28,6 +28,7 @@ public class FFCreativeTabRegistry {
                 output.accept(FFBlocksRegistry.SCP106CORROSIONLAYER.get());
                 output.accept(FFBlocksRegistry.SCP173CRAP.get());
                 output.accept(FFItemsRegistry.SCP_131_SPAWN_EGG.get());
+                output.accept(FFItemsRegistry.SCP_111_SPAWN_EGG.get());
                 output.accept(FFItemsRegistry.SCP_049_SPAWN_EGG.get());
                 output.accept(FFItemsRegistry.SCP_173_SPAWN_EGG.get());
                 output.accept(FFItemsRegistry.SCP_650_SPAWN_EGG.get());
@@ -70,6 +71,8 @@ public class FFCreativeTabRegistry {
                 output.accept(FFBlocksRegistry.SUBLEVEL2WALL_BOTTOM2.get());
                 output.accept(FFBlocksRegistry.SUBLEVEL2WALL_MIDDLE2.get());
                 output.accept(FFBlocksRegistry.SUBLEVEL2WALL_TOP2.get());
+                output.accept(FFBlocksRegistry.SUBLEVEL2WALL_BOTTOM3.get());
+                output.accept(FFBlocksRegistry.SUBLEVEL2CEILING.get());
                 output.accept(FFBlocksRegistry.TILE.get());
                 output.accept(FFBlocksRegistry.BIG_TILE_STAIRS.get());
                 output.accept(FFBlocksRegistry.BIG_TILE_SLAB.get());
@@ -87,6 +90,7 @@ public class FFCreativeTabRegistry {
                 output.accept(FFBlocksRegistry.BARREL_BLUE.get());
                 output.accept(FFBlocksRegistry.BARREL_GRAY.get());
                 output.accept(FFBlocksRegistry.REINFORCEDIRON.get());
+                output.accept(FFBlocksRegistry.REINFORCEDGLASS.get());
                 output.accept(FFBlocksRegistry.WHITE_CONCRETE_STAIRS.get());
                 output.accept(FFBlocksRegistry.WHITE_CONCRETE_SLAB.get());
                 output.accept(FFBlocksRegistry.GRAY_CONCRETE_STAIRS.get());

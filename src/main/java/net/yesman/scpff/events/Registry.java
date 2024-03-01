@@ -28,6 +28,7 @@ public class Registry {
         event.registerEntityRenderer(FFEntitiesRegistry.SCP_2521.get(), SCP2521Renderer::new);
         event.registerEntityRenderer(FFEntitiesRegistry.SCP_106.get(), SCP106Renderer::new);
         event.registerEntityRenderer(FFEntitiesRegistry.SCP_131.get(), SCP131Renderer::new);
+        event.registerEntityRenderer(FFEntitiesRegistry.SCP_111.get(), SCP111Renderer::new);
         event.registerEntityRenderer(EntityType.PLAYER, SCP035WitherSkeletonRenderer::new);
         event.registerEntityRenderer(FFEntitiesRegistry.CHAIR.get(), ChairRenderer::new);
 

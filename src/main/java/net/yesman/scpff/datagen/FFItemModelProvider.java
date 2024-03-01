@@ -71,6 +71,7 @@ public class FFItemModelProvider extends ItemModelProvider {
         spawnEggItem(FFItemsRegistry.SCP_058_SPAWN_EGG);
         spawnEggItem(FFItemsRegistry.SCP_106_SPAWN_EGG);
         spawnEggItem(FFItemsRegistry.SCP_131_SPAWN_EGG);
+        spawnEggItem(FFItemsRegistry.SCP_111_SPAWN_EGG);
         spawnEggItem(FFItemsRegistry.SCP_173_SPAWN_EGG);
         spawnEggItem(FFItemsRegistry.SCP_650_SPAWN_EGG);
         spawnEggItem(FFItemsRegistry.SCP_939_SPAWN_EGG);
@@ -82,6 +83,7 @@ public class FFItemModelProvider extends ItemModelProvider {
         blockItem(FFBlocksRegistry.DESKLAMP);
 
         blockItemWithTexture(FFBlocksRegistry.METALDOOR, new ResourceLocation(SCPFf.MOD_ID, "item/metaldoor"));
+        blockItemWithTexture(FFBlocksRegistry.REINFORCEDGLASS, new ResourceLocation(SCPFf.MOD_ID, "block/reinforcedglass"));
         blockItemWithTexture(FFBlocksRegistry.OFFICEDOOR, new ResourceLocation(SCPFf.MOD_ID, "item/officedoor"));
 
         trapDoorBlockItem(FFBlocksRegistry.VENT_COVER);

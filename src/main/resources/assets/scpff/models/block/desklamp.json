@@ -1,6 +1,5 @@
 {
 	"credit": "YesMan",
-	"parent": "desklamp",
 	"ambientocclusion": false,
 	"render_type": "minecraft:translucent",
 	"texture_size": [32, 32],

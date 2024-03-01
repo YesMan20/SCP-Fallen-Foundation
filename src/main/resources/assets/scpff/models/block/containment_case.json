@@ -5,7 +5,7 @@
 	"texture_size": [45, 39],
 	"textures": {
 		"0": "scpff:block/containment_case",
-		"particle": "scpff:block/containment_case"
+		"particle": "scpff:block/containment_case_bottom"
 	},
 	"elements": [
 		{
