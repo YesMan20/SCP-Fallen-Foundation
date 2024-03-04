@@ -1,12 +1,12 @@
 {
   "values": [
-    "scpff:soda",
-    "scpff:mason",
-    "scpff:mysteriousrobot",
-    "scpff:protectposter",
+    "scpff:surveillanceposter",
     "scpff:memeticposter",
-    "scpff:dclassposter",
-    "scpff:106poster",
-    "scpff:safetyfirstposter"
+    "scpff:scp173poster",
+    "scpff:safetyfirstposter",
+    "scpff:safelabel",
+    "scpff:euclidlabel",
+    "scpff:keterlabel",
+    "scpff:thaumiellabel"
   ]
 }

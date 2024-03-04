@@ -19,7 +19,7 @@ import software.bernie.geckolib.renderer.GeoArmorRenderer;
 import java.util.function.Consumer;
 
 public class DClassArmorItem extends ArmorItem implements GeoItem {
-    private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
+    private final AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
 
     public DClassArmorItem(ArmorMaterial material, Type type, Properties properties) {
         super(material, type, properties);

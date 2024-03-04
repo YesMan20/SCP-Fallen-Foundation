@@ -1,14 +1,22 @@
 package net.yesman.scpff.client.renderer.entity;
 
 import com.google.common.collect.Maps;
+import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.Util;
+import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.EntityType;
+import net.minecraftforge.common.Tags;
 import net.yesman.scpff.SCPFf;
-import net.yesman.scpff.client.model.SCP106Model;
 import net.yesman.scpff.client.model.SCP111Model;
-import net.yesman.scpff.level.entity.scp.SCP106;
+import net.yesman.scpff.client.renderer.GlowdrakeGlowLayer;
+import net.yesman.scpff.level.entity.FFEntitiesRegistry;
 import net.yesman.scpff.level.entity.scp.SCP111;
+import org.jetbrains.annotations.NotNull;
+import software.bernie.geckolib.cache.object.BakedGeoModel;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;
 
 import java.util.Map;
@@ -31,8 +39,27 @@ public class SCP111Renderer extends GeoEntityRenderer<SCP111> {
             });
 
     public SCP111Renderer(EntityRendererProvider.Context renderManager) {
-        super(renderManager, new SCP111Model());
+        super(renderManager, new SCP111Model<>());
         this.shadowRadius = 0.5F;
+        this.addRenderLayer(new GlowdrakeGlowLayer<>(this));
     }
 
+    @Override
+    public void preRender(PoseStack poseStack, SCP111 pEntity, BakedGeoModel model, MultiBufferSource bufferSource, VertexConsumer buffer, boolean isReRender, float partialTick, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
+        super.preRender(poseStack, animatable, model, bufferSource, buffer, isReRender, partialTick, packedLight, packedOverlay, red, green, blue, alpha);
+
+        if (pEntity.isTame() && getGeoModel().getBone("Collar").isPresent()) {
+            getGeoModel().getBone("Collar").get().setHidden(false);
+        } else if (!pEntity.isTame()) {
+            getGeoModel().getBone("Collar").get().setHidden(true);
+        }
+    }
+
+    @Override
+    public void scaleModelForRender(float widthScale, float heightScale, PoseStack poseStack, SCP111 animatable, BakedGeoModel model, boolean isReRender, float partialTick, int packedLight, int packedOverlay) {
+        super.scaleModelForRender(widthScale, heightScale, poseStack, animatable, model, isReRender, partialTick, packedLight, packedOverlay);
+        if (this.animatable.isSmall() && this.animatable.getVariant().getId() != 2) {
+            poseStack.scale(0.8f, 0.8f, 0.8f);
+        }
+    }
 }

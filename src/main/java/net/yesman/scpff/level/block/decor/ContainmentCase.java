@@ -114,7 +114,7 @@ public class ContainmentCase extends HorizontalDecorationBlock implements Entity
             entity.updateItem(pPlayer, pPlayer.getItemInHand(InteractionHand.MAIN_HAND));
             return InteractionResult.SUCCESS;
         }
-        return InteractionResult.SUCCESS;
+        return InteractionResult.FAIL;
     }
 
     @Nullable

@@ -3,21 +3,11 @@ package net.yesman.scpff.client.model;
 import net.minecraft.resources.ResourceLocation;
 import net.yesman.scpff.SCPFf;
 import net.yesman.scpff.level.entity.scp.SCP058;
+import software.bernie.geckolib.model.DefaultedEntityGeoModel;
 import software.bernie.geckolib.model.GeoModel;
 
-public class SCP058Model extends GeoModel<SCP058> {
-    @Override
-    public ResourceLocation getModelResource(SCP058 animatable) {
-        return new ResourceLocation(SCPFf.MOD_ID, "geo/entity/scp058.geo.json");
-    }
-
-    @Override
-    public ResourceLocation getAnimationResource(SCP058 animatable) {
-        return new ResourceLocation(SCPFf.MOD_ID, "animations/entity/scp058.animation.json");
-    }
-
-    @Override
-    public ResourceLocation getTextureResource(SCP058 animatable) {
-        return new ResourceLocation(SCPFf.MOD_ID, "textures/entity/scp058.png");
+public class SCP058Model extends DefaultedEntityGeoModel<SCP058> {
+    public SCP058Model() {
+        super(new ResourceLocation(SCPFf.MOD_ID, "scp058"), true);
     }
 }

@@ -18,7 +18,7 @@ import software.bernie.geckolib.renderer.GeoArmorRenderer;
 import java.util.function.Consumer;
 
 public class GuardArmorItem extends WeightedArmorItem implements GeoItem {
-    private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
+    private final AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
 
     public GuardArmorItem(float weight, ArmorMaterial material, Type type, Properties properties) {
         super(weight, material, type, properties);

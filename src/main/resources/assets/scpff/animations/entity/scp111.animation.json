@@ -1,6 +1,16 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
+		"animation.scp111.sitting": {
+			"loop": true,
+			"bones": {
+				"head": {
+					"position": {
+						"vector": [0, -1, -2]
+					}
+				}
+			}
+		},
 		"animation.scp111.idle": {
 			"loop": true
 		}

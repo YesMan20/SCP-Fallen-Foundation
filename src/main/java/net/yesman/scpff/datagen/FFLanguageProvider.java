@@ -175,6 +175,7 @@ public class FFLanguageProvider extends LanguageProvider {
         addEntityType(FFEntitiesRegistry.SCP_650, "SCP-650");
         addEntityType(FFEntitiesRegistry.SCP_173, "SCP-173");
         addEntityType(FFEntitiesRegistry.SCP_131, "SCP-131");
+        addEntityType(FFEntitiesRegistry.SCP_111, "SCP-111");
         addEntityType(FFEntitiesRegistry.SCP_049, "SCP-049");
         addEntityType(FFEntitiesRegistry.SCP_1507, "SCP-1507");
         addEntityType(FFEntitiesRegistry.SCP_939, "SCP-939");
@@ -183,14 +184,14 @@ public class FFLanguageProvider extends LanguageProvider {
         addEntityType(FFEntitiesRegistry.SCP_2521, "SCP-§4●●|●●●●●|●●|●");
 
         // Paintings
-        addPainting(FFPaintingsRegistry.SODA, "SODA!!!!!", "Lucent");
         addPainting(FFPaintingsRegistry.SAFETYFIRST, "Safety First Poster", "The Foundation");
-        addPainting(FFPaintingsRegistry.MASON, "Mason Troy Adams", "Lucent");
-        addPainting(FFPaintingsRegistry.MYSTERIOUSROBOT, "Mysterious Robot", "NEWBLOOD");
-        addPainting(FFPaintingsRegistry.PROTECTPOSTER, "Protect Poster", "The Foundation");
+        addPainting(FFPaintingsRegistry.SURVEILLANCEPOSTER, "Surveillance Poster", "The Foundation");
         addPainting(FFPaintingsRegistry.MEMETICPOSTER, "Memetic Poster", "The Foundation");
-        addPainting(FFPaintingsRegistry.SCP106POSTER, "SCP-106 Poster", "The Foundation");
-        addPainting(FFPaintingsRegistry.DCLASSPOSTER, "Class-D Poster", "The Foundation");
+        addPainting(FFPaintingsRegistry.SCP173POSTER, "SCP-173 Poster", "The Foundation");
+        addPainting(FFPaintingsRegistry.SAFELABEL, "Safe Label", "The Foundation");
+        addPainting(FFPaintingsRegistry.EUCLIDLABEL, "Euclid Label", "The Foundation");
+        addPainting(FFPaintingsRegistry.KETERLABEL, "Keter Label", "The Foundation");
+        addPainting(FFPaintingsRegistry.THAUMIELLABEL, "Thaumiel Label", "The Foundation");
 
         // Tooltips
         add("tooltip.scpff.decoration_block", "Can be used with White Concrete");

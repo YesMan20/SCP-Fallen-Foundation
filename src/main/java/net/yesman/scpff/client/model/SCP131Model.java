@@ -13,31 +13,13 @@ import software.bernie.geckolib.model.DefaultedEntityGeoModel;
 import software.bernie.geckolib.model.GeoModel;
 import software.bernie.geckolib.model.data.EntityModelData;
 
-public class SCP131Model extends GeoModel<SCP131> {
-    @Override
-    public ResourceLocation getModelResource(SCP131 animatable) {
-        return new ResourceLocation(SCPFf.MOD_ID, "geo/entity/scp131.geo.json");
-    }
-
-    @Override
-    public ResourceLocation getAnimationResource(SCP131 animatable) {
-        return new ResourceLocation(SCPFf.MOD_ID, "animations/entity/scp131.animation.json");
+public class SCP131Model extends DefaultedEntityGeoModel<SCP131> {
+    public SCP131Model() {
+        super(new ResourceLocation(SCPFf.MOD_ID, "scp131"), true);
     }
 
     @Override
     public ResourceLocation getTextureResource(SCP131 animatable) {
         return new ResourceLocation(SCPFf.MOD_ID, "textures/entity/scp131/" + animatable.getModel() + ".png");
-    }
-
-    @Override
-    public void setCustomAnimations(SCP131 animatable, long instanceId, AnimationState<SCP131> animationState) {
-        CoreGeoBone head = getAnimationProcessor().getBone("head");
-
-        if (head != null) {
-            EntityModelData entityData = animationState.getData(DataTickets.ENTITY_MODEL_DATA);
-
-            head.setRotX(entityData.headPitch() * Mth.DEG_TO_RAD);
-            head.setRotY(entityData.netHeadYaw() * Mth.DEG_TO_RAD);
-        }
     }
 }
