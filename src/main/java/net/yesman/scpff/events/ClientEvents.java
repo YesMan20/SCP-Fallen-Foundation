@@ -28,7 +28,8 @@ public class ClientEvents {
                     tab.iconItemStack = new ItemStack(nextItem);
                 }
             });
-        }
+        } else if (event.phase == TickEvent.Phase.END) return;
+
         if (BlinkOverlay.currentBlinkTime > 0) {
             BlinkOverlay.currentBlinkTime--;
         }

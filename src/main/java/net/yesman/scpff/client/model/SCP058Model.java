@@ -4,7 +4,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.yesman.scpff.SCPFf;
 import net.yesman.scpff.level.entity.scp.SCP058;
 import software.bernie.geckolib.model.DefaultedEntityGeoModel;
-import software.bernie.geckolib.model.GeoModel;
 
 public class SCP058Model extends DefaultedEntityGeoModel<SCP058> {
     public SCP058Model() {

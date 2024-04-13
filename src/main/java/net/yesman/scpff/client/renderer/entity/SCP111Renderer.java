@@ -7,15 +7,10 @@ import net.minecraft.Util;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.RandomSource;
-import net.minecraft.world.entity.EntityType;
-import net.minecraftforge.common.Tags;
 import net.yesman.scpff.SCPFf;
 import net.yesman.scpff.client.model.SCP111Model;
-import net.yesman.scpff.client.renderer.GlowdrakeGlowLayer;
-import net.yesman.scpff.level.entity.FFEntitiesRegistry;
+import net.yesman.scpff.client.renderer.entity.layers.GlowdrakeGlowLayer;
 import net.yesman.scpff.level.entity.scp.SCP111;
-import org.jetbrains.annotations.NotNull;
 import software.bernie.geckolib.cache.object.BakedGeoModel;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;
 

@@ -2,8 +2,7 @@ package net.yesman.scpff.client.renderer.entity;
 
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.yesman.scpff.client.model.SCP939Model;
-import net.yesman.scpff.client.renderer.GlowdrakeGlowLayer;
-import net.yesman.scpff.client.renderer.SCP939GlowLayer;
+import net.yesman.scpff.client.renderer.entity.layers.SCP939GlowLayer;
 import net.yesman.scpff.level.entity.scp.SCP939;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;
 
