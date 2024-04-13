@@ -36,13 +36,10 @@ public class FFItemsRegistry {
 
     /** Icons for tabs **/
 
-    public static final RegistryObject<Item> ITEMICON = ITEMS.register("itemicon", () -> new IgnoreOnLoad(new Item.Properties()));
-
-    public static final RegistryObject<Item> SCPICON = ITEMS.register("scpicon", () -> new IgnoreOnLoad(new Item.Properties()));
-
-    public static final RegistryObject<Item> BLOCKICON = ITEMS.register("blockicon", () -> new IgnoreOnLoad(new Item.Properties()));
-
-    public static final RegistryObject<Item> ARMORYICON = ITEMS.register("armoryicon", () -> new IgnoreOnLoad(new Item.Properties()));
+    //public static final RegistryObject<Item> ITEMICON = ITEMS.register("itemicon", () -> new IgnoreOnLoad(new Item.Properties()));
+    //public static final RegistryObject<Item> SCPICON = ITEMS.register("scpicon", () -> new IgnoreOnLoad(new Item.Properties()));
+    //public static final RegistryObject<Item> BLOCKICON = ITEMS.register("blockicon", () -> new IgnoreOnLoad(new Item.Properties()));
+    //public static final RegistryObject<Item> ARMORYICON = ITEMS.register("armoryicon", () -> new IgnoreOnLoad(new Item.Properties()));
 
     /** Keycards **/
 

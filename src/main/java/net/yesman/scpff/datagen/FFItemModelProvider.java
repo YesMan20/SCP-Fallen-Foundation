@@ -25,10 +25,10 @@ public class FFItemModelProvider extends ItemModelProvider {
         simpleItem(FFItemsRegistry.SCP109);
         simpleItem(FFItemsRegistry.SCP268);
         simpleItem(FFItemsRegistry.SCP035);
-        simpleItem(FFItemsRegistry.ITEMICON);
-        simpleItem(FFItemsRegistry.SCPICON);
-        simpleItem(FFItemsRegistry.BLOCKICON);
-        simpleItem(FFItemsRegistry.ARMORYICON);
+        //simpleItem(FFItemsRegistry.ITEMICON);
+        //simpleItem(FFItemsRegistry.SCPICON);
+        //simpleItem(FFItemsRegistry.BLOCKICON);
+        //simpleItem(FFItemsRegistry.ARMORYICON);
         simpleItem(FFItemsRegistry.KEYCARD1);
         simpleItem(FFItemsRegistry.KEYCARD2);
         simpleItem(FFItemsRegistry.KEYCARD3);

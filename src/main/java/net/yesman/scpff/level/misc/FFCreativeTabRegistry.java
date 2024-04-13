@@ -3,10 +3,7 @@ package net.yesman.scpff.level.misc;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
-import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import net.yesman.scpff.SCPFf;
@@ -16,13 +13,9 @@ import net.yesman.scpff.level.item.FFItemsRegistry;
 public class FFCreativeTabRegistry {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, SCPFf.MOD_ID);
 
-    private static void register(IEventBus eventBus) {
-        CREATIVE_TABS.register(eventBus);
-    }
-
     public static final RegistryObject<CreativeModeTab> SCP_SPAWN_EGGS = CREATIVE_TABS.register("scpff_scps", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.scpff_scps"))
-            .icon(() -> new ItemStack(FFItemsRegistry.SCPICON.get()))
+            .icon(() -> new ItemStack(FFItemsRegistry.SCP_173_SPAWN_EGG.get()))
             .displayItems((parameters, output) -> {
                 output.accept(FFBlocksRegistry.SCP106CORROSION.get());
                 output.accept(FFBlocksRegistry.SCP106CORROSIONLAYER.get());
@@ -48,7 +41,6 @@ public class FFCreativeTabRegistry {
 
     public static final RegistryObject<CreativeModeTab> SCP_BLOCKS = CREATIVE_TABS.register("scpff_blocks", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.scpff_blocks"))
-            .icon(() -> new ItemStack(FFItemsRegistry.BLOCKICON.get()))
             .displayItems((parameters, output) -> {
                 output.accept(FFBlocksRegistry.BRICKWALL1.get());
                 output.accept(FFBlocksRegistry.BRICKWALL2.get());
@@ -147,7 +139,7 @@ public class FFCreativeTabRegistry {
 
     public static final RegistryObject<CreativeModeTab> SCP_ARMOR = CREATIVE_TABS.register("scpff_armory", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.scpff_armory"))
-            .icon(() -> new ItemStack(FFItemsRegistry.ARMORYICON.get()))
+            .icon(() -> new ItemStack(FFItemsRegistry.GUARD_ARMOR_HELMET.get()))
             .displayItems((parameters, output) -> {
                 output.accept(FFItemsRegistry.DCLASS_ARMOR_BOOTS.get());
                 output.accept(FFItemsRegistry.DCLASS_ARMOR_LEGGINGS.get());
@@ -167,7 +159,7 @@ public class FFCreativeTabRegistry {
 
     public static final RegistryObject<CreativeModeTab> SCP_ITEMS = CREATIVE_TABS.register("scpff_items", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.scpff_items"))
-            .icon(() -> new ItemStack(FFItemsRegistry.ITEMICON.get()))
+            .icon(() -> new ItemStack(FFItemsRegistry.SCP268.get()))
             .displayItems((parameters, output) -> {
                 output.accept(FFItemsRegistry.KEYCARD1.get());
                 output.accept(FFItemsRegistry.KEYCARD2.get());
